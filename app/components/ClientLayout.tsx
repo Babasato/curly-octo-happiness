@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import DarkModeToggle from './DarkModeToggle';
-import LanguageSelector from './LanguageSelector';
+
 
 export default function ClientLayout({
   children,
@@ -38,7 +38,7 @@ export default function ClientLayout({
       <header className="app-header">
         <h1>Math Worksheet Generator</h1>
         <div className="header-controls">
-          <LanguageSelector />
+          
           <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
         </div>
       </header>
