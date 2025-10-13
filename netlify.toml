@@ -1,11 +1,6 @@
 [build]
-  command = "npm run build && npm run export"
-  publish = "out"
+  command = "npm run build"  # REMOVE the "&& npm run export"
+  publish = ".next"          # NOT "out"
 
 [build.environment]
   NODE_VERSION = "18"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
