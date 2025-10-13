@@ -2,15 +2,14 @@
 "use client";
 
 import Link from 'next/link';
-import { useTranslation } from '../contexts/TranslationContext';
 
 export default function Navigation() {
-  const { t } = useTranslation();
+  
 
   return (
     <nav className="navigation">
       <Link href="/" className="nav-brand">
-        {t.title}
+       
       </Link>
       
       <div className="nav-links">
