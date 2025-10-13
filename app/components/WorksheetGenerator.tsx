@@ -102,62 +102,263 @@ const gradeConfigurations = {
   }
 };
 
+// IMPROVED PROBLEM GENERATION - Replace the existing functions in WorksheetGenerator.tsx
+
+// Expanded word problem templates
 const wordProblemTemplates = {
   addition: [
     "{person} has {num1} {item}. {person} gets {num2} more. How many {item} are there now?",
-    "There are {num1} {item} in the basket and {num2} on the table. How many {item} are there altogether?"
+    "There are {num1} {item} in the basket and {num2} on the table. How many {item} are there altogether?",
+    "{person} found {num1} {item} in the morning and {num2} more in the afternoon. How many {item} did {person} find in total?",
+    "In the park, there are {num1} red {item} and {num2} blue {item}. How many {item} are there in all?",
+    "{person} baked {num1} {item} yesterday and {num2} {item} today. How many {item} did {person} bake?",
   ],
   subtraction: [
     "{person} had {num1} {item} and gave {num2} to a friend. How many {item} does {person} have left?",
-    "There were {num1} {item} on the shelf. {num2} were sold. How many {item} remain?"
+    "There were {num1} {item} on the shelf. {num2} were sold. How many {item} remain?",
+    "{person} collected {num1} {item}. {num2} rolled away. How many {item} are left?",
+    "The basket had {num1} {item}. We ate {num2} of them. How many {item} are still in the basket?",
+    "{person} saw {num1} {item} at first. Then {num2} {item} flew away. How many {item} stayed?",
   ],
   multiplication: [
     "There are {num1} boxes. Each box has {num2} {item}. How many {item} are there total?",
-    "{person} has {num1} bags. Each bag has {num2} {item}. How many {item} does {person} have?"
+    "{person} has {num1} bags. Each bag has {num2} {item}. How many {item} does {person} have?",
+    "In {num1} groups, there are {num2} {item} in each group. How many {item} are there altogether?",
+    "{person} bought {num1} packs of {item}. Each pack has {num2} {item}. How many {item} in total?",
+    "The teacher gave {num1} students {num2} {item} each. How many {item} did the teacher give out?",
   ]
 };
 
-const items = ['apples', 'cookies', 'pencils', 'books', 'toys', 'crayons', 'markers'];
-const people = ['Sarah', 'John', 'Emma', 'Michael', 'Lisa', 'David'];
+const items = [
+  'apples', 'cookies', 'pencils', 'books', 'toys', 'crayons', 
+  'markers', 'stickers', 'buttons', 'marbles', 'candies', 'flowers',
+  'shells', 'rocks', 'cards', 'coins', 'erasers', 'balloons'
+];
 
+const people = [
+  'Sarah', 'John', 'Emma', 'Michael', 'Lisa', 'David',
+  'Anna', 'James', 'Sophia', 'Daniel', 'Olivia', 'Alex'
+];
+
+// IMPROVED: Better number ranges based on grade and difficulty
+const getNumberRanges = (grade: string, difficulty: string, operation: string) => {
+  const ranges: Record<string, Record<string, Record<string, { min: number; max: number }>>> = {
+    kindergarten: {
+      addition: {
+        easy: { min: 1, max: 5 },
+        medium: { min: 1, max: 8 },
+        hard: { min: 1, max: 10 }
+      },
+      subtraction: {
+        easy: { min: 2, max: 5 },
+        medium: { min: 3, max: 8 },
+        hard: { min: 4, max: 10 }
+      }
+    },
+    first: {
+      addition: {
+        easy: { min: 1, max: 10 },
+        medium: { min: 5, max: 15 },
+        hard: { min: 10, max: 20 }
+      },
+      subtraction: {
+        easy: { min: 5, max: 10 },
+        medium: { min: 8, max: 15 },
+        hard: { min: 10, max: 20 }
+      }
+    },
+    second: {
+      addition: {
+        easy: { min: 5, max: 25 },
+        medium: { min: 10, max: 50 },
+        hard: { min: 25, max: 100 }
+      },
+      subtraction: {
+        easy: { min: 10, max: 25 },
+        medium: { min: 20, max: 50 },
+        hard: { min: 30, max: 100 }
+      },
+      multiplication: {
+        easy: { min: 1, max: 5 },
+        medium: { min: 2, max: 8 },
+        hard: { min: 2, max: 10 }
+      }
+    },
+    third: {
+      multiplication: {
+        easy: { min: 1, max: 5 },
+        medium: { min: 2, max: 10 },
+        hard: { min: 2, max: 12 }
+      },
+      division: {
+        easy: { min: 2, max: 5 },
+        medium: { min: 2, max: 10 },
+        hard: { min: 2, max: 12 }
+      }
+    }
+  };
+
+  return ranges[grade]?.[operation.toLowerCase()]?.[difficulty] || { min: 1, max: 10 };
+};
+
+// IMPROVED: Generate unique problems
+const generateMathProblem = (
+  grade: string, 
+  index: number, 
+  problemTypes: string[], 
+  difficulty: string, 
+  usedCombinations: Set<string>
+): Problem => {
+  const shouldBeWordProblem = Math.random() < 0.3 && problemTypes.includes('Word Problems');
+  
+  if (shouldBeWordProblem) {
+    const wordOperations = [];
+    if (problemTypes.includes('Addition')) wordOperations.push('addition');
+    if (problemTypes.includes('Subtraction')) wordOperations.push('subtraction');
+    if (problemTypes.includes('Multiplication') && grade !== 'kindergarten' && grade !== 'first') {
+      wordOperations.push('multiplication');
+    }
+    
+    const operation = wordOperations[Math.floor(Math.random() * wordOperations.length)] || 'addition';
+    const { question, answer } = generateWordProblem(grade, operation, difficulty);
+    return { 
+      id: index + 1, 
+      question, 
+      answer, 
+      isWordProblem: true,
+      hasVisual: false
+    };
+  }
+
+  // Select available operations
+  const availableOperations = [];
+  if (problemTypes.includes('Addition')) availableOperations.push('+');
+  if (problemTypes.includes('Subtraction')) availableOperations.push('-');
+  if (problemTypes.includes('Multiplication') && grade !== 'kindergarten') availableOperations.push('×');
+  if (problemTypes.includes('Division') && (grade === 'third' || grade === 'fourth' || grade === 'fifth' || grade === 'sixth')) {
+    availableOperations.push('÷');
+  }
+
+  const operation = availableOperations.length > 0 
+    ? availableOperations[Math.floor(Math.random() * availableOperations.length)] as '+' | '-' | '×' | '÷'
+    : '+';
+
+  // Generate unique problem
+  let num1 = 0;
+  let num2 = 0;
+  let question = "";
+  let answer = "";
+  let attempts = 0;
+  const maxAttempts = 50;
+
+  do {
+    const range = getNumberRanges(grade, difficulty, operation === '÷' ? 'division' : operation === '×' ? 'multiplication' : operation === '+' ? 'addition' : 'subtraction');
+    
+    if (operation === '+') {
+      num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      // Ensure sum doesn't exceed max for younger grades
+      if (grade === 'kindergarten' && num1 + num2 > 10) {
+        num2 = 10 - num1;
+      }
+      question = `${num1} + ${num2} = `;
+      answer = String(num1 + num2);
+    } else if (operation === '-') {
+      num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      num2 = Math.floor(Math.random() * num1) + 1; // Ensure num2 < num1
+      question = `${num1} - ${num2} = `;
+      answer = String(num1 - num2);
+    } else if (operation === '×') {
+      num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      question = `${num1} × ${num2} = `;
+      answer = String(num1 * num2);
+    } else if (operation === '÷') {
+      // Generate division problems that result in whole numbers
+      num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      const quotient = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      num1 = num2 * quotient;
+      question = `${num1} ÷ ${num2} = `;
+      answer = String(quotient);
+    }
+
+    const combinationKey = `${num1}-${operation}-${num2}`;
+    if (!usedCombinations.has(combinationKey)) {
+      usedCombinations.add(combinationKey);
+      break;
+    }
+    attempts++;
+  } while (attempts < maxAttempts);
+
+  // Determine if visual aids should be included (max 9 to prevent page overflow)
+  const shouldHaveVisual = (grade === 'kindergarten' || grade === 'first') && 
+                           (operation === '+' || operation === '-') && 
+                           num1 <= 9 && num2 <= 9 && (num1 + num2) <= 9;
+
+  let visualData = undefined;
+  if (shouldHaveVisual) {
+    visualData = {
+      num1,
+      num2,
+      operation: operation as '+' | '-' | '×',
+      shape: '●',
+      color: '#000000'
+    };
+  }
+
+  return { 
+    id: index + 1, 
+    question, 
+    answer, 
+    isWordProblem: false,
+    hasVisual: shouldHaveVisual,
+    visualType: 'shapes',
+    visualData
+  };
+};
+
+// Keep the existing generateWordProblem function but make it use the expanded templates
 const generateWordProblem = (grade: string, operation: string, difficulty: string): { question: string; answer: string } => {
   const item = items[Math.floor(Math.random() * items.length)];
   const person = people[Math.floor(Math.random() * people.length)];
   
+  const range = getNumberRanges(grade, difficulty, operation);
   let num1, num2, question, answer;
-
-  const getNumberRange = (base: number) => {
-    const multipliers = { 
-      kindergarten: { easy: 1, medium: 1.2, hard: 1.5 },
-      first: { easy: 1, medium: 1.5, hard: 2 },
-      second: { easy: 1, medium: 2, hard: 3 }
-    };
-    const gradeMultipliers = multipliers[grade as keyof typeof multipliers] || multipliers.second;
-    return Math.floor(base * gradeMultipliers[difficulty as keyof typeof gradeMultipliers]);
-  };
 
   switch (operation) {
     case 'addition':
-      num1 = Math.floor(Math.random() * getNumberRange(6)) + 1;
-      num2 = Math.floor(Math.random() * getNumberRange(6)) + 1;
-      const additionTemplate = wordProblemTemplates.addition[Math.floor(Math.random() * wordProblemTemplates.addition.length)];
-      question = additionTemplate.replace(/{person}/g, person).replace(/{item}/g, item).replace(/{num1}/g, num1.toString()).replace(/{num2}/g, num2.toString());
+      num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      const addTemplate = wordProblemTemplates.addition[Math.floor(Math.random() * wordProblemTemplates.addition.length)];
+      question = addTemplate
+        .replace(/{person}/g, person)
+        .replace(/{item}/g, item)
+        .replace(/{num1}/g, num1.toString())
+        .replace(/{num2}/g, num2.toString());
       answer = String(num1 + num2);
       break;
 
     case 'subtraction':
-      num1 = Math.floor(Math.random() * getNumberRange(8)) + 3;
+      num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
       num2 = Math.floor(Math.random() * (num1 - 1)) + 1;
-      const subtractionTemplate = wordProblemTemplates.subtraction[Math.floor(Math.random() * wordProblemTemplates.subtraction.length)];
-      question = subtractionTemplate.replace(/{person}/g, person).replace(/{item}/g, item).replace(/{num1}/g, num1.toString()).replace(/{num2}/g, num2.toString());
+      const subTemplate = wordProblemTemplates.subtraction[Math.floor(Math.random() * wordProblemTemplates.subtraction.length)];
+      question = subTemplate
+        .replace(/{person}/g, person)
+        .replace(/{item}/g, item)
+        .replace(/{num1}/g, num1.toString())
+        .replace(/{num2}/g, num2.toString());
       answer = String(num1 - num2);
       break;
 
     case 'multiplication':
-      num1 = Math.floor(Math.random() * 4) + 2;
-      num2 = Math.floor(Math.random() * 4) + 2;
-      const multiplicationTemplate = wordProblemTemplates.multiplication[Math.floor(Math.random() * wordProblemTemplates.multiplication.length)];
-      question = multiplicationTemplate.replace(/{person}/g, person).replace(/{item}/g, item).replace(/{num1}/g, num1.toString()).replace(/{num2}/g, num2.toString());
+      num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      const multTemplate = wordProblemTemplates.multiplication[Math.floor(Math.random() * wordProblemTemplates.multiplication.length)];
+      question = multTemplate
+        .replace(/{person}/g, person)
+        .replace(/{item}/g, item)
+        .replace(/{num1}/g, num1.toString())
+        .replace(/{num2}/g, num2.toString());
       answer = String(num1 * num2);
       break;
 
@@ -171,119 +372,6 @@ const generateWordProblem = (grade: string, operation: string, difficulty: strin
   return { question, answer };
 };
 
-const generateMathProblem = (grade: string, index: number, problemTypes: string[], difficulty: string, usedCombinations: Set<string>): Problem => {
-  const shouldBeWordProblem = Math.random() < 0.3 && problemTypes.includes('Word Problems');
-  
-  if (shouldBeWordProblem) {
-    const wordOperations = [];
-    if (problemTypes.includes('Addition')) wordOperations.push('addition');
-    if (problemTypes.includes('Subtraction')) wordOperations.push('subtraction');
-    if (problemTypes.includes('Multiplication')) wordOperations.push('multiplication');
-    
-    const operation = wordOperations[Math.floor(Math.random() * wordOperations.length)] || 'addition';
-    const { question, answer } = generateWordProblem(grade, operation, difficulty);
-    return { 
-      id: index + 1, 
-      question, 
-      answer, 
-      isWordProblem: true,
-      hasVisual: false
-    };
-  }
-
-  const shouldHaveVisual = (grade === 'kindergarten' || grade === 'first' || grade === 'second');
-  
-  let question = "";
-  let answer = "";
-  let num1 = 0;
-  let num2 = 0;
-  let operation: '+' | '-' | '×' = '+';
-  let visualData = undefined;
-
-  const availableOperations = [];
-  if (problemTypes.includes('Addition')) availableOperations.push('+');
-  if (problemTypes.includes('Subtraction')) availableOperations.push('-');
-  if (problemTypes.includes('Multiplication') && grade !== 'kindergarten') availableOperations.push('×');
-
-  operation = availableOperations.length > 0 
-    ? availableOperations[Math.floor(Math.random() * availableOperations.length)] as '+' | '-' | '×'
-    : '+';
-
-  if (operation === '+') {
-    const maxTotal = 8;
-    num1 = Math.floor(Math.random() * 4) + 1;
-    num2 = Math.floor(Math.random() * (maxTotal - num1)) + 1;
-    
-    if (num1 + num2 > maxTotal) {
-      num2 = maxTotal - num1;
-    }
-    
-    question = `${num1} + ${num2} = `;
-    answer = String(num1 + num2);
-    
-    if (shouldHaveVisual) {
-      visualData = {
-        num1,
-        num2,
-        operation: '+',
-        shape: '●',
-        color: '#000000'
-      };
-    }
-  } else if (operation === '-') {
-    num1 = Math.floor(Math.random() * 5) + 3;
-    num2 = Math.floor(Math.random() * (num1 - 1)) + 1;
-    
-    if (num1 > 7) num1 = 7;
-    if (num2 > 6) num2 = 6;
-    if (num1 - num2 < 1) num2 = num1 - 1;
-    
-    question = `${num1} - ${num2} = `;
-    answer = String(num1 - num2);
-    
-    if (shouldHaveVisual) {
-      visualData = {
-        num1,
-        num2,
-        operation: '-',
-        shape: '●',
-        color: '#000000'
-      };
-    }
-  } else if (operation === '×') {
-    num1 = Math.floor(Math.random() * 3) + 2;
-    num2 = Math.floor(Math.random() * 3) + 2;
-    
-    if (num1 > 4) num1 = 4;
-    if (num2 > 4) num2 = 4;
-    if (num1 * num2 > 12) {
-      num2 = Math.floor(12 / num1);
-    }
-    
-    question = `${num1} × ${num2} = `;
-    answer = String(num1 * num2);
-    
-    if (shouldHaveVisual && num1 <= 3 && num2 <= 4) {
-      visualData = {
-        num1,
-        num2,
-        operation: '×',
-        shape: '●',
-        color: '#000000'
-      };
-    }
-  }
-
-  return { 
-    id: index + 1, 
-    question, 
-    answer, 
-    isWordProblem: false,
-    hasVisual: shouldHaveVisual && visualData !== undefined,
-    visualType: 'shapes',
-    visualData
-  };
-};
 
 const useProblemGeneration = (grade: string, count: number, problemTypes: string[], difficulty: string) => {
     const [problems, setProblems] = useState<Problem[]>([]);
