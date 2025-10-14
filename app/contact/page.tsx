@@ -162,10 +162,6 @@ export default function Contact() {
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
-
-              <p className="alternative-contact">
-                Or email us directly at: <a href="mailto:bob@homeschoolmath.site" className="email-link">bob@homeschoolmath.site</a>
-              </p>
             </div>
 
             <div className="resources-section">
