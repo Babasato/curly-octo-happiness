@@ -679,3 +679,10 @@ body {
 .page-container {
   flex: 1;
 }
+
+/* Add to your globals.css */
+.main-content {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+}
