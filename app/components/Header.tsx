@@ -4,10 +4,6 @@
 import Link from 'next/link';
 
 export default function Header() {
-  const handleHomeClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <header className="site-header">
       <div className="header-content">
@@ -47,12 +43,7 @@ export default function Header() {
           cursor: pointer;
           padding: 0;
           margin: 0;
-          transition: transform 0.2s ease;
           text-decoration: none;
-        }
-
-        .home-button:hover {
-          transform: scale(1.05);
         }
 
         .brand-title {
@@ -60,11 +51,6 @@ export default function Header() {
           font-weight: 700;
           color: #1e293b;
           margin: 0;
-          transition: color 0.2s ease;
-        }
-
-        .home-button:hover .brand-title {
-          color: #2563eb;
         }
 
         .main-nav {
@@ -78,7 +64,6 @@ export default function Header() {
           text-decoration: none;
           font-weight: 600;
           font-size: 0.95rem;
-          transition: color 0.2s;
         }
 
         .nav-link:hover {
@@ -93,16 +78,11 @@ export default function Header() {
           .main-nav {
             gap: 1rem;
           }
-          
-          .nav-link {
-            display: flex;
-          }
         }
 
         @media (max-width: 480px) {
           .nav-link {
             font-size: 0.9rem;
-            padding: 0.5rem;
           }
           
           .brand-title {
