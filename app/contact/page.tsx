@@ -1,4 +1,4 @@
-// app/contact/page.tsx
+// app/contact/page.tsx - UPDATED
 "use client";
 
 import { useState } from 'react';
@@ -50,103 +50,44 @@ export default function Contact() {
   };
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: 'var(--background)',
-      padding: '2rem 0'
-    }}>
-      <div style={{
-        maxWidth: '1000px',
-        margin: '0 auto',
-        padding: '0 1.5rem'
-      }}>
-        <div style={{
-          background: 'var(--surface)',
-          border: '1px solid var(--border)',
-          borderRadius: '8px',
-          padding: '2rem'
-        }}>
-          <h1 style={{
-            fontSize: '2.5rem',
-            fontWeight: '700',
-            color: 'var(--text-primary)',
-            marginBottom: '1.5rem'
-          }}>
+    <div className="page-container">
+      <div className="content-wrapper">
+        <div className="content-card">
+          <h1 className="page-title">
             Contact Us
           </h1>
           
-          <section style={{marginBottom: '2rem'}}>
-            <h2 style={{
-              fontSize: '1.75rem',
-              fontWeight: '600',
-              color: 'var(--text-primary)',
-              marginBottom: '1rem'
-            }}>
+          <section className="section-spacing">
+            <h2 className="section-title">
               We're Here to Help
             </h2>
-            <p style={{
-              color: 'var(--text-secondary)',
-              lineHeight: '1.6'
-            }}>
+            <p className="section-description">
               Have questions about using Math Worksheet Generator? Need technical support? 
               Want to share feedback or suggestions? We'd love to hear from you!
             </p>
           </section>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '2rem'
-          }}>
-            <div>
-              <h3 style={{
-                fontSize: '1.25rem',
-                fontWeight: '600',
-                color: 'var(--text-primary)',
-                marginBottom: '1rem'
-              }}>
+          <div className="grid-layout">
+            <div className="form-section">
+              <h3 className="subsection-title">
                 Send Us a Message
               </h3>
 
               {submitStatus === 'success' && (
-                <div style={{
-                  padding: '1rem',
-                  backgroundColor: '#d4edda',
-                  border: '1px solid #c3e6cb',
-                  borderRadius: '6px',
-                  color: '#155724',
-                  marginBottom: '1rem'
-                }}>
+                <div className="success-message">
                   ✓ Message sent successfully! We'll get back to you soon.
                 </div>
               )}
 
               {submitStatus === 'error' && (
-                <div style={{
-                  padding: '1rem',
-                  backgroundColor: '#f8d7da',
-                  border: '1px solid #f5c6cb',
-                  borderRadius: '6px',
-                  color: '#721c24',
-                  marginBottom: '1rem'
-                }}>
+                <div className="error-message">
                   ✗ Something went wrong. Please try again or email us directly at bob@homeschoolmath.site
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '1rem'
-              }}>
-                <div>
-                  <label htmlFor="name" style={{
-                    display: 'block',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                    color: 'var(--text-primary)',
-                    marginBottom: '0.25rem'
-                  }}>
+              <form onSubmit={handleSubmit} className="form-stack">
+                <div className="form-group">
+                  <label htmlFor="name" className="form-label">
                     Your Name *
                   </label>
                   <input
@@ -156,27 +97,13 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    style={{
-                      width: '100%',
-                      padding: '0.75rem',
-                      border: '1px solid var(--border)',
-                      borderRadius: '6px',
-                      background: 'var(--background)',
-                      color: 'var(--text-primary)',
-                      fontSize: '0.95rem'
-                    }}
+                    className="form-input"
                     placeholder="Enter your name"
                   />
                 </div>
                 
-                <div>
-                  <label htmlFor="email" style={{
-                    display: 'block',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                    color: 'var(--text-primary)',
-                    marginBottom: '0.25rem'
-                  }}>
+                <div className="form-group">
+                  <label htmlFor="email" className="form-label">
                     Email Address *
                   </label>
                   <input
@@ -186,27 +113,13 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    style={{
-                      width: '100%',
-                      padding: '0.75rem',
-                      border: '1px solid var(--border)',
-                      borderRadius: '6px',
-                      background: 'var(--background)',
-                      color: 'var(--text-primary)',
-                      fontSize: '0.95rem'
-                    }}
+                    className="form-input"
                     placeholder="Enter your email"
                   />
                 </div>
                 
-                <div>
-                  <label htmlFor="subject" style={{
-                    display: 'block',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                    color: 'var(--text-primary)',
-                    marginBottom: '0.25rem'
-                  }}>
+                <div className="form-group">
+                  <label htmlFor="subject" className="form-label">
                     Subject
                   </label>
                   <select
@@ -214,15 +127,7 @@ export default function Contact() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    style={{
-                      width: '100%',
-                      padding: '0.75rem',
-                      border: '1px solid var(--border)',
-                      borderRadius: '6px',
-                      background: 'var(--background)',
-                      color: 'var(--text-primary)',
-                      fontSize: '0.95rem'
-                    }}
+                    className="form-input"
                   >
                     <option value="">Select a subject</option>
                     <option value="technical">Technical Support</option>
@@ -233,14 +138,8 @@ export default function Contact() {
                   </select>
                 </div>
                 
-                <div>
-                  <label htmlFor="message" style={{
-                    display: 'block',
-                    fontSize: '0.875rem',
-                    fontWeight: '500',
-                    color: 'var(--text-primary)',
-                    marginBottom: '0.25rem'
-                  }}>
+                <div className="form-group">
+                  <label htmlFor="message" className="form-label">
                     Message *
                   </label>
                   <textarea
@@ -250,16 +149,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    style={{
-                      width: '100%',
-                      padding: '0.75rem',
-                      border: '1px solid var(--border)',
-                      borderRadius: '6px',
-                      background: 'var(--background)',
-                      color: 'var(--text-primary)',
-                      fontSize: '0.95rem',
-                      resize: 'vertical'
-                    }}
+                    className="form-textarea"
                     placeholder="Tell us how we can help you..."
                   ></textarea>
                 </div>
@@ -267,160 +157,69 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  style={{
-                    background: isSubmitting ? '#ccc' : 'var(--primary)',
-                    color: 'white',
-                    border: 'none',
-                    padding: '0.75rem 1.5rem',
-                    borderRadius: '6px',
-                    fontWeight: '600',
-                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
-                    transition: 'background-color 0.2s'
-                  }}
+                  className="submit-button"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
 
-              <p style={{
-                marginTop: '1rem',
-                fontSize: '0.875rem',
-                color: 'var(--text-secondary)'
-              }}>
-                Or email us directly at: <a href="mailto:bob@homeschoolmath.site" style={{ color: 'var(--primary)' }}>bob@homeschoolmath.site</a>
+              <p className="alternative-contact">
+                Or email us directly at: <a href="mailto:bob@homeschoolmath.site" className="email-link">bob@homeschoolmath.site</a>
               </p>
             </div>
 
-            <div>
-              <h3 style={{
-                fontSize: '1.25rem',
-                fontWeight: '600',
-                color: 'var(--text-primary)',
-                marginBottom: '1rem'
-              }}>
+            <div className="resources-section">
+              <h3 className="subsection-title">
                 Quick Help & Resources
               </h3>
               
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '1rem'
-              }}>
-                <div style={{
-                  background: '#dbeafe',
-                  borderRadius: '6px',
-                  padding: '1.25rem'
-                }}>
-                  <h4 style={{
-                    fontSize: '1.125rem',
-                    fontWeight: '600',
-                    color: 'var(--text-primary)',
-                    marginBottom: '0.5rem'
-                  }}>
+              <div className="resources-stack">
+                <div className="resource-card resource-blue">
+                  <h4 className="resource-title">
                     How to Use Guide
                   </h4>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    marginBottom: '0.75rem',
-                    lineHeight: '1.5'
-                  }}>
+                  <p className="resource-description">
                     New to Math Worksheet Generator? Check out our comprehensive guide to get started.
                   </p>
-                  <Link href="/how-to-use" style={{
-                    color: '#2563eb',
-                    fontWeight: '500',
-                    textDecoration: 'none'
-                  }}>
+                  <Link href="/how-to-use" className="resource-link">
                     View Tutorial →
                   </Link>
                 </div>
                 
-                <div style={{
-                  background: '#f3e8ff',
-                  borderRadius: '6px',
-                  padding: '1.25rem'
-                }}>
-                  <h4 style={{
-                    fontSize: '1.125rem',
-                    fontWeight: '600',
-                    color: 'var(--text-primary)',
-                    marginBottom: '0.5rem'
-                  }}>
+                <div className="resource-card resource-purple">
+                  <h4 className="resource-title">
                     Teaching Tips
                   </h4>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    marginBottom: '0.75rem',
-                    lineHeight: '1.5'
-                  }}>
+                  <p className="resource-description">
                     Discover effective strategies for using worksheets in your teaching practice.
                   </p>
-                  <Link href="/teaching-tips" style={{
-                    color: '#7c3aed',
-                    fontWeight: '500',
-                    textDecoration: 'none'
-                  }}>
+                  <Link href="/teaching-tips" className="resource-link">
                     Get Teaching Tips →
                   </Link>
                 </div>
                 
-                <div style={{
-                  background: '#ffedd5',
-                  borderRadius: '6px',
-                  padding: '1.25rem'
-                }}>
-                  <h4 style={{
-                    fontSize: '1.125rem',
-                    fontWeight: '600',
-                    color: 'var(--text-primary)',
-                    marginBottom: '0.5rem'
-                  }}>
+                <div className="resource-card resource-orange">
+                  <h4 className="resource-title">
                     Common Questions
                   </h4>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    marginBottom: '0.75rem',
-                    lineHeight: '1.5'
-                  }}>
+                  <p className="resource-description">
                     Find answers to frequently asked questions about our worksheet generator.
                   </p>
-                  <Link href="/how-to-use" style={{
-                    color: '#ea580c',
-                    fontWeight: '500',
-                    textDecoration: 'none'
-                  }}>
+                  <Link href="/how-to-use" className="resource-link">
                     View FAQs →
                   </Link>
                 </div>
               </div>
 
-              <div style={{
-                marginTop: '2rem',
-                background: '#f8fafc',
-                borderRadius: '6px',
-                padding: '1.5rem'
-              }}>
-                <h4 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '600',
-                  color: 'var(--text-primary)',
-                  marginBottom: '0.75rem'
-                }}>
+              <div className="response-time-info">
+                <h4 className="info-title">
                   Response Time
                 </h4>
-                <p style={{
-                  color: 'var(--text-secondary)',
-                  marginBottom: '0.5rem',
-                  lineHeight: '1.5'
-                }}>
+                <p className="info-description">
                   We typically respond to all messages within 24-48 hours. For technical issues, 
                   we'll work to resolve them as quickly as possible.
                 </p>
-                <p style={{
-                  color: 'var(--text-secondary)',
-                  fontSize: '0.875rem',
-                  lineHeight: '1.5'
-                }}>
+                <p className="info-note">
                   Please note: We are a small team dedicated to providing free educational resources. 
                   Your patience and understanding are appreciated.
                 </p>
@@ -429,6 +228,271 @@ export default function Contact() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .page-container {
+          min-height: 100vh;
+          background: var(--background);
+          padding: 2rem 1rem;
+        }
+
+        .content-wrapper {
+          max-width: 1200px;
+          margin: 0 auto;
+          width: 100%;
+        }
+
+        .content-card {
+          background: var(--surface);
+          border: 1px solid var(--border);
+          border-radius: 12px;
+          padding: 2rem;
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .page-title {
+          font-size: clamp(2rem, 5vw, 2.5rem);
+          font-weight: 700;
+          color: var(--text-primary);
+          margin-bottom: 1.5rem;
+          line-height: 1.2;
+        }
+
+        .section-spacing {
+          margin-bottom: 2rem;
+        }
+
+        .section-title {
+          font-size: clamp(1.5rem, 4vw, 1.75rem);
+          font-weight: 600;
+          color: var(--text-primary);
+          margin-bottom: 1rem;
+          line-height: 1.3;
+        }
+
+        .section-description {
+          color: var(--text-secondary);
+          line-height: 1.6;
+          font-size: clamp(1rem, 2vw, 1.1rem);
+        }
+
+        .grid-layout {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+          .grid-layout {
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+          }
+          
+          .page-container {
+            padding: 3rem 1.5rem;
+          }
+          
+          .content-card {
+            padding: 3rem;
+          }
+        }
+
+        .form-section {
+          width: 100%;
+        }
+
+        .subsection-title {
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: var(--text-primary);
+          margin-bottom: 1.5rem;
+        }
+
+        .success-message {
+          padding: 1rem;
+          background-color: #d4edda;
+          border: 1px solid #c3e6cb;
+          border-radius: 8px;
+          color: #155724;
+          margin-bottom: 1.5rem;
+          font-size: 0.95rem;
+        }
+
+        .error-message {
+          padding: 1rem;
+          background-color: #f8d7da;
+          border: 1px solid #f5c6cb;
+          border-radius: 8px;
+          color: #721c24;
+          margin-bottom: 1.5rem;
+          font-size: 0.95rem;
+        }
+
+        .form-stack {
+          display: flex;
+          flex-direction: column;
+          gap: 1.25rem;
+        }
+
+        .form-group {
+          width: 100%;
+        }
+
+        .form-label {
+          display: block;
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: var(--text-primary);
+          margin-bottom: 0.5rem;
+        }
+
+        .form-input, .form-textarea {
+          width: 100%;
+          padding: 0.875rem;
+          border: 1px solid var(--border);
+          border-radius: 8px;
+          background: var(--background);
+          color: var(--text-primary);
+          font-size: 1rem;
+          box-sizing: border-box;
+          transition: border-color 0.2s ease;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+          outline: none;
+          border-color: var(--primary);
+        }
+
+        .form-textarea {
+          resize: vertical;
+          min-height: 120px;
+        }
+
+        .submit-button {
+          background: var(--primary);
+          color: white;
+          border: none;
+          padding: 1rem 2rem;
+          border-radius: 8px;
+          font-weight: 600;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+          width: 100%;
+        }
+
+        .submit-button:hover:not(:disabled) {
+          background: var(--primary-dark);
+        }
+
+        .submit-button:disabled {
+          background: #ccc;
+          cursor: not-allowed;
+        }
+
+        .alternative-contact {
+          margin-top: 1.5rem;
+          font-size: 0.875rem;
+          color: var(--text-secondary);
+          text-align: center;
+        }
+
+        .email-link {
+          color: var(--primary);
+          text-decoration: none;
+        }
+
+        .email-link:hover {
+          text-decoration: underline;
+        }
+
+        .resources-section {
+          width: 100%;
+        }
+
+        .resources-stack {
+          display: flex;
+          flex-direction: column;
+          gap: 1.25rem;
+          margin-bottom: 2rem;
+        }
+
+        .resource-card {
+          border-radius: 8px;
+          padding: 1.5rem;
+          transition: transform 0.2s ease;
+        }
+
+        .resource-card:hover {
+          transform: translateY(-2px);
+        }
+
+        .resource-blue {
+          background: #dbeafe;
+        }
+
+        .resource-purple {
+          background: #f3e8ff;
+        }
+
+        .resource-orange {
+          background: #ffedd5;
+        }
+
+        .resource-title {
+          font-size: 1.125rem;
+          font-weight: 600;
+          color: var(--text-primary);
+          margin-bottom: 0.75rem;
+        }
+
+        .resource-description {
+          color: var(--text-secondary);
+          margin-bottom: 1rem;
+          line-height: 1.5;
+          font-size: 0.95rem;
+        }
+
+        .resource-link {
+          color: inherit;
+          font-weight: 500;
+          text-decoration: none;
+          font-size: 0.95rem;
+        }
+
+        .resource-link:hover {
+          text-decoration: underline;
+        }
+
+        .response-time-info {
+          background: #f8fafc;
+          border-radius: 8px;
+          padding: 1.5rem;
+          border: 1px solid var(--border);
+        }
+
+        .info-title {
+          font-size: 1.125rem;
+          font-weight: 600;
+          color: var(--text-primary);
+          margin-bottom: 0.75rem;
+        }
+
+        .info-description {
+          color: var(--text-secondary);
+          margin-bottom: 1rem;
+          line-height: 1.5;
+          font-size: 0.95rem;
+        }
+
+        .info-note {
+          color: var(--text-secondary);
+          font-size: 0.875rem;
+          line-height: 1.5;
+          font-style: italic;
+        }
+      `}</style>
     </div>
   );
 }

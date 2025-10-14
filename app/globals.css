@@ -667,3 +667,15 @@ body {
   align-items: center;
   padding: 2px; /* Added padding */
 }
+
+/* Add to your globals.css */
+.main-content {
+  min-height: calc(100vh - 64px); /* Adjust based on your navbar height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure proper spacing for pages */
+.page-container {
+  flex: 1;
+}
