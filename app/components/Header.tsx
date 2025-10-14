@@ -38,7 +38,8 @@ export default function Header() {
         }
 
         .home-link {
-          text-decoration: none; /* Remove underline */
+          text-decoration: none;
+          color: inherit;
         }
 
         .brand-title {
@@ -57,7 +58,7 @@ export default function Header() {
         .nav-link {
           color: #64748b;
           text-decoration: none;
-          font-weight: 600;
+          font-weight: 700;
           font-size: 0.95rem;
         }
 
@@ -72,19 +73,16 @@ export default function Header() {
           }
           
           .main-nav {
+            display: flex;
             gap: 1rem;
           }
           
           .nav-link {
-            display: block; /* Ensure they're visible */
+            font-size: 0.9rem;
           }
         }
 
         @media (max-width: 480px) {
-          .nav-link {
-            font-size: 0.9rem;
-          }
-          
           .brand-title {
             font-size: 1.2rem;
           }
