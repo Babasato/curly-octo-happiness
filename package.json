@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next export"
+    "lint": "next lint"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
@@ -32,8 +31,5 @@
     "eslint-config-next": "15.5.2",
     "prisma": "^6.15.0",
     "typescript": "^5.9.2"
-  },
-  "engines": {
-    "node": ">=18.0.0"
   }
 }
