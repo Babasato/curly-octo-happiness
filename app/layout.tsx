@@ -1,7 +1,7 @@
-// app/layout.tsx - SAFE VERSION
+// app/layout.tsx - UPDATED WITH HEADER
 // @ts-ignore - Ignore TypeScript error for CSS import
 import './globals.css';
-import Navbar from './components/Navbar';
+import Header from './components/Header';
 import Footer from './components/Footer';
 
 export const metadata = {
@@ -33,10 +33,6 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  // Remove verification object if you can't find the code
-  // verification: {
-  //   google: 'your-code-here',
-  // },
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -59,11 +55,9 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://homeschoolmath.site" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Add this later if you find your verification code */}
-        {/* <meta name="google-site-verification" content="YOUR_CODE_HERE" /> */}
       </head>
       <body suppressHydrationWarning>
-        <Navbar />
+        <Header />
         <main className="main-content">
           {children}
         </main>
