@@ -1,4 +1,4 @@
-// app/components/Header.tsx
+// app/components/Header.tsx - FIXED MOBILE VERSION
 "use client";
 
 import Link from 'next/link';
@@ -8,7 +8,7 @@ export default function Header() {
     <header className="site-header">
       <div className="header-content">
         <div className="brand">
-          <Link href="/" className="home-button">
+          <Link href="/" className="home-link">
             <h1 className="brand-title">Homeschool Math</h1>
           </Link>
         </div>
@@ -37,13 +37,8 @@ export default function Header() {
           justify-content: space-between;
         }
 
-        .home-button {
-          background: none;
-          border: none;
-          cursor: pointer;
-          padding: 0;
-          margin: 0;
-          text-decoration: none;
+        .home-link {
+          text-decoration: none; /* Remove underline */
         }
 
         .brand-title {
@@ -70,6 +65,7 @@ export default function Header() {
           color: #2563eb;
         }
 
+        /* Mobile styles - make sure nav links are always visible */
         @media (max-width: 768px) {
           .header-content {
             padding: 1rem;
@@ -77,6 +73,10 @@ export default function Header() {
           
           .main-nav {
             gap: 1rem;
+          }
+          
+          .nav-link {
+            display: block; /* Ensure they're visible */
           }
         }
 

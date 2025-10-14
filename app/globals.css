@@ -680,7 +680,7 @@ body {
   flex: 1;
 }
 
-/* Add to your globals.css */
+/* Add to your app/globals.css if not already there */
 .main-content {
   min-height: calc(100vh - 64px);
   display: flex;
