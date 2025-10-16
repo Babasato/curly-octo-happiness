@@ -1,4 +1,4 @@
-// app/components/WorksheetGenerator.tsx - FIXED VERSION
+// app/components/WorksheetGenerator.tsx - COMPLETE FIXED VERSION
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -20,7 +20,6 @@ interface Problem {
   };
 }
 
-// 🎯 FIXED: Added props to receive download tracking from parent
 interface WorksheetGeneratorProps {
   onOpenLeadMagnet: () => void;
   downloadsRemaining: number;
@@ -28,18 +27,18 @@ interface WorksheetGeneratorProps {
   hasReceivedSignupBonus: boolean;
 }
 
-// FIXED: Age-appropriate grade configurations
+// Grade configurations
 const gradeConfigurations = {
   kindergarten: {
-  availableTypes: ['Addition', 'Subtraction', 'Counting'],
-  defaultTypes: ['Addition', 'Subtraction'],
-  difficultyLevels: {
-    easy: { range: '1-4', description: 'Numbers 1-4' },
-    medium: { range: '1-5', description: 'Numbers 1-5' },
-    hard: { range: '1-8', description: 'Numbers 1-8' }
+    availableTypes: ['Addition', 'Subtraction', 'Counting'],
+    defaultTypes: ['Addition', 'Subtraction'],
+    difficultyLevels: {
+      easy: { range: '1-4', description: 'Numbers 1-4' },
+      medium: { range: '1-5', description: 'Numbers 1-5' },
+      hard: { range: '1-8', description: 'Numbers 1-8' }
+    },
+    description: 'Basic counting, addition, and subtraction within 8'
   },
-  description: 'Basic counting, addition, and subtraction within 8'
-},
   first: {
     availableTypes: ['Addition', 'Subtraction', 'Word Problems'],
     defaultTypes: ['Addition', 'Subtraction'],
@@ -102,9 +101,7 @@ const gradeConfigurations = {
   }
 };
 
-// IMPROVED PROBLEM GENERATION - Replace the existing functions in WorksheetGenerator.tsx
-
-// Expanded word problem templates
+// Word problem templates
 const wordProblemTemplates = {
   addition: [
     "{person} has {num1} {item}. {person} gets {num2} more. How many {item} are there now?",
@@ -140,26 +137,31 @@ const people = [
   'Anna', 'James', 'Sophia', 'Daniel', 'Olivia', 'Alex'
 ];
 
-// IMPROVED: Better number ranges based on grade and difficulty
+// COMPREHENSIVE NUMBER RANGES - Grade and operation specific
 const getNumberRanges = (grade: string, difficulty: string, operation: string) => {
-  const ranges: Record<string, Record<string, Record<string, { min: number; max: number }>>> = {
+  const ranges: Record<string, Record<string, Record<string, any>>> = {
     kindergarten: {
       addition: {
-        easy: { min: 1, max: 5 },
-        medium: { min: 1, max: 8 },
-        hard: { min: 1, max: 10 }
+        easy: { min: 1, max: 4, maxSum: 5 },
+        medium: { min: 1, max: 5, maxSum: 8 },
+        hard: { min: 2, max: 5, maxSum: 10 }
       },
       subtraction: {
-        easy: { min: 2, max: 5 },
-        medium: { min: 3, max: 8 },
-        hard: { min: 4, max: 10 }
+        easy: { min: 2, max: 5, maxResult: 5 },
+        medium: { min: 3, max: 8, maxResult: 8 },
+        hard: { min: 4, max: 10, maxResult: 10 }
+      },
+      counting: {
+        easy: { min: 1, max: 5 },
+        medium: { min: 1, max: 8 },
+        hard: { min: 1, max: 9 }
       }
     },
     first: {
       addition: {
-        easy: { min: 1, max: 10 },
-        medium: { min: 5, max: 15 },
-        hard: { min: 10, max: 20 }
+        easy: { min: 1, max: 9, maxSum: 10 },
+        medium: { min: 3, max: 9, maxSum: 15 },
+        hard: { min: 5, max: 15, maxSum: 20 }
       },
       subtraction: {
         easy: { min: 5, max: 10 },
@@ -169,14 +171,14 @@ const getNumberRanges = (grade: string, difficulty: string, operation: string) =
     },
     second: {
       addition: {
-        easy: { min: 5, max: 25 },
+        easy: { min: 5, max: 20 },
         medium: { min: 10, max: 50 },
-        hard: { min: 25, max: 100 }
+        hard: { min: 25, max: 99 }
       },
       subtraction: {
         easy: { min: 10, max: 25 },
         medium: { min: 20, max: 50 },
-        hard: { min: 30, max: 100 }
+        hard: { min: 30, max: 99 }
       },
       multiplication: {
         easy: { min: 1, max: 5 },
@@ -185,15 +187,86 @@ const getNumberRanges = (grade: string, difficulty: string, operation: string) =
       }
     },
     third: {
+      addition: {
+        easy: { min: 10, max: 50 },
+        medium: { min: 25, max: 100 },
+        hard: { min: 50, max: 500 }
+      },
+      subtraction: {
+        easy: { min: 10, max: 50 },
+        medium: { min: 25, max: 100 },
+        hard: { min: 50, max: 500 }
+      },
       multiplication: {
         easy: { min: 1, max: 5 },
         medium: { min: 2, max: 10 },
         hard: { min: 2, max: 12 }
       },
       division: {
-        easy: { min: 2, max: 5 },
-        medium: { min: 2, max: 10 },
-        hard: { min: 2, max: 12 }
+        easy: { divisor: { min: 2, max: 5 }, quotient: { min: 1, max: 10 } },
+        medium: { divisor: { min: 2, max: 10 }, quotient: { min: 1, max: 10 } },
+        hard: { divisor: { min: 2, max: 12 }, quotient: { min: 1, max: 12 } }
+      }
+    },
+    fourth: {
+      multiplication: {
+        easy: { min: 10, max: 50 },
+        medium: { min: 10, max: 100 },
+        hard: { min: 100, max: 999 }
+      },
+      division: {
+        easy: { divisor: { min: 2, max: 10 }, quotient: { min: 2, max: 20 } },
+        medium: { divisor: { min: 2, max: 12 }, quotient: { min: 10, max: 50 } },
+        hard: { divisor: { min: 2, max: 12 }, quotient: { min: 10, max: 100 } }
+      },
+      fractions: {
+        easy: { maxDenominator: 4 },
+        medium: { maxDenominator: 8 },
+        hard: { maxDenominator: 12 }
+      }
+    },
+    fifth: {
+      multiplication: {
+        easy: { min: 10, max: 100 },
+        medium: { min: 50, max: 500 },
+        hard: { min: 100, max: 999 }
+      },
+      division: {
+        easy: { divisor: { min: 2, max: 12 }, quotient: { min: 10, max: 50 } },
+        medium: { divisor: { min: 2, max: 12 }, quotient: { min: 10, max: 100 } },
+        hard: { divisor: { min: 5, max: 25 }, quotient: { min: 10, max: 100 } }
+      },
+      fractions: {
+        easy: { maxDenominator: 8 },
+        medium: { maxDenominator: 12 },
+        hard: { maxDenominator: 16 }
+      },
+      decimals: {
+        easy: { decimalPlaces: 1, min: 0.1, max: 10 },
+        medium: { decimalPlaces: 2, min: 0.1, max: 100 },
+        hard: { decimalPlaces: 2, min: 1, max: 1000 }
+      }
+    },
+    sixth: {
+      multiplication: {
+        easy: { min: 10, max: 100 },
+        medium: { min: 50, max: 500 },
+        hard: { min: 100, max: 9999 }
+      },
+      division: {
+        easy: { divisor: { min: 5, max: 20 }, quotient: { min: 5, max: 50 } },
+        medium: { divisor: { min: 10, max: 50 }, quotient: { min: 10, max: 100 } },
+        hard: { divisor: { min: 10, max: 100 }, quotient: { min: 10, max: 500 } }
+      },
+      percent: {
+        easy: { min: 10, max: 100, percentMin: 10, percentMax: 50 },
+        medium: { min: 50, max: 500, percentMin: 10, percentMax: 100 },
+        hard: { min: 100, max: 1000, percentMin: 1, percentMax: 150 }
+      },
+      ratios: {
+        easy: { min: 1, max: 10 },
+        medium: { min: 2, max: 20 },
+        hard: { min: 5, max: 50 }
       }
     }
   };
@@ -201,123 +274,146 @@ const getNumberRanges = (grade: string, difficulty: string, operation: string) =
   return ranges[grade]?.[operation.toLowerCase()]?.[difficulty] || { min: 1, max: 10 };
 };
 
-// IMPROVED: Generate unique problems
-const generateMathProblem = (
-  grade: string, 
-  index: number, 
-  problemTypes: string[], 
-  difficulty: string, 
-  usedCombinations: Set<string>
-): Problem => {
-  const shouldBeWordProblem = Math.random() < 0.3 && problemTypes.includes('Word Problems');
-  
-  if (shouldBeWordProblem) {
-    const wordOperations = [];
-    if (problemTypes.includes('Addition')) wordOperations.push('addition');
-    if (problemTypes.includes('Subtraction')) wordOperations.push('subtraction');
-    if (problemTypes.includes('Multiplication') && grade !== 'kindergarten' && grade !== 'first') {
-      wordOperations.push('multiplication');
-    }
-    
-    const operation = wordOperations[Math.floor(Math.random() * wordOperations.length)] || 'addition';
-    const { question, answer } = generateWordProblem(grade, operation, difficulty);
-    return { 
-      id: index + 1, 
-      question, 
-      answer, 
-      isWordProblem: true,
-      hasVisual: false
-    };
-  }
-
-  // Select available operations
-  const availableOperations = [];
-  if (problemTypes.includes('Addition')) availableOperations.push('+');
-  if (problemTypes.includes('Subtraction')) availableOperations.push('-');
-  if (problemTypes.includes('Multiplication') && grade !== 'kindergarten') availableOperations.push('×');
-  if (problemTypes.includes('Division') && (grade === 'third' || grade === 'fourth' || grade === 'fifth' || grade === 'sixth')) {
-    availableOperations.push('÷');
-  }
-
-  const operation = availableOperations.length > 0 
-    ? availableOperations[Math.floor(Math.random() * availableOperations.length)] as '+' | '-' | '×' | '÷'
-    : '+';
-
-  // Generate unique problem
-  let num1 = 0;
-  let num2 = 0;
-  let question = "";
-  let answer = "";
-  let attempts = 0;
-  const maxAttempts = 50;
-
-  do {
-    const range = getNumberRanges(grade, difficulty, operation === '÷' ? 'division' : operation === '×' ? 'multiplication' : operation === '+' ? 'addition' : 'subtraction');
-    
-    if (operation === '+') {
-      num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
-      num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
-      // Ensure sum doesn't exceed max for younger grades
-      if (grade === 'kindergarten' && num1 + num2 > 10) {
-        num2 = 10 - num1;
-      }
-      question = `${num1} + ${num2} = `;
-      answer = String(num1 + num2);
-    } else if (operation === '-') {
-      num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
-      num2 = Math.floor(Math.random() * num1) + 1; // Ensure num2 < num1
-      question = `${num1} - ${num2} = `;
-      answer = String(num1 - num2);
-    } else if (operation === '×') {
-      num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
-      num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
-      question = `${num1} × ${num2} = `;
-      answer = String(num1 * num2);
-    } else if (operation === '÷') {
-      // Generate division problems that result in whole numbers
-      num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
-      const quotient = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
-      num1 = num2 * quotient;
-      question = `${num1} ÷ ${num2} = `;
-      answer = String(quotient);
-    }
-
-    const combinationKey = `${num1}-${operation}-${num2}`;
-    if (!usedCombinations.has(combinationKey)) {
-      usedCombinations.add(combinationKey);
-      break;
-    }
-    attempts++;
-  } while (attempts < maxAttempts);
-
-  // Determine if visual aids should be included (max 9 to prevent page overflow)
-  const shouldHaveVisual = (grade === 'kindergarten' || grade === 'first') && 
-                           (operation === '+' || operation === '-') && 
-                           num1 <= 9 && num2 <= 9 && (num1 + num2) <= 9;
-
-  let visualData = undefined;
-  if (shouldHaveVisual) {
-    visualData = {
-      num1,
-      num2,
-      operation: operation as '+' | '-' | '×',
-      shape: '●',
-      color: '#000000'
-    };
-  }
-
-  return { 
-    id: index + 1, 
-    question, 
-    answer, 
-    isWordProblem: false,
-    hasVisual: shouldHaveVisual,
-    visualType: 'shapes',
-    visualData
-  };
+// Helper functions
+const gcd = (a: number, b: number): number => {
+  return b === 0 ? a : gcd(b, a % b);
 };
 
-// Keep the existing generateWordProblem function but make it use the expanded templates
+const generateFractionProblem = (grade: string, difficulty: string): { question: string; answer: string } => {
+  const range = getNumberRanges(grade, difficulty, 'fractions');
+  const maxDenom = range.maxDenominator;
+  
+  const operations = ['+', '-'];
+  const operation = operations[Math.floor(Math.random() * operations.length)];
+  
+  const useSameDenominator = Math.random() < 0.5 || difficulty === 'easy';
+  
+  let denom1, denom2, numer1, numer2;
+  
+  if (useSameDenominator) {
+    denom1 = denom2 = Math.floor(Math.random() * (maxDenom - 1)) + 2;
+    numer1 = Math.floor(Math.random() * (denom1 - 1)) + 1;
+    numer2 = Math.floor(Math.random() * (denom2 - 1)) + 1;
+  } else {
+    denom1 = Math.floor(Math.random() * (maxDenom - 1)) + 2;
+    denom2 = Math.floor(Math.random() * (maxDenom - 1)) + 2;
+    numer1 = Math.floor(Math.random() * (denom1 - 1)) + 1;
+    numer2 = Math.floor(Math.random() * (denom2 - 1)) + 1;
+  }
+  
+  const question = `${numer1}/${denom1} ${operation} ${numer2}/${denom2} = `;
+  
+  let answerNumer, answerDenom;
+  if (useSameDenominator) {
+    answerDenom = denom1;
+    answerNumer = operation === '+' ? numer1 + numer2 : numer1 - numer2;
+  } else {
+    answerDenom = denom1 * denom2;
+    if (operation === '+') {
+      answerNumer = numer1 * denom2 + numer2 * denom1;
+    } else {
+      answerNumer = numer1 * denom2 - numer2 * denom1;
+    }
+  }
+  
+  if (answerNumer !== 0) {
+    const divisor = gcd(Math.abs(answerNumer), answerDenom);
+    answerNumer = answerNumer / divisor;
+    answerDenom = answerDenom / divisor;
+  }
+  
+  const answer = answerNumer === 0 ? '0' : `${answerNumer}/${answerDenom}`;
+  
+  return { question, answer };
+};
+
+const generateDecimalProblem = (grade: string, difficulty: string): { question: string; answer: string } => {
+  const range = getNumberRanges(grade, difficulty, 'decimals');
+  const operations = ['+', '-', '×'];
+  const operation = operations[Math.floor(Math.random() * operations.length)];
+  
+  const num1 = parseFloat((Math.random() * (range.max - range.min) + range.min).toFixed(range.decimalPlaces));
+  const num2 = parseFloat((Math.random() * (range.max - range.min) + range.min).toFixed(range.decimalPlaces));
+  
+  const question = `${num1} ${operation} ${num2} = `;
+  
+  let result;
+  if (operation === '+') {
+    result = num1 + num2;
+  } else if (operation === '-') {
+    result = num1 - num2;
+  } else {
+    result = num1 * num2;
+  }
+  
+  const answer = result.toFixed(range.decimalPlaces);
+  
+  return { question, answer };
+};
+
+const generatePercentProblem = (difficulty: string): { question: string; answer: string } => {
+  const range = getNumberRanges('sixth', difficulty, 'percent');
+  
+  const base = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+  const percent = Math.floor(Math.random() * (range.percentMax - range.percentMin + 1)) + range.percentMin;
+  
+  const problemTypes = ['find_percent', 'find_whole', 'find_rate'];
+  const problemType = problemTypes[Math.floor(Math.random() * problemTypes.length)];
+  
+  let question, answer;
+  
+  if (problemType === 'find_percent') {
+    question = `What is ${percent}% of ${base}?`;
+    answer = String(Math.round((base * percent / 100) * 100) / 100);
+  } else if (problemType === 'find_whole') {
+    const part = Math.round(base * percent / 100);
+    question = `${part} is ${percent}% of what number?`;
+    answer = String(base);
+  } else {
+    const part = Math.round(base * percent / 100);
+    question = `${part} is what percent of ${base}?`;
+    answer = String(percent) + '%';
+  }
+  
+  return { question, answer };
+};
+
+const generateRatioProblem = (difficulty: string): { question: string; answer: string } => {
+  const range = getNumberRanges('sixth', difficulty, 'ratios');
+  
+  const num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+  const num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+  const multiplier = Math.floor(Math.random() * 5) + 2;
+  
+  const problemTypes = ['equivalent', 'simplify', 'solve_proportion'];
+  const problemType = problemTypes[Math.floor(Math.random() * problemTypes.length)];
+  
+  let question, answer;
+  
+  if (problemType === 'equivalent') {
+    question = `If the ratio is ${num1}:${num2}, what is an equivalent ratio when multiplied by ${multiplier}?`;
+    answer = `${num1 * multiplier}:${num2 * multiplier}`;
+  } else if (problemType === 'simplify') {
+    const base1 = Math.floor(Math.random() * range.max) + 1;
+    const base2 = Math.floor(Math.random() * range.max) + 1;
+    const factor = Math.floor(Math.random() * 4) + 2;
+    const expandedNum1 = base1 * factor;
+    const expandedNum2 = base2 * factor;
+    question = `Simplify the ratio ${expandedNum1}:${expandedNum2}`;
+    const divisor = gcd(expandedNum1, expandedNum2);
+    answer = `${expandedNum1 / divisor}:${expandedNum2 / divisor}`;
+  } else {
+    const a = Math.floor(Math.random() * range.max) + 1;
+    const b = Math.floor(Math.random() * range.max) + 1;
+    const c = Math.floor(Math.random() * range.max) + 1;
+    const d = Math.round((b * c) / a);
+    question = `Solve for x: ${a}/${b} = ${c}/x`;
+    answer = String(d);
+  }
+  
+  return { question, answer };
+};
+
 const generateWordProblem = (grade: string, operation: string, difficulty: string): { question: string; answer: string } => {
   const item = items[Math.floor(Math.random() * items.length)];
   const person = people[Math.floor(Math.random() * people.length)];
@@ -329,6 +425,15 @@ const generateWordProblem = (grade: string, operation: string, difficulty: strin
     case 'addition':
       num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
       num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      
+      if (range.maxSum && (num1 + num2) > range.maxSum) {
+        num2 = range.maxSum - num1;
+        if (num2 < range.min) {
+          num1 = Math.floor(range.maxSum / 2);
+          num2 = range.maxSum - num1;
+        }
+      }
+      
       const addTemplate = wordProblemTemplates.addition[Math.floor(Math.random() * wordProblemTemplates.addition.length)];
       question = addTemplate
         .replace(/{person}/g, person)
@@ -340,7 +445,10 @@ const generateWordProblem = (grade: string, operation: string, difficulty: strin
 
     case 'subtraction':
       num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
-      num2 = Math.floor(Math.random() * (num1 - 1)) + 1;
+      num2 = Math.floor(Math.random() * (num1 - range.min + 1)) + range.min;
+      if (num2 >= num1) num2 = num1 - 1;
+      if (num2 < 1) num2 = 1;
+      
       const subTemplate = wordProblemTemplates.subtraction[Math.floor(Math.random() * wordProblemTemplates.subtraction.length)];
       question = subTemplate
         .replace(/{person}/g, person)
@@ -362,6 +470,15 @@ const generateWordProblem = (grade: string, operation: string, difficulty: strin
       answer = String(num1 * num2);
       break;
 
+    case 'division':
+      const divisor = Math.floor(Math.random() * (range.divisor.max - range.divisor.min + 1)) + range.divisor.min;
+      const quotient = Math.floor(Math.random() * (range.quotient.max - range.quotient.min + 1)) + range.quotient.min;
+      const total = divisor * quotient;
+      
+      question = `${person} has ${total} ${item} to share equally among ${divisor} friends. How many ${item} does each friend get?`;
+      answer = String(quotient);
+      break;
+
     default:
       num1 = Math.floor(Math.random() * 5) + 1;
       num2 = Math.floor(Math.random() * 5) + 1;
@@ -372,30 +489,220 @@ const generateWordProblem = (grade: string, operation: string, difficulty: strin
   return { question, answer };
 };
 
+// COMPLETE PROBLEM GENERATION - All operations properly implemented
+const generateMathProblem = (
+  grade: string, 
+  index: number, 
+  problemTypes: string[], 
+  difficulty: string, 
+  usedCombinations: Set<string>
+): Problem => {
+  const shouldBeWordProblem = Math.random() < 0.3 && problemTypes.includes('Word Problems');
+  
+  if (shouldBeWordProblem) {
+    const wordOperations = [];
+    if (problemTypes.includes('Addition')) wordOperations.push('addition');
+    if (problemTypes.includes('Subtraction')) wordOperations.push('subtraction');
+    if (problemTypes.includes('Multiplication') && grade !== 'kindergarten' && grade !== 'first') {
+      wordOperations.push('multiplication');
+    }
+    if (problemTypes.includes('Division') && (grade === 'third' || grade === 'fourth' || grade === 'fifth' || grade === 'sixth')) {
+      wordOperations.push('division');
+    }
+    
+    const operation = wordOperations[Math.floor(Math.random() * wordOperations.length)] || 'addition';
+    const { question, answer } = generateWordProblem(grade, operation, difficulty);
+    return { 
+      id: index + 1, 
+      question, 
+      answer, 
+      isWordProblem: true,
+      hasVisual: false
+    };
+  }
 
-const useProblemGeneration = (grade: string, count: number, problemTypes: string[], difficulty: string) => {
-    const [problems, setProblems] = useState<Problem[]>([]);
-    const [isClient, setIsClient] = useState(false);
-    const usedCombinationsRef = React.useRef<Set<string>>(new Set());
+  const availableOperations: string[] = [];
+  if (problemTypes.includes('Addition')) availableOperations.push('addition');
+  if (problemTypes.includes('Subtraction')) availableOperations.push('subtraction');
+  if (problemTypes.includes('Multiplication') && grade !== 'kindergarten' && grade !== 'first') {
+    availableOperations.push('multiplication');
+  }
+  if (problemTypes.includes('Division') && (grade === 'third' || grade === 'fourth' || grade === 'fifth' || grade === 'sixth')) {
+    availableOperations.push('division');
+  }
+  if (problemTypes.includes('Fractions') && (grade === 'fourth' || grade === 'fifth')) {
+    availableOperations.push('fractions');
+  }
+  if (problemTypes.includes('Decimals') && grade === 'fifth') {
+    availableOperations.push('decimals');
+  }
+  if (problemTypes.includes('Percent') && grade === 'sixth') {
+    availableOperations.push('percent');
+  }
+  if (problemTypes.includes('Ratios') && grade === 'sixth') {
+    availableOperations.push('ratios');
+  }
+  if (problemTypes.includes('Counting') && grade === 'kindergarten') {
+    availableOperations.push('counting');
+  }
 
-    useEffect(() => {
-        setIsClient(true);
-        const generateProblems = (c: number, l: string, types: string[], diff: string): Problem[] => {
-            usedCombinationsRef.current.clear();
-            return Array.from({ length: c }).map((_, i) => 
-                generateMathProblem(l, i, types, diff, usedCombinationsRef.current)
-            );
-        };
-        const generatedProblems = generateProblems(count, grade, problemTypes, difficulty);
-        setProblems(generatedProblems);
-    }, [count, grade, problemTypes, difficulty]);
+  const operation = availableOperations.length > 0 
+    ? availableOperations[Math.floor(Math.random() * availableOperations.length)]
+    : 'addition';
 
-    const title = `${grade.charAt(0).toUpperCase() + grade.slice(1)} Grade Math Worksheet - ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}`;
+  let question = "";
+  let answer = "";
+  let attempts = 0;
+  const maxAttempts = 50;
+  let num1 = 0, num2 = 0;
 
-    return { problems, title, isClient };
+  do {
+    const range = getNumberRanges(grade, difficulty, operation);
+    
+    if (operation === 'addition') {
+      num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      
+      if (range.maxSum && (num1 + num2) > range.maxSum) {
+        num2 = range.maxSum - num1;
+        if (num2 < range.min) {
+          num1 = Math.floor(range.maxSum / 2);
+          num2 = range.maxSum - num1;
+        }
+      }
+      
+      question = `${num1} + ${num2} = `;
+      answer = String(num1 + num2);
+      
+    } else if (operation === 'subtraction') {
+      num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      num2 = Math.floor(Math.random() * (num1 - range.min + 1)) + range.min;
+      if (num2 >= num1) num2 = num1 - 1;
+      if (num2 < 1) num2 = 1;
+      
+      question = `${num1} - ${num2} = `;
+      answer = String(num1 - num2);
+      
+    } else if (operation === 'multiplication') {
+      num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      
+      question = `${num1} × ${num2} = `;
+      answer = String(num1 * num2);
+      
+    } else if (operation === 'division') {
+      const divisor = Math.floor(Math.random() * (range.divisor.max - range.divisor.min + 1)) + range.divisor.min;
+      const quotient = Math.floor(Math.random() * (range.quotient.max - range.quotient.min + 1)) + range.quotient.min;
+      const dividend = divisor * quotient;
+      
+      question = `${dividend} ÷ ${divisor} = `;
+      answer = String(quotient);
+      num1 = dividend;
+      num2 = divisor;
+      
+    } else if (operation === 'fractions') {
+      const result = generateFractionProblem(grade, difficulty);
+      return { 
+        id: index + 1, 
+        question: result.question, 
+        answer: result.answer, 
+        isWordProblem: false,
+        hasVisual: false
+      };
+      
+    } else if (operation === 'decimals') {
+      const result = generateDecimalProblem(grade, difficulty);
+      return { 
+        id: index + 1, 
+        question: result.question, 
+        answer: result.answer, 
+        isWordProblem: false,
+        hasVisual: false
+      };
+      
+    } else if (operation === 'percent') {
+      const result = generatePercentProblem(difficulty);
+      return { 
+        id: index + 1, 
+        question: result.question, 
+        answer: result.answer, 
+        isWordProblem: false,
+        hasVisual: false
+      };
+      
+    } else if (operation === 'ratios') {
+      const result = generateRatioProblem(difficulty);
+      return { 
+        id: index + 1, 
+        question: result.question, 
+        answer: result.answer, 
+        isWordProblem: false,
+        hasVisual: false
+      };
+      
+    } else if (operation === 'counting') {
+      num1 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+      question = `Count: How many objects? (${num1})`;
+      answer = String(num1);
+    }
+
+    const combinationKey = `${num1}-${operation}-${num2}`;
+    if (!usedCombinations.has(combinationKey)) {
+      usedCombinations.add(combinationKey);
+      break;
+    }
+    attempts++;
+  } while (attempts < maxAttempts);
+
+  // FIXED: Visual aids capped at 9 for PDF generation
+  const shouldHaveVisual = (grade === 'kindergarten' || grade === 'first') && 
+                           (operation === 'addition' || operation === 'subtraction' || operation === 'counting') && 
+                           num1 <= 9 && num2 <= 9 && (num1 + num2) <= 9;
+
+  let visualData = undefined;
+  if (shouldHaveVisual && (operation === 'addition' || operation === 'subtraction')) {
+    visualData = {
+      num1,
+      num2,
+      operation: operation === 'addition' ? '+' : '-',
+      shape: '●',
+      color: '#000000'
+    };
+  }
+
+  return { 
+    id: index + 1, 
+    question, 
+    answer, 
+    isWordProblem: false,
+    hasVisual: shouldHaveVisual,
+    visualType: 'shapes',
+    visualData
+  };
 };
 
-// 🎯 FIXED: Receive props instead of using the hook
+const useProblemGeneration = (grade: string, count: number, problemTypes: string[], difficulty: string) => {
+  const [problems, setProblems] = useState<Problem[]>([]);
+  const [isClient, setIsClient] = useState(false);
+  const usedCombinationsRef = React.useRef<Set<string>>(new Set());
+
+  useEffect(() => {
+    setIsClient(true);
+    const generateProblems = (c: number, l: string, types: string[], diff: string): Problem[] => {
+      usedCombinationsRef.current.clear();
+      return Array.from({ length: c }).map((_, i) => 
+        generateMathProblem(l, i, types, diff, usedCombinationsRef.current)
+      );
+    };
+    const generatedProblems = generateProblems(count, grade, problemTypes, difficulty);
+    setProblems(generatedProblems);
+  }, [count, grade, problemTypes, difficulty]);
+
+  const title = `${grade.charAt(0).toUpperCase() + grade.slice(1)} Grade Math Worksheet - ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}`;
+
+  return { problems, title, isClient };
+};
+
 export default function WorksheetGenerator({ 
   onOpenLeadMagnet, 
   downloadsRemaining, 
@@ -408,7 +715,6 @@ export default function WorksheetGenerator({
   const [isGenerating, setIsGenerating] = useState(false);
   const [showAnswers, setShowAnswers] = useState(false);
   const [includeVisuals, setIncludeVisuals] = useState(true);
- 
   
   const worksheetPreviewRef = useRef<HTMLDivElement>(null);
   const downloadSectionRef = useRef<HTMLDivElement>(null);
@@ -417,9 +723,6 @@ export default function WorksheetGenerator({
   const [problemTypes, setProblemTypes] = useState<string[]>(gradeConfig.defaultTypes);
   
   const { problems, title, isClient } = useProblemGeneration(gradeLevel, problemCount, problemTypes, difficulty);
-  
-  // 🎯 REMOVED: No longer calling useDownloadTracker() here!
-  // const { downloadsRemaining, incrementDownloadCount, downloadData } = useDownloadTracker();
   
   useEffect(() => {
     setProblemTypes(gradeConfig.defaultTypes);
@@ -432,13 +735,13 @@ export default function WorksheetGenerator({
   const handleGenerate = () => {
     setIsGenerating(true);
     setTimeout(() => {
-        setIsGenerating(false);
-        setTimeout(() => {
-          worksheetPreviewRef.current?.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }, 100);
+      setIsGenerating(false);
+      setTimeout(() => {
+        worksheetPreviewRef.current?.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 100);
     }, 500);
   };
 
@@ -509,27 +812,6 @@ export default function WorksheetGenerator({
           </div>
         </div>
       );
-    } else if (operation === '×') {
-      return (
-        <div className="visual-container">
-          <div className="multiplication-groups">
-            <div className="multiplication-label">{num1} groups of {num2}</div>
-            {Array.from({ length: num1 }).map((_, groupIndex) => (
-              <div key={groupIndex} className="multiplication-group">
-                <div className="group-label">Group {groupIndex + 1}</div>
-                <div className="shapes-row">
-                  {Array.from({ length: num2 }).map((_, i) => (
-                    <span key={i} className="shape" style={{ color }}>
-                      {shape}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-            <div className="multiplication-explanation">Count all the dots!</div>
-          </div>
-        </div>
-      );
     }
     
     return null;
@@ -556,55 +838,53 @@ export default function WorksheetGenerator({
         Create custom worksheets and download the clean PDF. (Downloads Remaining: <strong>{downloadsRemaining}</strong>)
       </p>
 
-      
-
       <div className="card controls-card">
         <div className="control-group">
-            <label className="label" htmlFor="count">Number of Problems</label>
-            <input
-                id="count"
-                type="number"
-                min="5"
-                max="20"
-                value={problemCount}
-                onChange={(e) => setProblemCount(Math.min(20, Math.max(5, parseInt(e.target.value) || 10)))}
-                className="input-field"
-            />
-            <div className="helper-text">5-20 problems</div>
+          <label className="label" htmlFor="count">Number of Problems</label>
+          <input
+            id="count"
+            type="number"
+            min="5"
+            max="20"
+            value={problemCount}
+            onChange={(e) => setProblemCount(Math.min(20, Math.max(5, parseInt(e.target.value) || 10)))}
+            className="input-field"
+          />
+          <div className="helper-text">5-20 problems</div>
         </div>
         
         <div className="control-group">
-            <label className="label" htmlFor="level">Grade Level</label>
-            <select
-                id="level"
-                value={gradeLevel}
-                onChange={(e) => setGradeLevel(e.target.value)}
-                className="input-field"
-            >
-                <option value="kindergarten">Kindergarten</option>
-                <option value="first">First Grade</option>
-                <option value="second">Second Grade</option>
-                <option value="third">Third Grade</option>
-                <option value="fourth">Fourth Grade</option>
-                <option value="fifth">Fifth Grade</option>
-                <option value="sixth">Sixth Grade</option>
-            </select>
-            <div className="helper-text">{gradeConfig.description}</div>
+          <label className="label" htmlFor="level">Grade Level</label>
+          <select
+            id="level"
+            value={gradeLevel}
+            onChange={(e) => setGradeLevel(e.target.value)}
+            className="input-field"
+          >
+            <option value="kindergarten">Kindergarten</option>
+            <option value="first">First Grade</option>
+            <option value="second">Second Grade</option>
+            <option value="third">Third Grade</option>
+            <option value="fourth">Fourth Grade</option>
+            <option value="fifth">Fifth Grade</option>
+            <option value="sixth">Sixth Grade</option>
+          </select>
+          <div className="helper-text">{gradeConfig.description}</div>
         </div>
 
         <div className="control-group">
-            <label className="label" htmlFor="difficulty">Difficulty Level</label>
-            <select
-                id="difficulty"
-                value={difficulty}
-                onChange={(e) => setDifficulty(e.target.value)}
-                className="input-field"
-            >
-                <option value="easy">Easy - {gradeConfig.difficultyLevels.easy.description}</option>
-                <option value="medium">Medium - {gradeConfig.difficultyLevels.medium.description}</option>
-                <option value="hard">Hard - {gradeConfig.difficultyLevels.hard.description}</option>
-            </select>
-            <div className="helper-text">Choose problem difficulty</div>
+          <label className="label" htmlFor="difficulty">Difficulty Level</label>
+          <select
+            id="difficulty"
+            value={difficulty}
+            onChange={(e) => setDifficulty(e.target.value)}
+            className="input-field"
+          >
+            <option value="easy">Easy - {gradeConfig.difficultyLevels.easy.description}</option>
+            <option value="medium">Medium - {gradeConfig.difficultyLevels.medium.description}</option>
+            <option value="hard">Hard - {gradeConfig.difficultyLevels.hard.description}</option>
+          </select>
+          <div className="helper-text">Choose problem difficulty</div>
         </div>
 
         <div className="control-group">
@@ -639,20 +919,20 @@ export default function WorksheetGenerator({
         </div>
         
         <button 
-            onClick={handleGenerate} 
-            disabled={isGenerating || problemTypes.length === 0} 
-            className="generate-button"
+          onClick={handleGenerate} 
+          disabled={isGenerating || problemTypes.length === 0} 
+          className="generate-button"
         >
-            {isGenerating ? (
-                <>
-                    <div className="spinner"></div>
-                    Generating...
-                </>
-            ) : (
-                <>
-                    Generate Worksheet
-                </>
-            )}
+          {isGenerating ? (
+            <>
+              <div className="spinner"></div>
+              Generating...
+            </>
+          ) : (
+            <>
+              Generate Worksheet
+            </>
+          )}
         </button>
       </div>
 
@@ -682,24 +962,24 @@ export default function WorksheetGenerator({
         <div className="card preview-card">
           <h3 className="preview-title">{title}</h3>
           <div className="problem-grid">
-              {problems.map((p, index) => (
-                  <div key={p.id} className="problem-item">
-                      <span className="problem-number">{index + 1}.</span> 
-                      <span className="problem-text">{p.question}</span>
-                      {renderVisual(p)}
-                      {showAnswers ? (
-                        <div className="answer-line">
-                          <span className="answer-label">Answer:</span> 
-                          <span className="answer-value">{p.answer}</span>
-                        </div>
-                      ) : (
-                        <div className="answer-line">
-                          <span className="answer-label">Answer:</span> 
-                          <div className="answer-underline"></div>
-                        </div>
-                      )}
+            {problems.map((p, index) => (
+              <div key={p.id} className="problem-item">
+                <span className="problem-number">{index + 1}.</span> 
+                <span className="problem-text">{p.question}</span>
+                {renderVisual(p)}
+                {showAnswers ? (
+                  <div className="answer-line">
+                    <span className="answer-label">Answer:</span> 
+                    <span className="answer-value">{p.answer}</span>
                   </div>
-              ))}
+                ) : (
+                  <div className="answer-line">
+                    <span className="answer-label">Answer:</span> 
+                    <div className="answer-underline"></div>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -708,31 +988,31 @@ export default function WorksheetGenerator({
         <h2 className="section-title">Download</h2>
         
         <div className="download-wrapper">
-    {canDownload ? (
-        <DownloadSection 
-            problems={problems} 
-            title={title} 
-            onDownloadComplete={incrementDownloadCount}
-            onOpenLeadMagnet={onOpenLeadMagnet} 
-            includeVisuals={includeVisuals}
-            downloadsRemaining={downloadsRemaining}
-            hasReceivedSignupBonus={hasReceivedSignupBonus}
-        />
-            ) : (
-                <div className="card limit-card"> 
-                    <h3 className="limit-title">Nice work! You've generated 10 worksheets today</h3>
-                    <p className="limit-description">
-                      Join our community of 5,000+ homeschool parents to get <strong>10 more downloads today</strong> plus helpful teaching resources.
-                    </p>
-                    <button 
-                      onClick={onOpenLeadMagnet} 
-                      className="generate-button limit-button"
-                    >
-                      Join Our Community
-                    </button>
-                    <p className="limit-note">Free to join • No credit card required</p>
-                </div>
-            )}
+          {canDownload ? (
+            <DownloadSection 
+              problems={problems} 
+              title={title} 
+              onDownloadComplete={incrementDownloadCount}
+              onOpenLeadMagnet={onOpenLeadMagnet} 
+              includeVisuals={includeVisuals}
+              downloadsRemaining={downloadsRemaining}
+              hasReceivedSignupBonus={hasReceivedSignupBonus}
+            />
+          ) : (
+            <div className="card limit-card"> 
+              <h3 className="limit-title">Nice work! You've generated 10 worksheets today</h3>
+              <p className="limit-description">
+                Join our community of 5,000+ homeschool parents to get <strong>10 more downloads today</strong> plus helpful teaching resources.
+              </p>
+              <button 
+                onClick={onOpenLeadMagnet} 
+                className="generate-button limit-button"
+              >
+                Join Our Community
+              </button>
+              <p className="limit-note">Free to join • No credit card required</p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -759,98 +1039,17 @@ export default function WorksheetGenerator({
           margin-bottom: 30px;
         }
 
-        .info-banner {
-          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-          border: 1px solid #3b82f6;
-          border-radius: 12px;
-          padding: 16px 20px;
-          margin-bottom: 24px;
-          box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
-          animation: slideDown 0.3s ease-out;
-        }
-
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .info-banner-content {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          flex-wrap: wrap;
-        }
-
-        .info-icon {
-          font-size: 20px;
-          flex-shrink: 0;
-        }
-
-        .info-text {
-          flex: 1;
-          font-size: 14px;
-          color: #1e40af;
-          font-weight: 500;
-          min-width: 200px;
-        }
-
-        .info-banner-button {
-          background: #3b82f6;
-          color: white;
-          border: none;
-          border-radius: 6px;
-          padding: 8px 16px;
-          font-size: 14px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.2s ease;
-          white-space: nowrap;
-        }
-
-        .info-banner-button:hover {
-          background: #2563eb;
-          transform: translateY(-1px);
-        }
-
-        .info-banner-close {
-          background: transparent;
-          border: none;
-          color: #3b82f6;
-          font-size: 24px;
-          line-height: 1;
-          cursor: pointer;
-          padding: 0;
-          width: 24px;
-          height: 24px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 4px;
-          transition: all 0.2s ease;
-          flex-shrink: 0;
-        }
-
-        .info-banner-close:hover {
-          background: rgba(59, 130, 246, 0.1);
-        }
-
         .section-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #374151;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+          font-size: 24px;
+          font-weight: 700;
+          color: #374151;
+          margin-top: 40px;
+          margin-bottom: 20px;
+          border-bottom: 2px solid #e5e7eb;
+          padding-bottom: 8px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
 
         .preview-controls {
@@ -875,24 +1074,24 @@ export default function WorksheetGenerator({
         }
 
         .controls-card {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            align-items: flex-start;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: center;
+          align-items: flex-start;
         }
 
         .control-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            min-width: 200px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          min-width: 200px;
         }
 
         .label {
-            font-size: 14px;
-            font-weight: 600;
-            color: #374151;
+          font-size: 14px;
+          font-weight: 600;
+          color: #374151;
         }
 
         .helper-text {
@@ -902,18 +1101,18 @@ export default function WorksheetGenerator({
         }
 
         .input-field {
-            padding: 10px 12px;
-            border: 2px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.2s;
-            background: #f9fafb;
+          padding: 10px 12px;
+          border: 2px solid #d1d5db;
+          border-radius: 8px;
+          font-size: 16px;
+          transition: border-color 0.2s;
+          background: #f9fafb;
         }
 
         .input-field:focus {
-            border-color: #3b82f6;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+          border-color: #3b82f6;
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
         }
 
         .checkbox-group {
@@ -940,42 +1139,42 @@ export default function WorksheetGenerator({
         }
 
         .generate-button {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            min-height: 42px;
+          background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+          color: white;
+          border: none;
+          border-radius: 8px;
+          padding: 12px 24px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          min-height: 42px;
         }
 
         .generate-button:hover:not(:disabled) {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+          transform: translateY(-1px);
+          box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
         }
         
         .generate-button:disabled {
-            background: #9ca3af;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
+          background: #9ca3af;
+          cursor: not-allowed;
+          transform: none;
+          box-shadow: none;
         }
         
         .spinner {
-            width: 16px;
-            height: 16px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-top: 2px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+          width: 16px;
+          height: 16px;
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          border-top: 2px solid white;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
         }
 
         @keyframes spin {
@@ -984,75 +1183,74 @@ export default function WorksheetGenerator({
         }
 
         .preview-card {
-            min-height: 200px;
+          min-height: 200px;
         }
         
         .preview-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #e5e7eb;
+          font-size: 18px;
+          font-weight: 700;
+          color: #1f2937;
+          margin-bottom: 20px;
+          padding-bottom: 8px;
+          border-bottom: 1px solid #e5e7eb;
         }
 
         .problem-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
         }
 
         .problem-item {
-            font-size: 15px;
-            color: #374151;
-            padding: 16px;
-            border-left: 3px solid #60a5fa;
-            background: #f5f7fa;
-            border-radius: 6px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+          font-size: 15px;
+          color: #374151;
+          padding: 16px;
+          border-left: 3px solid #60a5fa;
+          background: #f5f7fa;
+          border-radius: 6px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
         }
 
         .problem-number {
-            font-weight: 600;
-            color: #3b82f6;
+          font-weight: 600;
+          color: #3b82f6;
         }
 
         .problem-text {
-            line-height: 1.4;
+          line-height: 1.4;
         }
         
         .answer-line {
-            padding-top: 8px;
-            color: #6b7280;
-            font-size: 12px;
-            border-top: 1px dashed #d1d5db;
-            margin-top: 4px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+          padding-top: 8px;
+          color: #6b7280;
+          font-size: 12px;
+          border-top: 1px dashed #d1d5db;
+          margin-top: 4px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
         }
 
         .answer-label {
-            font-weight: 600;
-            color: #374151;
+          font-weight: 600;
+          color: #374151;
         }
 
         .answer-value {
-            color: #dc2626;
-            font-weight: bold;
+          color: #dc2626;
+          font-weight: bold;
         }
 
         .answer-underline {
-            flex: 1;
-            border-bottom: 1px solid #000;
-            margin-left: 5px;
-            min-width: 60px;
-            height: 16px;
+          flex: 1;
+          border-bottom: 1px solid #000;
+          margin-left: 5px;
+          min-width: 60px;
+          height: 16px;
         }
 
-        /* FIXED: Visual styles */
         .visual-container {
           margin: 12px 0;
           padding: 12px;
@@ -1077,33 +1275,35 @@ export default function WorksheetGenerator({
           min-width: 80px;
         }
 
-        .shapes-container {
+        .shapes-row {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
-          gap: 2px;
-          max-width: 120px;
+          gap: 4px;
+          max-width: 150px;
           min-height: 24px;
         }
 
         .shape {
-          font-size: 18px;
+          font-size: 20px;
           display: inline-block;
           line-height: 1;
         }
 
-        .shape.crossed {
+        .shape-with-cross {
           position: relative;
+          font-size: 20px;
+          display: inline-block;
+          line-height: 1;
         }
 
-        .shape.crossed::after {
-          content: '✕';
+        .cross {
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
           color: #dc2626;
-          font-size: 14px;
+          font-size: 16px;
           font-weight: bold;
         }
 
@@ -1111,109 +1311,67 @@ export default function WorksheetGenerator({
           font-size: 12px;
           font-weight: 600;
           color: #6b7280;
-          margin-bottom: 4px;
+          margin-bottom: 6px;
         }
 
-        .operation {
-          font-size: 16px;
+        .operation-symbol {
+          font-size: 20px;
           font-weight: bold;
           color: #3b82f6;
         }
 
         .count-hint {
-          font-size: 12px;
-          color: #6b7280;
-          font-style: italic;
-        }
-
-        .explanation {
           font-size: 11px;
           color: #6b7280;
-          margin-top: 4px;
           font-style: italic;
         }
 
-        .multiplication-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 8px;
+        .subtraction-explanation {
+          font-size: 11px;
+          color: #6b7280;
+          margin-top: 6px;
+          font-style: italic;
         }
 
-        .multiplication-label {
-          font-size: 12px;
-          font-weight: 600;
-          color: #374151;
-        }
-
-        .groups-container {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-          justify-content: center;
-        }
-
-        .multiplication-group {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 6px;
-          background: white;
-          border-radius: 4px;
-          border: 1px dashed #9ca3af;
-        }
-
-        /* TIER 2: Limit Reached Card */
         .limit-card {
-            text-align: center;
-            padding: 40px 32px;
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            border: 2px solid #f59e0b;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .celebration-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-            animation: bounce 1s ease-in-out;
-        }
-
-        @keyframes bounce {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
+          text-align: center;
+          padding: 40px 32px;
+          background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+          border: 2px solid #f59e0b;
+          max-width: 600px;
+          margin: 0 auto;
         }
         
         .limit-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: #92400e;
+          font-size: 24px;
+          font-weight: 700;
+          margin-bottom: 16px;
+          color: #92400e;
         }
         
         .limit-description {
-            font-size: 16px;
-            margin-bottom: 24px;
-            color: #78350f;
-            line-height: 1.6;
+          font-size: 16px;
+          margin-bottom: 24px;
+          color: #78350f;
+          line-height: 1.6;
         }
 
         .limit-button {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
-            margin: 0 auto;
+          background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+          box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+          margin: 0 auto;
         }
 
         .limit-button:hover {
-            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-            box-shadow: 0 6px 15px rgba(245, 158, 11, 0.4);
+          background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+          box-shadow: 0 6px 15px rgba(245, 158, 11, 0.4);
         }
 
         .limit-note {
-            margin-top: 12px;
-            font-size: 13px;
-            color: #92400e;
-            font-style: italic;
+          margin-top: 12px;
+          font-size: 13px;
+          color: #92400e;
+          font-style: italic;
         }
 
         .download-wrapper {
@@ -1223,60 +1381,40 @@ export default function WorksheetGenerator({
         }
         
         @media (max-width: 640px) {
-            .controls-card {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .title {
-                font-size: 28px;
-            }
-            .subtitle {
-                font-size: 14px;
-            }
-            .control-group {
-                min-width: 100%;
-            }
-            .section-title {
-                flex-direction: column;
-                gap: 10px;
-                align-items: flex-start;
-            }
-            .preview-controls {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .info-banner-content {
-                flex-direction: column;
-                align-items: stretch;
-                text-align: center;
-            }
-            .info-text {
-                min-width: 100%;
-            }
-            .info-banner-button {
-                width: 100%;
-            }
-            .info-banner-close {
-                position: absolute;
-                top: 12px;
-                right: 12px;
-            }
-            .info-banner {
-                position: relative;
-                padding-right: 40px;
-            }
-            .limit-card {
-                padding: 32px 20px;
-            }
-            .limit-title {
-                font-size: 20px;
-            }
-            .visual-container {
-              gap: 8px;
-            }
-            .visual-group {
-              min-width: 60px;
-            }
+          .controls-card {
+            flex-direction: column;
+            align-items: stretch;
+          }
+          .title {
+            font-size: 28px;
+          }
+          .subtitle {
+            font-size: 14px;
+          }
+          .control-group {
+            min-width: 100%;
+          }
+          .section-title {
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+          }
+          .preview-controls {
+            flex-direction: column;
+            gap: 10px;
+          }
+          .limit-card {
+            padding: 32px 20px;
+          }
+          .limit-title {
+            font-size: 20px;
+          }
+          .visual-container {
+            gap: 8px;
+          }
+          .visual-group {
+            min-width: 60px;
+          }
         }
       `}</style>
     </div>
