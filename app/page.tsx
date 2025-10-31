@@ -30,8 +30,8 @@ export default function Home() {
     setShowLeadMagnet(false);
   };
 
-  const handleUserDataSubmit = (email: string, language: string, unitSystem?: string, grade?: string) => {
-    console.log('User data submitted:', { email, language, unitSystem, grade });
+  const handleUserDataSubmit = (email: string) => {
+    console.log('User data submitted:', { email });
     
     addBonusDownloads(10, email);
     
