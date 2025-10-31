@@ -15,10 +15,8 @@ export default function Home() {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [showLeadMagnet, setShowLeadMagnet] = useState(false);
   
-  // RETAIN THE STATE VARIABLE TO FORCE RE-RENDER
   const [downloadUpdateKey, setDownloadUpdateKey] = useState(0); 
 
-  // FIX: NO ARGUMENT PASSED TO THE HOOK
   const { 
     addBonusDownloads, 
     downloadsRemaining, 
@@ -36,14 +34,14 @@ export default function Home() {
 
   const handleUserDataSubmit = (email: string) => {
     console.log('User data submitted:', { email });
+    console.log('Before bonus - hasReceivedSignupBonus:', hasReceivedSignupBonus);
+    console.log('Before bonus - downloadsRemaining:', downloadsRemaining);
     
-    // Logic to prevent giving the bonus twice:
     if (!hasReceivedSignupBonus) {
       addBonusDownloads(10, email);
+      setDownloadUpdateKey(prev => prev + 1);
       
-      // CRUCIAL: Forces the component (and the hook) to re-run and update the counter display
-      setDownloadUpdateKey(prev => prev + 1); 
-      
+      console.log('After bonus - downloadsRemaining should be +10');
       alert('Success! You now have 10 extra downloads!');
     } else {
       alert('Welcome back! Your bonus downloads are still available.');
@@ -63,6 +61,7 @@ export default function Home() {
           downloadsRemaining={downloadsRemaining}
           incrementDownloadCount={incrementDownloadCount}
           hasReceivedSignupBonus={hasReceivedSignupBonus}
+          key={downloadUpdateKey}
         />
       </main>
 
