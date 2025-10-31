@@ -57,17 +57,23 @@ export const useDownloadTracker = () => {
 
   const addBonusDownloads = (bonusCount: number, email?: string) => {
     setDownloadData(prev => {
+      console.log('Adding bonus downloads:', { prev, bonusCount, email });
+      
       // Only add bonus if they haven't received it yet
       if (prev.hasReceivedSignupBonus) {
+        console.log('Already received bonus, skipping');
         return prev;
       }
       
-      return {
+      const newData = {
         ...prev, 
         email: email || prev.email,
         bonusDownloads: prev.bonusDownloads + bonusCount,
         hasReceivedSignupBonus: true 
       };
+      
+      console.log('New download data after bonus:', newData);
+      return newData;
     });
   };
 
@@ -75,7 +81,17 @@ export const useDownloadTracker = () => {
     const dailyFree = 10;
     const totalAvailable = dailyFree + downloadData.bonusDownloads;
     const remaining = totalAvailable - downloadData.count;
-    return Math.max(0, remaining);
+    const result = Math.max(0, remaining);
+    
+    console.log('Calculating downloads remaining:', {
+      dailyFree,
+      bonusDownloads: downloadData.bonusDownloads,
+      totalAvailable,
+      count: downloadData.count,
+      remaining: result
+    });
+    
+    return result;
   };
 
   return {
