@@ -15,6 +15,12 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!marketing_consent) {
+      alert("Please confirm you'd like to receive our resources and updates.");
+      return;
+    }
+    
     setIsSubmitting(true);
 
     try {
@@ -94,18 +100,17 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           </div>
           
           <div className="checkbox-group">
-  <input
-    id="marketing-consent"
-    type="checkbox"
-    checked={marketing_consent}
-    onChange={(e) => setMarketingConsent(e.target.checked)}
-    className="marketing-checkbox"
-    required  // ADD THIS LINE
-  />
-  <label htmlFor="marketing-consent" className="consent-label">
-    I'd like to receive occasional tips, resources, and **recommended educational products (which may include affiliate links)**.
-  </label>
-</div>
+            <input
+              id="marketing-consent"
+              type="checkbox"
+              checked={marketing_consent}
+              onChange={(e) => setMarketingConsent(e.target.checked)}
+              className="marketing-checkbox"
+            />
+            <label htmlFor="marketing-consent" className="consent-label">
+              I'd like to receive occasional tips, resources, and <strong>recommended educational products (which may include affiliate links)</strong>.
+            </label>
+          </div>
 
           <button type="submit" disabled={isSubmitting} className="submit-button">
             {isSubmitting ? (
@@ -270,6 +275,7 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           margin-top: 3px;
           transform: scale(1.1);
           cursor: pointer;
+          flex-shrink: 0;
         }
 
         .consent-label {
@@ -277,6 +283,10 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           color: #4b5563;
           line-height: 1.4;
           cursor: pointer;
+        }
+        
+        .consent-label strong {
+          font-weight: 600;
         }
         
         .submit-button {
