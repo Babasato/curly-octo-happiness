@@ -4,7 +4,7 @@
 import { useState } from "react";
 
 interface LeadMagnetSignupProps {
-  onSuccess: (email: string) => void; 
+  onSuccess: (email: string) => void;
   onClose: () => void;
 }
 
@@ -16,7 +16,6 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // MANDATORY CHECK: This enforces that the user must explicitly opt-in for marketing/affiliate emails.
     if (!marketing_consent) {
       alert("Please check the box to confirm you'd like to receive occasional tips, resources, and recommended educational products.");
       return;
@@ -30,10 +29,7 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email,
-          language: "en",
-          unitSystem: null,
-          grade: null,
-          marketing_consent: marketing_consent, 
+          marketing_consent: marketing_consent,
         }),
       });
 
@@ -63,17 +59,29 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
         </button>
 
         <div className="modal-header">
-          {/* EMOJI REMOVED */}
-          <div className="bonus-badge">+10 Bonus Downloads!</div> 
-          <h2>Unlock 10 Extra Math Worksheets Instantly!</h2>
+          <div className="bonus-badge">+10 Bonus Downloads</div>
+          <h2>Unlock More Math Worksheets!</h2>
           <p className="subtitle">
-            Get 10 extra downloads when you join our homeschool community today.
+            Get instant access to 10 extra downloads when you join our homeschool community
           </p>
         </div>
 
-        {/* BENEFIT LIST ITEMS REMOVED */}
         <div className="benefits-list">
-          {/* This section is now empty as requested, but the container remains. */}
+          <div className="benefit-item">
+            <span className="benefit-text">
+              <strong>10 Extra Downloads</strong> – Added to your account immediately
+            </span>
+          </div>
+          <div className="benefit-item">
+            <span className="benefit-text">
+              <strong>Personalized Content</strong> – Worksheets tailored to your student's grade
+            </span>
+          </div>
+          <div className="benefit-item">
+            <span className="benefit-text">
+              <strong>Regular Updates</strong> – New worksheet types and teaching tips
+            </span>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="signup-form">
@@ -88,11 +96,10 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
               required
               className="email-input"
             />
-            <p className="email-help">Your 10 bonus downloads will be added instantly.</p>
+            <p className="email-help">We'll add your 10 bonus downloads instantly</p>
           </div>
           
-          {/* PROMINENT OPT-IN CHECKBOX */}
-          <div className="marketing-checkbox-group-prominent"> 
+          <div className="checkbox-group">
             <input
               id="marketing-consent"
               type="checkbox"
@@ -100,8 +107,8 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
               onChange={(e) => setMarketingConsent(e.target.checked)}
               className="marketing-checkbox"
             />
-            <label htmlFor="marketing-consent" className="consent-label-prominent">
-              ✅ Yes, I want occasional tips, resources, and <strong>recommended educational products (which may include affiliate links)</strong>.
+            <label htmlFor="marketing-consent" className="consent-label">
+              I'd like to receive occasional tips, resources, and <strong>recommended educational products (which may include affiliate links)</strong>.
             </label>
           </div>
 
@@ -123,7 +130,6 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
       </div>
 
       <style jsx>{`
-        /* BACKDROP */
         .modal-backdrop {
           position: fixed;
           inset: 0;
@@ -136,7 +142,6 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           z-index: 1000;
         }
 
-        /* MODAL */
         .lead-magnet-modal {
           position: relative;
           background: white;
@@ -147,10 +152,9 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           max-height: 90vh;
           overflow-y: auto;
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-          border: 1px solid #e2e8f0;
+          border: 1px solid #e5e7eb;
         }
 
-        /* CLOSE BUTTON */
         .close-button {
           position: absolute;
           top: 12px;
@@ -169,10 +173,9 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           color: #111827;
         }
 
-        /* HEADER */
         .modal-header {
           text-align: center;
-          margin: 10px 10px 20px 0; 
+          margin: 10px 10px 20px 0;
         }
 
         .bonus-badge {
@@ -199,17 +202,27 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           line-height: 1.4;
         }
 
-        /* BENEFITS (container still present but empty) */
         .benefits-list {
           background: #f8fafc;
           border-radius: 8px;
-          padding: 16px; /* Still provide padding if you re-add items later */
+          padding: 16px;
           margin-bottom: 20px;
           border: 1px solid #e2e8f0;
         }
-        /* No individual .benefit-item styles needed if list is empty */
 
-        /* FORM */
+        .benefit-item {
+          margin-bottom: 10px;
+        }
+
+        .benefit-item:last-child {
+          margin-bottom: 0;
+        }
+
+        .benefit-text {
+          color: #374151;
+          font-size: 14px;
+        }
+
         .form-group {
           margin-bottom: 16px;
         }
@@ -244,37 +257,25 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           font-style: italic;
         }
 
-        /* --- PROMINENT CHECKBOX STYLES --- */
-        .marketing-checkbox-group-prominent {
-          background: #f0f9ff;
-          border: 1px solid #bfdbfe;
-          border-radius: 6px;
-          padding: 12px;
+        .checkbox-group {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           margin-bottom: 20px;
-          gap: 12px;
+          gap: 8px;
         }
 
         .marketing-checkbox {
-          transform: scale(1.3);
+          margin-top: 3px;
+          transform: scale(1.1);
           cursor: pointer;
-          flex-shrink: 0;
-          margin-top: 0;
         }
 
-        .consent-label-prominent {
-          font-size: 13px;
-          color: #1e3a8a;
+        .consent-label {
+          font-size: 12px;
+          color: #4b5563;
           line-height: 1.4;
           cursor: pointer;
-          font-weight: 500;
         }
-        
-        .consent-label-prominent strong {
-          font-weight: 700;
-        }
-        /* --- END PROMINENT STYLES --- */
         
         .submit-button {
           width: 100%;
@@ -322,13 +323,11 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           font-size: 11px;
           text-align: center;
           line-height: 1.4;
-          margin-top: 15px;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 480px) {
           .lead-magnet-modal {
-            padding: 16px 30px 16px 16px; 
+            padding: 16px 30px 16px 16px;
           }
           
           .modal-header h2 {
