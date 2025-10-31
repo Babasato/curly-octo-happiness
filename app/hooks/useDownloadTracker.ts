@@ -56,27 +56,27 @@ export const useDownloadTracker = () => {
   };
 
   const addBonusDownloads = (bonusCount: number, email?: string) => {
-  setDownloadData(prev => {
-    // Only add bonus if they haven't received it yet
-    if (prev.hasReceivedSignupBonus) {
-      return prev; // Don't add more bonus if already received
-    }
-    
-    return {
-      ...prev, 
-      email: email || prev.email,
-      bonusDownloads: Math.min(prev.bonusDownloads + bonusCount, 10), // Cap at 10 bonus
-      hasReceivedSignupBonus: true 
-    };
-  });
-};
+    setDownloadData(prev => {
+      // Only add bonus if they haven't received it yet
+      if (prev.hasReceivedSignupBonus) {
+        return prev;
+      }
+      
+      return {
+        ...prev, 
+        email: email || prev.email,
+        bonusDownloads: prev.bonusDownloads + bonusCount,
+        hasReceivedSignupBonus: true 
+      };
+    });
+  };
 
   const getDownloadsRemaining = (): number => {
-    const dailyFree = 10;  // Back to 10
+    const dailyFree = 10;
     const totalAvailable = dailyFree + downloadData.bonusDownloads;
     const remaining = totalAvailable - downloadData.count;
     return Math.max(0, remaining);
-};
+  };
 
   return {
     downloadsRemaining: getDownloadsRemaining(),
