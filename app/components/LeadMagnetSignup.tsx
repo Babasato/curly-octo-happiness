@@ -1,16 +1,17 @@
-//app/components/LeadMagnetSignup.tsx
+// app/components/LeadMagnetSignup.tsx
 "use client";
 
 import { useState } from "react";
 
 interface LeadMagnetSignupProps {
-  onSuccess: (email: string, language: string, unitSystem?: string, grade?: string) => void;
+  onSuccess: (email: string) => void;
   onClose: () => void;
 }
 
 export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignupProps) {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [marketing_consent, setMarketingConsent] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,9 +23,7 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email,
-          language: "en",
-          unitSystem: null,
-          grade: null,
+          marketing_consent: marketing_consent,
         }),
       });
 
@@ -33,9 +32,9 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
         throw new Error(result.error || "Failed to save email");
       }
 
-      const userData = { email, language: "en" };
+      const userData = { email };
       localStorage.setItem("worksheetUser", JSON.stringify(userData));
-      onSuccess(email, "en");
+      onSuccess(email);
     } catch (error: any) {
       alert(`There was an error: ${error.message}. Please try again.`);
     } finally {
@@ -47,9 +46,8 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
     <div className="modal-backdrop" onClick={onClose}>
       <div
         className="lead-magnet-modal"
-        onClick={(e) => e.stopPropagation()} // prevents closing when clicking inside modal
+        onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button is placed here */}
         <button className="close-button" onClick={onClose} aria-label="Close modal">
           ✕
         </button>
@@ -94,6 +92,19 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
             />
             <p className="email-help">We'll add your 10 bonus downloads instantly</p>
           </div>
+          
+          <div className="checkbox-group">
+            <input
+              id="marketing-consent"
+              type="checkbox"
+              checked={marketing_consent}
+              onChange={(e) => setMarketingConsent(e.target.checked)}
+              className="marketing-checkbox"
+            />
+            <label htmlFor="marketing-consent" className="consent-label">
+              I'd like to receive occasional tips, resources, and **recommended educational products (which may include affiliate links)**.
+            </label>
+          </div>
 
           <button type="submit" disabled={isSubmitting} className="submit-button">
             {isSubmitting ? (
@@ -131,7 +142,6 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           position: relative;
           background: white;
           border-radius: 12px;
-          /* ADJUSTED PADDING: Increased right padding to prevent content from going under the button */
           padding: 24px 32px 24px 24px;
           width: 100%;
           max-width: min(400px, 100vw - 32px);
@@ -153,7 +163,6 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           cursor: pointer;
           line-height: 1;
           transition: color 0.2s ease;
-          /* FIX 1: Ensure button is above all other modal content */
           z-index: 10;
         }
 
@@ -164,8 +173,7 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
         /* HEADER */
         .modal-header {
           text-align: center;
-          /* ADJUSTED MARGIN: Added margin-right to prevent header content from overlapping the button */
-          margin: 10px 10px 20px 0; 
+          margin: 10px 10px 20px 0;
         }
 
         .bonus-badge {
@@ -249,6 +257,27 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           font-style: italic;
         }
 
+        /* CHECKBOX STYLES */
+        .checkbox-group {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 20px;
+          gap: 8px;
+        }
+
+        .marketing-checkbox {
+          margin-top: 3px;
+          transform: scale(1.1);
+          cursor: pointer;
+        }
+
+        .consent-label {
+          font-size: 12px;
+          color: #4b5563;
+          line-height: 1.4;
+          cursor: pointer;
+        }
+        
         .submit-button {
           width: 100%;
           background: linear-gradient(135deg, #10b981, #059669);
@@ -300,8 +329,7 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
         /* RESPONSIVE */
         @media (max-width: 480px) {
           .lead-magnet-modal {
-            /* Adjusted right padding to leave space for button */
-            padding: 16px 30px 16px 16px; 
+            padding: 16px 30px 16px 16px;
           }
           
           .modal-header h2 {
