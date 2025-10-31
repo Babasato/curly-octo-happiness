@@ -1,7 +1,7 @@
 // app/page.tsx - FINAL FIX
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import WorksheetGenerator from './components/WorksheetGenerator';
 import LeadMagnetSignup from './components/LeadMagnetSignup';
 import { useDownloadTracker } from './hooks/useDownloadTracker';
@@ -15,14 +15,22 @@ export default function Home() {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [showLeadMagnet, setShowLeadMagnet] = useState(false);
   
-  const [downloadUpdateKey, setDownloadUpdateKey] = useState(0); 
-
   const { 
     addBonusDownloads, 
     downloadsRemaining, 
     incrementDownloadCount,
-    hasReceivedSignupBonus 
+    hasReceivedSignupBonus,
+    downloadData 
   } = useDownloadTracker(); 
+
+  // Debug effect to see state changes
+  useEffect(() => {
+    console.log('Home component - Current state:', {
+      downloadsRemaining,
+      hasReceivedSignupBonus,
+      downloadData
+    });
+  }, [downloadsRemaining, hasReceivedSignupBonus, downloadData]);
 
   const handleOpenLeadMagnet = () => {
     setShowLeadMagnet(true);
@@ -32,23 +40,36 @@ export default function Home() {
     setShowLeadMagnet(false);
   };
 
-  const handleUserDataSubmit = (email: string) => {
-    console.log('User data submitted:', { email });
+  const handleUserDataSubmit = async (email: string) => {
+    console.log('=== USER DATA SUBMIT START ===');
     console.log('Before bonus - hasReceivedSignupBonus:', hasReceivedSignupBonus);
     console.log('Before bonus - downloadsRemaining:', downloadsRemaining);
+    console.log('Before bonus - downloadData:', downloadData);
     
-    if (!hasReceivedSignupBonus) {
+    // Use a different approach - check localStorage directly
+    const saved = localStorage.getItem('downloadData');
+    const alreadyGotBonus = saved ? JSON.parse(saved).hasReceivedSignupBonus : false;
+    
+    console.log('Checking localStorage for existing bonus:', alreadyGotBonus);
+    
+    if (!alreadyGotBonus) {
+      console.log('Adding 10 bonus downloads for email:', email);
       addBonusDownloads(10, email);
-      setDownloadUpdateKey(prev => prev + 1);
       
-      console.log('After bonus - downloadsRemaining should be +10');
-      alert('Success! You now have 10 extra downloads!');
+      // Wait a moment for state to update
+      setTimeout(() => {
+        console.log('After bonus - downloadsRemaining:', downloadsRemaining);
+        console.log('After bonus - downloadData:', downloadData);
+        alert('Success! You now have 10 extra downloads!');
+      }, 100);
     } else {
+      console.log('User already received bonus, skipping');
       alert('Welcome back! Your bonus downloads are still available.');
     }
     
     setUserData({ name: '', email });
     setShowLeadMagnet(false);
+    console.log('=== USER DATA SUBMIT END ===');
   };
 
   return (
@@ -61,7 +82,6 @@ export default function Home() {
           downloadsRemaining={downloadsRemaining}
           incrementDownloadCount={incrementDownloadCount}
           hasReceivedSignupBonus={hasReceivedSignupBonus}
-          key={downloadUpdateKey}
         />
       </main>
 
