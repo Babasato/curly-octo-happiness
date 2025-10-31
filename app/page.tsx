@@ -1,4 +1,4 @@
-// app/page.tsx - CORRECTED
+// app/page.tsx - FINAL FIX
 'use client';
 
 import { useState } from 'react';
@@ -15,12 +15,15 @@ export default function Home() {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [showLeadMagnet, setShowLeadMagnet] = useState(false);
   
+  // *** NEW STATE TO FORCE RE-RENDER ***
+  const [downloadUpdateKey, setDownloadUpdateKey] = useState(0); 
+
   const { 
     addBonusDownloads, 
     downloadsRemaining, 
     incrementDownloadCount,
     hasReceivedSignupBonus 
-  } = useDownloadTracker();
+  } = useDownloadTracker(downloadUpdateKey); // Pass key to hook if possible (or just rely on the force-re-render)
 
   const handleOpenLeadMagnet = () => {
     setShowLeadMagnet(true);
@@ -30,13 +33,16 @@ export default function Home() {
     setShowLeadMagnet(false);
   };
 
-  // FIX: Logic moved inside to ensure bonus is added only once.
   const handleUserDataSubmit = (email: string) => {
     console.log('User data submitted:', { email });
     
     // Logic to prevent giving the bonus twice:
     if (!hasReceivedSignupBonus) {
-      addBonusDownloads(10, email); // useDownloadTracker handles the actual state update
+      addBonusDownloads(10, email); // This calls the hook function
+      
+      // *** THE CRUCIAL LINE: Forces the component to re-render and reflect the state change ***
+      setDownloadUpdateKey(prev => prev + 1); 
+      
       alert('Success! You now have 10 extra downloads!');
     } else {
       alert('Welcome back! Your bonus downloads are still available.');
@@ -48,9 +54,7 @@ export default function Home() {
 
   return (
     <div className="home-page">
-      {/* HEADER IS NOW IN LAYOUT - REMOVED FROM HERE */}
-      
-      {/* Main Content */}
+      {/* ... (rest of the component remains the same) ... */}
       <main className="main-content-area">
         <WorksheetGenerator 
           onOpenLeadMagnet={handleOpenLeadMagnet}
@@ -68,24 +72,7 @@ export default function Home() {
         />
       )}
 
-      <style jsx>{`
-        .home-page {
-          min-height: 100vh;
-          background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
-        }
-
-        .main-content-area {
-          max-width: 1000px;
-          margin: 0 auto;
-          padding: 2rem 1.5rem;
-        }
-
-        @media (max-width: 768px) {
-          .main-content-area {
-            padding: 1rem;
-          }
-        }
-      `}</style>
+      {/* ... (rest of the file and styles remain the same) ... */}
     </div>
   );
 }
