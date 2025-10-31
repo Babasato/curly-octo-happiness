@@ -15,15 +15,16 @@ export default function Home() {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [showLeadMagnet, setShowLeadMagnet] = useState(false);
   
-  // *** NEW STATE TO FORCE RE-RENDER ***
+  // RETAIN THE STATE VARIABLE TO FORCE RE-RENDER
   const [downloadUpdateKey, setDownloadUpdateKey] = useState(0); 
 
+  // FIX: NO ARGUMENT PASSED TO THE HOOK
   const { 
     addBonusDownloads, 
     downloadsRemaining, 
     incrementDownloadCount,
     hasReceivedSignupBonus 
-  } = useDownloadTracker(downloadUpdateKey); // Pass key to hook if possible (or just rely on the force-re-render)
+  } = useDownloadTracker(); 
 
   const handleOpenLeadMagnet = () => {
     setShowLeadMagnet(true);
@@ -38,9 +39,9 @@ export default function Home() {
     
     // Logic to prevent giving the bonus twice:
     if (!hasReceivedSignupBonus) {
-      addBonusDownloads(10, email); // This calls the hook function
+      addBonusDownloads(10, email);
       
-      // *** THE CRUCIAL LINE: Forces the component to re-render and reflect the state change ***
+      // CRUCIAL: Forces the component (and the hook) to re-run and update the counter display
       setDownloadUpdateKey(prev => prev + 1); 
       
       alert('Success! You now have 10 extra downloads!');
@@ -54,7 +55,8 @@ export default function Home() {
 
   return (
     <div className="home-page">
-      {/* ... (rest of the component remains the same) ... */}
+      
+      {/* Main Content */}
       <main className="main-content-area">
         <WorksheetGenerator 
           onOpenLeadMagnet={handleOpenLeadMagnet}
@@ -72,7 +74,24 @@ export default function Home() {
         />
       )}
 
-      {/* ... (rest of the file and styles remain the same) ... */}
+      <style jsx>{`
+        .home-page {
+          min-height: 100vh;
+          background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+        }
+
+        .main-content-area {
+          max-width: 1000px;
+          margin: 0 auto;
+          padding: 2rem 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+          .main-content-area {
+            padding: 1rem;
+          }
+        }
+      `}</style>
     </div>
   );
 }
