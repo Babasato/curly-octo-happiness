@@ -94,17 +94,18 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           </div>
           
           <div className="checkbox-group">
-            <input
-              id="marketing-consent"
-              type="checkbox"
-              checked={marketing_consent}
-              onChange={(e) => setMarketingConsent(e.target.checked)}
-              className="marketing-checkbox"
-            />
-            <label htmlFor="marketing-consent" className="consent-label">
-              I'd like to receive occasional tips, resources, and **recommended educational products (which may include affiliate links)**.
-            </label>
-          </div>
+  <input
+    id="marketing-consent"
+    type="checkbox"
+    checked={marketing_consent}
+    onChange={(e) => setMarketingConsent(e.target.checked)}
+    className="marketing-checkbox"
+    required  // ADD THIS LINE
+  />
+  <label htmlFor="marketing-consent" className="consent-label">
+    I'd like to receive occasional tips, resources, and **recommended educational products (which may include affiliate links)**.
+  </label>
+</div>
 
           <button type="submit" disabled={isSubmitting} className="submit-button">
             {isSubmitting ? (
