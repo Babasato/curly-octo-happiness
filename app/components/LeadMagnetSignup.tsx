@@ -63,31 +63,17 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
         </button>
 
         <div className="modal-header">
-          <div className="bonus-badge">🎁 +10 Bonus Downloads!</div>
+          {/* EMOJI REMOVED */}
+          <div className="bonus-badge">+10 Bonus Downloads!</div> 
           <h2>Unlock 10 Extra Math Worksheets Instantly!</h2>
-          {/* CONDENSED SUBTITLE */}
           <p className="subtitle">
             Get 10 extra downloads when you join our homeschool community today.
           </p>
         </div>
 
+        {/* BENEFIT LIST ITEMS REMOVED */}
         <div className="benefits-list">
-          {/* CONDENSED BENEFITS */}
-          <div className="benefit-item">
-            <span className="benefit-text">
-              <strong>10 Extra Downloads</strong> – Added to your account immediately
-            </span>
-          </div>
-          <div className="benefit-item">
-            <span className="benefit-text">
-              <strong>Personalized Content</strong> – Worksheets tailored to your student's grade
-            </span>
-          </div>
-          <div className="benefit-item">
-            <span className="benefit-text">
-              <strong>Regular Updates</strong> – New worksheet types and teaching tips
-            </span>
-          </div>
+          {/* This section is now empty as requested, but the container remains. */}
         </div>
 
         <form onSubmit={handleSubmit} className="signup-form">
@@ -213,27 +199,15 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           line-height: 1.4;
         }
 
-        /* BENEFITS */
+        /* BENEFITS (container still present but empty) */
         .benefits-list {
           background: #f8fafc;
           border-radius: 8px;
-          padding: 16px;
+          padding: 16px; /* Still provide padding if you re-add items later */
           margin-bottom: 20px;
           border: 1px solid #e2e8f0;
         }
-
-        .benefit-item {
-          margin-bottom: 10px;
-        }
-
-        .benefit-item:last-child {
-          margin-bottom: 0;
-        }
-
-        .benefit-text {
-          color: #374151;
-          font-size: 14px;
-        }
+        /* No individual .benefit-item styles needed if list is empty */
 
         /* FORM */
         .form-group {
@@ -272,8 +246,8 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
 
         /* --- PROMINENT CHECKBOX STYLES --- */
         .marketing-checkbox-group-prominent {
-          background: #f0f9ff; /* Light blue background for emphasis */
-          border: 1px solid #bfdbfe; /* Subtle blue border */
+          background: #f0f9ff;
+          border: 1px solid #bfdbfe;
           border-radius: 6px;
           padding: 12px;
           display: flex;
@@ -283,7 +257,7 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
         }
 
         .marketing-checkbox {
-          transform: scale(1.3); /* Larger checkbox */
+          transform: scale(1.3);
           cursor: pointer;
           flex-shrink: 0;
           margin-top: 0;
@@ -291,7 +265,7 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
 
         .consent-label-prominent {
           font-size: 13px;
-          color: #1e3a8a; /* Darker text for visibility */
+          color: #1e3a8a;
           line-height: 1.4;
           cursor: pointer;
           font-weight: 500;
