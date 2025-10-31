@@ -1,4 +1,4 @@
-// app/page.tsx - UPDATED (REMOVED DUPLICATE HEADER)
+// app/page.tsx - CORRECTED
 'use client';
 
 import { useState } from 'react';
@@ -30,14 +30,20 @@ export default function Home() {
     setShowLeadMagnet(false);
   };
 
+  // FIX: Logic moved inside to ensure bonus is added only once.
   const handleUserDataSubmit = (email: string) => {
     console.log('User data submitted:', { email });
     
-    addBonusDownloads(10, email);
+    // Logic to prevent giving the bonus twice:
+    if (!hasReceivedSignupBonus) {
+      addBonusDownloads(10, email); // useDownloadTracker handles the actual state update
+      alert('Success! You now have 10 extra downloads!');
+    } else {
+      alert('Welcome back! Your bonus downloads are still available.');
+    }
     
     setUserData({ name: '', email });
     setShowLeadMagnet(false);
-    alert('Success! You now have 10 extra downloads!');
   };
 
   return (
