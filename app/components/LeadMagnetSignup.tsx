@@ -1,10 +1,9 @@
-// app/components/LeadMagnetSignup.tsx
+// app/components/LeadMagnetSignup.tsx - CORRECTED
 "use client";
 
 import { useState } from "react";
 
 interface LeadMagnetSignupProps {
-  // Updated onSuccess signature to match the component's current logic
   onSuccess: (email: string) => void; 
   onClose: () => void;
 }
@@ -12,7 +11,6 @@ interface LeadMagnetSignupProps {
 export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignupProps) {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  // State for marketing consent checkbox (using snake_case to match the form submission body)
   const [marketing_consent, setMarketingConsent] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -35,7 +33,6 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           language: "en",
           unitSystem: null,
           grade: null,
-          // Sending the consent status to the backend
           marketing_consent: marketing_consent, 
         }),
       });
@@ -59,30 +56,31 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
     <div className="modal-backdrop" onClick={onClose}>
       <div
         className="lead-magnet-modal"
-        onClick={(e) => e.stopPropagation()} // prevents closing when clicking inside modal
+        onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button is placed here */}
         <button className="close-button" onClick={onClose} aria-label="Close modal">
           ✕
         </button>
 
         <div className="modal-header">
-          <div className="bonus-badge">+10 Bonus Downloads</div>
-          <h2>Unlock More Math Worksheets!</h2>
+          <div className="bonus-badge">🎁 +10 Bonus Downloads!</div>
+          <h2>Unlock 10 Extra Math Worksheets Instantly!</h2>
+          {/* CONDENSED SUBTITLE */}
           <p className="subtitle">
-            Get instant access to 10 extra downloads when you join our homeschool community
+            Get 10 extra downloads when you join our homeschool community today.
           </p>
         </div>
 
         <div className="benefits-list">
+          {/* CONDENSED BENEFITS */}
           <div className="benefit-item">
             <span className="benefit-text">
-              <strong>+10 Instant Downloads</strong> – Added to your account immediately
+              <strong>10 Extra Downloads</strong> – Added to your account immediately
             </span>
           </div>
           <div className="benefit-item">
             <span className="benefit-text">
-              <strong>Personalized Worksheets</strong> – Tailored to your grade level
+              <strong>Personalized Content</strong> – Worksheets tailored to your student's grade
             </span>
           </div>
           <div className="benefit-item">
@@ -104,11 +102,11 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
               required
               className="email-input"
             />
-            <p className="email-help">We'll add your 10 bonus downloads instantly</p>
+            <p className="email-help">Your 10 bonus downloads will be added instantly.</p>
           </div>
           
-          {/* UPDATED: Using a unique class name to prevent global CSS conflict */}
-          <div className="marketing-checkbox-group"> 
+          {/* PROMINENT OPT-IN CHECKBOX */}
+          <div className="marketing-checkbox-group-prominent"> 
             <input
               id="marketing-consent"
               type="checkbox"
@@ -116,8 +114,8 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
               onChange={(e) => setMarketingConsent(e.target.checked)}
               className="marketing-checkbox"
             />
-            <label htmlFor="marketing-consent" className="consent-label">
-              I'd like to receive occasional tips, resources, and <strong>recommended educational products (which may include affiliate links)</strong>.
+            <label htmlFor="marketing-consent" className="consent-label-prominent">
+              ✅ Yes, I want occasional tips, resources, and <strong>recommended educational products (which may include affiliate links)</strong>.
             </label>
           </div>
 
@@ -272,32 +270,37 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           font-style: italic;
         }
 
-        /* --- NEW: UNIQUE CHECKBOX STYLES --- */
-        .marketing-checkbox-group { /* UNIQUE CLASS NAME */
+        /* --- PROMINENT CHECKBOX STYLES --- */
+        .marketing-checkbox-group-prominent {
+          background: #f0f9ff; /* Light blue background for emphasis */
+          border: 1px solid #bfdbfe; /* Subtle blue border */
+          border-radius: 6px;
+          padding: 12px;
           display: flex;
-          align-items: flex-start;
+          align-items: center;
           margin-bottom: 20px;
-          gap: 8px;
+          gap: 12px;
         }
 
-        .marketing-checkbox { /* UNIQUE CLASS NAME */
-          margin-top: 3px;
-          transform: scale(1.1);
+        .marketing-checkbox {
+          transform: scale(1.3); /* Larger checkbox */
           cursor: pointer;
           flex-shrink: 0;
+          margin-top: 0;
         }
 
-        .consent-label {
-          font-size: 12px;
-          color: #4b5563;
+        .consent-label-prominent {
+          font-size: 13px;
+          color: #1e3a8a; /* Darker text for visibility */
           line-height: 1.4;
           cursor: pointer;
+          font-weight: 500;
         }
         
-        .consent-label strong {
-          font-weight: 600;
+        .consent-label-prominent strong {
+          font-weight: 700;
         }
-        /* --- END NEW STYLES --- */
+        /* --- END PROMINENT STYLES --- */
         
         .submit-button {
           width: 100%;
@@ -345,6 +348,7 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           font-size: 11px;
           text-align: center;
           line-height: 1.4;
+          margin-top: 15px;
         }
 
         /* RESPONSIVE */
