@@ -1,4 +1,4 @@
-// app/components/LeadMagnetSignup.tsx - CORRECTED
+// app/components/LeadMagnetSignup.tsx - REDESIGNED
 "use client";
 
 import { useState } from "react";
@@ -17,7 +17,7 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
     e.preventDefault();
     
     if (!marketing_consent) {
-      alert("Please check the box to confirm you'd like to receive occasional tips, resources, and recommended educational products.");
+      alert("Please confirm you'd like to receive educational resources and recommendations.");
       return;
     }
     
@@ -42,7 +42,7 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
       localStorage.setItem("worksheetUser", JSON.stringify(userData));
       onSuccess(email);
     } catch (error: any) {
-      alert(`There was an error: ${error.message}. Please try again.`);
+      alert(`Error: ${error.message}. Please try again.`);
     } finally {
       setIsSubmitting(false);
     }
@@ -54,78 +54,60 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
         className="lead-magnet-modal"
         onClick={(e) => e.stopPropagation()}
       >
-        <button className="close-button" onClick={onClose} aria-label="Close modal">
+        <button className="close-button" onClick={onClose} aria-label="Close">
           ✕
         </button>
 
         <div className="modal-header">
-          <div className="bonus-badge">+10 Bonus Downloads</div>
-          <h2>Unlock More Math Worksheets!</h2>
-          <p className="subtitle">
-            Get instant access to 10 extra downloads when you join our homeschool community
-          </p>
-        </div>
-
-        <div className="benefits-list">
-          <div className="benefit-item">
-            <span className="benefit-text">
-              <strong>10 Extra Downloads</strong> – Added to your account immediately
-            </span>
-          </div>
-          <div className="benefit-item">
-            <span className="benefit-text">
-              <strong>Personalized Content</strong> – Worksheets tailored to your student's grade
-            </span>
-          </div>
-          <div className="benefit-item">
-            <span className="benefit-text">
-              <strong>Regular Updates</strong> – New worksheet types and teaching tips
-            </span>
-          </div>
+          <div className="bonus-badge">🎁 +10 Bonus Downloads</div>
+          <h2>Get 10 More Worksheets Instantly!</h2>
         </div>
 
         <form onSubmit={handleSubmit} className="signup-form">
           <div className="form-group">
-            <label htmlFor="email">Email Address</label>
             <input
               id="email"
               type="email"
-              placeholder="your.email@example.com"
+              placeholder="Enter your email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
               className="email-input"
             />
-            <p className="email-help">We'll add your 10 bonus downloads instantly</p>
           </div>
           
-          <div className="checkbox-group">
-            <input
-              id="marketing-consent"
-              type="checkbox"
-              checked={marketing_consent}
-              onChange={(e) => setMarketingConsent(e.target.checked)}
-              className="marketing-checkbox"
-            />
-            <label htmlFor="marketing-consent" className="consent-label">
-              I'd like to receive occasional tips, resources, and <strong>recommended educational products (which may include affiliate links)</strong>.
-            </label>
+          <div className="consent-box">
+            <div className="consent-header">
+              <input
+                id="marketing-consent"
+                type="checkbox"
+                checked={marketing_consent}
+                onChange={(e) => setMarketingConsent(e.target.checked)}
+                className="consent-checkbox"
+              />
+              <label htmlFor="marketing-consent" className="consent-title">
+                Yes, send me free resources!
+              </label>
+            </div>
+            <p className="consent-description">
+              Get personalized worksheets, teaching tips, and helpful product recommendations (including affiliate links). Unsubscribe anytime.
+            </p>
           </div>
 
           <button type="submit" disabled={isSubmitting} className="submit-button">
             {isSubmitting ? (
               <>
                 <span className="spinner"></span>
-                Adding Your Bonus...
+                Processing...
               </>
             ) : (
-              "Get My 10 Bonus Downloads!"
+              "Unlock My 10 Bonus Downloads"
             )}
           </button>
         </form>
 
-        <p className="privacy-text">
-          We respect your privacy. Unsubscribe anytime. No spam — just helpful math resources.
+        <p className="footer-note">
+          No spam, just quality math resources. 
         </p>
       </div>
 
@@ -133,148 +115,146 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
         .modal-backdrop {
           position: fixed;
           inset: 0;
-          background: rgba(0, 0, 0, 0.5);
-          backdrop-filter: blur(3px);
+          background: rgba(0, 0, 0, 0.6);
+          backdrop-filter: blur(4px);
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 16px;
+          padding: 20px;
           z-index: 1000;
+          animation: fadeIn 0.2s ease;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
 
         .lead-magnet-modal {
           position: relative;
           background: white;
-          border-radius: 12px;
-          padding: 24px 32px 24px 24px;
+          border-radius: 16px;
+          padding: 32px;
           width: 100%;
-          max-width: min(400px, 100vw - 32px);
-          max-height: 90vh;
-          overflow-y: auto;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-          border: 1px solid #e5e7eb;
+          max-width: 440px;
+          box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+          animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
 
         .close-button {
           position: absolute;
-          top: 12px;
-          right: 12px;
-          background: none;
+          top: 16px;
+          right: 16px;
+          background: #f3f4f6;
           border: none;
-          font-size: 20px;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          font-size: 18px;
           color: #6b7280;
           cursor: pointer;
-          line-height: 1;
-          transition: color 0.2s ease;
-          z-index: 10;
+          transition: all 0.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .close-button:hover {
+          background: #e5e7eb;
           color: #111827;
         }
 
         .modal-header {
           text-align: center;
-          margin: 10px 10px 20px 0;
+          margin-bottom: 28px;
         }
 
         .bonus-badge {
           background: linear-gradient(135deg, #f59e0b, #d97706);
           color: white;
-          padding: 6px 12px;
-          border-radius: 16px;
+          padding: 8px 16px;
+          border-radius: 24px;
           font-weight: 700;
-          font-size: 13px;
+          font-size: 15px;
           display: inline-block;
-          margin-bottom: 12px;
+          margin-bottom: 16px;
+          box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
         }
 
         .modal-header h2 {
-          color: #1f2937;
-          font-size: 20px;
+          color: #111827;
+          font-size: 24px;
           font-weight: 700;
-          margin: 0 0 8px;
-        }
-
-        .subtitle {
-          color: #6b7280;
-          font-size: 14px;
-          line-height: 1.4;
-        }
-
-        .benefits-list {
-          background: #f8fafc;
-          border-radius: 8px;
-          padding: 16px;
-          margin-bottom: 20px;
-          border: 1px solid #e2e8f0;
-        }
-
-        .benefit-item {
-          margin-bottom: 10px;
-        }
-
-        .benefit-item:last-child {
-          margin-bottom: 0;
-        }
-
-        .benefit-text {
-          color: #374151;
-          font-size: 14px;
+          margin: 0;
+          line-height: 1.3;
         }
 
         .form-group {
-          margin-bottom: 16px;
-        }
-
-        .form-group label {
-          display: block;
-          margin-bottom: 6px;
-          color: #374151;
-          font-weight: 600;
-          font-size: 14px;
+          margin-bottom: 20px;
         }
 
         .email-input {
           width: 100%;
-          padding: 12px;
+          padding: 14px 16px;
           border: 2px solid #e5e7eb;
-          border-radius: 8px;
+          border-radius: 10px;
           font-size: 16px;
           transition: all 0.2s ease;
+          box-sizing: border-box;
         }
 
         .email-input:focus {
           outline: none;
           border-color: #3b82f6;
-          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+          box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
         }
 
-        .email-help {
-          margin-top: 6px;
-          color: #6b7280;
-          font-size: 12px;
-          font-style: italic;
+        .consent-box {
+          background: #f0f9ff;
+          border: 2px solid #bfdbfe;
+          border-radius: 12px;
+          padding: 16px;
+          margin-bottom: 24px;
         }
 
-        .checkbox-group {
+        .consent-header {
           display: flex;
-          align-items: flex-start;
-          margin-bottom: 20px;
-          gap: 8px;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 8px;
         }
 
-        .marketing-checkbox {
-          margin-top: 3px;
-          transform: scale(1.1);
+        .consent-checkbox {
+          width: 20px;
+          height: 20px;
           cursor: pointer;
+          flex-shrink: 0;
         }
 
-        .consent-label {
-          font-size: 12px;
-          color: #4b5563;
-          line-height: 1.4;
+        .consent-title {
+          font-size: 16px;
+          font-weight: 700;
+          color: #1e40af;
           cursor: pointer;
+          margin: 0;
+        }
+
+        .consent-description {
+          margin: 0 0 0 32px;
+          font-size: 13px;
+          color: #475569;
+          line-height: 1.5;
         }
         
         .submit-button {
@@ -282,56 +262,67 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
           background: linear-gradient(135deg, #10b981, #059669);
           color: white;
           border: none;
-          border-radius: 8px;
-          padding: 14px 20px;
-          font-size: 16px;
-          font-weight: 600;
+          border-radius: 10px;
+          padding: 16px;
+          font-size: 17px;
+          font-weight: 700;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: all 0.2s ease;
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 8px;
+          gap: 10px;
+          box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
         }
 
         .submit-button:hover:not(:disabled) {
-          transform: translateY(-1px);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+        }
+
+        .submit-button:active:not(:disabled) {
+          transform: translateY(0);
         }
 
         .submit-button:disabled {
           opacity: 0.7;
           cursor: not-allowed;
+          transform: none;
         }
 
         .spinner {
-          width: 16px;
-          height: 16px;
-          border: 2px solid transparent;
-          border-top: 2px solid white;
+          width: 18px;
+          height: 18px;
+          border: 3px solid rgba(255, 255, 255, 0.3);
+          border-top: 3px solid white;
           border-radius: 50%;
-          animation: spin 1s linear infinite;
+          animation: spin 0.8s linear infinite;
         }
 
         @keyframes spin {
-          to {
-            transform: rotate(360deg);
-          }
+          to { transform: rotate(360deg); }
         }
 
-        .privacy-text {
+        .footer-note {
           color: #9ca3af;
-          font-size: 11px;
+          font-size: 12px;
           text-align: center;
-          line-height: 1.4;
+          margin-top: 16px;
+          margin-bottom: 0;
         }
 
         @media (max-width: 480px) {
           .lead-magnet-modal {
-            padding: 16px 30px 16px 16px;
+            padding: 24px;
+            max-width: calc(100vw - 40px);
           }
           
           .modal-header h2 {
-            font-size: 18px;
+            font-size: 21px;
+          }
+
+          .consent-description {
+            margin-left: 32px;
           }
         }
       `}</style>
