@@ -1,6 +1,5 @@
-// app/hooks/useDownloadTracker.ts - REPLACE YOUR CURRENT FILE WITH THIS
+// app/hooks/useDownloadTracker.ts - CORRECTED VERSION
 "use client";
-
 import { useState, useEffect } from 'react';
 
 interface DownloadData {
@@ -10,6 +9,9 @@ interface DownloadData {
   bonusDownloads: number;
   hasReceivedSignupBonus: boolean;
 }
+
+const DAILY_FREE_DOWNLOADS = 10;
+const SIGNUP_BONUS = 10;
 
 export const useDownloadTracker = () => {
   const [downloadData, setDownloadData] = useState<DownloadData>({ 
@@ -28,15 +30,18 @@ export const useDownloadTracker = () => {
         const lastResetDate = new Date(data.lastReset);
         const today = new Date();
         
-        // Reset daily downloads if it's a new day
+        // Reset daily downloads if it's a new day, but keep bonus downloads
         if (lastResetDate.getDate() !== today.getDate() || 
             lastResetDate.getMonth() !== today.getMonth() || 
             lastResetDate.getFullYear() !== today.getFullYear()) {
-          setDownloadData({ 
+          
+          const resetData = { 
             ...data, 
             count: 0, 
             lastReset: today.toISOString() 
-          });
+          };
+          setDownloadData(resetData);
+          localStorage.setItem('downloadData', JSON.stringify(resetData));
         } else {
           setDownloadData(data);
         }
@@ -48,7 +53,9 @@ export const useDownloadTracker = () => {
 
   // Save to localStorage whenever downloadData changes
   useEffect(() => {
-    localStorage.setItem('downloadData', JSON.stringify(downloadData));
+    if (downloadData.count > 0 || downloadData.hasReceivedSignupBonus) {
+      localStorage.setItem('downloadData', JSON.stringify(downloadData));
+    }
   }, [downloadData]);
 
   const incrementDownloadCount = () => {
@@ -57,41 +64,32 @@ export const useDownloadTracker = () => {
 
   const addBonusDownloads = (bonusCount: number, email?: string) => {
     setDownloadData(prev => {
-      console.log('Adding bonus downloads:', { prev, bonusCount, email });
-      
       // Only add bonus if they haven't received it yet
       if (prev.hasReceivedSignupBonus) {
-        console.log('Already received bonus, skipping');
+        console.log('Bonus already received, skipping');
         return prev;
       }
       
       const newData = {
         ...prev, 
         email: email || prev.email,
-        bonusDownloads: prev.bonusDownloads + bonusCount,
+        bonusDownloads: bonusCount,
         hasReceivedSignupBonus: true 
       };
       
-      console.log('New download data after bonus:', newData);
       return newData;
     });
   };
 
   const getDownloadsRemaining = (): number => {
-    const dailyFree = 10;
-    const totalAvailable = dailyFree + downloadData.bonusDownloads;
+    const totalAvailable = DAILY_FREE_DOWNLOADS + downloadData.bonusDownloads;
     const remaining = totalAvailable - downloadData.count;
-    const result = Math.max(0, remaining);
-    
-    console.log('Calculating downloads remaining:', {
-      dailyFree,
-      bonusDownloads: downloadData.bonusDownloads,
-      totalAvailable,
-      count: downloadData.count,
-      remaining: result
-    });
-    
-    return result;
+    return Math.max(0, remaining);
+  };
+
+  const shouldShowLeadMagnet = (): boolean => {
+    // Show modal when 3 downloads remaining AND hasn't received bonus yet
+    return getDownloadsRemaining() === 3 && !downloadData.hasReceivedSignupBonus;
   };
 
   return {
@@ -99,6 +97,7 @@ export const useDownloadTracker = () => {
     incrementDownloadCount,
     addBonusDownloads,
     downloadData,
-    hasReceivedSignupBonus: downloadData.hasReceivedSignupBonus
+    hasReceivedSignupBonus: downloadData.hasReceivedSignupBonus,
+    shouldShowLeadMagnet
   };
 };
