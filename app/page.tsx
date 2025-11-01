@@ -1,6 +1,5 @@
-// app/page.tsx - FINAL FIX
+// app/page.tsx - CORRECTED VERSION
 'use client';
-
 import { useState, useEffect } from 'react';
 import WorksheetGenerator from './components/WorksheetGenerator';
 import LeadMagnetSignup from './components/LeadMagnetSignup';
@@ -20,17 +19,16 @@ export default function Home() {
     downloadsRemaining, 
     incrementDownloadCount,
     hasReceivedSignupBonus,
+    shouldShowLeadMagnet,
     downloadData 
   } = useDownloadTracker(); 
 
-  // Debug effect to see state changes
+  // Auto-show modal when user reaches 3 downloads remaining
   useEffect(() => {
-    console.log('Home component - Current state:', {
-      downloadsRemaining,
-      hasReceivedSignupBonus,
-      downloadData
-    });
-  }, [downloadsRemaining, hasReceivedSignupBonus, downloadData]);
+    if (shouldShowLeadMagnet()) {
+      setShowLeadMagnet(true);
+    }
+  }, [downloadsRemaining, hasReceivedSignupBonus]);
 
   const handleOpenLeadMagnet = () => {
     setShowLeadMagnet(true);
@@ -41,41 +39,22 @@ export default function Home() {
   };
 
   const handleUserDataSubmit = async (email: string) => {
-    console.log('=== USER DATA SUBMIT START ===');
-    console.log('Before bonus - hasReceivedSignupBonus:', hasReceivedSignupBonus);
-    console.log('Before bonus - downloadsRemaining:', downloadsRemaining);
-    console.log('Before bonus - downloadData:', downloadData);
+    console.log('Email submitted:', email);
     
-    // Use a different approach - check localStorage directly
-    const saved = localStorage.getItem('downloadData');
-    const alreadyGotBonus = saved ? JSON.parse(saved).hasReceivedSignupBonus : false;
-    
-    console.log('Checking localStorage for existing bonus:', alreadyGotBonus);
-    
-    if (!alreadyGotBonus) {
-      console.log('Adding 10 bonus downloads for email:', email);
-      addBonusDownloads(10, email);
-      
-      // Wait a moment for state to update
-      setTimeout(() => {
-        console.log('After bonus - downloadsRemaining:', downloadsRemaining);
-        console.log('After bonus - downloadData:', downloadData);
-        alert('Success! You now have 10 extra downloads!');
-      }, 100);
-    } else {
-      console.log('User already received bonus, skipping');
-      alert('Welcome back! Your bonus downloads are still available.');
-    }
+    // Add bonus downloads (the hook will check if already received)
+    addBonusDownloads(10, email);
     
     setUserData({ name: '', email });
     setShowLeadMagnet(false);
-    console.log('=== USER DATA SUBMIT END ===');
+    
+    // Show success message
+    setTimeout(() => {
+      alert('Success! 10 bonus downloads added to your account!');
+    }, 100);
   };
 
   return (
     <div className="home-page">
-      
-      {/* Main Content */}
       <main className="main-content-area">
         <WorksheetGenerator 
           onOpenLeadMagnet={handleOpenLeadMagnet}
@@ -85,7 +64,6 @@ export default function Home() {
         />
       </main>
 
-      {/* Lead Magnet Modal */}
       {showLeadMagnet && (
         <LeadMagnetSignup 
           onSuccess={handleUserDataSubmit} 
