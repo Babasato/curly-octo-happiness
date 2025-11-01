@@ -1,5 +1,6 @@
 // app/api/emails/route.ts
 import { NextResponse } from "next/server";
+import { neon } from '@neondatabase/serverless';
 
 export async function POST(req: Request) {
   try {
@@ -11,18 +12,16 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Valid email is required", success: false }, { status: 400 });
     }
 
-    // TODO: Replace with your actual database insert
-    // Example using your schema:
-    /*
-    await db.query(
-      `INSERT INTO emails (email, marketing_consent, created_at) 
-       VALUES ($1, $2, $3)`,
-      [email, marketing_consent, new Date()]
-    );
-    */
+    // Connect to Neon database
+    const sql = neon(process.env.DATABASE_URL!);
+    
+    // Insert into database
+    await sql`
+      INSERT INTO emails (email, marketing_consent, created_at) 
+      VALUES (${email}, ${marketing_consent}, NOW())
+    `;
 
-    // Log for now (matches your schema exactly)
-    console.log("New email signup:", { 
+    console.log("Email saved to database:", { 
       email, 
       marketing_consent,
       created_at: new Date().toISOString() 
