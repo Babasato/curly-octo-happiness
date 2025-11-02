@@ -2,8 +2,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -13,8 +11,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Missing API key" }, { status: 500 });
     }
 
+    // Initialize Resend INSIDE the function, not at the top
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
     const { data, error } = await resend.emails.send({
-      from: "Math Worksheet <noreply@homeschoolmath.site>", // ✅ Changed to your verified domain
+      from: "Math Worksheet <noreply@homeschoolmath.site>",
       to: ["bob@homeschoolmath.site"],
       replyTo: email,
       subject: subject ? `Contact Form: ${subject}` : `Message from ${name}`,
