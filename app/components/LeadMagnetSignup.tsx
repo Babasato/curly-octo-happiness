@@ -59,7 +59,7 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
         </button>
 
         <div className="modal-header">
-          <div className="bonus-badge">🎁 +10 Bonus Downloads</div>
+          <div className="bonus-badge">+10 Bonus Downloads</div>
           <h2>Get 10 More Worksheets Instantly!</h2>
         </div>
 
