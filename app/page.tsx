@@ -47,6 +47,9 @@ export default function Home() {
     setUserData({ name: '', email });
     setShowLeadMagnet(false);
     
+    // Scroll to top of page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
     // Show success message
     setTimeout(() => {
       alert('Success! 10 bonus downloads added to your account!');
