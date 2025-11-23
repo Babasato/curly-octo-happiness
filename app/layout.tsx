@@ -1,8 +1,9 @@
-// app/layout.tsx - COMPLETE VERSION WITH METADATA
+// app/layout.tsx - UPDATED WITH DARK MODE
 // @ts-ignore - Ignore TypeScript error for CSS import
 import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { ThemeProvider } from './context/ThemeContext';
 
 export const metadata = {
   title: 'Math Worksheet Generator - Create Custom Math Worksheets for Homeschool',
@@ -57,9 +58,11 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body suppressHydrationWarning>
-        <Header />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
