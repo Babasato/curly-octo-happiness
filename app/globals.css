@@ -1094,7 +1094,6 @@ body {
 }
 
 /* ===== WORKSHEET GENERATOR STYLES ===== */
-/* ===== WORKSHEET GENERATOR STYLES ===== */
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -1207,6 +1206,7 @@ body {
   gap: 8px;
   cursor: pointer;
   font-size: 14px;
+  color: var(--text-primary); /* Added this */
 }
 
 .checkbox-input {
@@ -1235,8 +1235,8 @@ body {
   justify-content: center;
   gap: 8px;
   min-height: 42px;
-  width: 100%; /* Added this */
-  margin-top: 10px; /* Added this */
+  width: 100%;
+  margin-top: 10px;
 }
 
 .generate-button:hover:not(:disabled) {
@@ -1247,6 +1247,7 @@ body {
 
 .generate-button:disabled {
   background: var(--border);
+  color: var(--text-muted); /* Added this */
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
@@ -1336,7 +1337,7 @@ body {
   height: 16px;
 }
 
-/* ADD THESE MISSING VISUAL STYLES */
+/* VISUAL ELEMENTS - FIXED COLORS */
 .visual-container {
   margin: 12px 0;
   padding: 12px;
@@ -1374,7 +1375,7 @@ body {
   font-size: 20px;
   display: inline-block;
   line-height: 1;
-  color: var(--text-primary); /* Use CSS variable */
+  color: var(--text-primary); /* Fixed color */
 }
 
 .shape-with-cross {
@@ -1382,7 +1383,7 @@ body {
   font-size: 20px;
   display: inline-block;
   line-height: 1;
-  color: var(--text-primary); /* Use CSS variable */
+  color: var(--text-primary); /* Fixed color */
 }
 
 .cross {
@@ -1465,6 +1466,24 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+/* FIX FOR WHITE TEXT ON WHITE BACKGROUND */
+.toggle-answers input[type="checkbox"] {
+  accent-color: var(--primary);
+}
+
+/* Ensure all text is readable */
+.helper-text,
+.count-hint,
+.subtraction-explanation,
+.limit-note {
+  color: var(--text-muted);
+}
+
+/* Fix for disabled state text */
+.generate-button:disabled {
+  color: var(--text-muted);
 }
 
 @media (max-width: 640px) {
