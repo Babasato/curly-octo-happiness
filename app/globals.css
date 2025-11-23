@@ -1,83 +1,79 @@
-/* ===== CSS VARIABLES - LIGHT MODE (UNCHANGED) ===== */
+/* ===== CSS VARIABLES - LIGHT MODE ===== */
 :root {
   /* Colors - Professional homeschool palette */
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
   --secondary: #059669;
   --accent: #dc2626;
-  
+
   /* Neutral colors */
   --background: #ffffff;
   --surface: #f8fafc;
   --surface-elevated: #ffffff;
   --border: #e2e8f0;
   --border-light: #f1f5f9;
-  
+
   /* Text colors */
   --text-primary: #1e293b;
   --text-secondary: #475569;
   --text-muted: #64748b;
-  
+
   /* Functional colors */
   --success: #059669;
   --warning: #d97706;
   --error: #dc2626;
-  
+
   /* Spacing */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2rem;
   --space-xl: 3rem;
-  
+
   /* Layout */
   --radius: 6px;
   --radius-lg: 8px;
   --max-width: 1000px;
-  
+
   /* Effects */
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
-/* ===== DARK MODE VARIABLES (UNCHANGED) ===== */
+/* ===== DARK MODE - FULLY FIXED ===== */
 [data-theme='dark'] {
-  /* Colors adapted for dark mode */
   --primary: #3b82f6;
   --primary-hover: #2563eb;
   --secondary: #10b981;
   --accent: #ef4444;
-  
-  /* Neutral colors - dark palette */
+
   --background: #0f172a;
   --surface: #1e293b;
   --surface-elevated: #334155;
-  --border: #334155;
-  --border-light: #475569;
-  
-  /* Text colors - inverted for dark */
+  --border: #475569;
+  --border-light: #64748b;
+
   --text-primary: #f1f5f9;
   --text-secondary: #cbd5e1;
   --text-muted: #94a3b8;
-  
-  /* Functional colors */
+
   --success: #10b981;
   --warning: #f59e0b;
   --error: #ef4444;
-  
-  /* Effects - adjusted for dark */
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.4);
+
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== RESET & BASE STYLES (UNCHANGED) ===== */
+/* ===== RESET & BASE STYLES ===== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
-
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.5;
@@ -85,22 +81,14 @@ body {
   background-color: var(--background);
 }
 
-/* ===== LAYOUT (UNCHANGED) ===== */
-.main-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+/* ===== LAYOUT ===== */
+.main-container { min-height: 100vh; display: flex; flex-direction: column; }
+.content { flex: 1; max-width: var(--max-width); margin: 0 auto; padding: var(--space-lg); width: 100%; }
+.main-content-area { max-width: var(--max-width); margin: 0 auto; padding: var(--space-lg); }
+.main-content { min-height: calc(100vh - 64px); display: flex; flex-direction: column; }
+.page-container { flex: 1; }
 
-.content {
-  flex: 1;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: var(--space-lg);
-  width: 100%;
-}
-
-/* ===== HEADER (UNCHANGED) ===== */
+/* ===== HEADER ===== */
 .site-header {
   background: var(--surface-elevated);
   border-bottom: 1px solid var(--border);
@@ -108,7 +96,6 @@ body {
   top: 0;
   z-index: 100;
 }
-
 .header-content {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -117,37 +104,11 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
-.home-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.brand-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0;
-}
-
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.nav-link {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.95rem;
-  transition: color 0.2s;
-}
-
-.nav-link:hover {
-  color: var(--primary);
-}
-
+.home-link { text-decoration: none; color: inherit; }
+.brand-title { font-size: 1.4rem; font-weight: 700; color: var(--text-primary); margin: 0; }
+.main-nav { display: flex; align-items: center; gap: var(--space-md); }
+.nav-link { color: var(--text-secondary); text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: color 0.2s; }
+.nav-link:hover { color: var(--primary); }
 .downloads-counter {
   background: var(--surface);
   color: var(--text-primary);
@@ -157,346 +118,125 @@ body {
   font-size: 0.9rem;
   font-weight: 600;
 }
+.downloads-count { color: var(--primary); font-weight: 700; }
 
-.downloads-count {
-  color: var(--primary);
-  font-weight: 700;
-}
-
-/* ===== MAIN CONTENT (UNCHANGED) ===== */
-.main-content-area {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: var(--space-lg);
-}
-
-/* ===== WORKSHEET GENERATOR (MODIFIED for Dark Mode) ===== */
-.worksheet-generator {
-  background: var(--surface-elevated); /* Main card background */
+/* ===== WORKSHEET GENERATOR ===== */
+.worksheet-generator, .card, .controls-card, .preview-card, .limit-card {
+  background: var(--surface-elevated);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border);
   overflow: hidden;
 }
+.worksheet-generator .hero, .container { background: var(--surface); padding: var(--space-xl); text-align: center; border-bottom: 1px solid var(--border); }
+.worksheet-generator .hero h1, .title { font-size: 2rem; font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-sm); }
+.worksheet-generator .hero p, .subtitle { color: var(--text-secondary); margin-bottom: var(--space-lg); font-size: 1.1rem; }
 
-.worksheet-generator .hero {
-  background: var(--surface); /* Hero section background */
-  padding: var(--space-xl);
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-primary); /* Ensure text is readable */
+/* Downloads Info & Buttons */
+.downloads-info { display: flex; align-items: center; justify-content: center; gap: var(--space-md); margin: var(--space-lg) 0; }
+.downloads-remaining, .bonus-button, .download-button, .generate-button, .contact-submit-button, .about-cta-button {
+  padding: 0.75rem 1.5rem; border-radius: var(--radius); font-weight: 600; cursor: pointer; transition: all 0.2s;
 }
+.downloads-remaining { background: var(--surface); color: var(--text-primary); border: 1px solid var(--border); }
+.bonus-button, .generate-button, .contact-submit-button, .about-cta-button { background: var(--primary); color: white; border: none; }
+.bonus-button:hover, .generate-button:hover:not(:disabled), .contact-submit-button:hover:not(:disabled), .about-cta-button:hover { background: var(--primary-hover); }
+.download-button { background: var(--secondary); }
+.download-button:hover:not(:disabled) { background: #047857; }
+.generate-button:disabled, .download-button:disabled, .contact-submit-button:disabled { background: var(--border); cursor: not-allowed; opacity: 0.7; }
 
-.worksheet-generator .hero h1 {
-  color: var(--text-primary);
+/* Settings Panel & Forms */
+.settings-panel { padding: var(--space-xl); background: var(--background); }
+.settings-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl); margin-bottom: var(--space-lg); }
+.form-group label { font-weight: 600; color: var(--text-primary); font-size: 0.95rem; }
+.form-group input, .form-group select, .input-field, .form-textarea {
+  padding: 0.75rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--text-primary); font-size: 0.95rem;
 }
+.form-group input:focus, .form-group select:focus, .input-field:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
 
-.worksheet-generator .hero p {
-  color: var(--text-secondary);
-}
-
-.downloads-info {
-  /* No background specific here, should inherit from parent or stay transparent */
-}
-
-.downloads-remaining {
-  background: var(--surface);
-  color: var(--text-primary);
-  border: 1px solid var(--border);
-}
-
-/* ===== SETTINGS PANEL (MODIFIED for Dark Mode) ===== */
-.settings-panel {
-  padding: var(--space-xl);
-  background: var(--background); /* Main settings panel background */
-}
-
-.settings-panel h3 {
-  color: var(--text-primary);
-}
-
-.form-group label {
-  color: var(--text-primary);
-}
-
-.form-group input,
-.form-group select {
-  background: var(--surface); /* Input fields background */
-  border: 1px solid var(--border);
-  color: var(--text-primary); /* Input text color */
-}
-
-.form-group input:focus,
-.form-group select:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px var(--primary); /* Adjust shadow for visibility in dark mode */
-}
-
+/* Checkboxes */
 .checkbox-label {
-  color: var(--text-primary);
+  display: flex; align-items: center; gap: var(--space-xs); font-weight: 500; cursor: pointer; padding: 0.5rem; border-radius: var(--radius);
+  transition: background-color 0.2s; color: var(--text-primary);
 }
+.checkbox-label:hover { background: var(--surface-elevated); }
+.checkbox-label input, .checkbox-input { width: 16px; height: 16px; accent-color: var(--primary); }
 
-.checkbox-label:hover {
-  background: var(--surface-elevated); /* Hover background for checkboxes */
+/* Word Problems & Visuals */
+.include-word-problems, .word-problems-options, .visual-container, .visual-group, .multiplication-group {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem;
 }
+.visual-group, .multiplication-group { background: var(--background); }
 
-/* ===== WORD PROBLEMS SECTION (MODIFIED for Dark Mode) ===== */
-.include-word-problems {
-  background: var(--surface); /* Background for the main word problems box */
-  border: 1px solid var(--border);
+/* Problem List & Preview */
+.worksheet-panel, .download-section { padding: var(--space-xl); border-top: 1px solid var(--border); background: var(--surface); }
+.problems-grid, .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-md); }
+.problem-card, .problem-item {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-md);
 }
+.problem-number { font-weight: 700; color: var(--primary); }
+.problem-question, .problem-text { color: var(--text-primary); line-height: 1.5; }
+.problem-answer, .answer-line { color: var(--text-muted); font-size: 0.9rem; padding-top: var(--space-xs); border-top: 1px dashed var(--border); }
 
-.include-word-problems .checkbox-label {
-  color: var(--text-primary); /* Text color for the checkbox label */
-}
+/* Shapes & Symbols */
+.shape, .shape-with-cross, .operation-symbol { color: var(--text-primary); }
+.cross { color: var(--error); }
+.group-label, .count-hint, .subtraction-explanation, .limit-note { color: var(--text-muted); font-size: 12px; }
 
-.word-problems-options {
-  background: var(--background); /* Background for nested word problems options */
-  border: 1px solid var(--border);
-}
+/* ===== DARK MODE OVERRIDES - FINAL FIX ===== */
+[data-theme='dark'] .worksheet-generator,
+[data-theme='dark'] .card,
+[data-theme='dark'] .controls-card,
+[data-theme='dark'] .preview-card,
+[data-theme='dark'] .limit-card { background: var(--surface-elevated) !important; }
 
-.percentage-value {
-  color: var(--primary); /* Keep primary color for this */
-}
+[data-theme='dark'] .settings-panel,
+[data-theme='dark'] .worksheet-panel,
+[data-theme='dark'] .download-section,
+[data-theme='dark'] .visual-container,
+[data-theme='dark'] .problem-item,
+[data-theme='dark'] .info-item,
+[data-theme='dark'] .include-word-problems { background: var(--surface) !important; }
 
-/* Generate button (UNCHANGED - assumed to be fine with existing vars) */
-.generate-section {
-  border-top: 1px solid var(--border);
-}
+[data-theme='dark'] .problem-card,
+[data-theme='dark'] .visual-group,
+[data-theme='dark'] .multiplication-group { background: var(--surface) !important; }
 
-/* ===== PROBLEM LIST (MODIFIED for Dark Mode) ===== */
-.worksheet-panel {
-  padding: var(--space-xl);
-  border-top: 1px solid var(--border);
-  background: var(--surface); /* Panel background for problem list */
-}
+[data-theme='dark'] input,
+[data-theme='dark'] select,
+[data-theme='dark'] .input-field,
+[data-theme='dark'] .form-textarea { background: var(--surface) !important; color: var(--text-primary) !important; border-color: var(--border) !important; }
 
-.panel-header h3 {
-  color: var(--text-primary);
-}
+[data-theme='dark'] .checkbox-label:hover { background: rgba(255,255,255,0.06) !important; }
 
-.problem-card {
-  background: var(--background); /* Individual problem card background */
-  border: 1px solid var(--border);
-  color: var(--text-primary); /* Problem text color */
-}
-
-.problem-number {
-  color: var(--primary);
-}
-
-.problem-question {
-  color: var(--text-primary);
-}
-
-.problem-answer {
-  color: var(--text-muted);
-  border-top: 1px dashed var(--border);
-}
-
-/* ===== DOWNLOAD SECTION (MODIFIED for Dark Mode) ===== */
-.download-section {
-  background: var(--surface); /* Download section background */
-  border-top: 1px solid var(--border);
-}
-
-.info-item {
-  background: var(--background); /* Info item cards background */
-  border: 1px solid var(--border);
-}
-
-.info-title {
-  color: var(--text-primary);
-}
-
-.info-desc {
-  color: var(--text-secondary);
-}
-
-/* ===== VISUAL CONTAINER (shapes/circles) (MODIFIED for Dark Mode) ===== */
-.visual-container {
-  background: var(--surface); /* Main visual container background */
-  border: 1px solid var(--border);
-}
-
-.visual-group {
-  background: var(--background); /* Individual visual group background */
-  border: 1px solid var(--border);
-}
-
-.operation-symbol {
-  color: var(--primary);
-}
-
-.group-label {
-  color: var(--text-muted);
-}
-
-.shape-with-cross,
-.shape {
-  color: var(--text-primary); /* Ensure shape characters are visible */
-}
-
-.cross {
-  color: var(--error);
-}
-
-.subtraction-explanation,
-.multiplication-explanation {
-  color: var(--text-muted);
-}
-
-.multiplication-group {
-  background: var(--background); /* Background for multiplication group */
-  border: 1px dashed var(--border);
-}
-
-.multiplication-label {
-  color: var(--text-primary);
-}
-
-
-/* ===== MAIN CONTENT & PAGE CONTAINER (UNCHANGED) ===== */
-.main-content {
-  min-height: calc(100vh - 64px);
-  display: flex;
-  flex-direction: column;
-}
-
-.page-container {
-  flex: 1;
-}
-
-/* ===== RESPONSIVE DESIGN (UNCHANGED - minor fixes for consistency) ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .header-content {
-    padding: 1rem;
-  }
-  
-  .main-content-area {
-    padding: 1rem;
-  }
-  
-  .settings-options {
-    grid-template-columns: 1fr;
-  }
-  
-  .downloads-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    margin: 1.5rem 0;
-  }
-
-  .downloads-remaining {
-    background: var(--surface); /* Ensure consistent in responsive */
-    color: var(--text-primary);
-    border: 1px solid var(--border);
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 600;
-  }
-
-  .bonus-button {
-    background: var(--secondary); /* Ensure consistent in responsive */
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-
-  .bonus-button:hover {
-    background: #047857;
-  }
-  
-  .problems-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .download-info {
-    grid-template-columns: 1fr;
-  }
-  
-  .footer-links {
-    flex-direction: column;
-    gap: var(--space-sm);
-  }
-  
-  .main-nav {
-    gap: 1rem;
-  }
-  
-  .nav-link {
-    font-size: 0.9rem;
-  }
+  .header-content { padding: 1rem; }
+  .settings-options, .problems-grid, .problem-grid { grid-template-columns: 1fr; }
+  .downloads-info { flex-direction: column; gap: 1rem; align-items: center; }
+  .download-info { grid-template-columns: 1fr; }
 }
 
-/* Custom Footer Overrides (UNCHANGED) */
-.footer-container a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.footer-container a:visited {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-/* ===== DARK MODE TOGGLE BUTTON (UNCHANGED) ===== */
+/* ===== MISC & PAGES ===== */
 .dark-mode-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-  transition: all 0.2s;
-  color: var(--text-primary);
-  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border: 1px solid var(--border); border-radius: 6px;
+  width: 36px; height: 36px; cursor: pointer; color: var(--text-primary);
 }
+.dark-mode-toggle:hover { background: var(--surface); border-color: var(--primary); color: var(--primary); }
 
-.dark-mode-toggle:hover {
-  background: var(--surface);
-  border-color: var(--primary);
-  color: var(--primary);
+/* Contact & About colored cards */
+.contact-resource-blue, .about-feature-blue { background: #dbeafe; }
+[data-theme='dark'] .contact-resource-blue, [data-theme='dark'] .about-feature-blue { background: #1e3a5f; }
+.contact-resource-purple, .about-feature-purple { background: #f3e8ff; }
+[data-theme='dark'] .contact-resource-purple, [data-theme='dark'] .about-feature-purple { background: #3d2d5f; }
+.contact-resource-orange, .about-feature-orange { background: #ffedd5; }
+[data-theme='dark'] .contact-resource-orange, [data-theme='dark'] .about-feature-orange { background: #5f3d1e; }
+.about-feature-green { background: #dcfce7; }
+[data-theme='dark'] .about-feature-green { background: #1e5f3a; }
+
+/* Spinner */
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner {
+  width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top: 2px solid white;
+  border-radius: 50%; animation: spin 1s linear infinite;
 }
-
-.dark-mode-toggle:active {
-  transform: scale(0.95);
-}
-
-/* ===== CONTACT PAGE STYLES (UNCHANGED) ===== */
-.contact-page-container {
-  min-height: 100vh;
-  background: var(--background);
-  padding: 2rem 1rem;
-}
-
-.contact-content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.contact-content-card {
-  background: var(--surface-elevated);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 2rem;
-}
-
-.contact-page-title {
-  font-size: clamp(2rem, 5vw, 2.5rem);
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-}
-
-.contact-section {
-  margin-bottom: 2rem
