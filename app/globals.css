@@ -70,16 +70,12 @@
   --shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== SMOOTH TRANSITIONS FOR THEME SWITCHING ===== */
-* {
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-}
-
 /* ===== RESET & BASE STYLES ===== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 body {
