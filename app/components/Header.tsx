@@ -1,7 +1,7 @@
 // app/components/Header.tsx - FIXED WITHOUT INLINE STYLES
 "use client";
 import Link from 'next/link';
-import DarkModeToggle from './DarkModeToggle';
+//import DarkModeToggle from './DarkModeToggle';
 
 export default function Header() {
   return (
