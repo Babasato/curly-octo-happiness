@@ -1,20 +1,44 @@
+// app/components/DarkModeToggle.tsx - UPDATED
 'use client';
-
 import { Moon, Sun } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
-interface DarkModeToggleProps {
-  darkMode: boolean;
-  setDarkMode: (darkMode: boolean) => void;
-}
+export default function DarkModeToggle() {
+  const { theme, toggleTheme } = useTheme();
 
-export default function DarkModeToggle({ darkMode, setDarkMode }: DarkModeToggleProps) {
   return (
     <button
-      onClick={() => setDarkMode(!darkMode)}
-      className="icon-button"
-      aria-label="Toggle dark mode"
+      onClick={toggleTheme}
+      className="dark-mode-toggle"
+      aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+      title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
-      {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+      {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+      <style jsx>{`
+        .dark-mode-toggle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: transparent;
+          border: 1px solid var(--border);
+          border-radius: 6px;
+          width: 36px;
+          height: 36px;
+          cursor: pointer;
+          transition: all 0.2s;
+          color: var(--text-primary);
+        }
+
+        .dark-mode-toggle:hover {
+          background: var(--surface);
+          border-color: var(--primary);
+          color: var(--primary);
+        }
+
+        .dark-mode-toggle:active {
+          transform: scale(0.95);
+        }
+      `}</style>
     </button>
   );
 }
