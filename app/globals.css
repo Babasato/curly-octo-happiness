@@ -718,3 +718,29 @@ body {
   color: #ffffff;
   text-decoration: none;
 }
+
+/* ===== DARK MODE TOGGLE BUTTON ===== */
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.dark-mode-toggle:hover {
+  background: var(--surface);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.dark-mode-toggle:active {
+  transform: scale(0.95);
+}
