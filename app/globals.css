@@ -1092,12 +1092,14 @@ body {
 .about-cta-button:hover {
   background: var(--primary-hover);
 }
+
+/* ===== WORKSHEET GENERATOR STYLES ===== */
 /* ===== WORKSHEET GENERATOR STYLES ===== */
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 30px 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family);
 }
 
 .title {
@@ -1190,7 +1192,7 @@ body {
 .input-field:focus {
   border-color: var(--primary);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 0 3px var(--primary-light);
 }
 
 .checkbox-group {
@@ -1227,17 +1229,20 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+  box-shadow: var(--shadow-md);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   min-height: 42px;
+  width: 100%; /* Added this */
+  margin-top: 10px; /* Added this */
 }
 
 .generate-button:hover:not(:disabled) {
   transform: translateY(-1px);
   background: var(--primary-hover);
+  box-shadow: var(--shadow-lg);
 }
 
 .generate-button:disabled {
@@ -1331,9 +1336,88 @@ body {
   height: 16px;
 }
 
+/* ADD THESE MISSING VISUAL STYLES */
+.visual-container {
+  margin: 12px 0;
+  padding: 12px;
+  background: var(--surface);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.visual-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  background: var(--background);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  min-width: 80px;
+}
+
+.shapes-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  max-width: 150px;
+  min-height: 24px;
+}
+
+.shape {
+  font-size: 20px;
+  display: inline-block;
+  line-height: 1;
+  color: var(--text-primary); /* Use CSS variable */
+}
+
+.shape-with-cross {
+  position: relative;
+  font-size: 20px;
+  display: inline-block;
+  line-height: 1;
+  color: var(--text-primary); /* Use CSS variable */
+}
+
+.cross {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--error);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.group-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.operation-symbol {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
 .count-hint {
   font-size: 11px;
   color: var(--text-muted);
+  font-style: italic;
+}
+
+.subtraction-explanation {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 6px;
   font-style: italic;
 }
 
@@ -1362,7 +1446,7 @@ body {
 
 .limit-button {
   background: var(--primary);
-  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+  box-shadow: var(--shadow-md);
   margin: 0 auto;
 }
 
