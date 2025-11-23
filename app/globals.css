@@ -744,3 +744,351 @@ body {
 .dark-mode-toggle:active {
   transform: scale(0.95);
 }
+/* ===== CONTACT PAGE STYLES ===== */
+.contact-page-container {
+  min-height: 100vh;
+  background: var(--background);
+  padding: 2rem 1rem;
+}
+
+.contact-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-content-card {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.contact-page-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.contact-section {
+  margin-bottom: 2rem;
+}
+
+.contact-section-title {
+  font-size: clamp(1.5rem, 4vw, 1.75rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.contact-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .contact-page-container {
+    padding: 3rem 1.5rem;
+  }
+  .contact-content-card {
+    padding: 3rem;
+  }
+}
+
+.contact-subsection-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.contact-success-message {
+  padding: 1rem;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  color: #155724;
+  margin-bottom: 1.5rem;
+}
+
+.contact-error-message {
+  padding: 1rem;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  color: #721c24;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--text-primary);
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.contact-submit-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.contact-submit-button:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.contact-submit-button:disabled {
+  background: var(--border);
+  cursor: not-allowed;
+}
+
+.contact-resources-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.contact-resource-card {
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.contact-resource-card:hover {
+  transform: translateY(-2px);
+}
+
+.contact-resource-blue {
+  background: #dbeafe;
+}
+
+[data-theme='dark'] .contact-resource-blue {
+  background: #1e3a5f;
+}
+
+.contact-resource-purple {
+  background: #f3e8ff;
+}
+
+[data-theme='dark'] .contact-resource-purple {
+  background: #3d2d5f;
+}
+
+.contact-resource-orange {
+  background: #ffedd5;
+}
+
+[data-theme='dark'] .contact-resource-orange {
+  background: #5f3d1e;
+}
+
+.contact-resource-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.contact-resource-description {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.contact-resource-link {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contact-resource-link:hover {
+  text-decoration: underline;
+}
+
+.contact-response-info {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.contact-info-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.contact-info-description {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.contact-info-note {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* ===== ABOUT PAGE STYLES ===== */
+.about-page {
+  min-height: 100vh;
+  background: var(--background);
+  padding: 2rem 0;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.about-card {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.about-section {
+  margin-bottom: 2rem;
+}
+
+.about-section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.about-feature-card {
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.about-feature-blue {
+  background: #dbeafe;
+}
+
+[data-theme='dark'] .about-feature-blue {
+  background: #1e3a5f;
+}
+
+.about-feature-green {
+  background: #dcfce7;
+}
+
+[data-theme='dark'] .about-feature-green {
+  background: #1e5f3a;
+}
+
+.about-feature-purple {
+  background: #f3e8ff;
+}
+
+[data-theme='dark'] .about-feature-purple {
+  background: #3d2d5f;
+}
+
+.about-feature-orange {
+  background: #ffedd5;
+}
+
+[data-theme='dark'] .about-feature-orange {
+  background: #5f3d1e;
+}
+
+.about-feature-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.about-feature-text {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.about-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.about-list-item {
+  margin-bottom: 0.5rem;
+}
+
+.about-cta-section {
+  text-align: center;
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+
+.about-cta-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.about-cta-button:hover {
+  background: var(--primary-hover);
+}
