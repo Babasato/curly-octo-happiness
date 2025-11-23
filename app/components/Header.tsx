@@ -1,7 +1,7 @@
-// app/components/Header.tsx - FIXED WITHOUT INLINE STYLES
+// app/components/Header.tsx - TEMPORARY TEST (DARK MODE COMMENTED OUT)
 "use client";
 import Link from 'next/link';
-//import DarkModeToggle from './DarkModeToggle';
+// import DarkModeToggle from './DarkModeToggle';
 
 export default function Header() {
   return (
@@ -16,9 +16,10 @@ export default function Header() {
         <nav className="main-nav">
           <Link href="/about" className="nav-link">About</Link>
           <Link href="/contact" className="nav-link">Contact</Link>
-          <DarkModeToggle />
+          {/* <DarkModeToggle /> */}
         </nav>
       </div>
     </header>
   );
+}
 }
