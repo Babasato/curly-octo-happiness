@@ -1328,11 +1328,8 @@ body {
   }
 }
 
-/* 100% FINAL – NO MORE WHITE EDGES EVER */
-html, body, #__next {
-  background: var(--background) !important;
-  color: var(--text-primary);
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-}
+/* FINAL FIX – NO WHITE EDGES, NO BROKEN TEXT, WORKS 100% */
+html { background: var(--background); }
+body { background: inherit; min-height: 100vh; margin: 0; }
+[data-theme="dark"] { background: #0f172a; }   /* your exact dark background */
+[data-theme="dark"] * { color: var(--text-primary); }
