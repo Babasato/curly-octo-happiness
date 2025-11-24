@@ -1328,105 +1328,64 @@ body {
   }
 }
 
-/* ===== PRECISE DARK MODE FIX FOR WORKSHEET GENERATOR ===== */
-[data-theme='dark'] {
-  /* Main container and background */
-  .container,
-  .main-content-area,
-  .main-content {
-    background: var(--background) !important;
-  }
-
-  /* All cards */
-  .card,
-  .controls-card,
-  .preview-card,
-  .limit-card {
-    background: var(--surface-elevated) !important;
-    border-color: var(--border) !important;
-    color: var(--text-primary) !important;
-  }
-
-  /* Problem items inside preview */
-  .problem-item {
-    background: var(--surface) !important;
-    border-color: var(--border) !important;
-    color: var(--text-primary) !important;
-  }
-
-  /* Visual containers */
-  .visual-container,
-  .visual-group {
-    background: var(--surface) !important;
-    border-color: var(--border) !important;
-  }
-
-  /* Form elements */
-  .input-field,
-  select,
-  input[type="number"],
-  input[type="checkbox"] {
-    background: var(--surface) !important;
-    color: var(--text-primary) !important;
-    border-color: var(--border) !important;
-  }
-
-  /* Text elements - ensure readability */
-  .title,
-  .subtitle,
-  .section-title,
-  .preview-title,
-  .label,
-  .problem-number,
-  .problem-text,
-  .answer-label,
-  .limit-title,
-  .limit-description,
-  .limit-note {
-    color: var(--text-primary) !important;
-  }
-
-  .helper-text,
-  .answer-value,
-  .answer-line {
-    color: var(--text-secondary) !important;
-  }
-
-  /* Download section specific */
-  .download-wrapper {
-    background: transparent !important;
-  }
-
-  /* Shapes and visual elements */
-  .shape,
-  .shape-with-cross {
-    color: var(--text-primary) !important;
-  }
-
-  .operation-symbol {
-    color: var(--primary) !important;
-  }
-
-  .cross {
-    color: var(--error) !important;
-  }
-}
-
-/* Specific fix for the download section component */
-[data-theme='dark'] .download-section-container {
+/* ===== WORKING DARK MODE FIX ===== */
+[data-theme='dark'] .container {
   background: var(--background) !important;
-  color: var(--text-primary) !important;
 }
 
-[data-theme='dark'] .download-section-container .info-item {
+[data-theme='dark'] .card {
   background: var(--surface-elevated) !important;
   border-color: var(--border) !important;
 }
 
-[data-theme='dark'] .download-section-container .info-title {
+[data-theme='dark'] .problem-item {
+  background: var(--surface) !important;
+  border-left-color: var(--primary) !important;
+}
+
+[data-theme='dark'] .visual-container,
+[data-theme='dark'] .visual-group {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+
+[data-theme='dark'] .input-field,
+[data-theme='dark'] select {
+  background: var(--surface) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+
+/* Fix text colors */
+[data-theme='dark'] .title,
+[data-theme='dark'] .subtitle,
+[data-theme='dark'] .section-title,
+[data-theme='dark'] .preview-title,
+[data-theme='dark'] .label,
+[data-theme='dark'] .problem-text,
+[data-theme='dark'] .problem-number {
   color: var(--text-primary) !important;
 }
 
-[data-theme='dark'] .download-section-container .info-desc {
+[data-theme='dark'] .helper-text {
+  color: var(--text-secondary) !important;
+}
+
+/* Download section */
+[data-theme='dark'] .download-wrapper {
+  background: transparent !important;
+}
+
+[data-theme='dark'] .limit-card {
+  background: var(--surface-elevated) !important;
+  border-color: var(--primary) !important;
+}
+
+[data-theme='dark'] .limit-title,
+[data-theme='dark'] .limit-description {
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] .limit-note {
   color: var(--text-secondary) !important;
 }
