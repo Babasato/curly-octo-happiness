@@ -1416,3 +1416,15 @@ body {
 [data-theme='dark'] .operation-symbol {
   color: var(--primary) !important;
 }
+/* FORCE DARK MODE - OVERRIDE EVERYTHING */
+[data-theme='dark'] body,
+[data-theme='dark'] .main-content,
+[data-theme='dark'] .container {
+  background: var(--background) !important;
+}
+
+[data-theme='dark'] .card,
+[data-theme='dark'] .controls-card,
+[data-theme='dark'] .preview-card {
+  background: var(--surface-elevated) !important;
+}
