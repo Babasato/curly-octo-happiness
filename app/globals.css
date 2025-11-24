@@ -1328,80 +1328,29 @@ body {
   }
 }
 
-/* ===== COMPREHENSIVE DARK MODE FIX ===== */
-[data-theme='dark'] {
-  /* Force the entire page background */
-  body, .main-container, .content, .main-content-area {
-    background: var(--background) !important;
-  }
-
-  /* Worksheet generator container */
-  .worksheet-generator {
-    background: var(--background) !important;
-    border-color: var(--border) !important;
-  }
-
-  /* All sections inside worksheet generator */
-  .worksheet-generator .hero,
-  .settings-panel,
-  .worksheet-panel,
-  .download-section,
-  .generate-section {
-    background: var(--background) !important;
-    border-color: var(--border) !important;
-  }
-
-  /* Cards and elevated surfaces */
-  .card, .preview-card, .controls-card, .limit-card {
-    background: var(--surface-elevated) !important;
-    border-color: var(--border) !important;
-  }
-
-  /* Problem items and visual containers */
-  .problem-item,
-  .visual-container,
-  .include-word-problems,
-  .word-problems-options {
-    background: var(--surface) !important;
-    border-color: var(--border) !important;
-  }
-
-  /* Download section specifically */
-  .download-section {
-    background: var(--background) !important;
-  }
-
-  /* Info items in download section */
-  .info-item {
-    background: var(--surface-elevated) !important;
-    border-color: var(--border) !important;
-  }
-
-  /* Form elements */
-  .form-group input,
-  .form-group select,
-  .input-field {
-    background: var(--surface) !important;
-    color: var(--text-primary) !important;
-    border-color: var(--border) !important;
-  }
+/* ===== NUCLEAR DARK MODE FIX ===== */
+[data-theme='dark'] .worksheet-generator,
+[data-theme='dark'] .worksheet-generator *:not(button):not(input):not(select):not(textarea) {
+  background: var(--background) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
 }
 
-/* More specific overrides for stubborn sections */
-[data-theme='dark'] .download-section .download-button {
-  background: var(--secondary) !important;
-  color: white !important;
+/* But keep buttons and form elements styled properly */
+[data-theme='dark'] .worksheet-generator button,
+[data-theme='dark'] .worksheet-generator input,
+[data-theme='dark'] .worksheet-generator select,
+[data-theme='dark'] .worksheet-generator textarea {
+  background: var(--surface) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
 }
 
-[data-theme='dark'] .download-section .download-info {
-  background: transparent !important;
+/* Specific download section override */
+[data-theme='dark'] .download-section {
+  background: var(--background) !important;
 }
 
-/* Ensure no white leaks through */
-[data-theme='dark'] * {
-  background-color: inherit !important;
-}
-
-[data-theme='dark'] .worksheet-generator * {
-  background-color: transparent !important;
+[data-theme='dark'] .download-section .info-item {
+  background: var(--surface-elevated) !important;
 }
