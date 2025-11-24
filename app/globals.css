@@ -1328,10 +1328,10 @@ body {
   }
 }
 
-/* ===== COMPREHENSIVE DARK MODE FIX ===== */
+/* ===== IMPROVED DARK MODE FIX ===== */
 [data-theme='dark'] {
   /* Force the entire page background */
-  body, .main-container, .content, .main-content-area {
+  body, .main-container, .content, .main-content-area, .page-container {
     background: var(--background) !important;
   }
 
@@ -1349,12 +1349,29 @@ body {
   .generate-section {
     background: var(--background) !important;
     border-color: var(--border) !important;
+    color: var(--text-primary) !important;
+  }
+
+  /* Fix text colors in all sections */
+  .worksheet-generator .hero h1,
+  .worksheet-generator .hero p,
+  .settings-panel h3,
+  .panel-header h3,
+  .download-section h3,
+  .info-title,
+  .info-desc,
+  .form-group label,
+  .problem-number,
+  .problem-question,
+  .problem-text {
+    color: var(--text-primary) !important;
   }
 
   /* Cards and elevated surfaces */
   .card, .preview-card, .controls-card, .limit-card {
     background: var(--surface-elevated) !important;
     border-color: var(--border) !important;
+    color: var(--text-primary) !important;
   }
 
   /* Problem items and visual containers */
@@ -1364,17 +1381,27 @@ body {
   .word-problems-options {
     background: var(--surface) !important;
     border-color: var(--border) !important;
+    color: var(--text-primary) !important;
   }
 
   /* Download section specifically */
   .download-section {
     background: var(--background) !important;
+    color: var(--text-primary) !important;
   }
 
-  /* Info items in download section */
+  /* Info items in download section - fix text */
   .info-item {
     background: var(--surface-elevated) !important;
     border-color: var(--border) !important;
+  }
+  
+  .info-title {
+    color: var(--text-primary) !important;
+  }
+  
+  .info-desc {
+    color: var(--text-secondary) !important;
   }
 
   /* Form elements */
@@ -1385,9 +1412,28 @@ body {
     color: var(--text-primary) !important;
     border-color: var(--border) !important;
   }
+
+  /* Fix secondary text colors */
+  .helper-text,
+  .subtitle,
+  .text-muted,
+  .problem-answer,
+  .answer-line {
+    color: var(--text-secondary) !important;
+  }
+
+  /* Fix any remaining light backgrounds in the main content */
+  .main-content {
+    background: var(--background) !important;
+  }
 }
 
-/* More specific overrides for stubborn sections */
+/* Remove the problematic universal selector and replace with better targeting */
+[data-theme='dark'] .worksheet-generator * {
+  color: inherit !important;
+}
+
+/* Ensure download button text is visible */
 [data-theme='dark'] .download-section .download-button {
   background: var(--secondary) !important;
   color: white !important;
@@ -1395,13 +1441,4 @@ body {
 
 [data-theme='dark'] .download-section .download-info {
   background: transparent !important;
-}
-
-/* Ensure no white leaks through */
-[data-theme='dark'] * {
-  background-color: inherit !important;
-}
-
-[data-theme='dark'] .worksheet-generator * {
-  background-color: transparent !important;
 }
