@@ -1390,3 +1390,17 @@ body {
 [data-theme='dark'] .limit-note {
   color: var(--text-secondary) !important;
 }
+/* ===== DEBUG MODE - TEST IF DARK MODE IS WORKING AT ALL ===== */
+[data-theme='dark'] .container {
+  background: #ff0000 !important; /* Bright red to test */
+  border: 5px solid #00ff00 !important; /* Bright green border */
+}
+
+[data-theme='dark'] .card {
+  background: #0000ff !important; /* Bright blue */
+  color: #ffff00 !important; /* Bright yellow text */
+}
+
+[data-theme='dark'] .title {
+  color: #ff00ff !important; /* Bright pink */
+}
