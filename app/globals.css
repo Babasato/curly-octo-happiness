@@ -1328,15 +1328,11 @@ body {
   }
 }
 
-/* FINAL DARK MODE FIX – WORKSHEET PAGE = CONTACT/ABOUT (no white anywhere) */
-html,
-body,
-#__next,
-.main-container,
-.content,
-.page-container,
-.container,
-.download-wrapper {
+/* 100% FINAL – NO MORE WHITE EDGES EVER */
+html, body, #__next {
   background: var(--background) !important;
   color: var(--text-primary);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
