@@ -760,7 +760,6 @@ export default function WorksheetGenerator({
     
     const { num1, num2, operation } = problem.visualData;
     const shape = '●';
-    const color = '#000000';
 
     if (operation === '+') {
       return (
@@ -769,7 +768,7 @@ export default function WorksheetGenerator({
             <div className="group-label">{num1}</div>
             <div className="shapes-row">
               {Array.from({ length: num1 }).map((_, i) => (
-                <span key={i} className="shape" style={{ color }}>
+                <span key={i} className="shape">
                   {shape}
                 </span>
               ))}
@@ -780,7 +779,7 @@ export default function WorksheetGenerator({
             <div className="group-label">{num2}</div>
             <div className="shapes-row">
               {Array.from({ length: num2 }).map((_, i) => (
-                <span key={i} className="shape" style={{ color }}>
+                <span key={i} className="shape">
                   {shape}
                 </span>
               ))}
@@ -802,7 +801,7 @@ export default function WorksheetGenerator({
             <div className="group-label">Start with {num1}</div>
             <div className="shapes-row">
               {Array.from({ length: num1 }).map((_, i) => (
-                <span key={i} className="shape-with-cross" style={{ color }}>
+                <span key={i} className="shape-with-cross">
                   {shape}
                   {i >= (num1 - num2) && <span className="cross">✕</span>}
                 </span>
