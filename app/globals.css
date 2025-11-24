@@ -1328,8 +1328,64 @@ body {
   }
 }
 
-/* FINAL FIX – NO WHITE EDGES, NO BROKEN TEXT, WORKS 100% */
-html { background: var(--background); }
-body { background: inherit; min-height: 100vh; margin: 0; }
-[data-theme="dark"] { background: #0f172a; }   /* your exact dark background */
-[data-theme="dark"] * { color: var(--text-primary); }
+/* ===== WORKING DARK MODE FIX ===== */
+[data-theme='dark'] .container {
+  background: var(--background) !important;
+}
+
+[data-theme='dark'] .card {
+  background: var(--surface-elevated) !important;
+  border-color: var(--border) !important;
+}
+
+[data-theme='dark'] .problem-item {
+  background: var(--surface) !important;
+  border-left-color: var(--primary) !important;
+}
+
+[data-theme='dark'] .visual-container,
+[data-theme='dark'] .visual-group {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+
+[data-theme='dark'] .input-field,
+[data-theme='dark'] select {
+  background: var(--surface) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+
+/* Fix text colors */
+[data-theme='dark'] .title,
+[data-theme='dark'] .subtitle,
+[data-theme='dark'] .section-title,
+[data-theme='dark'] .preview-title,
+[data-theme='dark'] .label,
+[data-theme='dark'] .problem-text,
+[data-theme='dark'] .problem-number {
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] .helper-text {
+  color: var(--text-secondary) !important;
+}
+
+/* Download section */
+[data-theme='dark'] .download-wrapper {
+  background: transparent !important;
+}
+
+[data-theme='dark'] .limit-card {
+  background: var(--surface-elevated) !important;
+  border-color: var(--primary) !important;
+}
+
+[data-theme='dark'] .limit-title,
+[data-theme='dark'] .limit-description {
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] .limit-note {
+  color: var(--text-secondary) !important;
+}
