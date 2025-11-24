@@ -1328,16 +1328,58 @@ body {
   }
 }
 
-/* ===== WORKSHEET GENERATOR DARK MODE FIX ===== */
-[data-theme='dark'] .container {
+/* ===== WORKSHEET PAGE DARK MODE - MATCHING ABOUT & CONTACT ===== */
+[data-theme='dark'] .worksheet-page-container {
   background: var(--background) !important;
+  min-height: 100vh;
+  padding: 2rem 0;
 }
 
-[data-theme='dark'] .card {
+[data-theme='dark'] .worksheet-content-wrapper {
+  background: var(--background) !important;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+[data-theme='dark'] .worksheet-content-card {
   background: var(--surface-elevated) !important;
-  border-color: var(--border) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px;
+  padding: 2rem;
+  color: var(--text-primary) !important;
 }
 
+[data-theme='dark'] .worksheet-controls-card,
+[data-theme='dark'] .worksheet-preview-card {
+  background: var(--surface-elevated) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+[data-theme='dark'] .worksheet-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary) !important;
+  margin-bottom: 1rem;
+}
+
+[data-theme='dark'] .worksheet-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary) !important;
+  margin-bottom: 2rem;
+}
+
+[data-theme='dark'] .worksheet-section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary) !important;
+  margin-bottom: 1rem;
+}
+
+/* Keep all your existing worksheet styles for problem items, visuals, etc. */
 [data-theme='dark'] .problem-item {
   background: var(--surface) !important;
   border-left-color: var(--primary) !important;
@@ -1353,54 +1395,4 @@ body {
   background: var(--surface) !important;
   color: var(--text-primary) !important;
   border-color: var(--border) !important;
-}
-
-/* Fix all text colors */
-[data-theme='dark'] .title,
-[data-theme='dark'] .subtitle,
-[data-theme='dark'] .section-title,
-[data-theme='dark'] .preview-title,
-[data-theme='dark'] .label,
-[data-theme='dark'] .problem-text,
-[data-theme='dark'] .problem-number,
-[data-theme='dark'] .answer-label {
-  color: var(--text-primary) !important;
-}
-
-[data-theme='dark'] .helper-text,
-[data-theme='dark'] .answer-value {
-  color: var(--text-secondary) !important;
-}
-
-/* Download section */
-[data-theme='dark'] .download-wrapper {
-  background: transparent !important;
-}
-
-[data-theme='dark'] .limit-card {
-  background: var(--surface-elevated) !important;
-  border-color: var(--primary) !important;
-}
-
-[data-theme='dark'] .limit-title,
-[data-theme='dark'] .limit-description {
-  color: var(--text-primary) !important;
-}
-
-[data-theme='dark'] .limit-note {
-  color: var(--text-secondary) !important;
-}
-/* ===== DEBUG MODE - TEST IF DARK MODE IS WORKING AT ALL ===== */
-[data-theme='dark'] .container {
-  background: #ff0000 !important; /* Bright red to test */
-  border: 5px solid #00ff00 !important; /* Bright green border */
-}
-
-[data-theme='dark'] .card {
-  background: #0000ff !important; /* Bright blue */
-  color: #ffff00 !important; /* Bright yellow text */
-}
-
-[data-theme='dark'] .title {
-  color: #ff00ff !important; /* Bright pink */
 }
