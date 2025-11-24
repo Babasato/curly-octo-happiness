@@ -830,16 +830,14 @@ export default function WorksheetGenerator({
     );
   }
 
-    return (
-    <div className="worksheet-page-container">
-      <div className="worksheet-content-wrapper">
-        <div className="worksheet-content-card">
-          <h1 className="worksheet-title">Homeschool Math Worksheet Generator</h1>
-          <p className="worksheet-subtitle">
-            Create custom worksheets and download the clean PDF. (Downloads Remaining: <strong>{downloadsRemaining}</strong>)
-          </p>
+  return (
+    <div className="container">
+      <h1 className="title">Homeschool Math Worksheet Generator</h1>
+      <p className="subtitle">
+        Create custom worksheets and download the clean PDF. (Downloads Remaining: <strong>{downloadsRemaining}</strong>)
+      </p>
 
-      <div className="worksheet-controls-card">
+      <div className="card controls-card">
         <div className="control-group">
           <label className="label" htmlFor="count">Number of Problems</label>
           <input
@@ -960,7 +958,7 @@ export default function WorksheetGenerator({
           </div>
         </h2>
         
-        <div className="worksheet-preview-card">
+        <div className="card preview-card">
           <h3 className="preview-title">{title}</h3>
           <div className="problem-grid">
             {problems.map((p, index) => (
@@ -988,7 +986,7 @@ export default function WorksheetGenerator({
       <div ref={downloadSectionRef}>
         <h2 className="section-title">Download</h2>
         
-        <div className="worksheet-download-wrapper">
+        <div className="download-wrapper">
           {canDownload ? (
             <DownloadSection 
               problems={problems} 
@@ -1013,11 +1011,9 @@ export default function WorksheetGenerator({
               </button>
               <p className="limit-note">Free to join • No credit card required</p>
             </div>
-                    )}
+          )}
         </div>
       </div>
-    </div> 
-  </div> 
-</div> 
+    </div>
   );
 }
