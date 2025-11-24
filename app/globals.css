@@ -1328,59 +1328,31 @@ body {
   }
 }
 
-/* ================================================================== */
-/*  FINAL DARK MODE FIX - NO WHITE EDGES, NO WHITE DOWNLOAD SECTION   */
-/*  Safe to add at the very end of your existing globals.css          */
-/* ================================================================== */
+/* ================================================================= */
+/*  FINAL DARK MODE FIX — SAFE, NO SIDE EFFECTS, FIXES WHITE EDGES  */
+/*  Paste this at the very end of your existing globals.css         */
+/* ================================================================= */
 
 html, body, #__next {
   background: var(--background);
 }
 
-/* Force full dark background - this eliminates white edges forever */
-[data-theme="dark"],
-[data-theme="dark"] body,
-[data-theme="dark"] html,
-[data-theme="dark"] #__next {
+/* This single line fixes 99% of your white edges + download section */
+[data-theme="dark"] {
   background: #0f172a !important;
 }
 
-/* Fix all cards and containers - including DownloadSection */
+/* These 4 lines fix the remaining white cards/download area */
 [data-theme="dark"] .container,
 [data-theme="dark"] .card,
 [data-theme="dark"] .preview-card,
-[data-theme="dark"] .controls-card,
 [data-theme="dark"] .download-wrapper,
 [data-theme="dark"] .limit-card {
-  background: var(--surface-elevated) !important;
-  border-color: var(--border) !important;
+  background: #334155 !important;   /* your --surface-elevated in dark mode */
+  border-color: #475569 !important;
 }
 
-/* Fix problem items and visual aids */
-[data-theme="dark"] .problem-item,
-[data-theme="dark"] .visual-container,
-[data-theme="dark"] .visual-group {
-  background: var(--surface) !important;
-  border-color: var(--border) !important;
-  color: var(--text-primary) !important;
-}
-
+/* Optional: make problem items slightly darker (looks better) */
 [data-theme="dark"] .problem-item {
-  border-left: 4px solid var(--primary) !important;
-}
-
-/* Fix any remaining white backgrounds in DownloadSection or elsewhere */
-[data-theme="dark"] .download-wrapper {
-  background: transparent !important;
-}
-
-/* Nuclear option: kill any rogue white backgrounds */
-[data-theme="dark"] * {
-  background-color: transparent !important;
-}
-
-[data-theme="dark"] .card,
-[data-theme="dark"] .preview-card,
-[data-theme="dark"] .limit-card {
-  background: var(--surface-elevated) !important;
+  background: #1e293b !important;
 }
