@@ -1384,3 +1384,35 @@ body {
 [data-theme='dark'] .limit-card {
   border-color: #60a5fa !important;
 }
+/* Additional Dark Mode Fixes for Worksheet Generator */
+[data-theme='dark'] .container {
+  background: var(--background) !important;
+}
+
+[data-theme='dark'] .title,
+[data-theme='dark'] .subtitle,
+[data-theme='dark'] .section-title,
+[data-theme='dark'] .label,
+[data-theme='dark'] .helper-text,
+[data-theme='dark'] .preview-title,
+[data-theme='dark'] .problem-number,
+[data-theme='dark'] .problem-text,
+[data-theme='dark'] .answer-label,
+[data-theme='dark'] .checkbox-text,
+[data-theme='dark'] .group-label {
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] .shape,
+[data-theme='dark'] .shape-with-cross {
+  color: var(--text-primary) !important;
+}
+
+[data-theme='dark'] .count-hint,
+[data-theme='dark'] .subtraction-explanation {
+  color: var(--text-muted) !important;
+}
+
+[data-theme='dark'] .operation-symbol {
+  color: var(--primary) !important;
+}
