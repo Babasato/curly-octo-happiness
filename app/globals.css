@@ -1328,71 +1328,93 @@ body {
   }
 }
 
-/* ============================================================================= */
-/* DARK MODE FIXES — CONSOLIDATED                                                */
-/* ============================================================================= */
+/* ===== DARK MODE FIXES FOR WORKSHEET GENERATOR ===== */
 [data-theme='dark'] {
-  /* Force dark backgrounds */
-  body,
-  .main-content,
-  .container,
+  /* Force dark backgrounds throughout the worksheet generator */
+  .worksheet-generator,
+  .worksheet-generator .hero,
   .settings-panel,
   .worksheet-panel,
   .download-section,
   .visual-container,
   .include-word-problems,
-  .problem-item,
-  .info-item,
-  .contact-response-info,
   .word-problems-options,
-  .contact-page-container,
-  .about-page {
+  .problem-card,
+  .info-item {
     background: var(--background) !important;
+    border-color: var(--border) !important;
   }
 
-  /* Elevated surfaces */
-  .worksheet-generator,
+  /* Fix elevated surfaces */
+  .worksheet-generator .hero,
+  .downloads-remaining,
+  .word-problems-options,
+  .visual-group {
+    background: var(--surface) !important;
+  }
+
+  /* Remove any white edges from cards and containers */
   .card,
   .controls-card,
   .preview-card,
-  .limit-card,
-  .contact-content-card,
-  .about-card,
-  .problem-card,
-  .visual-group,
-  .multiplication-group {
+  .problem-item {
     background: var(--surface-elevated) !important;
     border-color: var(--border) !important;
   }
 
-  /* Form elements */
-  input,
-  select,
-  textarea,
-  .input-field,
-  .form-textarea,
+  /* Ensure form elements are dark */
   .form-group input,
-  .form-group select {
+  .form-group select,
+  .input-field,
+  .form-textarea {
     background: var(--surface) !important;
     color: var(--text-primary) !important;
     border-color: var(--border) !important;
   }
 
-  /* Text colors */
+  /* Fix visual elements */
   .shape,
   .shape-with-cross {
     color: var(--text-primary) !important;
   }
 
-  /* Hover states */
-  .checkbox-label:hover,
-  .contact-resource-card:hover {
-    background: rgba(255, 255, 255, 0.06) !important;
+  /* Remove any shadow that might create light edges */
+  .worksheet-generator,
+  .card {
+    box-shadow: var(--shadow-lg) !important;
   }
+}
 
-  /* Special borders */
-  .limit-card {
-    background: var(--surface-elevated) !important;
-    border-color: var(--primary) !important;
-  }
+/* Additional specific fixes for worksheet generator sections */
+[data-theme='dark'] .worksheet-generator .hero {
+  background: var(--surface) !important;
+  border-bottom-color: var(--border) !important;
+}
+
+[data-theme='dark'] .generate-section {
+  border-top-color: var(--border) !important;
+  background: var(--background) !important;
+}
+
+[data-theme='dark'] .panel-header {
+  background: transparent !important;
+}
+
+[data-theme='dark'] .answer-underline {
+  border-bottom-color: var(--text-primary) !important;
+}
+
+/* Ensure the main container blends seamlessly */
+[data-theme='dark'] .main-content-area,
+[data-theme='dark'] .content {
+  background: var(--background) !important;
+}
+
+/* Fix any remaining white backgrounds in problem displays */
+[data-theme='dark'] .problem-text,
+[data-theme='dark'] .problem-number,
+[data-theme='dark'] .answer-label,
+[data-theme='dark'] .answer-value {
+  color: var(--text-primary) !important;
+  background: transparent !important;
 }
