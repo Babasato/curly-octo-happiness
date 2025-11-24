@@ -1328,71 +1328,22 @@ body {
   }
 }
 
-/* ===== WORKSHEET PAGE DARK MODE - MATCHING ABOUT & CONTACT ===== */
+/* ===== MINIMAL FIX FOR WHITE BACKGROUND ===== */
 [data-theme='dark'] .worksheet-page-container {
   background: var(--background) !important;
   min-height: 100vh;
-  padding: 2rem 0;
 }
 
 [data-theme='dark'] .worksheet-content-wrapper {
   background: var(--background) !important;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
 }
 
 [data-theme='dark'] .worksheet-content-card {
-  background: var(--surface-elevated) !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 8px;
-  padding: 2rem;
-  color: var(--text-primary) !important;
+  background: var(--background) !important;
 }
 
 [data-theme='dark'] .worksheet-controls-card,
 [data-theme='dark'] .worksheet-preview-card {
   background: var(--surface-elevated) !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 8px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-}
-
-[data-theme='dark'] .worksheet-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--text-primary) !important;
-  margin-bottom: 1rem;
-}
-
-[data-theme='dark'] .worksheet-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-secondary) !important;
-  margin-bottom: 2rem;
-}
-
-[data-theme='dark'] .worksheet-section-title {
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: var(--text-primary) !important;
-  margin-bottom: 1rem;
-}
-
-/* Keep all your existing worksheet styles for problem items, visuals, etc. */
-[data-theme='dark'] .problem-item {
-  background: var(--surface) !important;
-  border-left-color: var(--primary) !important;
-}
-
-[data-theme='dark'] .visual-container {
-  background: var(--surface) !important;
-  border-color: var(--border) !important;
-}
-
-[data-theme='dark'] .input-field,
-[data-theme='dark'] select {
-  background: var(--surface) !important;
-  color: var(--text-primary) !important;
   border-color: var(--border) !important;
 }
