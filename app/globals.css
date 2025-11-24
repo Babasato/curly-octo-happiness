@@ -1328,14 +1328,15 @@ body {
   }
 }
 
-/* FINAL FIX — WORKSHEET PAGE DARK MODE (identical to Contact/About) */
+/* FINAL DARK MODE FIX – WORKSHEET PAGE = CONTACT/ABOUT (no white anywhere) */
 html,
 body,
 #__next,
 .main-container,
 .content,
 .page-container,
-.container {
-  background-color: var(--background) !important;
+.container,
+.download-wrapper {
+  background: var(--background) !important;
   color: var(--text-primary);
 }
