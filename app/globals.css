@@ -1328,31 +1328,17 @@ body {
   }
 }
 
-/* ================================================================= */
-/*  FINAL DARK MODE FIX — SAFE, NO SIDE EFFECTS, FIXES WHITE EDGES  */
-/*  Paste this at the very end of your existing globals.css         */
-/* ================================================================= */
+/* =================================================================== */
+/*  PERFECT DARK MODE FIX — MAKES WORKSHEET PAGE IDENTICAL TO CONTACT/ABOUT  */
+/*  Uses your own CSS variables → never breaks again                      */
+/* =================================================================== */
 
-html, body, #__next {
-  background: var(--background);
+html, body, #__next, .main-container, .content, .page-container {
+  background: var(--background) !important;
+  color: var(--text-primary);
 }
 
-/* This single line fixes 99% of your white edges + download section */
+/* This is the magic: forces the entire page background */
 [data-theme="dark"] {
-  background: #0f172a !important;
-}
-
-/* These 4 lines fix the remaining white cards/download area */
-[data-theme="dark"] .container,
-[data-theme="dark"] .card,
-[data-theme="dark"] .preview-card,
-[data-theme="dark"] .download-wrapper,
-[data-theme="dark"] .limit-card {
-  background: #334155 !important;   /* your --surface-elevated in dark mode */
-  border-color: #475569 !important;
-}
-
-/* Optional: make problem items slightly darker (looks better) */
-[data-theme="dark"] .problem-item {
-  background: #1e293b !important;
+  background: var(--background) !important;
 }
