@@ -1328,7 +1328,7 @@ body {
   }
 }
 
-/* ===== WORKING DARK MODE FIX ===== */
+/* ===== WORKSHEET GENERATOR DARK MODE FIX ===== */
 [data-theme='dark'] .container {
   background: var(--background) !important;
 }
@@ -1343,8 +1343,7 @@ body {
   border-left-color: var(--primary) !important;
 }
 
-[data-theme='dark'] .visual-container,
-[data-theme='dark'] .visual-group {
+[data-theme='dark'] .visual-container {
   background: var(--surface) !important;
   border-color: var(--border) !important;
 }
@@ -1356,18 +1355,20 @@ body {
   border-color: var(--border) !important;
 }
 
-/* Fix text colors */
+/* Fix all text colors */
 [data-theme='dark'] .title,
 [data-theme='dark'] .subtitle,
 [data-theme='dark'] .section-title,
 [data-theme='dark'] .preview-title,
 [data-theme='dark'] .label,
 [data-theme='dark'] .problem-text,
-[data-theme='dark'] .problem-number {
+[data-theme='dark'] .problem-number,
+[data-theme='dark'] .answer-label {
   color: var(--text-primary) !important;
 }
 
-[data-theme='dark'] .helper-text {
+[data-theme='dark'] .helper-text,
+[data-theme='dark'] .answer-value {
   color: var(--text-secondary) !important;
 }
 
