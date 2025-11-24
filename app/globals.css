@@ -1328,105 +1328,59 @@ body {
   }
 }
 
-/* ===== COMPLETE DARK MODE FIX - NO MORE WHITE EDGES ===== */
-[data-theme='dark'],
-[data-theme='dark'] body {
-  background: #0f0f0f !important;
-  color: var(--text-primary, #e0e0e0) !important;
+/* ================================================================== */
+/*  FINAL DARK MODE FIX - NO WHITE EDGES, NO WHITE DOWNLOAD SECTION   */
+/*  Safe to add at the very end of your existing globals.css          */
+/* ================================================================== */
+
+html, body, #__next {
+  background: var(--background);
 }
 
-/* Force container and all major wrappers */
-[data-theme='dark'] .container,
-[data-theme='dark'] .download-wrapper,
-[data-theme='dark'] .card,
-[data-theme='dark'] .preview-card,
-[data-theme='dark'] .controls-card,
-[data-theme='dark'] .limit-card {
+/* Force full dark background - this eliminates white edges forever */
+[data-theme="dark"],
+[data-theme="dark"] body,
+[data-theme="dark"] html,
+[data-theme="dark"] #__next {
+  background: #0f172a !important;
+}
+
+/* Fix all cards and containers - including DownloadSection */
+[data-theme="dark"] .container,
+[data-theme="dark"] .card,
+[data-theme="dark"] .preview-card,
+[data-theme="dark"] .controls-card,
+[data-theme="dark"] .download-wrapper,
+[data-theme="dark"] .limit-card {
+  background: var(--surface-elevated) !important;
+  border-color: var(--border) !important;
+}
+
+/* Fix problem items and visual aids */
+[data-theme="dark"] .problem-item,
+[data-theme="dark"] .visual-container,
+[data-theme="dark"] .visual-group {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .problem-item {
+  border-left: 4px solid var(--primary) !important;
+}
+
+/* Fix any remaining white backgrounds in DownloadSection or elsewhere */
+[data-theme="dark"] .download-wrapper {
   background: transparent !important;
 }
 
-/* Elevated surfaces (cards, panels) */
-[data-theme='dark'] .card,
-[data-theme='dark'] .preview-card,
-[data-theme='dark'] .controls-card,
-[data-theme='dark'] .limit-card {
-  background: var(--surface-elevated, #1a1a1a) !important;
-  border: 1px solid var(--border, #333) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* Problem items and visual aids */
-[data-theme='dark'] .problem-item,
-[data-theme='dark'] .visual-container,
-[data-theme='dark'] .visual-group {
-  background: var(--surface, #1e1e1e) !important;
-  border-color: var(--border, #444) !important;
-}
-
-/* Fix any lingering white from Tailwind defaults */
-[data-theme='dark'] * {
+/* Nuclear option: kill any rogue white backgrounds */
+[data-theme="dark"] * {
   background-color: transparent !important;
 }
 
-/* Re-apply correct backgrounds where needed */
-[data-theme='dark'] .problem-item {
-  background: var(--surface, #1e1e1e) !important;
-  border-left: 4px solid var(--primary, #3b82f6) !important;
-}
-
-[data-theme='dark'] .answer-underline {
-  border-bottom: 2px solid var(--text-secondary, #888) !important;
-}
-
-/* Inputs, selects, checkboxes */
-[data-theme='dark'] .input-field,
-[data-theme='dark'] select,
-[data-theme='dark'] input[type="checkbox"] {
-  background: var(--surface, #2a2a2a) !important;
-  color: var(--text-primary, #e0e0e0) !important;
-  border-color: var(--border, #444) !important;
-}
-
-/* Buttons - especially in DownloadSection */
-[data-theme='dark'] button,
-[data-theme='dark'] .generate-button,
-[data-theme='dark'] .limit-button {
-  background: var(--primary, #3b82f6) !important;
-  color: white !important;
-}
-
-[data-theme='dark'] button:hover,
-[data-theme='dark'] .generate-button:hover {
-  background: #2563eb !important;
-}
-
-/* Text colors */
-[data-theme='dark'] .title,
-[data-theme='dark'] .subtitle,
-[data-theme='dark'] .section-title,
-[data-theme='dark'] .preview-title,
-[data-theme='dark'] .label,
-[data-theme='dark'] .problem-text,
-[data-theme='dark'] .problem-number,
-[data-theme='dark'] .answer-value,
-[data-theme='dark'] .limit-title,
-[data-theme='dark'] .limit-description {
-  color: var(--text-primary, #e0e0e0) !important;
-}
-
-[data-theme='dark'] .helper-text,
-[data-theme='dark'] .limit-note {
-  color: var(--text-secondary, #aaaaaa) !important;
-}
-
-/* Final catch-all: ANY element with bg-white should be dark */
-[data-theme='dark'] [class*="bg-white"],
-[data-theme='dark'] .bg-white {
-  background-color: #1a1a1a !important;
-}
-
-/* Ensure DownloadSection has no white background */
-[data-theme='dark'] .download-wrapper {
-  background: transparent !important;
-  padding: 2rem 0 !important;
+[data-theme="dark"] .card,
+[data-theme="dark"] .preview-card,
+[data-theme="dark"] .limit-card {
+  background: var(--surface-elevated) !important;
 }
