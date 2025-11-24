@@ -1328,17 +1328,14 @@ body {
   }
 }
 
-/* =================================================================== */
-/*  PERFECT DARK MODE FIX — MAKES WORKSHEET PAGE IDENTICAL TO CONTACT/ABOUT  */
-/*  Uses your own CSS variables → never breaks again                      */
-/* =================================================================== */
-
-html, body, #__next, .main-container, .content, .page-container {
-  background: var(--background) !important;
+/* FINAL FIX — WORKSHEET PAGE DARK MODE (identical to Contact/About) */
+html,
+body,
+#__next,
+.main-container,
+.content,
+.page-container,
+.container {
+  background-color: var(--background) !important;
   color: var(--text-primary);
-}
-
-/* This is the magic: forces the entire page background */
-[data-theme="dark"] {
-  background: var(--background) !important;
 }
