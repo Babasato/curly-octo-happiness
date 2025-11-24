@@ -1329,105 +1329,70 @@ body {
 }
 
 /* ============================================================================= */
-/* DARK MODE FIXES — ONLY THESE LINES WERE ADDED (at the very end)               */
+/* DARK MODE FIXES — CONSOLIDATED                                                */
 /* ============================================================================= */
-[data-theme='dark'] .worksheet-generator,
-[data-theme='dark'] .card,
-[data-theme='dark'] .controls-card,
-[data-theme='dark'] .preview-card,
-[data-theme='dark'] .limit-card,
-[data-theme='dark'] .contact-content-card,
-[data-theme='dark'] .about-card {
-  background: var(--surface-elevated) !important;
-  border-color: var(--border) !important;
-}
+[data-theme='dark'] {
+  /* Force dark backgrounds */
+  body,
+  .main-content,
+  .container,
+  .settings-panel,
+  .worksheet-panel,
+  .download-section,
+  .visual-container,
+  .include-word-problems,
+  .problem-item,
+  .info-item,
+  .contact-response-info,
+  .word-problems-options,
+  .contact-page-container,
+  .about-page {
+    background: var(--background) !important;
+  }
 
-[data-theme='dark'] .settings-panel,
-[data-theme='dark'] .worksheet-panel,
-[data-theme='dark'] .download-section,
-[data-theme='dark'] .visual-container,
-[data-theme='dark'] .include-word-problems,
-[data-theme='dark'] .problem-item,
-[data-theme='dark'] .info-item,
-[data-theme='dark'] .contact-response-info,
-[data-theme='dark'] .word-problems-options,
-[data-theme='dark'] body,
-[data-theme='dark'] .main-content,
-[data-theme='dark'] .contact-page-container,
-[data-theme='dark'] .about-page {
-  background: var(--surface) !important;
-}
+  /* Elevated surfaces */
+  .worksheet-generator,
+  .card,
+  .controls-card,
+  .preview-card,
+  .limit-card,
+  .contact-content-card,
+  .about-card,
+  .problem-card,
+  .visual-group,
+  .multiplication-group {
+    background: var(--surface-elevated) !important;
+    border-color: var(--border) !important;
+  }
 
-[data-theme='dark'] .problem-card,
-[data-theme='dark'] .visual-group,
-[data-theme='dark'] .multiplication-group {
-  background: var(--surface-elevated) !important;
-}
+  /* Form elements */
+  input,
+  select,
+  textarea,
+  .input-field,
+  .form-textarea,
+  .form-group input,
+  .form-group select {
+    background: var(--surface) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border) !important;
+  }
 
-[data-theme='dark'] input,
-[data-theme='dark'] select,
-[data-theme='dark'] textarea,
-[data-theme='dark'] .input-field,
-[data-theme='dark'] .form-textarea,
-[data-theme='dark'] .form-group input,
-[data-theme='dark'] .form-group select {
-  background: var(--surface) !important;
-  color: var(--text-primary) !important;
-  border-color: var(--border) !important;
-}
+  /* Text colors */
+  .shape,
+  .shape-with-cross {
+    color: var(--text-primary) !important;
+  }
 
-[data-theme='dark'] .checkbox-label:hover,
-[data-theme='dark'] .contact-resource-card:hover {
-  background: rgba(255, 255, 255, 0.06) !important;
-}
+  /* Hover states */
+  .checkbox-label:hover,
+  .contact-resource-card:hover {
+    background: rgba(255, 255, 255, 0.06) !important;
+  }
 
-[data-theme='dark'] .limit-card {
-  border-color: #60a5fa !important;
-}
-/* Additional Dark Mode Fixes for Worksheet Generator */
-[data-theme='dark'] .container {
-  background: var(--background) !important;
-}
-
-[data-theme='dark'] .title,
-[data-theme='dark'] .subtitle,
-[data-theme='dark'] .section-title,
-[data-theme='dark'] .label,
-[data-theme='dark'] .helper-text,
-[data-theme='dark'] .preview-title,
-[data-theme='dark'] .problem-number,
-[data-theme='dark'] .problem-text,
-[data-theme='dark'] .answer-label,
-[data-theme='dark'] .checkbox-text,
-[data-theme='dark'] .group-label {
-  color: var(--text-primary) !important;
-}
-
-[data-theme='dark'] .shape,
-[data-theme='dark'] .shape-with-cross {
-  color: var(--text-primary) !important;
-}
-
-[data-theme='dark'] .count-hint,
-[data-theme='dark'] .subtraction-explanation {
-  color: var(--text-muted) !important;
-}
-
-[data-theme='dark'] .operation-symbol {
-  color: var(--primary) !important;
-}
-/* FORCE DARK MODE - OVERRIDE EVERYTHING */
-[data-theme='dark'] body,
-[data-theme='dark'] .main-content,
-[data-theme='dark'] .container {
-  background: var(--background) !important;
-}
-
-[data-theme='dark'] .card,
-[data-theme='dark'] .controls-card,
-[data-theme='dark'] .preview-card {
-  background: var(--surface-elevated) !important;
-}
-[data-theme='dark'] .container {
-  background: var(--background) !important;
+  /* Special borders */
+  .limit-card {
+    background: var(--surface-elevated) !important;
+    border-color: var(--primary) !important;
+  }
 }
