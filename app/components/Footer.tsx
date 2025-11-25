@@ -1,4 +1,4 @@
-// app/components/Footer.tsx - UPDATED RESPONSIVE VERSION
+// app/components/Footer.tsx - UPDATED WITH NEW BRANDING
 "use client";
 
 import Link from 'next/link';
@@ -29,10 +29,10 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand-section">
             <h3 className="footer-brand">
-              Homeschool Math Generator
+              homeschoolmath.site
             </h3>
             <p className="footer-description">
-              Create custom math worksheets for students in grades K-6.
+              Math worksheets made simple. Create custom math worksheets for students in grades K-6.
               Perfect for teachers, parents, and homeschoolers.
             </p>
             <div className="stats-grid">
@@ -156,10 +156,10 @@ export default function Footer() {
 
         <div className="footer-copyright-section">
           <p className="footer-copyright">
-            © {new Date().getFullYear()} Homeschool Math Generator. All rights reserved.
+            © {new Date().getFullYear()} homeschoolmath.site. All rights reserved.
           </p>
           <p className="footer-subtext">
-            Made for educators everywhere
+            Math worksheets made simple
           </p>
         </div>
       </div>
