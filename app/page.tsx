@@ -1,5 +1,6 @@
-// app/page.tsx - CORRECTED VERSION
+// app/page.tsx - DARK MODE FIXED
 'use client';
+
 import { useState, useEffect } from 'react';
 import WorksheetGenerator from './components/WorksheetGenerator';
 import LeadMagnetSignup from './components/LeadMagnetSignup';
@@ -23,7 +24,6 @@ export default function Home() {
     downloadData 
   } = useDownloadTracker(); 
 
-  // Auto-show modal when user reaches 3 downloads remaining
   useEffect(() => {
     if (shouldShowLeadMagnet()) {
       setShowLeadMagnet(true);
@@ -41,16 +41,13 @@ export default function Home() {
   const handleUserDataSubmit = async (email: string) => {
     console.log('Email submitted:', email);
     
-    // Add bonus downloads (the hook will check if already received)
     addBonusDownloads(10, email);
     
     setUserData({ name: '', email });
     setShowLeadMagnet(false);
     
-    // Scroll to top of page
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    // Show success message
     setTimeout(() => {
       alert('Success! 10 bonus downloads added to your account!');
     }, 100);
@@ -73,25 +70,6 @@ export default function Home() {
           onClose={handleCloseLeadMagnet} 
         />
       )}
-
-      <style jsx>{`
-        .home-page {
-          min-height: 100vh;
-          background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
-        }
-
-        .main-content-area {
-          max-width: 1000px;
-          margin: 0 auto;
-          padding: 2rem 1.5rem;
-        }
-
-        @media (max-width: 768px) {
-          .main-content-area {
-            padding: 1rem;
-          }
-        }
-      `}</style>
     </div>
   );
 }
