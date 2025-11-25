@@ -1,10 +1,10 @@
-// app/about/page.tsx - FIXED FOR DARK MODE
+// app/about/page.tsx - UPDATED BRANDING
 import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Math Worksheet Generator | Free Educational Resources',
-  description: 'Learn about our mission to provide free, high-quality math worksheets for homeschool and classroom use. Discover our commitment to educational excellence.',
+  title: 'About homeschoolmath.site | Free Math Worksheet Generator',
+  description: 'Learn about our mission to provide free, high-quality math worksheets for homeschool and classroom use. Math worksheets made simple.',
 }
 
 export default function About() {
@@ -12,12 +12,12 @@ export default function About() {
     <div className="about-page">
       <div className="about-container">
         <div className="about-card">
-          <h1 className="about-title">About Math Worksheet Generator</h1>
+          <h1 className="about-title">About homeschoolmath.site</h1>
           
           <section className="about-section">
             <h2 className="about-section-title">Our Mission</h2>
             <p className="about-text">
-              Math Worksheet Generator was created with a simple but important mission: to provide 
+              homeschoolmath.site was created with a simple but important mission: to provide 
               high-quality, customizable math practice materials for students, teachers, and homeschool 
               families completely free of charge.
             </p>
@@ -119,7 +119,7 @@ export default function About() {
           <section className="about-cta-section">
             <h2 className="about-section-title">Get Started Today</h2>
             <p className="about-text">
-              Join thousands of educators and parents who are already using Math Worksheet Generator 
+              Join thousands of educators and parents who are already using homeschoolmath.site 
               to support their students' math learning journey.
             </p>
             <Link href="/" className="about-cta-button">
