@@ -1,4 +1,4 @@
-// app/contact/page.tsx - FIXED FOR DARK MODE
+// app/contact/page.tsx - UPDATED BRANDING
 "use client";
 
 import { useState } from 'react';
@@ -58,7 +58,7 @@ export default function Contact() {
           <section className="contact-section">
             <h2 className="contact-section-title">We're Here to Help</h2>
             <p className="contact-description">
-              Have questions about using Math Worksheet Generator? Need technical support? 
+              Have questions about using homeschoolmath.site? Need technical support? 
               Want to share feedback or suggestions? We'd love to hear from you!
             </p>
           </section>
@@ -153,7 +153,7 @@ export default function Contact() {
                 <div className="contact-resource-card contact-resource-blue">
                   <h4 className="contact-resource-title">How to Use Guide</h4>
                   <p className="contact-resource-description">
-                    New to Math Worksheet Generator? Check out our comprehensive guide to get started.
+                    New to homeschoolmath.site? Check out our comprehensive guide to get started.
                   </p>
                   <Link href="/how-to-use" className="contact-resource-link">View Tutorial →</Link>
                 </div>
