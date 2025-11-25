@@ -1328,16 +1328,27 @@ body {
   }
 }
 
-/* ===== CORRECT MINIMAL SOLUTION ===== */
-[data-theme='dark'] .main-content-area {
-  background: var(--background) !important;
+/* ===== HOME PAGE - DARK MODE COMPATIBLE ===== */
+.home-page {
+  min-height: 100vh;
+  background: var(--background);
 }
 
-[data-theme='dark'] .container {
-  background: var(--background) !important;
+.main-content-area {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: var(--background);
 }
 
-[data-theme='dark'] .card {
-  background: var(--surface-elevated) !important;
-  border-color: var(--border) !important;
+@media (max-width: 768px) {
+  .main-content-area {
+    padding: 1rem;
+  }
+}
+
+/* Ensure no white backgrounds leak through */
+html, body {
+  background: var(--background);
+  min-height: 100vh;
 }
