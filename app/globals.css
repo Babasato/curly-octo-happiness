@@ -1950,3 +1950,92 @@ html, body {
     font-size: 2rem;
   }
 }
+/* Orange/Amber variant for division */
+.practice-badge-orange {
+  background: #f59e0b;
+}
+
+.practice-subtitle-orange {
+  color: #f59e0b;
+}
+
+.practice-button-orange {
+  background: #f59e0b;
+}
+
+.practice-button-orange:hover {
+  background: #d97706;
+}
+
+.practice-bullet-dot-orange {
+  background: #f59e0b;
+}
+
+.practice-grade-badge-orange {
+  background: #f59e0b;
+}
+
+.practice-count-badge-orange {
+  background: #f59e0b;
+}
+
+.practice-worksheet-grades-orange {
+  color: #f59e0b;
+}
+
+.practice-cta-box-orange {
+  background: #f59e0b;
+}
+
+.practice-cta-button-orange {
+  color: #f59e0b;
+}
+
+.practice-nav-icon-orange {
+  background: #f59e0b;
+}
+
+/* Blue variant for addition */
+.practice-badge-blue {
+  background: #3b82f6;
+}
+
+.practice-subtitle-blue {
+  color: #3b82f6;
+}
+
+.practice-button-blue {
+  background: #3b82f6;
+}
+
+.practice-button-blue:hover {
+  background: #2563eb;
+}
+
+.practice-bullet-dot-blue {
+  background: #3b82f6;
+}
+
+.practice-grade-badge-blue {
+  background: #3b82f6;
+}
+
+.practice-count-badge-blue {
+  background: #3b82f6;
+}
+
+.practice-worksheet-grades-blue {
+  color: #3b82f6;
+}
+
+.practice-cta-box-blue {
+  background: #3b82f6;
+}
+
+.practice-cta-button-blue {
+  color: #3b82f6;
+}
+
+.practice-nav-icon-blue {
+  background: #3b82f6;
+}
