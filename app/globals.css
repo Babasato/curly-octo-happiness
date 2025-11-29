@@ -2039,3 +2039,92 @@ html, body {
 .practice-nav-icon-blue {
   background: #3b82f6;
 }
+/* Green variant for word-problems */
+.practice-badge-green {
+  background: #059669;
+}
+
+.practice-subtitle-green {
+  color: #059669;
+}
+
+.practice-button-green {
+  background: #059669;
+}
+
+.practice-button-green:hover {
+  background: #047857;
+}
+
+.practice-bullet-dot-green {
+  background: #059669;
+}
+
+.practice-grade-badge-green {
+  background: #059669;
+}
+
+.practice-count-badge-green {
+  background: #059669;
+}
+
+.practice-worksheet-grades-green {
+  color: #059669;
+}
+
+.practice-cta-box-green {
+  background: #059669;
+}
+
+.practice-cta-button-green {
+  color: #059669;
+}
+
+.practice-nav-icon-green {
+  background: #059669;
+}
+
+/* Light green variant for subtraction */
+.practice-badge-light-green {
+  background: #10b981;
+}
+
+.practice-subtitle-light-green {
+  color: #10b981;
+}
+
+.practice-button-light-green {
+  background: #10b981;
+}
+
+.practice-button-light-green:hover {
+  background: #059669;
+}
+
+.practice-bullet-dot-light-green {
+  background: #10b981;
+}
+
+.practice-grade-badge-light-green {
+  background: #10b981;
+}
+
+.practice-count-badge-light-green {
+  background: #10b981;
+}
+
+.practice-worksheet-grades-light-green {
+  color: #10b981;
+}
+
+.practice-cta-box-light-green {
+  background: #10b981;
+}
+
+.practice-cta-button-light-green {
+  color: #10b981;
+}
+
+.practice-nav-icon-light-green {
+  background: #10b981;
+}
