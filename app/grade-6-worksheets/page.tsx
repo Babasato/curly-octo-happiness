@@ -162,9 +162,9 @@ export default function Grade6Worksheets() {
                 Generate Custom 6th Grade Worksheets
               </Link>
               <div style={{
-                background: '#f1f5f9',
-                color: '#1e293b',
-                border: '1px solid #e2e8f0',
+                background: 'var(--surface)',
+                color: 'var(--text-primary)',
+                border: '1px solid var(--border)',
                 padding: '0.75rem 1.5rem',
                 borderRadius: '6px',
                 fontWeight: '600'
@@ -464,8 +464,8 @@ export default function Grade6Worksheets() {
           {/* Middle School Emphasis Section */}
           <section style={{marginBottom: '3rem'}}>
             <div style={{
-              background: '#eff6ff',
-              border: '1px solid #dbeafe',
+              background: 'var(--surface)',
+              border: '1px solid var(--border)',
               borderRadius: '8px',
               padding: '2rem'
             }}>
