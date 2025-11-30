@@ -2126,3 +2126,12 @@ html, body {
     font-size: 2rem;
   }
 }
+/* FIX FOR ALL PAGE CONTAINERS */
+.main-content-area,
+.content,
+.practice-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg) !important;
+  width: 100%;
+}
