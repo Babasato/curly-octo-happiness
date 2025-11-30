@@ -162,9 +162,9 @@ export default function Grade5Worksheets() {
                 Generate Custom 5th Grade Worksheets
               </Link>
               <div style={{
-                background: '#f1f5f9',
-                color: '#1e293b',
-                border: '1px solid #e2e8f0',
+                background: 'var(--surface)',
+                color: 'var(--text-primary)',
+                border: '1px solid var(--border)',
                 padding: '0.75rem 1.5rem',
                 borderRadius: '6px',
                 fontWeight: '600'
@@ -464,8 +464,8 @@ export default function Grade5Worksheets() {
           {/* Middle School Prep Section */}
           <section style={{marginBottom: '3rem'}}>
             <div style={{
-              background: '#fefce8',
-              border: '1px solid #fef08a',
+              background: 'var(--surface)',
+              border: '1px solid var(--border)',
               borderRadius: '8px',
               padding: '2rem'
             }}>
@@ -508,19 +508,20 @@ export default function Grade5Worksheets() {
                   <div style={{
                     width: '1.25rem',
                     height: '1.25rem',
-                    background: '#dcfce7',
+                    background: 'var(--surface-elevated)',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginRight: '0.75rem',
                     flexShrink: 0,
-                    marginTop: '0.125rem'
+                    marginTop: '0.125rem',
+                    border: '1px solid var(--border)'
                   }}>
                     <div style={{
                       width: '0.5rem',
                       height: '0.5rem',
-                      background: '#16a34a',
+                      background: 'var(--primary)',
                       borderRadius: '50%'
                     }}></div>
                   </div>
@@ -534,19 +535,20 @@ export default function Grade5Worksheets() {
                   <div style={{
                     width: '1.25rem',
                     height: '1.25rem',
-                    background: '#dcfce7',
+                    background: 'var(--surface-elevated)',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginRight: '0.75rem',
                     flexShrink: 0,
-                    marginTop: '0.125rem'
+                    marginTop: '0.125rem',
+                    border: '1px solid var(--border)'
                   }}>
                     <div style={{
                       width: '0.5rem',
                       height: '0.5rem',
-                      background: '#16a34a',
+                      background: 'var(--primary)',
                       borderRadius: '50%'
                     }}></div>
                   </div>
@@ -560,19 +562,20 @@ export default function Grade5Worksheets() {
                   <div style={{
                     width: '1.25rem',
                     height: '1.25rem',
-                    background: '#dcfce7',
+                    background: 'var(--surface-elevated)',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginRight: '0.75rem',
                     flexShrink: 0,
-                    marginTop: '0.125rem'
+                    marginTop: '0.125rem',
+                    border: '1px solid var(--border)'
                   }}>
                     <div style={{
                       width: '0.5rem',
                       height: '0.5rem',
-                      background: '#16a34a',
+                      background: 'var(--primary)',
                       borderRadius: '50%'
                     }}></div>
                   </div>
@@ -586,19 +589,20 @@ export default function Grade5Worksheets() {
                   <div style={{
                     width: '1.25rem',
                     height: '1.25rem',
-                    background: '#dcfce7',
+                    background: 'var(--surface-elevated)',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginRight: '0.75rem',
                     flexShrink: 0,
-                    marginTop: '0.125rem'
+                    marginTop: '0.125rem',
+                    border: '1px solid var(--border)'
                   }}>
                     <div style={{
                       width: '0.5rem',
                       height: '0.5rem',
-                      background: '#16a34a',
+                      background: 'var(--primary)',
                       borderRadius: '50%'
                     }}></div>
                   </div>
