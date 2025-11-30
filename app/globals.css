@@ -1512,11 +1512,27 @@ html, body {
 }
 
 .practice-badge-purple {
-  background: #8b5cf6;
+  background: #7c3aed;
 }
 
 .practice-badge-red {
-  background: #ef4444;
+  background: #dc2626;
+}
+
+.practice-badge-orange {
+  background: #d97706;
+}
+
+.practice-badge-blue {
+  background: #2563eb;
+}
+
+.practice-badge-green {
+  background: #047857;
+}
+
+.practice-badge-light-green {
+  background: #059669;
 }
 
 .practice-title {
@@ -1534,11 +1550,27 @@ html, body {
 }
 
 .practice-subtitle-purple {
-  color: #8b5cf6;
+  color: #7c3aed;
 }
 
 .practice-subtitle-red {
-  color: #ef4444;
+  color: #dc2626;
+}
+
+.practice-subtitle-orange {
+  color: #d97706;
+}
+
+.practice-subtitle-blue {
+  color: #2563eb;
+}
+
+.practice-subtitle-green {
+  color: #047857;
+}
+
+.practice-subtitle-light-green {
+  color: #059669;
 }
 
 .practice-description {
@@ -1602,19 +1634,51 @@ html, body {
 }
 
 .practice-button-purple {
-  background: #8b5cf6;
-}
-
-.practice-button-purple:hover {
   background: #7c3aed;
 }
 
+.practice-button-purple:hover {
+  background: #6d28d9;
+}
+
 .practice-button-red {
-  background: #ef4444;
+  background: #dc2626;
 }
 
 .practice-button-red:hover {
-  background: #dc2626;
+  background: #b91c1c;
+}
+
+.practice-button-orange {
+  background: #d97706;
+}
+
+.practice-button-orange:hover {
+  background: #b45309;
+}
+
+.practice-button-blue {
+  background: #2563eb;
+}
+
+.practice-button-blue:hover {
+  background: #1d4ed8;
+}
+
+.practice-button-green {
+  background: #047857;
+}
+
+.practice-button-green:hover {
+  background: #065f46;
+}
+
+.practice-button-light-green {
+  background: #059669;
+}
+
+.practice-button-light-green:hover {
+  background: #047857;
 }
 
 .practice-info-box {
@@ -1678,11 +1742,27 @@ html, body {
 }
 
 .practice-bullet-dot-purple {
-  background: #8b5cf6;
+  background: #7c3aed;
 }
 
 .practice-bullet-dot-red {
-  background: #ef4444;
+  background: #dc2626;
+}
+
+.practice-bullet-dot-orange {
+  background: #d97706;
+}
+
+.practice-bullet-dot-blue {
+  background: #2563eb;
+}
+
+.practice-bullet-dot-green {
+  background: #047857;
+}
+
+.practice-bullet-dot-light-green {
+  background: #059669;
 }
 
 .practice-bullet-text {
@@ -1709,11 +1789,27 @@ html, body {
 }
 
 .practice-grade-badge-purple {
-  background: #8b5cf6;
+  background: #7c3aed;
 }
 
 .practice-grade-badge-red {
-  background: #ef4444;
+  background: #dc2626;
+}
+
+.practice-grade-badge-orange {
+  background: #d97706;
+}
+
+.practice-grade-badge-blue {
+  background: #2563eb;
+}
+
+.practice-grade-badge-green {
+  background: #047857;
+}
+
+.practice-grade-badge-light-green {
+  background: #059669;
 }
 
 .practice-grade-title {
@@ -1758,11 +1854,27 @@ html, body {
 }
 
 .practice-count-badge-purple {
-  background: #8b5cf6;
+  background: #7c3aed;
 }
 
 .practice-count-badge-red {
-  background: #ef4444;
+  background: #dc2626;
+}
+
+.practice-count-badge-orange {
+  background: #d97706;
+}
+
+.practice-count-badge-blue {
+  background: #2563eb;
+}
+
+.practice-count-badge-green {
+  background: #047857;
+}
+
+.practice-count-badge-light-green {
+  background: #059669;
 }
 
 .practice-worksheet-desc {
@@ -1777,11 +1889,27 @@ html, body {
 }
 
 .practice-worksheet-grades-purple {
-  color: #8b5cf6;
+  color: #7c3aed;
 }
 
 .practice-worksheet-grades-red {
-  color: #ef4444;
+  color: #dc2626;
+}
+
+.practice-worksheet-grades-orange {
+  color: #d97706;
+}
+
+.practice-worksheet-grades-blue {
+  color: #2563eb;
+}
+
+.practice-worksheet-grades-green {
+  color: #047857;
+}
+
+.practice-worksheet-grades-light-green {
+  color: #059669;
 }
 
 .practice-faq-container {
@@ -1822,11 +1950,27 @@ html, body {
 }
 
 .practice-cta-box-purple {
-  background: #8b5cf6;
+  background: #7c3aed;
 }
 
 .practice-cta-box-red {
-  background: #ef4444;
+  background: #dc2626;
+}
+
+.practice-cta-box-orange {
+  background: #d97706;
+}
+
+.practice-cta-box-blue {
+  background: #2563eb;
+}
+
+.practice-cta-box-green {
+  background: #047857;
+}
+
+.practice-cta-box-light-green {
+  background: #059669;
 }
 
 .practice-cta-title {
@@ -1858,11 +2002,27 @@ html, body {
 }
 
 .practice-cta-button-purple {
-  color: #8b5cf6;
+  color: #7c3aed;
 }
 
 .practice-cta-button-red {
-  color: #ef4444;
+  color: #dc2626;
+}
+
+.practice-cta-button-orange {
+  color: #d97706;
+}
+
+.practice-cta-button-blue {
+  color: #2563eb;
+}
+
+.practice-cta-button-green {
+  color: #047857;
+}
+
+.practice-cta-button-light-green {
+  color: #059669;
 }
 
 .practice-cta-note {
@@ -1918,11 +2078,27 @@ html, body {
 }
 
 .practice-nav-icon-purple {
-  background: #8b5cf6;
+  background: #7c3aed;
 }
 
 .practice-nav-icon-red {
-  background: #ef4444;
+  background: #dc2626;
+}
+
+.practice-nav-icon-orange {
+  background: #d97706;
+}
+
+.practice-nav-icon-blue {
+  background: #2563eb;
+}
+
+.practice-nav-icon-green {
+  background: #047857;
+}
+
+.practice-nav-icon-light-green {
+  background: #059669;
 }
 
 .practice-nav-label {
@@ -1949,182 +2125,4 @@ html, body {
   .practice-section-title {
     font-size: 2rem;
   }
-}
-/* Orange/Amber variant for division */
-.practice-badge-orange {
-  background: #f59e0b;
-}
-
-.practice-subtitle-orange {
-  color: #f59e0b;
-}
-
-.practice-button-orange {
-  background: #f59e0b;
-}
-
-.practice-button-orange:hover {
-  background: #d97706;
-}
-
-.practice-bullet-dot-orange {
-  background: #f59e0b;
-}
-
-.practice-grade-badge-orange {
-  background: #f59e0b;
-}
-
-.practice-count-badge-orange {
-  background: #f59e0b;
-}
-
-.practice-worksheet-grades-orange {
-  color: #f59e0b;
-}
-
-.practice-cta-box-orange {
-  background: #f59e0b;
-}
-
-.practice-cta-button-orange {
-  color: #f59e0b;
-}
-
-.practice-nav-icon-orange {
-  background: #f59e0b;
-}
-
-/* Blue variant for addition */
-.practice-badge-blue {
-  background: #3b82f6;
-}
-
-.practice-subtitle-blue {
-  color: #3b82f6;
-}
-
-.practice-button-blue {
-  background: #3b82f6;
-}
-
-.practice-button-blue:hover {
-  background: #2563eb;
-}
-
-.practice-bullet-dot-blue {
-  background: #3b82f6;
-}
-
-.practice-grade-badge-blue {
-  background: #3b82f6;
-}
-
-.practice-count-badge-blue {
-  background: #3b82f6;
-}
-
-.practice-worksheet-grades-blue {
-  color: #3b82f6;
-}
-
-.practice-cta-box-blue {
-  background: #3b82f6;
-}
-
-.practice-cta-button-blue {
-  color: #3b82f6;
-}
-
-.practice-nav-icon-blue {
-  background: #3b82f6;
-}
-/* Green variant for word-problems */
-.practice-badge-green {
-  background: #059669;
-}
-
-.practice-subtitle-green {
-  color: #059669;
-}
-
-.practice-button-green {
-  background: #059669;
-}
-
-.practice-button-green:hover {
-  background: #047857;
-}
-
-.practice-bullet-dot-green {
-  background: #059669;
-}
-
-.practice-grade-badge-green {
-  background: #059669;
-}
-
-.practice-count-badge-green {
-  background: #059669;
-}
-
-.practice-worksheet-grades-green {
-  color: #059669;
-}
-
-.practice-cta-box-green {
-  background: #059669;
-}
-
-.practice-cta-button-green {
-  color: #059669;
-}
-
-.practice-nav-icon-green {
-  background: #059669;
-}
-
-/* Light green variant for subtraction */
-.practice-badge-light-green {
-  background: #10b981;
-}
-
-.practice-subtitle-light-green {
-  color: #10b981;
-}
-
-.practice-button-light-green {
-  background: #10b981;
-}
-
-.practice-button-light-green:hover {
-  background: #059669;
-}
-
-.practice-bullet-dot-light-green {
-  background: #10b981;
-}
-
-.practice-grade-badge-light-green {
-  background: #10b981;
-}
-
-.practice-count-badge-light-green {
-  background: #10b981;
-}
-
-.practice-worksheet-grades-light-green {
-  color: #10b981;
-}
-
-.practice-cta-box-light-green {
-  background: #10b981;
-}
-
-.practice-cta-button-light-green {
-  color: #10b981;
-}
-
-.practice-nav-icon-light-green {
-  background: #10b981;
 }
