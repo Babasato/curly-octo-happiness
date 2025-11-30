@@ -2135,3 +2135,64 @@ html, body {
   padding: var(--space-lg) !important;
   width: 100%;
 }
+/* FIX SPACING FOR ALL PRACTICE PAGES */
+.practice-cta-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem !important; /* Increased from 1rem */
+  align-items: center;
+  margin-top: 2rem !important; /* Added top margin */
+}
+
+.practice-hero {
+  text-align: center;
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+}
+
+.practice-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem !important; /* Increased from 2.5rem */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Ensure consistent spacing for all practice page sections */
+.practice-section {
+  margin-bottom: 4rem;
+  padding: 0 var(--space-md);
+}
+
+.practice-cta-section {
+  margin-bottom: 4rem;
+  padding: 0 var(--space-md);
+}
+
+.practice-nav-section {
+  margin-bottom: 2rem;
+  padding: 0 var(--space-md);
+}
+
+/* Make sure the hero section has enough bottom spacing */
+.practice-hero .practice-description {
+  margin-bottom: 3rem !important; /* Increased from 2.5rem */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .practice-cta-container {
+    gap: 1.25rem !important;
+    margin-top: 1.5rem !important;
+  }
+  
+  .practice-features-grid {
+    margin-bottom: 2.5rem !important;
+    gap: 1.25rem;
+  }
+  
+  .practice-hero .practice-description {
+    margin-bottom: 2.5rem !important;
+  }
+}
