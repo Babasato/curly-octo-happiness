@@ -31,30 +31,90 @@ export default function About() {
           <section className="about-section">
             <h2 className="about-section-title">What We Offer</h2>
             <div className="about-grid">
-              <div className="about-feature-card about-feature-blue">
-                <h3 className="about-feature-title">Customizable Worksheets</h3>
-                <p className="about-feature-text">
+              <div style={{
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                borderRadius: '6px',
+                padding: '1.5rem'
+              }}>
+                <h3 style={{
+                  fontSize: '1.125rem',
+                  fontWeight: '600',
+                  color: 'var(--text-primary)',
+                  marginBottom: '0.5rem'
+                }}>
+                  Customizable Worksheets
+                </h3>
+                <p style={{
+                  color: 'var(--text-secondary)',
+                  lineHeight: '1.5'
+                }}>
                   Generate math worksheets tailored to specific grade levels, skills, and difficulty 
                   requirements with our easy-to-use generator.
                 </p>
               </div>
-              <div className="about-feature-card about-feature-green">
-                <h3 className="about-feature-title">Comprehensive Coverage</h3>
-                <p className="about-feature-text">
+              <div style={{
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                borderRadius: '6px',
+                padding: '1.5rem'
+              }}>
+                <h3 style={{
+                  fontSize: '1.125rem',
+                  fontWeight: '600',
+                  color: 'var(--text-primary)',
+                  marginBottom: '0.5rem'
+                }}>
+                  Comprehensive Coverage
+                </h3>
+                <p style={{
+                  color: 'var(--text-secondary)',
+                  lineHeight: '1.5'
+                }}>
                   Worksheets covering kindergarten through 6th grade math, including all major 
                   operations and mathematical concepts.
                 </p>
               </div>
-              <div className="about-feature-card about-feature-purple">
-                <h3 className="about-feature-title">Answer Keys</h3>
-                <p className="about-feature-text">
+              <div style={{
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                borderRadius: '6px',
+                padding: '1.5rem'
+              }}>
+                <h3 style={{
+                  fontSize: '1.125rem',
+                  fontWeight: '600',
+                  color: 'var(--text-primary)',
+                  marginBottom: '0.5rem'
+                }}>
+                  Answer Keys
+                </h3>
+                <p style={{
+                  color: 'var(--text-secondary)',
+                  lineHeight: '1.5'
+                }}>
                   Every generated worksheet comes with a complete answer key for easy grading 
                   and immediate feedback.
                 </p>
               </div>
-              <div className="about-feature-card about-feature-orange">
-                <h3 className="about-feature-title">Always Free</h3>
-                <p className="about-feature-text">
+              <div style={{
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                borderRadius: '6px',
+                padding: '1.5rem'
+              }}>
+                <h3 style={{
+                  fontSize: '1.125rem',
+                  fontWeight: '600',
+                  color: 'var(--text-primary)',
+                  marginBottom: '0.5rem'
+                }}>
+                  Always Free
+                </h3>
+                <p style={{
+                  color: 'var(--text-secondary)',
+                  lineHeight: '1.5'
+                }}>
                   Our service is completely free to use, with no hidden fees, subscriptions, 
                   or usage limits beyond 10 worksheets per day.
                 </p>
@@ -80,8 +140,20 @@ export default function About() {
           <section className="about-section">
             <h2 className="about-section-title">For Educators & Parents</h2>
             <div className="about-grid">
-              <div>
-                <h3 className="about-feature-title">Classroom Teachers</h3>
+              <div style={{
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                borderRadius: '6px',
+                padding: '1.5rem'
+              }}>
+                <h3 style={{
+                  fontSize: '1.125rem',
+                  fontWeight: '600',
+                  color: 'var(--text-primary)',
+                  marginBottom: '0.5rem'
+                }}>
+                  Classroom Teachers
+                </h3>
                 <ul className="about-list">
                   <li className="about-list-item">Create homework assignments and practice sheets</li>
                   <li className="about-list-item">Generate differentiated materials for various skill levels</li>
@@ -89,8 +161,20 @@ export default function About() {
                   <li className="about-list-item">Support intervention and enrichment activities</li>
                 </ul>
               </div>
-              <div>
-                <h3 className="about-feature-title">Homeschool Families</h3>
+              <div style={{
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                borderRadius: '6px',
+                padding: '1.5rem'
+              }}>
+                <h3 style={{
+                  fontSize: '1.125rem',
+                  fontWeight: '600',
+                  color: 'var(--text-primary)',
+                  marginBottom: '0.5rem'
+                }}>
+                  Homeschool Families
+                </h3>
                 <ul className="about-list">
                   <li className="about-list-item">Customize curriculum to match your child's pace</li>
                   <li className="about-list-item">Create unlimited practice materials (10 per day)</li>
