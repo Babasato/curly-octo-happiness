@@ -150,38 +150,125 @@ export default function Contact() {
               <h3 className="contact-subsection-title">Quick Help & Resources</h3>
               
               <div className="contact-resources-stack">
-                <div className="contact-resource-card contact-resource-blue">
-                  <h4 className="contact-resource-title">How to Use Guide</h4>
-                  <p className="contact-resource-description">
+                <div style={{
+                  background: 'var(--surface)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '8px',
+                  padding: '1.5rem'
+                }}>
+                  <h4 style={{
+                    fontSize: '1.125rem',
+                    fontWeight: '600',
+                    color: 'var(--text-primary)',
+                    marginBottom: '0.75rem'
+                  }}>
+                    How to Use Guide
+                  </h4>
+                  <p style={{
+                    color: 'var(--text-secondary)',
+                    marginBottom: '1rem',
+                    lineHeight: '1.5'
+                  }}>
                     New to homeschoolmath.site? Check out our comprehensive guide to get started.
                   </p>
-                  <Link href="/how-to-use" className="contact-resource-link">View Tutorial →</Link>
+                  <Link href="/how-to-use" style={{
+                    color: 'var(--primary)',
+                    fontWeight: '500',
+                    textDecoration: 'none'
+                  }}>
+                    View Tutorial →
+                  </Link>
                 </div>
                 
-                <div className="contact-resource-card contact-resource-purple">
-                  <h4 className="contact-resource-title">Teaching Tips</h4>
-                  <p className="contact-resource-description">
+                <div style={{
+                  background: 'var(--surface)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '8px',
+                  padding: '1.5rem'
+                }}>
+                  <h4 style={{
+                    fontSize: '1.125rem',
+                    fontWeight: '600',
+                    color: 'var(--text-primary)',
+                    marginBottom: '0.75rem'
+                  }}>
+                    Teaching Tips
+                  </h4>
+                  <p style={{
+                    color: 'var(--text-secondary)',
+                    marginBottom: '1rem',
+                    lineHeight: '1.5'
+                  }}>
                     Discover effective strategies for using worksheets in your teaching practice.
                   </p>
-                  <Link href="/teaching-tips" className="contact-resource-link">Get Teaching Tips →</Link>
+                  <Link href="/teaching-tips" style={{
+                    color: 'var(--primary)',
+                    fontWeight: '500',
+                    textDecoration: 'none'
+                  }}>
+                    Get Teaching Tips →
+                  </Link>
                 </div>
                 
-                <div className="contact-resource-card contact-resource-orange">
-                  <h4 className="contact-resource-title">Common Questions</h4>
-                  <p className="contact-resource-description">
+                <div style={{
+                  background: 'var(--surface)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '8px',
+                  padding: '1.5rem'
+                }}>
+                  <h4 style={{
+                    fontSize: '1.125rem',
+                    fontWeight: '600',
+                    color: 'var(--text-primary)',
+                    marginBottom: '0.75rem'
+                  }}>
+                    Common Questions
+                  </h4>
+                  <p style={{
+                    color: 'var(--text-secondary)',
+                    marginBottom: '1rem',
+                    lineHeight: '1.5'
+                  }}>
                     Find answers to frequently asked questions about our worksheet generator.
                   </p>
-                  <Link href="/how-to-use" className="contact-resource-link">View FAQs →</Link>
+                  <Link href="/how-to-use" style={{
+                    color: 'var(--primary)',
+                    fontWeight: '500',
+                    textDecoration: 'none'
+                  }}>
+                    View FAQs →
+                  </Link>
                 </div>
               </div>
 
-              <div className="contact-response-info">
-                <h4 className="contact-info-title">Response Time</h4>
-                <p className="contact-info-description">
+              <div style={{
+                background: 'var(--surface)',
+                borderRadius: '8px',
+                padding: '1.5rem',
+                border: '1px solid var(--border)'
+              }}>
+                <h4 style={{
+                  fontSize: '1.125rem',
+                  fontWeight: '600',
+                  color: 'var(--text-primary)',
+                  marginBottom: '0.75rem'
+                }}>
+                  Response Time
+                </h4>
+                <p style={{
+                  color: 'var(--text-secondary)',
+                  marginBottom: '1rem',
+                  lineHeight: '1.5'
+                }}>
                   We typically respond to all messages within 24-48 hours. For technical issues, 
                   we'll work to resolve them as quickly as possible.
                 </p>
-                <p className="contact-info-note">
+                <p style={{
+                  color: 'var(--text-muted)',
+                  fontSize: '0.875rem',
+                  lineHeight: '1.5',
+                  fontStyle: 'italic'
+                }}>
                   Please note: We are a small team dedicated to providing free educational resources. 
                   Your patience and understanding are appreciated.
                 </p>
