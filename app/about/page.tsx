@@ -12,7 +12,7 @@ export default function About() {
     <div className="about-page">
       <div className="about-container">
         <div className="about-card">
-          <h1 className="about-title">About homeschoolmath.site</h1>
+          <h1 className="about-title">About Us</h1>
           
           <section className="about-section">
             <h2 className="about-section-title">Our Mission</h2>
