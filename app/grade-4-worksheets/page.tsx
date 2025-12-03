@@ -441,7 +441,7 @@ export default function Grade4Worksheets() {
                   }}>
                     <li style={{marginBottom: '0.75rem', display: 'flex', alignItems: 'flex-start'}}>
                       <span style={{marginRight: '0.5rem'}}>•</span>
-                      Angle measurement and classification
+                      Angle measurement & classification
                     </li>
                     <li style={{marginBottom: '0.75rem', display: 'flex', alignItems: 'flex-start'}}>
                       <span style={{marginRight: '0.5rem'}}>•</span>
