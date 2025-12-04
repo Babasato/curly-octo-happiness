@@ -1,4 +1,5 @@
 //app/api/contact/route.ts
+export const runtime = 'nodejs';
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
