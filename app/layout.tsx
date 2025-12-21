@@ -1,4 +1,4 @@
-// app/layout.tsx - FIXED VERSION
+// app/layout.tsx
 import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -9,10 +9,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="dark">
+    <html lang="en">
       <head>
         <link rel="canonical" href="https://homeschoolmath.site" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {/* Anti-Flash Theme Script: Sets theme BEFORE page paints */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+                  if (!theme && supportDarkMode) theme = 'dark';
+                  if (!theme) theme = 'light';
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         
         {/* Google Analytics */}
         <script
