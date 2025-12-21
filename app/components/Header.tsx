@@ -1,4 +1,4 @@
-// app/components/Header.tsx - WITH DARK MODE TOGGLE
+// app/components/Header.tsx - WITH DARK MODE TOGGLE & RESOURCES
 "use client";
 import Link from 'next/link';
 import DarkModeToggle from './DarkModeToggle';
@@ -15,6 +15,7 @@ export default function Header() {
         
         <nav className="main-nav">
           <Link href="/about" className="nav-link">About</Link>
+          <Link href="/resources" className="nav-link">Resources</Link>
           <Link href="/contact" className="nav-link">Contact</Link>
           <DarkModeToggle />
         </nav>
