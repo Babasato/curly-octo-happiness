@@ -1,4 +1,4 @@
-// app/contact/page.tsx - UPDATED BRANDING
+// app/contact/page.tsx
 "use client";
 
 import { useState } from 'react';
@@ -58,8 +58,8 @@ export default function Contact() {
           <section className="contact-section">
             <h2 className="contact-section-title">We're Here to Help</h2>
             <p className="contact-description">
-              Have questions about using homeschoolmath.site? Need technical support? 
-              Want to share feedback or suggestions? We'd love to hear from you!
+              Have questions about our tools, need technical support, or want to share 
+              feedback? Reach out and our team will get back to you shortly.
             </p>
           </section>
 
@@ -69,13 +69,13 @@ export default function Contact() {
 
               {submitStatus === 'success' && (
                 <div className="contact-success-message">
-                  ✓ Message sent successfully! We'll get back to you soon.
+                  ✓ Message sent successfully! We will respond shortly.
                 </div>
               )}
 
               {submitStatus === 'error' && (
                 <div className="contact-error-message">
-                  ✗ Something went wrong. Please try again or email us directly at bob@homeschoolmath.site
+                  ✗ Something went wrong. Please try again or email support@homeschoolmath.site
                 </div>
               )}
 
@@ -150,128 +150,36 @@ export default function Contact() {
               <h3 className="contact-subsection-title">Quick Help & Resources</h3>
               
               <div className="contact-resources-stack">
-                <div style={{
-                  background: 'var(--surface)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '8px',
-                  padding: '1.5rem'
-                }}>
-                  <h4 style={{
-                    fontSize: '1.125rem',
-                    fontWeight: '600',
-                    color: 'var(--text-primary)',
-                    marginBottom: '0.75rem'
-                  }}>
-                    How to Use Guide
-                  </h4>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    marginBottom: '1rem',
-                    lineHeight: '1.5'
-                  }}>
-                    New to homeschoolmath.site? Check out our comprehensive guide to get started.
+                <div className="info-card accent-blue">
+                  <h4 className="text-h3">User Documentation</h4>
+                  <p className="text-p" style={{marginBottom: '1rem'}}>
+                    Learn the best practices for generating and printing your math resources.
                   </p>
-                  <Link href="/how-to-use" style={{
-                    color: 'var(--primary)',
-                    fontWeight: '500',
-                    textDecoration: 'none'
-                  }}>
+                  <Link href="/how-to-use" className="contact-resource-link">
                     View Tutorial →
                   </Link>
                 </div>
                 
-                <div style={{
-                  background: 'var(--surface)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '8px',
-                  padding: '1.5rem'
-                }}>
-                  <h4 style={{
-                    fontSize: '1.125rem',
-                    fontWeight: '600',
-                    color: 'var(--text-primary)',
-                    marginBottom: '0.75rem'
-                  }}>
-                    Teaching Tips
-                  </h4>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    marginBottom: '1rem',
-                    lineHeight: '1.5'
-                  }}>
-                    Discover effective strategies for using worksheets in your teaching practice.
+                <div className="info-card accent-green">
+                  <h4 className="text-h3">The Resource Vault</h4>
+                  <p className="text-p" style={{marginBottom: '1rem'}}>
+                    Access curriculum planners, Notion templates, and recommended teaching tools.
                   </p>
-                  <Link href="/teaching-tips" style={{
-                    color: 'var(--primary)',
-                    fontWeight: '500',
-                    textDecoration: 'none'
-                  }}>
-                    Get Teaching Tips →
+                  <Link href="/resources" className="contact-resource-link">
+                    Explore Resources →
                   </Link>
                 </div>
-                
-                <div style={{
-                  background: 'var(--surface)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '8px',
-                  padding: '1.5rem'
-                }}>
-                  <h4 style={{
-                    fontSize: '1.125rem',
-                    fontWeight: '600',
-                    color: 'var(--text-primary)',
-                    marginBottom: '0.75rem'
-                  }}>
-                    Common Questions
-                  </h4>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    marginBottom: '1rem',
-                    lineHeight: '1.5'
-                  }}>
-                    Find answers to frequently asked questions about our worksheet generator.
-                  </p>
-                  <Link href="/how-to-use" style={{
-                    color: 'var(--primary)',
-                    fontWeight: '500',
-                    textDecoration: 'none'
-                  }}>
-                    View FAQs →
-                  </Link>
-                </div>
-              </div>
 
-              <div style={{
-                background: 'var(--surface)',
-                borderRadius: '8px',
-                padding: '1.5rem',
-                border: '1px solid var(--border)'
-              }}>
-                <h4 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '600',
-                  color: 'var(--text-primary)',
-                  marginBottom: '0.75rem'
-                }}>
-                  Response Time
-                </h4>
-                <p style={{
-                  color: 'var(--text-secondary)',
-                  marginBottom: '1rem',
-                  lineHeight: '1.5'
-                }}>
-                  We typically respond to all messages within 24-48 hours. For technical issues, 
-                  we'll work to resolve them as quickly as possible.
-                </p>
-                <p style={{
-                  color: 'var(--text-muted)',
-                  fontSize: '0.875rem',
-                  lineHeight: '1.5',
-                  fontStyle: 'italic'
-                }}>
-                  Please note: We are a small team dedicated to providing free educational resources. 
-                  Your patience and understanding are appreciated.
-                </p>
+                <div className="info-card">
+                  <h4 className="text-h3">Response Time</h4>
+                  <p className="text-p">
+                    We typically respond within 24-48 hours.
+                  </p>
+                  <p className="contact-info-note" style={{marginTop: '0.5rem'}}>
+                    Please note: We are a small team dedicated to providing free educational 
+                    resources. Your patience is appreciated.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
