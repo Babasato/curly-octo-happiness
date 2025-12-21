@@ -2549,3 +2549,45 @@ html, body {
     font-size: 0.75rem !important;
   }
 }
+/* ===== ARCHITECT UTILITY CLASSES ===== */
+
+/* The Standard Info Card (Used in About, Contact, and Resources) */
+.info-card {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Color Accents for Cards (Using your existing palette) */
+.accent-blue { border-top: 4px solid var(--primary); }
+.accent-green { border-top: 4px solid var(--secondary); }
+.accent-orange { border-top: 4px solid var(--warning); }
+.accent-red { border-top: 4px solid var(--error); }
+
+/* Typography Utilities */
+.text-h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.text-p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Flexible Grid System */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
