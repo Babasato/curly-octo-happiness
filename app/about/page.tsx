@@ -1,10 +1,10 @@
-// app/about/page.tsx - UPDATED BRANDING
+// app/about/page.tsx
 import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About homeschoolmath.site | Free Math Worksheet Generator',
-  description: 'Learn about our mission to provide free, high-quality math worksheets for homeschool and classroom use. Math worksheets made simple.',
+  title: 'About Us | The Mission Behind homeschoolmath.site',
+  description: 'Learn about our mission to provide high-quality, algorithmic math resources for homeschool families and educators worldwide.',
 }
 
 export default function About() {
@@ -17,106 +17,50 @@ export default function About() {
           <section className="about-section">
             <h2 className="about-section-title">Our Mission</h2>
             <p className="about-text">
-              homeschoolmath.site was created with a simple but important mission: to provide 
-              high-quality, customizable math practice materials for students, teachers, and homeschool 
-              families completely free of charge.
+              homeschoolmath.site was created with a clear objective: to bridge the gap between 
+              premium educational technology and accessibility. We provide high-quality, 
+              customizable math materials for students, teachers, and homeschool families 
+              completely free of charge.
             </p>
             <p className="about-text">
-              We believe that every student deserves access to excellent math education resources, 
-              regardless of their background or financial situation. Our platform empowers educators 
-              and parents to create tailored math practice that meets each student's unique needs.
+              We believe that every student deserves access to excellent math education resources. 
+              Our platform empowers educators to create tailored practice that meets each 
+              student's unique learning curve through algorithmic generation.
             </p>
           </section>
 
           <section className="about-section">
             <h2 className="about-section-title">What We Offer</h2>
-            <div className="about-grid">
-              <div style={{
-                background: 'var(--surface)',
-                border: '1px solid var(--border)',
-                borderRadius: '6px',
-                padding: '1.5rem'
-              }}>
-                <h3 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '600',
-                  color: 'var(--text-primary)',
-                  marginBottom: '0.5rem'
-                }}>
-                  Customizable Worksheets
-                </h3>
-                <p style={{
-                  color: 'var(--text-secondary)',
-                  lineHeight: '1.5'
-                }}>
-                  Generate math worksheets tailored to specific grade levels, skills, and difficulty 
-                  requirements with our easy-to-use generator.
+            <div className="auto-grid">
+              <div className="info-card accent-blue">
+                <h3 className="text-h3">Customizable Worksheets</h3>
+                <p className="text-p">
+                  Utilize randomized algorithmic generation to ensure every worksheet is unique, 
+                  preventing rote memorization and encouraging true mastery.
                 </p>
               </div>
-              <div style={{
-                background: 'var(--surface)',
-                border: '1px solid var(--border)',
-                borderRadius: '6px',
-                padding: '1.5rem'
-              }}>
-                <h3 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '600',
-                  color: 'var(--text-primary)',
-                  marginBottom: '0.5rem'
-                }}>
-                  Comprehensive Coverage
-                </h3>
-                <p style={{
-                  color: 'var(--text-secondary)',
-                  lineHeight: '1.5'
-                }}>
-                  Worksheets covering kindergarten through 6th grade math, including all major 
-                  operations and mathematical concepts.
+
+              <div className="info-card accent-green">
+                <h3 className="text-h3">Comprehensive Coverage</h3>
+                <p className="text-p">
+                  Extensive resources covering Kindergarten through 6th grade math, 
+                  aligned with core mathematical standards and conceptual development.
                 </p>
               </div>
-              <div style={{
-                background: 'var(--surface)',
-                border: '1px solid var(--border)',
-                borderRadius: '6px',
-                padding: '1.5rem'
-              }}>
-                <h3 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '600',
-                  color: 'var(--text-primary)',
-                  marginBottom: '0.5rem'
-                }}>
-                  Answer Keys
-                </h3>
-                <p style={{
-                  color: 'var(--text-secondary)',
-                  lineHeight: '1.5'
-                }}>
-                  Every generated worksheet comes with a complete answer key for easy grading 
-                  and immediate feedback.
+
+              <div className="info-card accent-orange">
+                <h3 className="text-h3">Planning & Organization</h3>
+                <p className="text-p">
+                  Beyond practice, we provide structured systems, including Notion dashboards 
+                  and curriculum trackers, to help manage the administrative side of education.
                 </p>
               </div>
-              <div style={{
-                background: 'var(--surface)',
-                border: '1px solid var(--border)',
-                borderRadius: '6px',
-                padding: '1.5rem'
-              }}>
-                <h3 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '600',
-                  color: 'var(--text-primary)',
-                  marginBottom: '0.5rem'
-                }}>
-                  Always Free
-                </h3>
-                <p style={{
-                  color: 'var(--text-secondary)',
-                  lineHeight: '1.5'
-                }}>
-                  Our service is completely free to use, with no hidden fees, subscriptions, 
-                  or usage limits beyond 10 worksheets per day.
+
+              <div className="info-card accent-red">
+                <h3 className="text-h3">Always Accessible</h3>
+                <p className="text-p">
+                  Our core generator is completely free to use, with no hidden fees or 
+                  intrusive subscriptions—just honest, effective educational tools.
                 </p>
               </div>
             </div>
@@ -125,86 +69,21 @@ export default function About() {
           <section className="about-section">
             <h2 className="about-section-title">Educational Philosophy</h2>
             <p className="about-text">
-              We understand that math education requires more than just rote practice. Our worksheets 
-              are designed to:
+              Math education requires more than just repetition. Our resources are engineered to:
             </p>
             <ul className="about-list">
-              <li className="about-list-item">Build conceptual understanding alongside procedural fluency</li>
-              <li className="about-list-item">Provide varied problem types to develop flexible thinking</li>
-              <li className="about-list-item">Include real-world applications to show math's relevance</li>
-              <li className="about-list-item">Offer appropriate challenge levels to support growth mindset</li>
-              <li className="about-list-item">Enable differentiation to meet diverse learning needs</li>
-            </ul>
-          </section>
-
-          <section className="about-section">
-            <h2 className="about-section-title">For Educators & Parents</h2>
-            <div className="about-grid">
-              <div style={{
-                background: 'var(--surface)',
-                border: '1px solid var(--border)',
-                borderRadius: '6px',
-                padding: '1.5rem'
-              }}>
-                <h3 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '600',
-                  color: 'var(--text-primary)',
-                  marginBottom: '0.5rem'
-                }}>
-                  Classroom Teachers
-                </h3>
-                <ul className="about-list">
-                  <li className="about-list-item">Create homework assignments and practice sheets</li>
-                  <li className="about-list-item">Generate differentiated materials for various skill levels</li>
-                  <li className="about-list-item">Prepare assessment materials and review packets</li>
-                  <li className="about-list-item">Support intervention and enrichment activities</li>
-                </ul>
-              </div>
-              <div style={{
-                background: 'var(--surface)',
-                border: '1px solid var(--border)',
-                borderRadius: '6px',
-                padding: '1.5rem'
-              }}>
-                <h3 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '600',
-                  color: 'var(--text-primary)',
-                  marginBottom: '0.5rem'
-                }}>
-                  Homeschool Families
-                </h3>
-                <ul className="about-list">
-                  <li className="about-list-item">Customize curriculum to match your child's pace</li>
-                  <li className="about-list-item">Create unlimited practice materials (10 per day)</li>
-                  <li className="about-list-item">Track progress with consistent format</li>
-                  <li className="about-list-item">Supplement any math program</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section className="about-section">
-            <h2 className="about-section-title">Our Commitment</h2>
-            <p className="about-text">
-              We are committed to maintaining the highest standards of educational quality while 
-              keeping our resources completely accessible. Our team continuously works to:
-            </p>
-            <ul className="about-list">
-              <li className="about-list-item">Improve and expand our worksheet offerings</li>
-              <li className="about-list-item">Ensure alignment with educational standards</li>
-              <li className="about-list-item">Provide reliable, easy-to-use technology</li>
-              <li className="about-list-item">Protect user privacy and data security</li>
-              <li className="about-list-item">Respond to user feedback and suggestions</li>
+              <li className="about-list-item">Build conceptual understanding alongside procedural fluency.</li>
+              <li className="about-list-item">Provide varied problem types to develop flexible mathematical thinking.</li>
+              <li className="about-list-item">Offer appropriate challenge levels to support a growth mindset.</li>
+              <li className="about-list-item">Enable seamless differentiation for diverse classroom needs.</li>
             </ul>
           </section>
 
           <section className="about-cta-section">
             <h2 className="about-section-title">Get Started Today</h2>
             <p className="about-text">
-              Join thousands of educators and parents who are already using homeschoolmath.site 
-              to support their students' math learning journey.
+              Join thousands of educators and parents who use homeschoolmath.site 
+              to support their students' mathematical journey.
             </p>
             <Link href="/" className="about-cta-button">
               Start Generating Worksheets
