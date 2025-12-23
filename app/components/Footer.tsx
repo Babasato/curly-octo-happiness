@@ -1,4 +1,4 @@
-// app/components/Footer.tsx - UPDATED WITH NEW BRANDING
+// app/components/Footer.tsx
 "use client";
 
 import Link from 'next/link';
@@ -88,6 +88,15 @@ export default function Footer() {
               Resources & Support
             </h4>
             <ul className="footer-link-list">
+              {/* ADDED PLANNING RESOURCES LINK HERE */}
+              <li>
+                <Link href="/resources">
+                  <div className="footer-link-content" style={{ color: '#60a5fa', fontWeight: 'bold' }}>
+                    <span>Planning Resources</span>
+                    <span className="arrow">→</span>
+                  </div>
+                </Link>
+              </li>
               <li>
                 <Link href="/how-to-use">
                   <div className="footer-link-content">
@@ -126,6 +135,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-legal-section">
+        {/* ... (rest of the legal section code remains exactly the same as you provided) ... */}
         <div className="footer-legal-content">
           <div className="legal-links-group">
             <Link href="/privacy-policy">
@@ -164,6 +174,7 @@ export default function Footer() {
         </div>
       </div>
       <style jsx>{`
+        /* ... (all your existing CSS remains exactly the same) ... */
         .footer-container {
           background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
           color: white;
