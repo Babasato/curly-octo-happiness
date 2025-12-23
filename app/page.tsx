@@ -1,4 +1,4 @@
-// app/page.tsx - WITH GENERATOR LOGIC, DARK MODE FIXES, AND ANCHOR
+// app/page.tsx - WITH GENERATOR LOGIC, ACCURATE COPY, AND DARK MODE ANCHOR
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -65,7 +65,7 @@ export default function Home() {
           hasReceivedSignupBonus={hasReceivedSignupBonus}
         />
 
-        {/* NEW RESOURCES SECTION - DARK MODE FIXED & ANCHORED */}
+        {/* ACCURATE RESOURCES SECTION - DARK MODE FIXED & ANCHORED */}
         <section 
           id="resources-banner" 
           style={{
@@ -78,40 +78,27 @@ export default function Home() {
             boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
           }}
         >
-          <div style={{
-            display: 'inline-block',
-            padding: '0.5rem 1rem',
-            background: 'var(--primary)',
-            color: 'white',
-            borderRadius: '20px',
-            fontSize: '0.875rem',
-            fontWeight: '600',
-            marginBottom: '1.5rem'
-          }}>
-            NEW
-          </div>
-          
           <h2 style={{
-            fontSize: '2.25rem',
+            fontSize: '2rem',
             fontWeight: '800',
             color: 'var(--text-primary)',
             marginBottom: '1rem',
             letterSpacing: '-0.025em'
           }}>
-            Level Up Your Math Planning
+            Complete Your Math Planning System
           </h2>
           
           <p style={{
             color: 'var(--text-secondary)',
-            fontSize: '1.25rem',
-            lineHeight: '1.7',
+            fontSize: '1.2rem',
+            lineHeight: '1.6',
             marginBottom: '2rem',
-            maxWidth: '600px',
+            maxWidth: '700px',
             marginLeft: 'auto',
             marginRight: 'auto'
           }}>
-            Stop hunting for folders. Use our <strong>Notion Math Dashboards</strong> to 
-            track every worksheet, grade, and milestone in one digital home.
+            Take your organization beyond the worksheet. Access our professional curriculum planners, 
+            automated grade trackers, and master dashboards designed to streamline your teaching.
           </p>
           
           <Link 
@@ -128,7 +115,7 @@ export default function Home() {
               transition: 'opacity 0.2s'
             }}
           >
-            Explore Resources & Templates →
+            Explore Resources →
           </Link>
         </section>
       </main>
