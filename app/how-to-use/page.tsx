@@ -1,4 +1,4 @@
-// app/how-to-use/page.tsx - WITH RESOURCE LINKING SECTION
+// app/how-to-use/page.tsx - FIXED SYNTAX AND RESOURCE LINKING
 import { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -257,10 +257,10 @@ export default function HowToUse() {
           </div>
         </section>
 
-        {/* INTERNAL LINKING SECTION: BONUS RESOURCES */}
+        {/* INTERNAL LINKING SECTION */}
         <section id="bonus-planning-tools" style={{
-          background: '#f8fafc',
-          border: '2px dashed #cbd5e1',
+          background: 'var(--surface)',
+          border: '2px dashed var(--border)',
           borderRadius: '12px',
           padding: '2rem',
           marginBottom: '3rem',
@@ -269,13 +269,13 @@ export default function HowToUse() {
           <h2 style={{
             fontSize: '1.5rem',
             fontWeight: '700',
-            color: '#1e293b',
+            color: 'var(--text-primary)',
             marginBottom: '1rem'
           }}>
             📊 Bonus: Organize Your Math Year
           </h2>
           <p style={{
-            color: '#64748b',
+            color: 'var(--text-secondary)',
             fontSize: '1.125rem',
             lineHeight: '1.6',
             marginBottom: '1.5rem'
@@ -284,7 +284,44 @@ export default function HowToUse() {
             Annual Planning tools help you visualize progress and keep your records perfect.
           </p>
           <Link href="/resources" style={{
-            color: '#2563eb',
+            color: 'var(--primary)',
             fontWeight: '600',
             textDecoration: 'underline',
             fontSize: '1.125rem'
+          }}>
+            Explore our Homeschool Resources →
+          </Link>
+        </section>
+
+        {/* CTA Section */}
+        <section style={{textAlign: 'center'}}>
+          <h2 style={{
+            fontSize: '2rem',
+            fontWeight: '700',
+            color: 'var(--text-primary)',
+            marginBottom: '1.5rem'
+          }}>
+            Ready to Create Your Worksheets?
+          </h2>
+          <Link 
+            href="/"
+            style={{
+              display: 'inline-block',
+              background: 'var(--primary)',
+              color: 'white',
+              border: 'none',
+              padding: '1rem 2rem',
+              borderRadius: '6px',
+              fontWeight: '600',
+              textDecoration: 'none',
+              transition: 'background-color 0.2s',
+              fontSize: '1.125rem'
+            }}
+          >
+            Start Generating Worksheets Now
+          </Link>
+        </section>
+      </div>
+    </div>
+  )
+}
