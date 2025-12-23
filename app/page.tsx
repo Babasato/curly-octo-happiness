@@ -1,46 +1,71 @@
-// app/page.tsx - FULL FILE WITH DARK MODE FIXES AND SCROLL ANCHOR
-import React from 'react';
+// app/page.tsx - WITH GENERATOR LOGIC, DARK MODE FIXES, AND ANCHOR
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import WorksheetGenerator from './components/WorksheetGenerator';
+import LeadMagnetSignup from './components/LeadMagnetSignup';
+import { useDownloadTracker } from './hooks/useDownloadTracker';
+
+interface UserData {
+  name: string;
+  email: string;
+}
 
 export default function Home() {
+  const [userData, setUserData] = useState<UserData | null>(null);
+  const [showLeadMagnet, setShowLeadMagnet] = useState(false);
+  
+  const { 
+    addBonusDownloads, 
+    downloadsRemaining, 
+    incrementDownloadCount,
+    hasReceivedSignupBonus,
+    shouldShowLeadMagnet,
+    downloadData 
+  } = useDownloadTracker(); 
+
+  useEffect(() => {
+    if (shouldShowLeadMagnet()) {
+      setShowLeadMagnet(true);
+    }
+  }, [downloadsRemaining, hasReceivedSignupBonus, shouldShowLeadMagnet]);
+
+  const handleOpenLeadMagnet = () => {
+    setShowLeadMagnet(true);
+  };
+
+  const handleCloseLeadMagnet = () => {
+    setShowLeadMagnet(false);
+  };
+
+  const handleUserDataSubmit = async (email: string) => {
+    console.log('Email submitted:', email);
+    
+    addBonusDownloads(10, email);
+    
+    setUserData({ name: '', email });
+    setShowLeadMagnet(false);
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    setTimeout(() => {
+      alert('Success! 10 bonus downloads added to your account!');
+    }, 100);
+  };
+
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: 'var(--background)',
-      color: 'var(--text-primary)',
-      padding: '2rem 1.5rem'
-    }}>
-      <main style={{
-        maxWidth: '1200px',
-        margin: '0 auto'
-      }}>
-        {/* Header Section */}
-        <section style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h1 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1.5rem' }}>
-            Math Worksheet Generator
-          </h1>
-          <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto' }}>
-            Create unlimited, customized math practice sheets for your homeschool or classroom in seconds.
-          </p>
-        </section>
+    <div className="home-page">
+      <main className="main-content-area">
+        {/* Core Generator Tool */}
+        <WorksheetGenerator 
+          onOpenLeadMagnet={handleOpenLeadMagnet}
+          downloadsRemaining={downloadsRemaining}
+          incrementDownloadCount={incrementDownloadCount}
+          hasReceivedSignupBonus={hasReceivedSignupBonus}
+        />
 
-        {/* PLACEHOLDER FOR YOUR GENERATOR COMPONENT 
-            (Ensure your <Generator /> or main tool logic is here)
-        */}
-        <div style={{ 
-          background: 'var(--surface)', 
-          border: '1px solid var(--border)', 
-          borderRadius: '12px', 
-          padding: '2rem',
-          minHeight: '400px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-          <p>Your Worksheet Generator Tool is active here.</p>
-        </div>
-
-        {/* NEW RESOURCES SECTION - DARK MODE COMPATIBLE & ANCHORED */}
+        {/* NEW RESOURCES SECTION - DARK MODE FIXED & ANCHORED */}
         <section 
           id="resources-banner" 
           style={{
@@ -100,13 +125,20 @@ export default function Home() {
               fontWeight: '700',
               fontSize: '1.125rem',
               textDecoration: 'none',
-              transition: 'transform 0.2s ease'
+              transition: 'opacity 0.2s'
             }}
           >
             Explore Resources & Templates →
           </Link>
         </section>
       </main>
+
+      {showLeadMagnet && (
+        <LeadMagnetSignup 
+          onSuccess={handleUserDataSubmit} 
+          onClose={handleCloseLeadMagnet} 
+        />
+      )}
     </div>
   );
 }
