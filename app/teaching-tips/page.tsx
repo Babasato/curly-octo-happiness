@@ -1,4 +1,6 @@
+// app/teaching-tips/page.tsx - WITH RESOURCE LINKING SECTION
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Math Teaching Tips & Strategies | Effective Math Instruction',
@@ -254,112 +256,47 @@ export default function TeachingTips() {
           </div>
         </section>
 
-        {/* Math Environment Section */}
-        <section style={{marginBottom: '3rem'}}>
-          <div style={{
-            background: 'var(--surface)',
-            border: '1px solid var(--border)',
-            borderRadius: '8px',
-            padding: '2rem'
+        {/* RESOURCE SPOTLIGHT SECTION */}
+        <section style={{
+          background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
+          border: '1px solid #bae6fd',
+          borderRadius: '12px',
+          padding: '2.5rem',
+          marginBottom: '3rem',
+          textAlign: 'center'
+        }}>
+          <h2 style={{
+            fontSize: '1.75rem',
+            fontWeight: '700',
+            color: '#0369a1',
+            marginBottom: '1rem'
           }}>
-            <h2 style={{
-              fontSize: '2rem',
-              fontWeight: '700',
-              color: 'var(--text-primary)',
-              textAlign: 'center',
-              marginBottom: '2rem'
-            }}>
-              Creating a Positive Math Environment
-            </h2>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2rem'
-            }}>
-              <div>
-                <h3 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: '600',
-                  color: 'var(--text-primary)',
-                  marginBottom: '1rem'
-                }}>
-                  Growth Mindset Strategies
-                </h3>
-                <ul style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: 0,
-                  color: 'var(--text-secondary)'
-                }}>
-                  {[
-                    'Emphasize that everyone can learn math',
-                    'Praise effort and strategies, not just answers',
-                    'Normalize mistakes as learning opportunities',
-                    'Share stories of mathematicians who struggled',
-                    'Use "yet" language ("I haven\'t mastered this yet")'
-                  ].map((item, index) => (
-                    <li key={index} style={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      marginBottom: '0.5rem'
-                    }}>
-                      <div style={{
-                        width: '0.5rem',
-                        height: '0.5rem',
-                        background: 'var(--primary)',
-                        borderRadius: '50%',
-                        marginRight: '0.75rem',
-                        marginTop: '0.5rem',
-                        flexShrink: 0
-                      }}></div>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 style={{
-                  fontSize: '1.25rem',
-                  fontWeight: '600',
-                  color: 'var(--text-primary)',
-                  marginBottom: '1rem'
-                }}>
-                  Classroom Culture Tips
-                </h3>
-                <ul style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: 0,
-                  color: 'var(--text-secondary)'
-                }}>
-                  {[
-                    'Establish math talk routines and norms',
-                    'Create a safe space for risk-taking',
-                    'Display student work and thinking',
-                    'Use collaborative problem-solving',
-                    'Celebrate multiple approaches to problems'
-                  ].map((item, index) => (
-                    <li key={index} style={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      marginBottom: '0.5rem'
-                    }}>
-                      <div style={{
-                        width: '0.5rem',
-                        height: '0.5rem',
-                        background: 'var(--primary)',
-                        borderRadius: '50%',
-                        marginRight: '0.75rem',
-                        marginTop: '0.5rem',
-                        flexShrink: 0
-                      }}></div>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
+            Master Your Math Planning
+          </h2>
+          <p style={{
+            color: '#0c4a6e',
+            fontSize: '1.125rem',
+            lineHeight: '1.6',
+            marginBottom: '1.5rem',
+            maxWidth: '700px',
+            marginLeft: 'auto',
+            marginRight: 'auto'
+          }}>
+            Great teaching starts with great organization. We created a set of 
+            <strong> premium planning tools</strong> to help you track these teaching 
+            strategies and monitor student growth over the entire year.
+          </p>
+          <Link href="/resources" style={{
+            display: 'inline-block',
+            padding: '0.75rem 1.5rem',
+            background: '#0369a1',
+            color: 'white',
+            borderRadius: '8px',
+            fontWeight: '600',
+            textDecoration: 'none'
+          }}>
+            View Planning Resources
+          </Link>
         </section>
 
         {/* CTA Section */}
