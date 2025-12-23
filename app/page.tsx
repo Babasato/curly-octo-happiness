@@ -88,7 +88,7 @@ export default function Home() {
             fontWeight: '600',
             marginBottom: '1.5rem'
           }}>
-            NEW FOR 2024
+            NEW
           </div>
           
           <h2 style={{
