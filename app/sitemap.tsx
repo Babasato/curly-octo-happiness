@@ -1,129 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://homeschoolmath.site</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>1.0</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/resources</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/about</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/contact</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/addition-practice</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/subtraction-practice</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/multiplication-practice</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/division-practice</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/fractions-practice</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/kindergarten-worksheets</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/grade-1-worksheets</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/grade-2-worksheets</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/grade-3-worksheets</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/grade-4-worksheets</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/grade-5-worksheets</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/grade-6-worksheets</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/how-to-use</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/teaching-tips</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/privacy-policy</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>yearly</changefreq>
-<priority>0.3</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/terms-of-service</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>yearly</changefreq>
-<priority>0.3</priority>
-</url>
-<url>
-<loc>https://homeschoolmath.site/cookies</loc>
-<lastmod>2025-12-23T09:00:00.000Z</lastmod>
-<changefreq>yearly</changefreq>
-<priority>0.3</priority>
-</url>
-</urlset>
+import { MetadataRoute } from 'next'
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://homeschoolmath.site'
+  const lastModified = new Date()
+
+  const routes = [
+    '',
+    '/resources',
+    '/about',
+    '/contact',
+    '/addition-practice',
+    '/subtraction-practice',
+    '/multiplication-practice',
+    '/division-practice',
+    '/fractions-practice',
+    '/kindergarten-worksheets',
+    '/grade-1-worksheets',
+    '/grade-2-worksheets',
+    '/grade-3-worksheets',
+    '/grade-4-worksheets',
+    '/grade-5-worksheets',
+    '/grade-6-worksheets',
+    '/how-to-use',
+    '/teaching-tips',
+    '/privacy-policy',
+    '/terms-of-service',
+    '/cookies',
+  ]
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: lastModified,
+    changeFrequency: route === '' || route.includes('practice') || route.includes('worksheets') ? 'weekly' : 'monthly',
+    priority: route === '' ? 1 : route === '/resources' ? 0.9 : 0.8,
+  }))
+}
