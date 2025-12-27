@@ -12,7 +12,7 @@ interface DownloadSectionProps {
   onOpenLeadMagnet: () => void;
   downloadsRemaining: number;
   hasReceivedSignupBonus: boolean;
-  paperSize: 'a4' | 'letter'; // Added paperSize to the interface
+  paperSize: 'a4' | 'letter';
 }
 
 export default function DownloadSection({ 
@@ -23,7 +23,7 @@ export default function DownloadSection({
   onOpenLeadMagnet,
   downloadsRemaining,
   hasReceivedSignupBonus,
-  paperSize // Receive the paper size here
+  paperSize
 }: DownloadSectionProps) {
   
   const handleDownload = async () => {
@@ -39,8 +39,6 @@ export default function DownloadSection({
     }
 
     try {
-      // Pass paperSize to your utility function
-      // NOTE: Ensure your downloadCombinedPDF utility is updated to accept a 4th argument
       await downloadCombinedPDF(problems, title, includeVisuals, paperSize);
       onDownloadComplete();
     } catch (error) {
@@ -53,10 +51,7 @@ export default function DownloadSection({
 
   return (
     <div className="download-card">
-      <h3 className="download-title">
-        Download Your Worksheet
-      </h3>
-
+      <h3 className="download-title">Download Your Worksheet</h3>
       <p className="download-description">
         Download a clean PDF with {problems.length} problems and answer key.
         {includeVisuals && ' Includes visual aids.'}
@@ -67,25 +62,12 @@ export default function DownloadSection({
       {showBonusPrompt && (
         <div className="bonus-prompt">
           <span className="prompt-text">Only <strong>{downloadsRemaining} download{downloadsRemaining === 1 ? '' : 's'} left</strong>. Get 10 extra downloads when you sign up!</span>
-          <button 
-            onClick={onOpenLeadMagnet}
-            className="bonus-button"
-          >
-            Get Bonus
-          </button>
+          <button onClick={onOpenLeadMagnet} className="bonus-button">Get Bonus</button>
         </div>
       )}
 
-      <button 
-        onClick={handleDownload}
-        className="download-button"
-        disabled={downloadsRemaining <= 0}
-      >
-        {downloadsRemaining <= 0 ? (
-          'No Downloads Left - Sign Up for More'
-        ) : (
-          `Download PDF Worksheet (${paperSize.toUpperCase()})`
-        )}
+      <button onClick={handleDownload} className="download-button" disabled={downloadsRemaining <= 0}>
+        {downloadsRemaining <= 0 ? 'No Downloads Left - Sign Up for More' : `Download PDF Worksheet (${paperSize.toUpperCase()})`}
       </button>
       
       <div className="download-note">
