@@ -1,8 +1,8 @@
-// app/components/DownloadSection.tsx - DARK MODE FIXED
+// app/components/DownloadSection.tsx - DARK MODE FIXED WITH PAPER SIZE
 'use client';
 
-import React from 'react';
-import { downloadCombinedPDF, Problem } from '../utils/pdfGenerator';
+import React, { useState } from 'react';
+import { downloadCombinedPDF, Problem, PaperSize, getPaperSizeOptions } from '../utils/pdfGenerator';
 
 interface DownloadSectionProps {
   problems: Problem[];
@@ -24,6 +24,9 @@ export default function DownloadSection({
   hasReceivedSignupBonus
 }: DownloadSectionProps) {
   
+  const [selectedPaperSize, setSelectedPaperSize] = useState<PaperSize>('a4');
+  const paperSizeOptions = getPaperSizeOptions();
+  
   const handleDownload = async () => {
     if (problems.length === 0) {
       alert('Please generate problems first!');
@@ -37,7 +40,7 @@ export default function DownloadSection({
     }
 
     try {
-      await downloadCombinedPDF(problems, title, includeVisuals);
+      await downloadCombinedPDF(problems, title, includeVisuals, selectedPaperSize);
       onDownloadComplete();
     } catch (error) {
       console.error('Download failed:', error);
@@ -57,6 +60,29 @@ export default function DownloadSection({
         Download a clean PDF with {problems.length} problems and answer key.
         {includeVisuals && ' Includes visual aids.'}
       </p>
+
+      {/* Paper Size Selector */}
+      <div className="paper-size-selector">
+        <label className="paper-size-label">
+          Paper Size:
+        </label>
+        <select
+          value={selectedPaperSize}
+          onChange={(e) => setSelectedPaperSize(e.target.value as PaperSize)}
+          className="paper-size-dropdown"
+        >
+          {paperSizeOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <p className="paper-size-hint">
+          {selectedPaperSize === 'a4' 
+            ? 'Standard international size (210×297mm)' 
+            : 'Standard US/Canada size (8.5×11in)'}
+        </p>
+      </div>
 
       {showBonusPrompt && (
         <div className="bonus-prompt">
@@ -78,7 +104,7 @@ export default function DownloadSection({
         {downloadsRemaining <= 0 ? (
           'No Downloads Left - Sign Up for More'
         ) : (
-          'Download PDF Worksheet'
+          `Download PDF (${selectedPaperSize.toUpperCase()})`
         )}
       </button>
       
@@ -88,6 +114,10 @@ export default function DownloadSection({
         <br />
         <strong>Free daily downloads: 10</strong>
         {hasReceivedSignupBonus && ' • +10 bonus downloads from signup!'}
+        <br />
+        <span className="paper-size-indicator">
+          Formatted for {selectedPaperSize === 'a4' ? 'A4' : 'Letter'} paper
+        </span>
       </div>
     </div>
   );
