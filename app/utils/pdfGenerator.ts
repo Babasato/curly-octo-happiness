@@ -13,12 +13,14 @@ export interface Problem {
 export async function downloadCombinedPDF(
   problems: Problem[], 
   title: string,
-  includeVisuals: boolean = false
+  includeVisuals: boolean = false,
+  paperSize: 'a4' | 'letter' = 'letter' // Added paperSize parameter
 ): Promise<void> {
+  // Initialize jsPDF with the dynamic format
   const doc = new jsPDF({
     orientation: 'portrait',
     unit: 'mm',
-    format: 'a4'
+    format: paperSize
   });
 
   const pageWidth = doc.internal.pageSize.getWidth();
@@ -26,7 +28,7 @@ export async function downloadCombinedPDF(
   const margin = 15;
   const contentWidth = pageWidth - (2 * margin);
 
-  // WORKSHEET PAGE
+  // --- WORKSHEET PAGE ---
   doc.setFontSize(18);
   doc.setFont('helvetica', 'bold');
   doc.text(title, pageWidth / 2, 20, { align: 'center' });
@@ -142,7 +144,7 @@ export async function downloadCombinedPDF(
     yPosition += 20;
   });
 
-  // ANSWER KEY PAGE
+  // --- ANSWER KEY PAGE ---
   doc.addPage();
   doc.setFontSize(18);
   doc.setFont('helvetica', 'bold');
