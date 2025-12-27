@@ -12,6 +12,7 @@ interface DownloadSectionProps {
   onOpenLeadMagnet: () => void;
   downloadsRemaining: number;
   hasReceivedSignupBonus: boolean;
+  paperSize: 'a4' | 'letter'; // Added paperSize to the interface
 }
 
 export default function DownloadSection({ 
@@ -21,7 +22,8 @@ export default function DownloadSection({
   onDownloadComplete, 
   onOpenLeadMagnet,
   downloadsRemaining,
-  hasReceivedSignupBonus
+  hasReceivedSignupBonus,
+  paperSize // Receive the paper size here
 }: DownloadSectionProps) {
   
   const handleDownload = async () => {
@@ -37,7 +39,9 @@ export default function DownloadSection({
     }
 
     try {
-      await downloadCombinedPDF(problems, title, includeVisuals);
+      // Pass paperSize to your utility function
+      // NOTE: Ensure your downloadCombinedPDF utility is updated to accept a 4th argument
+      await downloadCombinedPDF(problems, title, includeVisuals, paperSize);
       onDownloadComplete();
     } catch (error) {
       console.error('Download failed:', error);
@@ -56,6 +60,8 @@ export default function DownloadSection({
       <p className="download-description">
         Download a clean PDF with {problems.length} problems and answer key.
         {includeVisuals && ' Includes visual aids.'}
+        <br />
+        Format: <strong>{paperSize === 'a4' ? 'A4 (International)' : 'Letter (US/Canada)'}</strong>
       </p>
 
       {showBonusPrompt && (
@@ -78,7 +84,7 @@ export default function DownloadSection({
         {downloadsRemaining <= 0 ? (
           'No Downloads Left - Sign Up for More'
         ) : (
-          'Download PDF Worksheet'
+          `Download PDF Worksheet (${paperSize.toUpperCase()})`
         )}
       </button>
       
