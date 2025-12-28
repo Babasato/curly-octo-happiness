@@ -2667,3 +2667,17 @@ html, body {
     font-size: 0.8rem;
   }
 }
+/* app/teaching-tips/teaching-tips.css */
+.strategy-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.strategy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
