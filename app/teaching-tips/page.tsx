@@ -1,6 +1,7 @@
-// app/teaching-tips/page.tsx - ENHANCED VERSION
+// app/teaching-tips/page.tsx - FIXED VERSION
 import { Metadata } from 'next'
 import Link from 'next/link'
+import './teaching-tips.css' // ✅ Added for CSS hover effect
 
 export const metadata: Metadata = {
   title: 'Math Teaching Tips & Strategies | Effective Math Instruction',
@@ -64,47 +65,44 @@ export default function TeachingTips() {
     'Celebrate progress and effort'
   ]
 
-  // ✅ Added: Consistent website header
-  const Header = () => (
-    <header style={{
-      background: 'var(--surface)',
-      borderBottom: '1px solid var(--border)',
-      padding: '1rem 1.5rem'
-    }}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }}>
-        <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <h1 style={{
-            fontSize: '1.4rem',
-            fontWeight: '700',
-            margin: 0,
-            color: 'var(--text-primary)'
-          }}>
-            Math Worksheet Generator
-          </h1>
-        </Link>
-        <nav>
-          <Link href="/" style={{
-            color: 'var(--text-secondary)',
-            textDecoration: 'none',
-            fontWeight: '600',
-            fontSize: '0.95rem'
-          }}>
-            ← Back to Generator
-          </Link>
-        </nav>
-      </div>
-    </header>
-  )
-
   return (
     <>
-      <Header />
+      {/* Header Component */}
+      <header style={{
+        background: 'var(--surface)',
+        borderBottom: '1px solid var(--border)',
+        padding: '1rem 1.5rem'
+      }}>
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center'
+        }}>
+          <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <h1 style={{
+              fontSize: '1.4rem',
+              fontWeight: '700',
+              margin: 0,
+              color: 'var(--text-primary)'
+            }}>
+              Math Worksheet Generator
+            </h1>
+          </Link>
+          <nav>
+            <Link href="/" style={{
+              color: 'var(--text-secondary)',
+              textDecoration: 'none',
+              fontWeight: '600',
+              fontSize: '0.95rem'
+            }}>
+              ← Back to Generator
+            </Link>
+          </nav>
+        </div>
+      </header>
+
       <div style={{
         minHeight: '100vh',
         background: 'var(--background)',
@@ -161,22 +159,7 @@ export default function TeachingTips() {
               gap: '1.5rem'
             }}>
               {strategies.map((strategy, index) => (
-                <div key={index} style={{
-                  background: 'var(--surface)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '8px',
-                  padding: '1.5rem',
-                  transition: 'transform 0.2s ease, box-shadow 0.2s ease', // ✅ Added hover effect
-                  cursor: 'default'
-                }} 
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = 'var(--shadow-lg)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}>
+                <div key={index} className="strategy-card"> {/* ✅ Added CSS class */}
                   <h3 style={{
                     fontSize: '1.25rem',
                     fontWeight: '600',
@@ -261,7 +244,7 @@ export default function TeachingTips() {
                         <div style={{
                           width: '0.5rem',
                           height: '0.5rem',
-                          background: index === 0 ? 'var(--secondary)' : 'var(--primary)', // ✅ Highlight CRA tip
+                          background: index === 0 ? 'var(--secondary)' : 'var(--primary)',
                           borderRadius: '50%',
                           marginRight: '0.75rem',
                           marginTop: '0.5rem',
