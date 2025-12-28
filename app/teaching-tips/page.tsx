@@ -1,7 +1,6 @@
-// app/teaching-tips/page.tsx - FIXED VERSION
+// app/teaching-tips/page.tsx - FINAL WORKING VERSION
 import { Metadata } from 'next'
 import Link from 'next/link'
-import './teaching-tips.css' // ✅ Added for CSS hover effect
 
 export const metadata: Metadata = {
   title: 'Math Teaching Tips & Strategies | Effective Math Instruction',
@@ -159,7 +158,7 @@ export default function TeachingTips() {
               gap: '1.5rem'
             }}>
               {strategies.map((strategy, index) => (
-                <div key={index} className="strategy-card"> {/* ✅ Added CSS class */}
+                <div key={index} className="strategy-card">
                   <h3 style={{
                     fontSize: '1.25rem',
                     fontWeight: '600',
