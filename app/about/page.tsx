@@ -60,7 +60,7 @@ export default function About() {
               <h2 className="about-section-title">Why We Exist</h2>
               <div className="auto-grid">
                 <div className="info-card accent-blue">
-                  <h3 className="text-h3">🎯 The Problem</h3>
+                  <h3 className="text-h3">The Problem</h3>
                   <p className="text-p">
                     Quality math resources often come with premium price tags or rigid structures 
                     that don't adapt to individual learning needs.
@@ -68,7 +68,7 @@ export default function About() {
                 </div>
                 
                 <div className="info-card accent-green">
-                  <h3 className="text-h3">💡 Our Solution</h3>
+                  <h3 className="text-h3">Our Solution</h3>
                   <p className="text-p">
                     Algorithmic worksheet generation that provides infinite, tailored practice 
                     while remaining completely free and accessible to everyone.
