@@ -79,7 +79,7 @@ export default function PrivacyPolicy() {
               marginBottom: '2rem'
             }}>
               {/* ✅ STATIC DATE - Prevents hydration errors */}
-              Last updated: December 27, 2025
+              Last updated: December 28, 2025
             </p>
 
             <div style={{
@@ -264,7 +264,7 @@ export default function PrivacyPolicy() {
                 </p>
               </section>
 
-              {/* Section 6 - Advertising and Cookies */}
+              {/* ✅ CORRECTED Section 6 - Advertising and Cookies */}
               <section style={{marginBottom: '2.5rem'}}>
                 <h2 style={{
                   fontSize: '1.5rem',
@@ -274,17 +274,11 @@ export default function PrivacyPolicy() {
                 }}>
                   6. Advertising and Cookies
                 </h2>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-                  We use Ezoic to provide personalization and analytic services on this website. 
-                  Ezoic's privacy policy is in effect and can be reviewed here: 
-                  <a href="https://www.ezoic.com/privacy-policy/" target="_blank" rel="noopener" style={{color: 'var(--primary)', marginLeft: '5px'}}>
-                    Ezoic Privacy Policy
-                  </a>.
-                </p>
                 <p style={{ color: 'var(--text-secondary)' }}>
-                  Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website. 
-                  Google's use of advertising cookies enables it and its partners to serve ads based on your visit to this site 
-                  and/or other sites on the Internet.
+                  To support the operation of this free educational website, we may work with third-party advertising networks.
+                  These partners may use cookies and similar technologies to serve ads based on a user's prior visits to this 
+                  website or other sites on the internet. We will update this section with specific partner information if and when 
+                  an advertising program is implemented.
                 </p>
               </section>
 
@@ -354,7 +348,6 @@ export default function PrivacyPolicy() {
                 <p style={{ color: 'var(--text-secondary)' }}>
                   <strong>Email:</strong> bob@homeschoolmath.site
                   <br />
-                  {/* ✅ UPDATED CITY & COUNTRY */}
                   <strong>Mailing Address:</strong> Nairobi, Kenya
                 </p>
                 <p style={{ color: 'var(--text-secondary)', marginTop: '1rem', fontSize: '0.95rem', fontStyle: 'italic' }}>
