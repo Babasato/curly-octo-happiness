@@ -1,4 +1,4 @@
-// app/components/DownloadSection.tsx - DARK MODE FIXED WITH PAPER SIZE
+// app/components/DownloadSection.tsx - COMPLETE VERSION WITH ANALYTICS
 'use client';
 
 import React, { useState } from 'react';
@@ -27,6 +27,21 @@ export default function DownloadSection({
   const [selectedPaperSize, setSelectedPaperSize] = useState<PaperSize>('a4');
   const paperSizeOptions = getPaperSizeOptions();
   
+  // Track bonus prompt clicks
+  const handleBonusClick = () => {
+    // Track bonus prompt clicks in Google Analytics
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'bonus_prompt_click', {
+        'event_category': 'conversion',
+        'event_label': 'download_bonus',
+        'downloads_remaining': downloadsRemaining,
+        'has_received_bonus': hasReceivedSignupBonus,
+        'location': 'download_section'
+      });
+    }
+    onOpenLeadMagnet();
+  };
+  
   const handleDownload = async () => {
     if (problems.length === 0) {
       alert('Please generate problems first!');
@@ -35,16 +50,65 @@ export default function DownloadSection({
 
     if (downloadsRemaining <= 0) {
       alert('No downloads remaining for today. Sign up for more!');
-      onOpenLeadMagnet();
+      handleBonusClick();
       return;
     }
 
     try {
+      // --- GOOGLE ANALYTICS: Track worksheet download ---
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'generate_worksheet', {
+          'event_category': 'engagement',
+          'event_label': title,
+          'paper_size': selectedPaperSize,
+          'problem_count': problems.length,
+          'include_visuals': includeVisuals,
+          'downloads_remaining': downloadsRemaining,
+          'has_bonus': hasReceivedSignupBonus
+        });
+      }
+      // ------------------------------------------
+
       await downloadCombinedPDF(problems, title, includeVisuals, selectedPaperSize);
       onDownloadComplete();
+      
+      // --- OPTIONAL: Track successful download completion ---
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'download_complete', {
+          'event_category': 'engagement',
+          'event_label': 'pdf_downloaded',
+          'paper_size': selectedPaperSize
+        });
+      }
+      
     } catch (error) {
       console.error('Download failed:', error);
+      
+      // --- OPTIONAL: Track download failures ---
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'download_error', {
+          'event_category': 'errors',
+          'event_label': 'pdf_generation_failed',
+          'error_type': error instanceof Error ? error.message : 'unknown'
+        });
+      }
+      
       alert('Download failed. Please try again.');
+    }
+  };
+
+  // Track paper size changes (optional analytics)
+  const handlePaperSizeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newSize = e.target.value as PaperSize;
+    setSelectedPaperSize(newSize);
+    
+    // Track paper size preference
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'paper_size_change', {
+        'event_category': 'preferences',
+        'event_label': 'paper_size_selected',
+        'paper_size': newSize
+      });
     }
   };
 
@@ -68,7 +132,7 @@ export default function DownloadSection({
         </label>
         <select
           value={selectedPaperSize}
-          onChange={(e) => setSelectedPaperSize(e.target.value as PaperSize)}
+          onChange={handlePaperSizeChange}
           className="paper-size-dropdown"
         >
           {paperSizeOptions.map((option) => (
@@ -88,7 +152,7 @@ export default function DownloadSection({
         <div className="bonus-prompt">
           <span className="prompt-text">Only <strong>{downloadsRemaining} download{downloadsRemaining === 1 ? '' : 's'} left</strong>. Get 10 extra downloads when you sign up!</span>
           <button 
-            onClick={onOpenLeadMagnet}
+            onClick={handleBonusClick}
             className="bonus-button"
           >
             Get Bonus
