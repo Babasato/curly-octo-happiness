@@ -1,4 +1,4 @@
-// app/resources/page.tsx - WITH ANCHOR LINK AND DARK MODE COMPATIBILITY
+// app/resources/page.tsx - WITH NOTION TEMPLATE LIVE
 import Link from 'next/link';
 
 export default function Resources() {
@@ -45,14 +45,14 @@ export default function Resources() {
                 <h3 className="text-h3" style={{ fontSize: '1.8rem', color: 'var(--text-primary)' }}>Notion Math Progress Dashboard</h3>
                 <p style={{ color: 'var(--accent-blue)', fontWeight: 'bold', fontSize: '0.9rem', marginBottom: '0.5rem' }}>THE ULTIMATE MASTER TRACKER</p>
               </div>
-              <span style={{ background: 'var(--background)', padding: '6px 12px', borderRadius: '4px', fontSize: '1rem', fontWeight: 'bold', color: 'var(--text-secondary)' }}>COMING SOON</span>
+              <span style={{ background: 'var(--accent-blue)', color: 'white', padding: '6px 12px', borderRadius: '4px', fontSize: '1rem', fontWeight: 'bold' }}>$22</span>
             </div>
             <p className="text-p" style={{ fontSize: '1.1rem', marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
-              Our most comprehensive tool yet. This digital ecosystem allows you to track your student's entire mathematical journey in one place. Visualize mastery gaps, archive completed work, and manage multiple students within a high-performance Notion workspace.
+              Track your student's entire mathematical journey in one intelligent system. Auto-calculate teaching hours, visualize skill mastery with progress bars, and generate compliance portfolios in 30 seconds. Features 13 pre-built views, smart alerts for struggling skills, and seamless multi-student tracking—all in Notion.
             </p>
-            <button disabled className="contact-submit-button" style={{ width: '100%', opacity: 0.7, background: 'var(--accent-blue)', cursor: 'not-allowed', color: 'white', padding: '1rem', borderRadius: '8px', border: 'none' }}>
-              Currently in Final Development
-            </button>
+            <Link href="https://homeschoolmath.gumroad.com/l/ahxceu" target="_blank" className="contact-submit-button" style={{ display: 'block', textAlign: 'center', textDecoration: 'none', width: '100%', background: 'var(--accent-blue)', color: 'white', padding: '1rem', borderRadius: '8px', border: 'none', fontWeight: '600' }}>
+              Get the Template on Gumroad
+            </Link>
         </div>
       </section>
 
@@ -74,20 +74,6 @@ export default function Resources() {
               Map out your entire academic year in minutes. Set high-level objectives, align with standards, and generate a comprehensive PDF roadmap to keep your teaching on track.
             </p>
             <Link href="https://homeschoolmath.gumroad.com/l/btoecv" target="_blank" className="contact-submit-button" style={{ display: 'block', textAlign: 'center', textDecoration: 'none', fontSize: '0.9rem', background: 'var(--primary)', color: 'white', padding: '0.75rem', borderRadius: '8px' }}>
-              View on Gumroad
-            </Link>
-          </div>
-
-          {/* Grade Tracker */}
-          <div className="info-card accent-green" style={{ background: 'var(--surface)', padding: '1.5rem', borderRadius: '12px', border: '1px solid var(--border)' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-              <h3 className="text-h3" style={{ color: 'var(--text-primary)' }}>Grade Tracker Spreadsheet</h3>
-              <span style={{ background: 'var(--background)', padding: '2px 8px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 'bold', color: 'var(--text-secondary)' }}>$12</span>
-            </div>
-            <p className="text-p" style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
-              A fully automated gradebook for Excel or Google Sheets. Features weighted scoring, standards mastery tracking, and professional report cards ready for your portfolio.
-            </p>
-            <Link href="https://homeschoolmath.gumroad.com/l/toehbn" target="_blank" className="contact-submit-button" style={{ display: 'block', textAlign: 'center', textDecoration: 'none', fontSize: '0.9rem', background: 'var(--primary)', color: 'white', padding: '0.75rem', borderRadius: '8px' }}>
               View on Gumroad
             </Link>
           </div>
