@@ -1,3 +1,5 @@
+'use client';
+
 // app/resources/page.tsx - WITH NOTION TEMPLATE LIVE
 import Link from 'next/link';
 
@@ -39,8 +41,7 @@ export default function Resources() {
           position: 'relative',
           borderRadius: '12px',
           padding: '2rem',
-          transition: 'all 0.3s ease',
-          cursor: 'pointer'
+          transition: 'all 0.3s ease'
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = 'translateY(-4px)';
@@ -76,8 +77,7 @@ export default function Resources() {
                 borderRadius: '8px', 
                 border: 'none', 
                 fontWeight: '600',
-                transition: 'all 0.3s ease',
-                cursor: 'pointer'
+                transition: 'all 0.3s ease'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'var(--primary)';
