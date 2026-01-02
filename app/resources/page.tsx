@@ -38,8 +38,19 @@ export default function Resources() {
           border: '2px solid var(--accent-blue)', 
           position: 'relative',
           borderRadius: '12px',
-          padding: '2rem'
-        }}>
+          padding: '2rem',
+          transition: 'all 0.3s ease',
+          cursor: 'pointer'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'translateY(-4px)';
+          e.currentTarget.style.boxShadow = '0 8px 24px rgba(59, 130, 246, 0.3)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'translateY(0)';
+          e.currentTarget.style.boxShadow = 'none';
+        }}
+        >
            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <div>
                 <h3 className="text-h3" style={{ fontSize: '1.8rem', color: 'var(--text-primary)' }}>Notion Math Progress Dashboard</h3>
@@ -50,8 +61,36 @@ export default function Resources() {
             <p className="text-p" style={{ fontSize: '1.1rem', marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
               Track your student's entire mathematical journey in one intelligent system. Auto-calculate teaching hours, visualize skill mastery with progress bars, and generate compliance portfolios in 30 seconds. Features 13 pre-built views, smart alerts for struggling skills, and seamless multi-student tracking—all in Notion.
             </p>
-            <Link href="https://homeschoolmath.gumroad.com/l/ahxceu" target="_blank" className="contact-submit-button" style={{ display: 'block', textAlign: 'center', textDecoration: 'none', width: '100%', background: 'var(--accent-blue)', color: 'white', padding: '1rem', borderRadius: '8px', border: 'none', fontWeight: '600' }}>
-              Get the Template on Gumroad
+            <Link 
+              href="https://homeschoolmath.gumroad.com/l/ahxceu" 
+              target="_blank" 
+              className="contact-submit-button" 
+              style={{ 
+                display: 'block', 
+                textAlign: 'center', 
+                textDecoration: 'none', 
+                width: '100%', 
+                background: 'var(--accent-blue)', 
+                color: 'white', 
+                padding: '1rem', 
+                borderRadius: '8px', 
+                border: 'none', 
+                fontWeight: '600',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'var(--primary)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'var(--accent-blue)';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              Get the Template on Gumroad →
             </Link>
         </div>
       </section>
