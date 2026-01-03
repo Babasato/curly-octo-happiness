@@ -143,41 +143,52 @@ export default function Resources() {
           Reliable, automated tools for parents who want professional-grade organization without the administrative headache.
         </p>
         
-        <div className="auto-grid" style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-          gap: '1.5rem' 
+        {/* Two Product Cards - Fixed Alignment */}
+        <div style={{ 
+          display: 'flex', 
+          flexDirection: 'row', 
+          gap: '1.5rem', 
+          flexWrap: 'wrap' 
         }}>
           {/* Curriculum Planner */}
           <div className="info-card accent-red" style={{ 
+            flex: '1', 
+            minWidth: '300px',
             background: 'var(--surface)', 
             padding: '1.5rem', 
             borderRadius: '12px', 
-            border: '1px solid var(--border)' 
+            border: '1px solid var(--border)',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
           }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-              <h3 className="text-h3" style={{ color: 'var(--text-primary)' }}>
-                Curriculum PDF Generator
-              </h3>
-              <span style={{ 
-                background: 'var(--background)', 
-                padding: '2px 8px', 
-                borderRadius: '4px', 
-                fontSize: '0.8rem', 
-                fontWeight: 'bold', 
-                color: 'var(--text-secondary)' 
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                <h3 className="text-h3" style={{ color: 'var(--text-primary)' }}>
+                  Curriculum PDF Generator
+                </h3>
+                <span style={{ 
+                  background: 'var(--background)', 
+                  padding: '2px 8px', 
+                  borderRadius: '4px', 
+                  fontSize: '0.8rem', 
+                  fontWeight: 'bold', 
+                  color: 'var(--text-secondary)',
+                  whiteSpace: 'nowrap'
+                }}>
+                  $17
+                </span>
+              </div>
+              
+              <p className="text-p" style={{ 
+                marginBottom: '1.5rem', 
+                color: 'var(--text-secondary)',
+                flexGrow: '1'
               }}>
-                $17
-              </span>
+                Map out your entire academic year in minutes. Set high-level objectives, align with standards, and generate 
+                a comprehensive PDF roadmap to keep your teaching on track.
+              </p>
             </div>
-            
-            <p className="text-p" style={{ 
-              marginBottom: '1.5rem', 
-              color: 'var(--text-secondary)' 
-            }}>
-              Map out your entire academic year in minutes. Set high-level objectives, align with standards, and generate 
-              a comprehensive PDF roadmap to keep your teaching on track.
-            </p>
             
             <Link 
               href="https://homeschoolmath.gumroad.com/l/btoecv" 
@@ -191,7 +202,8 @@ export default function Resources() {
                 background: 'var(--primary)', 
                 color: 'white', 
                 padding: '0.75rem', 
-                borderRadius: '8px' 
+                borderRadius: '8px',
+                width: '100%'
               }}
             >
               View on Gumroad
@@ -200,34 +212,43 @@ export default function Resources() {
 
           {/* Weekly Planner */}
           <div className="info-card accent-orange" style={{ 
+            flex: '1', 
+            minWidth: '300px',
             background: 'var(--surface)', 
             padding: '1.5rem', 
             borderRadius: '12px', 
-            border: '1px solid var(--border)' 
+            border: '1px solid var(--border)',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
           }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-              <h3 className="text-h3" style={{ color: 'var(--text-primary)' }}>
-                Weekly Math Planner
-              </h3>
-              <span style={{ 
-                background: 'var(--background)', 
-                padding: '2px 8px', 
-                borderRadius: '4px', 
-                fontSize: '0.8rem', 
-                fontWeight: 'bold', 
-                color: 'var(--text-secondary)' 
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                <h3 className="text-h3" style={{ color: 'var(--text-primary)' }}>
+                  Weekly Math Planner
+                </h3>
+                <span style={{ 
+                  background: 'var(--background)', 
+                  padding: '2px 8px', 
+                  borderRadius: '4px', 
+                  fontSize: '0.8rem', 
+                  fontWeight: 'bold', 
+                  color: 'var(--text-secondary)',
+                  whiteSpace: 'nowrap'
+                }}>
+                  $7
+                </span>
+              </div>
+              
+              <p className="text-p" style={{ 
+                marginBottom: '1.5rem', 
+                color: 'var(--text-secondary)',
+                flexGrow: '1'
               }}>
-                $7
-              </span>
+                The perfect companion for daily teaching. Generate unlimited weekly planners to organize lessons, track 
+                manipulatives, and document student reflections.
+              </p>
             </div>
-            
-            <p className="text-p" style={{ 
-              marginBottom: '1.5rem', 
-              color: 'var(--text-secondary)' 
-            }}>
-              The perfect companion for daily teaching. Generate unlimited weekly planners to organize lessons, track 
-              manipulatives, and document student reflections.
-            </p>
             
             <Link 
               href="https://homeschoolmath.gumroad.com/l/bkltc" 
@@ -241,12 +262,109 @@ export default function Resources() {
                 background: 'var(--primary)', 
                 color: 'white', 
                 padding: '0.75rem', 
-                borderRadius: '8px' 
+                borderRadius: '8px',
+                width: '100%'
               }}
             >
               View on Gumroad
             </Link>
           </div>
+        </div>
+
+        {/* Bundle Product - Full Width */}
+        <div 
+          className="info-card accent-green" 
+          style={{ 
+            marginTop: '3rem',
+            background: 'var(--surface)',
+            border: '2px solid #10B981', 
+            borderRadius: '12px',
+            padding: '2rem',
+            transition: 'all 0.3s ease'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-4px)';
+            e.currentTarget.style.boxShadow = '0 8px 24px rgba(16, 185, 129, 0.3)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = 'none';
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+            <div>
+              <h3 className="text-h3" style={{ fontSize: '1.8rem', color: 'var(--text-primary)' }}>
+                The Complete Homeschool Math System Bundle
+              </h3>
+              <p style={{ 
+                color: '#10B981', 
+                fontWeight: 'bold', 
+                fontSize: '0.9rem', 
+                marginBottom: '0.5rem' 
+              }}>
+                GET ALL 3 PREMIUM TOOLS & SAVE 24%
+              </p>
+            </div>
+            <div style={{ textAlign: 'right' }}>
+              <div style={{ 
+                background: '#10B981', 
+                color: 'white', 
+                padding: '6px 12px', 
+                borderRadius: '4px', 
+                fontSize: '1.2rem', 
+                fontWeight: 'bold',
+                marginBottom: '0.25rem'
+              }}>
+                $35
+              </div>
+              <div style={{ 
+                fontSize: '0.8rem', 
+                color: 'var(--text-secondary)',
+                textDecoration: 'line-through'
+              }}>
+                Regular: $46
+              </div>
+            </div>
+          </div>
+          
+          <p className="text-p" style={{ 
+            fontSize: '1.1rem', 
+            marginBottom: '1.5rem', 
+            color: 'var(--text-secondary)' 
+          }}>
+            Stop piecing together random tools. Get everything you need to plan, track, and document your entire math curriculum in one complete bundle. Includes: Notion Math Progress Dashboard, Year-Long Curriculum Planner Generator, and Weekly Math Planner.
+          </p>
+          
+          <Link 
+            href="https://homeschoolmath.gumroad.com/l/bmedz" 
+            target="_blank" 
+            className="contact-submit-button" 
+            style={{ 
+              display: 'block', 
+              textAlign: 'center', 
+              textDecoration: 'none', 
+              width: '100%', 
+              background: '#10B981', 
+              color: 'white', 
+              padding: '1rem', 
+              borderRadius: '8px', 
+              border: 'none', 
+              fontWeight: '600',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'var(--primary)';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = '#10B981';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
+            Get the Complete Bundle on Gumroad →
+          </Link>
         </div>
       </section>
 
