@@ -6,6 +6,23 @@ import Link from 'next/link';
 import WorksheetGenerator from './components/WorksheetGenerator';
 import LeadMagnetSignup from './components/LeadMagnetSignup';
 import { useDownloadTracker } from './hooks/useDownloadTracker';
+import { Metadata } from 'next';
+
+// Static metadata export for the home page
+export const metadata: Metadata = {
+  title: 'Homeschool Math - Free Worksheets & Practice Sheets',
+  description: 'Generate free printable math worksheets for homeschool and classroom. Custom practice sheets for addition, subtraction, multiplication, division, and more.',
+  alternates: {
+    canonical: 'https://homeschoolmath.site/',
+  },
+  openGraph: {
+    title: 'Homeschool Math - Free Worksheets & Practice Sheets',
+    description: 'Generate free printable math worksheets for homeschool and classroom.',
+    url: 'https://homeschoolmath.site/',
+    siteName: 'Homeschool Math',
+    type: 'website',
+  },
+};
 
 interface UserData {
   name: string;
