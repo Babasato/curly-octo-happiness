@@ -1,7 +1,16 @@
-// app/layout.tsx
 import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://homeschoolmath.site'),
+  title: {
+    default: 'Homeschool Math - Free Worksheets & Resources',
+    template: '%s | Homeschool Math'
+  },
+  description: 'Free printable math worksheets, practice sheets, and educational resources for homeschool families and teachers.',
+};
 
 export default function RootLayout({
   children,
@@ -11,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="https://homeschoolmath.site" />
+        {/* Canonical tag is automatically added by Next.js using metadataBase */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
         {/* Anti-Flash Theme Script: Sets theme BEFORE page paints */}
