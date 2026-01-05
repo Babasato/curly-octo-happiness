@@ -5,6 +5,15 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Multiplication Practice Worksheets | Free Printable Times Tables',
   description: 'Master multiplication with custom practice sheets. Generate free printable multiplication worksheets for 2nd through 6th grade with times tables, arrays, and word problems.',
+  alternates: {
+    canonical: 'https://homeschoolmath.site/multiplication-practice',
+  },
+  openGraph: {
+    title: 'Multiplication Practice Worksheets | Free Printable Times Tables',
+    description: 'Master multiplication with custom practice sheets. Generate free printable multiplication worksheets.',
+    url: 'https://homeschoolmath.site/multiplication-practice',
+    type: 'website',
+  },
 }
 
 export default function MultiplicationPractice() {
