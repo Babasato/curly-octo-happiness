@@ -1,4 +1,4 @@
-// app/page.tsx - WITH GENERATOR LOGIC, ACCURATE COPY, AND DARK MODE ANCHOR
+// app/page.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -65,7 +65,7 @@ export default function Home() {
           hasReceivedSignupBonus={hasReceivedSignupBonus}
         />
 
-        {/* ACCURATE RESOURCES SECTION - DARK MODE FIXED & ANCHORED */}
+        {/* RESOURCES SECTION - DARK MODE FIXED & ANCHORED */}
         <section 
           id="resources-banner" 
           style={{
