@@ -1,4 +1,4 @@
-//app/layout.tsx
+// app/layout.tsx
 import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -6,6 +6,11 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://homeschoolmath.site'),
+  title: {
+    default: 'HomeschoolMath.site - Free Printable Math Worksheets',
+    template: '%s | HomeschoolMath.site'
+  },
+  description: 'Generate unlimited free printable math worksheets for addition, subtraction, multiplication, and division. Perfect for homeschool families and teachers.',
   alternates: {
     canonical: 'https://homeschoolmath.site',
   },
@@ -52,7 +57,7 @@ export default function RootLayout({
               gtag('config', 'G-20S3GKW7QB');
             `,
           }}
-        ></script>
+        />
         
         {/* Google AdSense */}
         <script
