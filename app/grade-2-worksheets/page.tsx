@@ -5,6 +5,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Second Grade Math Worksheets | Free Printable 2nd Grade Math Practice',
   description: 'Free printable 2nd grade math worksheets covering addition, subtraction, place value, measurement, time, money, and geometry. Perfect for homeschool and classroom use.',
+alternates: {
+    canonical: 'https://homeschoolmath.site/grade-2-worksheets',
+  },
 }
 
 export default function Grade2Worksheets() {

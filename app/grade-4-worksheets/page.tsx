@@ -5,6 +5,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Fourth Grade Math Worksheets | Free Printable 4th Grade Math Practice',
   description: 'Free printable 4th grade math worksheets covering multiplication, division, fractions, decimals, geometry, and measurement. Perfect for homeschool and classroom use.',
+alternates: {
+    canonical: 'https://homeschoolmath.site/grade-4-worksheets',
+  },
 }
 
 export default function Grade4Worksheets() {

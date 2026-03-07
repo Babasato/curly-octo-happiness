@@ -5,6 +5,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'First Grade Math Worksheets | Free Printable 1st Grade Math Practice',
   description: 'Free printable 1st grade math worksheets covering addition, subtraction, counting, place value, measurement, and geometry. Perfect for homeschool and classroom use.',
+alternates: {
+    canonical: 'https://homeschoolmath.site/grade-1-worksheets',
+  },
 }
 
 export default function Grade1Worksheets() {
