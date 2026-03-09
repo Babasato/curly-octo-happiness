@@ -13,21 +13,7 @@ export default function Resources() {
     }}>
       {/* Header Section */}
       <header style={{ textAlign: 'center', marginBottom: '3rem' }}>
-        <div style={{ textAlign: 'left', marginBottom: '1rem' }}>
-          <Link 
-            href="/#resources-banner" 
-            style={{ 
-              color: 'var(--primary)', 
-              textDecoration: 'none',
-              fontWeight: '600',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem'
-            }}
-          >
-            ← Back to Generator
-          </Link>
-        </div>
+        
 
         <h1 className="contact-page-title" style={{ color: 'var(--text-primary)' }}>
           Homeschool Math Resources

@@ -211,41 +211,7 @@ export default function HowToUse() {
 
   return (
     <>
-      {/* Approved Header */}
-      <header style={{
-        background: 'var(--surface)',
-        borderBottom: '1px solid var(--border)',
-        padding: '1rem 1.5rem'
-      }}>
-        <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center'
-        }}>
-          <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <h1 style={{
-              fontSize: '1.4rem',
-              fontWeight: '700',
-              margin: 0,
-              color: 'var(--text-primary)'
-            }}>
-              Math Worksheet Generator
-            </h1>
-          </Link>
-          <nav>
-            <Link href="/" style={{
-              color: 'var(--text-secondary)',
-              textDecoration: 'none',
-              fontWeight: '600',
-              fontSize: '0.95rem'
-            }}>
-              ← Back to Generator
-            </Link>
-          </nav>
-        </div>
-      </header>
+      
 
       <div style={{
         minHeight: '100vh',
