@@ -1,193 +1,284 @@
-// app/about/page.tsx - UPDATED WITH EXISTING CSS CLASSES
+// app/about/page.tsx
 import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Us | The Mission Behind homeschoolmath.site',
-  description: 'Learn about our mission to provide high-quality, algorithmic math resources for homeschool families and educators worldwide.',
+  title: 'About | homeschoolmath.site',
+  description: 'Learn about our mission to provide free, high-quality math worksheets and affordable resources for homeschool families and educators.',
+  alternates: {
+    canonical: 'https://homeschoolmath.site/about',
+  },
 }
 
 export default function About() {
-  const educationalPillars = [
-    { 
-      title: "Conceptual Mastery", 
-      desc: "Build deep understanding alongside procedural fluency for lasting mathematical knowledge." 
+  const offerings = [
+    {
+      title: 'Free Worksheet Generator',
+      desc: 'Unlimited, randomized math worksheets for kindergarten through 6th grade. No account needed, no cost — ever.',
+      accent: 'accent-blue'
     },
-    { 
-      title: "Flexible Thinking", 
-      desc: "Varied problem types and approaches to develop adaptable mathematical problem-solving skills." 
+    {
+      title: 'Planners & Templates',
+      desc: 'Weekly and yearly curriculum planners plus a Notion template to keep your homeschool organised and running smoothly.',
+      accent: 'accent-green'
     },
-    { 
-      title: "Growth Mindset", 
-      desc: "Appropriately challenging materials that encourage persistence and celebrate progress." 
+    {
+      title: 'Focused Math Courses',
+      desc: 'Short, targeted courses on Number Sense (K–2), Subtraction (Grades 2–4), and Multiplication (Grades 4–5) — built for real results.',
+      accent: 'accent-orange'
+    }
+  ]
+
+  const values = [
+    {
+      title: 'Conceptual Understanding First',
+      desc: 'Facts and procedures matter, but only after a child understands what the numbers mean. Everything we build reflects that priority.'
     },
-    { 
-      title: "Seamless Differentiation", 
-      desc: "Tools designed to meet diverse learning needs in both classroom and homeschool settings." 
+    {
+      title: 'Accessible to Everyone',
+      desc: 'The core tools are free. The paid resources are priced to be within reach of a single-income homeschool family.'
+    },
+    {
+      title: 'No Fluff',
+      desc: 'No weekly email courses, no upsell funnels, no bloated curricula. Just focused, well-made resources that do what they say.'
+    },
+    {
+      title: 'Built for Both Home and Classroom',
+      desc: 'Whether you\'re a homeschooling parent or a classroom teacher, the tools are designed to fit how you actually work.'
     }
   ]
 
   return (
-    <>
-      {/* ✅ Consistent Website Header */}
-      <header className="site-header">
-        <div className="header-content">
-          <Link href="/" className="home-link">
-            <h1 className="brand-title">Math Worksheet Generator</h1>
-          </Link>
-          <nav className="main-nav">
-            <Link href="/" className="nav-link">
-              ← Back to Generator
-            </Link>
-          </nav>
-        </div>
-      </header>
+    <div style={{
+      minHeight: '100vh',
+      background: 'var(--background)',
+      padding: '2rem 0'
+    }}>
+      <div style={{
+        maxWidth: '1000px',
+        margin: '0 auto',
+        padding: '0 1.5rem'
+      }}>
 
-      <div className="about-page">
-        <div className="about-container">
-          <div className="about-card">
-            {/* Hero Section */}
-            <div style={{ textAlign: 'center', padding: '3rem 0', marginBottom: '2rem' }}>
-              <h1 className="about-title">About Our Mission</h1>
-              <p className="about-text" style={{ fontSize: '1.25rem', maxWidth: '700px', margin: '0 auto' }}>
-                Bridging the gap between premium educational technology and accessibility through 
-                high-quality, customizable math resources.
-              </p>
-            </div>
-
-            {/* Our Mission Section */}
-            <section className="about-section">
-              <h2 className="about-section-title">Why We Exist</h2>
-              <div className="auto-grid">
-                <div className="info-card accent-blue">
-                  <h3 className="text-h3">The Problem</h3>
-                  <p className="text-p">
-                    Quality math resources often come with premium price tags or rigid structures 
-                    that don't adapt to individual learning needs.
-                  </p>
-                </div>
-                
-                <div className="info-card accent-green">
-                  <h3 className="text-h3">Our Solution</h3>
-                  <p className="text-p">
-                    Algorithmic worksheet generation that provides infinite, tailored practice 
-                    while remaining completely free and accessible to everyone.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* What We Offer Section */}
-            <section className="about-section">
-              <h2 className="about-section-title">What We Offer</h2>
-              <div className="auto-grid">
-                <div className="info-card accent-blue">
-                  <h3 className="text-h3">Customizable Worksheets</h3>
-                  <p className="text-p">
-                    Randomized algorithmic generation ensures every worksheet is unique, 
-                    preventing rote memorization and encouraging true mastery.
-                  </p>
-                </div>
-
-                <div className="info-card accent-green">
-                  <h3 className="text-h3">Comprehensive Coverage</h3>
-                  <p className="text-p">
-                    K-6 math resources aligned with core standards and conceptual development 
-                    milestones.
-                  </p>
-                </div>
-
-                <div className="info-card accent-orange">
-                  <h3 className="text-h3">Planning Tools</h3>
-                  <p className="text-p">
-                    Notion dashboards and curriculum trackers to organize the administrative 
-                    side of education effectively.
-                  </p>
-                </div>
-
-                <div className="info-card accent-red">
-                  <h3 className="text-h3">Always Free</h3>
-                  <p className="text-p">
-                    No hidden fees or intrusive subscriptions—just honest, effective educational 
-                    tools accessible to everyone.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* ✅ ENHANCED: Educational Philosophy Grid */}
-            <section className="about-section">
-              <h2 className="about-section-title">Our Educational Philosophy</h2>
-              <p className="about-text">
-                Math education requires more than just repetition. Our resources are engineered around these core principles:
-              </p>
-              
-              <div style={{ 
-                display: 'grid', 
-                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-                gap: '1.25rem', 
-                marginTop: '1.5rem' 
-              }}>
-                {educationalPillars.map((pillar, i) => (
-                  <div key={i} className="info-card" style={{
-                    borderLeft: '4px solid var(--primary)',
-                    height: '100%',
-                    padding: '1.25rem'
-                  }}>
-                    <h3 style={{ 
-                      fontSize: '1.125rem',
-                      fontWeight: '600',
-                      color: 'var(--text-primary)', 
-                      marginBottom: '0.5rem',
-                      lineHeight: '1.4'
-                    }}>
-                      {pillar.title}
-                    </h3>
-                    <p style={{ 
-                      fontSize: '0.95rem', 
-                      color: 'var(--text-secondary)',
-                      lineHeight: '1.5',
-                      margin: 0
-                    }}>
-                      {pillar.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="about-cta-section">
-              <h2 className="about-section-title">Ready to Transform Math Practice?</h2>
-              <p className="about-text" style={{ maxWidth: '600px', margin: '0 auto 2rem' }}>
-                Join thousands of educators and parents who use homeschoolmath.site 
-                to support their students' mathematical journey.
-              </p>
-              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link href="/" className="about-cta-button">
-                  Start Generating Worksheets
-                </Link>
-                <Link 
-                  href="/how-to-use"
-                  style={{
-                    display: 'inline-block',
-                    background: 'transparent',
-                    color: 'var(--primary)',
-                    border: '2px solid var(--primary)',
-                    padding: '1rem 2rem',
-                    borderRadius: '6px',
-                    fontWeight: '600',
-                    textDecoration: 'none',
-                    transition: 'all 0.2s'
-                  }}
-                >
-                  See How It Works
-                </Link>
-              </div>
-            </section>
+        {/* Hero */}
+        <section style={{
+          textAlign: 'center',
+          padding: '3rem 0',
+          marginBottom: '3rem'
+        }}>
+          <div style={{
+            display: 'inline-block',
+            background: 'var(--primary)',
+            color: 'white',
+            fontSize: '0.875rem',
+            fontWeight: '600',
+            padding: '0.5rem 1.5rem',
+            borderRadius: '6px',
+            marginBottom: '1.5rem'
+          }}>
+            Our Mission
           </div>
-        </div>
+          <h1 style={{
+            fontSize: '2.5rem',
+            fontWeight: '700',
+            color: 'var(--text-primary)',
+            marginBottom: '1rem',
+            lineHeight: '1.2'
+          }}>
+            About homeschoolmath.site
+          </h1>
+          <p style={{
+            fontSize: '1.125rem',
+            color: 'var(--text-secondary)',
+            maxWidth: '650px',
+            margin: '0 auto',
+            lineHeight: '1.7'
+          }}>
+            We build free math tools and affordable resources for homeschool families and educators who want their students to genuinely understand mathematics — not just get through it.
+          </p>
+        </section>
+
+        {/* Why We Exist */}
+        <section style={{
+          background: 'var(--surface)',
+          border: '1px solid var(--border)',
+          borderRadius: '8px',
+          padding: '2rem',
+          marginBottom: '3rem'
+        }}>
+          <h2 style={{
+            fontSize: '1.5rem',
+            fontWeight: '700',
+            color: 'var(--text-primary)',
+            marginBottom: '1rem'
+          }}>
+            Why We Exist
+          </h2>
+          <p style={{
+            color: 'var(--text-secondary)',
+            lineHeight: '1.7',
+            fontSize: '1.05rem',
+            marginBottom: '1rem'
+          }}>
+            Good math education shouldn't depend on how much money a family has or which school district a child happens to live in. Yet the most useful tools — customisable practice, targeted intervention, clear curriculum structure — tend to be locked behind expensive subscriptions or buried in bloated platforms.
+          </p>
+          <p style={{
+            color: 'var(--text-secondary)',
+            lineHeight: '1.7',
+            fontSize: '1.05rem'
+          }}>
+            homeschoolmath.site started as a worksheet generator and grew from there. The free tools stay free. The paid resources — planners and focused courses — are priced the way we'd want to see them priced if we were the ones buying.
+          </p>
+        </section>
+
+        {/* What We Offer */}
+        <section style={{ marginBottom: '3rem' }}>
+          <h2 style={{
+            fontSize: '2rem',
+            fontWeight: '700',
+            color: 'var(--text-primary)',
+            textAlign: 'center',
+            marginBottom: '2.5rem'
+          }}>
+            What We Offer
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1.5rem'
+          }}>
+            {offerings.map((item, i) => (
+              <div key={i} style={{
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                borderRadius: '8px',
+                padding: '1.5rem'
+              }}>
+                <h3 style={{
+                  fontSize: '1.125rem',
+                  fontWeight: '600',
+                  color: 'var(--text-primary)',
+                  marginBottom: '0.75rem'
+                }}>
+                  {item.title}
+                </h3>
+                <p style={{
+                  color: 'var(--text-secondary)',
+                  lineHeight: '1.6',
+                  margin: 0
+                }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Values */}
+        <section style={{ marginBottom: '3rem' }}>
+          <h2 style={{
+            fontSize: '2rem',
+            fontWeight: '700',
+            color: 'var(--text-primary)',
+            textAlign: 'center',
+            marginBottom: '2.5rem'
+          }}>
+            What We Believe
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1.5rem'
+          }}>
+            {values.map((item, i) => (
+              <div key={i} style={{
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                borderLeft: '4px solid var(--primary)',
+                borderRadius: '8px',
+                padding: '1.5rem'
+              }}>
+                <h3 style={{
+                  fontSize: '1.125rem',
+                  fontWeight: '600',
+                  color: 'var(--text-primary)',
+                  marginBottom: '0.5rem'
+                }}>
+                  {item.title}
+                </h3>
+                <p style={{
+                  color: 'var(--text-secondary)',
+                  lineHeight: '1.6',
+                  margin: 0,
+                  fontSize: '0.95rem'
+                }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section style={{ marginBottom: '3rem' }}>
+          <div style={{
+            background: 'var(--primary)',
+            color: 'white',
+            borderRadius: '8px',
+            padding: '3rem 2rem',
+            textAlign: 'center'
+          }}>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: '700',
+              marginBottom: '1rem'
+            }}>
+              Start With the Free Tools
+            </h2>
+            <p style={{
+              fontSize: '1.125rem',
+              color: 'rgba(255,255,255,0.9)',
+              marginBottom: '2rem',
+              maxWidth: '550px',
+              margin: '0 auto 2rem',
+              lineHeight: '1.6'
+            }}>
+              Generate your first worksheet in under a minute — no account, no sign-up, no cost.
+            </p>
+            <div style={{
+              display: 'flex',
+              gap: '1rem',
+              justifyContent: 'center',
+              flexWrap: 'wrap'
+            }}>
+              <Link href="/" style={{
+                background: 'white',
+                color: 'var(--primary)',
+                padding: '1rem 2rem',
+                borderRadius: '6px',
+                fontWeight: '600',
+                textDecoration: 'none',
+                fontSize: '1rem'
+              }}>
+                Generate Worksheets
+              </Link>
+              <Link href="/resources" style={{
+                background: 'transparent',
+                color: 'white',
+                border: '2px solid white',
+                padding: '1rem 2rem',
+                borderRadius: '6px',
+                fontWeight: '600',
+                textDecoration: 'none',
+                fontSize: '1rem'
+              }}>
+                Browse Resources
+              </Link>
+            </div>
+          </div>
+        </section>
+
       </div>
-    </>
+    </div>
   )
 }
