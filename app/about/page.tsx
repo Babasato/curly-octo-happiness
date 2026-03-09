@@ -24,7 +24,7 @@ export default function About() {
     },
     {
       title: 'Focused Math Courses',
-      desc: 'Short, targeted courses on Number Sense (K–2), Subtraction (Grades 2–4), and Multiplication (Grades 4–5) — built for real results.',
+      desc: 'Targeted courses on Number Sense (K–2), Subtraction (Grades 2–4), and Multiplication & Division (Grades 3–5). Each course is $57 or grab all three in the Complete Homeschool Math System Bundle for $35.',
       accent: 'accent-orange'
     }
   ]
