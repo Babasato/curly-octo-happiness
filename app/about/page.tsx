@@ -18,14 +18,14 @@ export default function About() {
       accent: 'accent-blue'
     },
     {
-      title: 'Planners & Templates',
-      desc: 'Weekly and yearly curriculum planners plus a Notion template to keep your homeschool organised and running smoothly.',
-      accent: 'accent-green'
+      title: 'Focused Math Courses',
+      desc: 'Targeted courses on Number Sense (K–2), Subtraction (Grades 2–4), and Multiplication & Division (Grades 3–5). Each course is $57.',
+      accent: 'accent-orange'
     },
     {
-      title: 'Focused Math Courses',
-      desc: 'Targeted courses on Number Sense (K–2), Subtraction (Grades 2–4), and Multiplication & Division (Grades 3–5). Each course is $57 or grab all three in the Complete Homeschool Math System Bundle for $35.',
-      accent: 'accent-orange'
+      title: 'Planners & Templates',
+      desc: 'Weekly planner, year-long curriculum planner, and a Notion template — available individually or as the Complete Homeschool Math System Bundle for $35.',
+      accent: 'accent-green'
     }
   ]
 
