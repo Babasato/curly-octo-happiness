@@ -1,29 +1,20 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   serverExternalPackages: ['resend'],
-  turbopack: {
-    root: __dirname,
-  },
+  turbopack: { root: __dirname },
   async redirects() {
     return [
+      // Existing redirects
+      { source: '/free-resources.html', destination: '/resources', permanent: true },
+      { source: '/free-resources', destination: '/resources', permanent: true },
+      { source: '/downloads/:path*', destination: '/resources', permanent: true },
+
+      // Ezoic ads.txt redirect
       {
-        source: '/free-resources.html',
-        destination: '/resources',
-        permanent: true,
+        source: '/ads.txt',
+        destination: 'https://srv.adstxtmanager.com/19390/homeschoolmath.site',
+        permanent: false,
       },
-      {
-        source: '/free-resources',
-        destination: '/resources',
-        permanent: true,
-      },
-      {
-        // This catches all the old PDF links in the /downloads/ folder
-        source: '/downloads/:path*',
-        destination: '/resources',
-        permanent: true,
-      },
-    ]
+    ];
   },
 };
-
 module.exports = nextConfig;
