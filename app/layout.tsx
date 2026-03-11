@@ -3,7 +3,6 @@ import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { Metadata } from 'next';
-import Script from 'next/script';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://homeschoolmath.site'),
@@ -43,31 +42,7 @@ export default function RootLayout({
             `,
           }}
         />
-
-        {/* Ezoic Privacy Scripts — must load before everything else */}
-        <Script
-          data-cfasync="false"
-          src="https://cmp.gatekeeperconsent.com/min.js"
-          strategy="beforeInteractive"
-        />
-        <Script
-          data-cfasync="false"
-          src="https://the.gatekeeperconsent.com/cmp.min.js"
-          strategy="beforeInteractive"
-        />
-
-        {/* Ezoic Header Script */}
-        <Script
-          src="//www.ezojs.com/ezoic/sa.min.js"
-          strategy="beforeInteractive"
-        />
-        <Script id="ezoic-init" strategy="beforeInteractive">
-          {`
-            window.ezstandalone = window.ezstandalone || {};
-            ezstandalone.cmd = ezstandalone.cmd || [];
-          `}
-        </Script>
-
+        
         {/* Google Analytics */}
         <script
           async
@@ -83,24 +58,11 @@ export default function RootLayout({
             `,
           }}
         />
-        
-        {/* Google AdSense */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4262494597106551"
-          crossOrigin="anonymous"
-        ></script>
       </head>
       <body suppressHydrationWarning>
         <Header />
         {children}
         <Footer />
-
-        {/* Ezoic Analytics — loads after page is interactive */}
-        <Script
-          src="//ezoicanalytics.com/analytics.js"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );

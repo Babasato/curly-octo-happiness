@@ -8,12 +8,7 @@ const nextConfig = {
       { source: '/free-resources', destination: '/resources', permanent: true },
       { source: '/downloads/:path*', destination: '/resources', permanent: true },
 
-      // Ezoic ads.txt redirect
-      {
-        source: '/ads.txt',
-        destination: 'https://srv.adstxtmanager.com/19390/homeschoolmath.site',
-        permanent: false,
-      },
+      
     ];
   },
 };
