@@ -8,7 +8,9 @@ export default function Home() {
       <main className="main-content-area">
 
         {/* Interactive generator — client side */}
-        <HomeClient />
+<div style={{ minHeight: '600px' }}>
+  <HomeClient />
+</div>
 
         {/* Resources banner — now server rendered, no layout shift */}
         <section 
