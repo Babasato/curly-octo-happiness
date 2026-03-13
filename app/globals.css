@@ -2681,11 +2681,11 @@ html, body {
   box-shadow: var(--shadow-lg);
 }
 .home-client-wrapper {
-  min-height: 600px;
+  min-height: 400px;
 }
 
 @media (min-width: 768px) {
   .home-client-wrapper {
-    min-height: 900px;
+    min-height: 750px;
   }
 }
