@@ -131,10 +131,11 @@ export default function DownloadSection({
           Paper Size:
         </label>
         <select
-          value={selectedPaperSize}
-          onChange={handlePaperSizeChange}
-          className="paper-size-dropdown"
-        >
+  value={selectedPaperSize}
+  onChange={handlePaperSizeChange}
+  className="paper-size-dropdown"
+  aria-label="Select paper size"
+>
           {paperSizeOptions.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}

@@ -8,7 +8,7 @@ export default function Home() {
       <main className="main-content-area">
 
         {/* Interactive generator — client side */}
-<div style={{ minHeight: '600px' }}>
+<div className="home-client-wrapper">
   <HomeClient />
 </div>
 

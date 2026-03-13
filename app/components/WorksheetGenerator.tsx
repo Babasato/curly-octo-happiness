@@ -874,11 +874,12 @@ export default function WorksheetGenerator({
         <div className="control-group">
           <label className="label" htmlFor="difficulty">Difficulty Level</label>
           <select
-            id="difficulty"
-            value={difficulty}
-            onChange={(e) => setDifficulty(e.target.value)}
-            className="input-field"
-          >
+  id="difficulty"
+  aria-label="Select difficulty level"
+  value={difficulty}
+  onChange={(e) => setDifficulty(e.target.value)}
+  className="input-field"
+>
             <option value="easy">Easy - {gradeConfig.difficultyLevels.easy.description}</option>
             <option value="medium">Medium - {gradeConfig.difficultyLevels.medium.description}</option>
             <option value="hard">Hard - {gradeConfig.difficultyLevels.hard.description}</option>

@@ -174,7 +174,6 @@ export default function Footer() {
         </div>
       </div>
       <style jsx>{`
-        /* ... (all your existing CSS remains exactly the same) ... */
         .footer-container {
           background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
           color: white;
@@ -256,13 +255,12 @@ export default function Footer() {
           border-radius: 12px;
           padding: 1.5rem 1rem;
           text-align: center;
-          transition: all 0.3s ease;
+          transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
         .stats-card:hover {
-          background: rgba(255, 255, 255, 0.15);
           transform: translateY(-2px);
-          border-color: rgba(37, 99, 235, 0.5);
+          opacity: 0.9;
         }
 
         .stats-number {
@@ -315,7 +313,7 @@ export default function Footer() {
           justify-content: space-between;
           padding: 0.75rem 0.5rem;
           border-radius: 6px;
-          transition: all 0.3s ease;
+          transition: transform 0.3s ease;
           margin-bottom: 0.25rem;
         }
 
@@ -327,10 +325,7 @@ export default function Footer() {
         }
         
         .footer-link-content:hover {
-          background: rgba(37, 99, 235, 0.08);
           transform: translateX(4px);
-          border-left: 2px solid #2563eb;
-          margin-left: -2px;
         }
 
         .arrow {
@@ -395,7 +390,7 @@ export default function Footer() {
           font-weight: 500;
           padding: 0.5rem 0.75rem;
           border-radius: 4px;
-          transition: all 0.3s ease;
+          transition: opacity 0.3s ease;
         }
 
         @media (min-width: 640px) {
@@ -406,9 +401,7 @@ export default function Footer() {
         }
         
         .legal-link-text:hover {
-          color: #2563eb;
-          background: rgba(37, 99, 235, 0.1);
-          transform: translateY(-1px);
+          opacity: 0.75;
         }
 
         .legal-separator {
@@ -434,13 +427,11 @@ export default function Footer() {
           border: 1px solid rgba(37, 99, 235, 0.3);
           border-radius: 20px;
           padding: 0.5rem 1rem;
-          transition: all 0.3s ease;
+          transition: opacity 0.3s ease;
         }
 
         .trust-badge:hover {
-          background: rgba(37, 99, 235, 0.2);
-          border-color: rgba(37, 99, 235, 0.6);
-          transform: scale(1.02);
+          opacity: 0.85;
         }
 
         .trust-badge span {

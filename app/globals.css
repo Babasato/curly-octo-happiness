@@ -2637,8 +2637,7 @@ html, body {
 
 .paper-size-indicator {
   font-size: 0.85rem;
-  color: var(--text-muted);
-  opacity: 0.9;
+  color: var(--text-secondary);
   display: block;
   margin-top: 2px;
 }
@@ -2680,4 +2679,13 @@ html, body {
 .strategy-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+}
+.home-client-wrapper {
+  min-height: 600px;
+}
+
+@media (min-width: 768px) {
+  .home-client-wrapper {
+    min-height: 900px;
+  }
 }
