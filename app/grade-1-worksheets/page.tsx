@@ -5,7 +5,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'First Grade Math Worksheets | Free Printable 1st Grade Math Practice',
   description: 'Free printable 1st grade math worksheets covering addition, subtraction, counting, place value, measurement, and geometry. Perfect for homeschool and classroom use.',
-alternates: {
+  alternates: {
     canonical: 'https://homeschoolmath.site/grade-1-worksheets',
   },
 }
@@ -157,13 +157,173 @@ export default function Grade1Worksheets() {
               Build addition and subtraction fluency within 20 while introducing place value, 
               measurement, and geometry concepts. Perfect for developing number sense in young learners.
             </p>
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+              alignItems: 'center'
+            }}>
+              <Link href="/" style={{
+                background: 'var(--primary)',
+                color: 'white',
+                border: 'none',
+                padding: '1rem 2rem',
+                borderRadius: '6px',
+                fontWeight: '600',
+                textDecoration: 'none',
+                display: 'inline-block',
+                transition: 'background-color 0.2s'
+              }}>
+                Generate Custom 1st Grade Worksheets
+              </Link>
+              <div style={{
+                background: '#f1f5f9',
+                color: '#1e293b',
+                border: '1px solid #e2e8f0',
+                padding: '0.75rem 1.5rem',
+                borderRadius: '6px',
+                fontWeight: '600'
+              }}>
+                <span style={{color: 'var(--primary)'}}>10</span> free worksheets per day • <span style={{color: 'var(--primary)'}}>3</span> difficulty levels
+              </div>
+            </div>
+          </section>
 
-            {/* Features Grid */}
+          {/* Worksheet Categories Section - Styled Cards */}
+          <section className="focus-areas" style={{marginBottom: '3rem'}}>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: '700',
+              color: 'var(--text-primary)',
+              textAlign: 'center',
+              marginBottom: '1rem'
+            }}>
+              Worksheet Categories
+            </h2>
+            <p style={{
+              fontSize: '1.125rem',
+              color: 'var(--text-secondary)',
+              textAlign: 'center',
+              marginBottom: '2.5rem',
+              maxWidth: '600px',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}>
+              Choose the skill your first grader needs to practice
+            </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '1.5rem',
-              marginBottom: '2.5rem'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1.5rem'
+            }}>
+              <Link href="/grade-1-addition-worksheets" className="worksheet-card">
+                <h3>Grade 1 Addition Worksheets</h3>
+                <p>Addition within 20 with counting on, making ten, and doubles strategies. Perfect for building fact fluency.</p>
+              </Link>
+              <Link href="/grade-1-subtraction-worksheets" className="worksheet-card">
+                <h3>Grade 1 Subtraction Worksheets</h3>
+                <p>Subtraction within 20 with take away and comparison problems. Develop mental math strategies.</p>
+              </Link>
+              <Link href="/grade-1-word-problems-worksheets" className="worksheet-card">
+                <h3>Grade 1 Word Problems Worksheets</h3>
+                <p>Simple story problems with visual supports. Help young readers understand what the question is asking.</p>
+              </Link>
+            </div>
+          </section>
+
+          {/* Why This Matters Section */}
+          <section style={{
+  background: 'var(--surface)',
+  border: '1px solid var(--border)',
+  borderRadius: '8px',
+  padding: '2rem',
+  marginBottom: '3rem'
+}}>
+  <h2 style={{
+    fontSize: '1.5rem',
+    fontWeight: '700',
+    color: 'var(--text-primary)',
+    marginBottom: '1rem'
+  }}>
+    Why First Grade Math Matters More Than It Seems
+  </h2>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    fontSize: '1.05rem',
+    marginBottom: '1rem'
+  }}>
+    First grade looks simple — counting, adding small numbers, telling time. But underneath that simplicity is a critical transition: the move from counting to calculating. In kindergarten, children learn that numbers represent quantities. In first grade, they learn to combine and separate those quantities without starting over from one each time. That shift — from "counting all" to "counting on" — is the foundation of every calculation they will ever do, which is why consistent <a href="/addition-practice" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>addition practice</a> is so vital at this stage.
+  </p>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    fontSize: '1.05rem'
+  }}>
+    The second critical piece in first grade is place value. Understanding that 14 means one ten and four ones — not just the number after 13 — is what makes regrouping in 2nd grade make sense. Children who don't develop this understanding in 1st grade can still memorize procedures in 2nd, but they'll be memorizing steps without comprehension, which eventually breaks down. The worksheets here are designed to support both transitions: visual models that help children see what numbers mean, and graduated practice that builds toward <a href="/subtraction-practice" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>subtraction fluency</a>.
+  </p>
+</section>
+
+          {/* Grade Level Descriptions */}
+          <section style={{marginBottom: '3rem'}}>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: '700',
+              color: 'var(--text-primary)',
+              textAlign: 'center',
+              marginBottom: '1rem'
+            }}>
+              What to Expect at Each Stage of 1st Grade
+            </h2>
+            <p style={{
+              fontSize: '1.125rem',
+              color: 'var(--text-secondary)',
+              textAlign: 'center',
+              marginBottom: '2.5rem',
+              maxWidth: '600px',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}>
+              What mastery looks like, where children typically get stuck, and what your child should be able to do
+            </p>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
+              gap: '1.5rem'
+            }}>
+              {gradeLevels.map((level, index) => (
+                <div key={index} style={{
+                  background: 'var(--surface)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '8px',
+                  padding: '1.5rem'
+                }}>
+                  <h3 style={{
+                    fontSize: '1.125rem',
+                    fontWeight: '700',
+                    color: 'var(--primary)',
+                    marginBottom: '0.75rem'
+                  }}>
+                    {level.grade}
+                  </h3>
+                  <p style={{
+                    color: 'var(--text-secondary)',
+                    lineHeight: '1.6',
+                    margin: 0
+                  }}>
+                    {level.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Features Grid Section */}
+          <section style={{marginBottom: '3rem'}}>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
+              gap: '1.5rem'
             }}>
               <div style={{
                 background: 'var(--surface)',
@@ -279,132 +439,6 @@ export default function Grade1Worksheets() {
                 </p>
               </div>
             </div>
-
-            <div style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1rem',
-              alignItems: 'center'
-            }}>
-              <Link href="/" style={{
-                background: 'var(--primary)',
-                color: 'white',
-                border: 'none',
-                padding: '1rem 2rem',
-                borderRadius: '6px',
-                fontWeight: '600',
-                textDecoration: 'none',
-                display: 'inline-block',
-                transition: 'background-color 0.2s'
-              }}>
-                Generate Custom 1st Grade Worksheets
-              </Link>
-              <div style={{
-                background: '#f1f5f9',
-                color: '#1e293b',
-                border: '1px solid #e2e8f0',
-                padding: '0.75rem 1.5rem',
-                borderRadius: '6px',
-                fontWeight: '600'
-              }}>
-                <span style={{color: 'var(--primary)'}}>10</span> free worksheets per day • <span style={{color: 'var(--primary)'}}>3</span> difficulty levels
-              </div>
-            </div>
-          </section>
-
-                   {/* Why This Matters Section */}
-          <section style={{
-            background: 'var(--surface)',
-            border: '1px solid var(--border)',
-            borderRadius: '8px',
-            padding: '2rem',
-            marginBottom: '3rem'
-          }}>
-            <h2 style={{
-              fontSize: '1.5rem',
-              fontWeight: '700',
-              color: 'var(--text-primary)',
-              marginBottom: '1rem'
-            }}>
-              Why First Grade Math Matters More Than It Seems
-            </h2>
-            <p style={{
-              color: 'var(--text-secondary)',
-              lineHeight: '1.7',
-              fontSize: '1.05rem',
-              marginBottom: '1rem'
-            }}>
-              First grade looks simple — counting, adding small numbers, telling time. But underneath that simplicity is a critical transition: the move from counting to calculating. In kindergarten, children learn that numbers represent quantities. In first grade, they learn to combine and separate those quantities without starting over from one each time. That shift — from "counting all" to "counting on" — is the foundation of every calculation they will ever do.
-            </p>
-            <p style={{
-              color: 'var(--text-secondary)',
-              lineHeight: '1.7',
-              fontSize: '1.05rem',
-              marginBottom: '1rem'
-            }}>
-              The second critical piece in first grade is place value. Understanding that 14 means one ten and four ones — not just the number after 13 — is what makes regrouping in 2nd grade make sense. Children who don't develop this understanding in 1st grade can still memorize procedures in 2nd, but they'll be memorizing steps without comprehension, which eventually breaks down. The <Link href="/addition-practice" style={{color: 'var(--primary)', textDecoration: 'underline'}}>addition practice</Link> and <Link href="/subtraction-practice" style={{color: 'var(--primary)', textDecoration: 'underline'}}>subtraction practice</Link> pages offer targeted worksheets that build both fluency and understanding.
-            </p>
-            <p style={{
-              color: 'var(--text-secondary)',
-              lineHeight: '1.7',
-              fontSize: '1.05rem'
-            }}>
-              The worksheets here are designed to support both transitions: visual models that help children see what the numbers mean, and graduated practice that builds toward fluency.
-            </p>
-          </section>
-
-          {/* Grade Level Descriptions */}
-          <section style={{marginBottom: '3rem'}}>
-            <h2 style={{
-              fontSize: '2rem',
-              fontWeight: '700',
-              color: 'var(--text-primary)',
-              textAlign: 'center',
-              marginBottom: '1rem'
-            }}>
-              What to Expect at Each Stage of 1st Grade
-            </h2>
-            <p style={{
-              fontSize: '1.125rem',
-              color: 'var(--text-secondary)',
-              textAlign: 'center',
-              marginBottom: '2.5rem',
-              maxWidth: '600px',
-              marginLeft: 'auto',
-              marginRight: 'auto'
-            }}>
-              What mastery looks like, where children typically get stuck, and what your child should be able to do
-            </p>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '1.5rem'
-            }}>
-              {gradeLevels.map((level, index) => (
-                <div key={index} style={{
-                  background: 'var(--surface)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '8px',
-                  padding: '1.5rem'
-                }}>
-                  <h3 style={{
-                    fontSize: '1.125rem',
-                    fontWeight: '700',
-                    color: 'var(--primary)',
-                    marginBottom: '0.75rem'
-                  }}>
-                    {level.grade}
-                  </h3>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    lineHeight: '1.6',
-                    margin: 0
-                  }}>
-                    {level.description}
-                  </p>
-                </div>
-              ))}
-            </div>
           </section>
 
           {/* Skills Section */}
@@ -431,7 +465,7 @@ export default function Grade1Worksheets() {
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               {skills.map((skill, index) => (
@@ -498,7 +532,7 @@ export default function Grade1Worksheets() {
               </h2>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
                 gap: '2rem'
               }}>
                 <div>
@@ -571,77 +605,6 @@ export default function Grade1Worksheets() {
             </div>
           </section>
 
-          {/* Worksheet Types Section */}
-          <section style={{marginBottom: '3rem'}}>
-            <h2 style={{
-              fontSize: '2rem',
-              fontWeight: '700',
-              color: 'var(--text-primary)',
-              textAlign: 'center',
-              marginBottom: '1rem'
-            }}>
-              Worksheet Categories
-            </h2>
-            <p style={{
-              fontSize: '1.125rem',
-              color: 'var(--text-secondary)',
-              textAlign: 'center',
-              marginBottom: '2.5rem',
-              maxWidth: '600px',
-              marginLeft: 'auto',
-              marginRight: 'auto'
-            }}>
-              Comprehensive collection of first grade math practice materials
-            </p>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '1.5rem'
-            }}>
-              {[
-                { name: 'Addition Practice', href: '/addition-practice', count: '25+ worksheets', desc: 'Facts within 20 with visual supports' },
-                { name: 'Subtraction Practice', href: '/subtraction-practice', count: '20+ worksheets', desc: 'Take-away and comparison problems' },
-                { name: 'Place Value', href: '/place-value', count: '15+ worksheets', desc: 'Tens and ones with base-ten blocks' },
-                { name: 'Word Problems', href: '/word-problems', count: '30+ worksheets', desc: 'Simple story problems with pictures' },
-                { name: 'Time & Measurement', href: '/time-measurement', count: '12+ worksheets', desc: 'Hour/half-hour and non-standard units' },
-                { name: 'Geometry', href: '/geometry', count: '12+ worksheets', desc: 'Shapes, halves, and fourths' }
-              ].map((type, index) => (
-                <Link key={index} href={type.href} style={{
-                  background: 'var(--surface)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '8px',
-                  padding: '1.5rem',
-                  textDecoration: 'none',
-                  transition: 'border-color 0.2s'
-                }}>
-                  <h3 style={{
-                    fontSize: '1.125rem',
-                    fontWeight: '600',
-                    color: 'var(--text-primary)',
-                    marginBottom: '0.5rem'
-                  }}>
-                    {type.name}
-                  </h3>
-                  <p style={{
-                    color: 'var(--primary)',
-                    fontSize: '0.875rem',
-                    fontWeight: '600',
-                    marginBottom: '0.5rem'
-                  }}>
-                    {type.count}
-                  </p>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    fontSize: '0.875rem',
-                    margin: 0
-                  }}>
-                    {type.desc}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </section>
-
           {/* Course Mention */}
           <section style={{marginBottom: '3rem'}}>
             <div style={{
@@ -681,7 +644,7 @@ export default function Grade1Worksheets() {
                   fontSize: '0.95rem'
                 }}
               >
-                View Number Sense Foundations — $57
+                View Number Sense Foundations (K–2) — $57
               </a>
             </div>
           </section>

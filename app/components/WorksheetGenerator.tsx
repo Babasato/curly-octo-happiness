@@ -732,6 +732,42 @@ export default function WorksheetGenerator({
     window.scrollTo(0, 0);
   }, []);
 
+    // Read URL params to pre-configure the generator
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const gradeParam = params.get('grade');
+    const topicParam = params.get('topic');
+    
+    // Set grade if provided and valid
+    if (gradeParam) {
+      const validGrades = ['kindergarten', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
+      if (validGrades.includes(gradeParam)) {
+        setGradeLevel(gradeParam);
+      }
+    }
+    
+    // Set topic/problem type if provided
+    if (topicParam) {
+      const topicMap: Record<string, string[]> = {
+        'addition': ['Addition'],
+        'subtraction': ['Subtraction'],
+        'multiplication': ['Multiplication'],
+        'division': ['Division'],
+        'fractions': ['Fractions'],
+        'decimals': ['Decimals'],
+        'word-problems': ['Word Problems'],
+        'counting': ['Counting'],
+        'percent': ['Percent'],
+        'ratios': ['Ratios']
+      };
+      
+      const mappedTypes = topicMap[topicParam];
+      if (mappedTypes && gradeConfig?.availableTypes?.some(t => mappedTypes.includes(t))) {
+        setProblemTypes(mappedTypes);
+      }
+    }
+  }, []); // Empty dependency array = runs once on mount
+
   const handleGenerate = () => {
     setIsGenerating(true);
     setTimeout(() => {

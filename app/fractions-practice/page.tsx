@@ -5,6 +5,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Fractions Practice Worksheets | Free Printable Math Sheets 3rd-6th Grade',
   description: 'Master fractions with custom practice sheets. Generate free printable fractions worksheets for 3rd through 6th grade with basic concepts, visual models, and finding fractions of wholes.',
+  alternates: {
+    canonical: 'https://homeschoolmath.site/fractions-practice',
+  },
 }
 
 export default function FractionsPractice() {

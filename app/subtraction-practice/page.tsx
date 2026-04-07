@@ -5,6 +5,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Subtraction Practice Worksheets | Free Printable Math Sheets K-6',
   description: 'Master subtraction with custom practice sheets. Generate free printable subtraction worksheets for kindergarten through 6th grade with basic facts, borrowing, and visual aids.',
+  alternates: {
+    canonical: 'https://homeschoolmath.site/subtraction-practice',
+  },
 }
 
 export default function SubtractionPractice() {

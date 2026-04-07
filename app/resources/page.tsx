@@ -1,7 +1,14 @@
 // app/resources/page.tsx - WITH COURSES SECTION + ANCHOR LINK AND DARK MODE COMPATIBILITY
-'use client';
+import { Metadata } from 'next'
+import Link from 'next/link'
 
-import Link from 'next/link';
+export const metadata: Metadata = {
+  title: 'Homeschool Math Resources | Courses, Planners & Teaching Tools',
+  description: 'Discover structured math courses and professional planning tools for homeschooling parents. Number Sense Foundations, Multiplication & Division Foundations, and more.',
+  alternates: {
+    canonical: 'https://homeschoolmath.site/resources',
+  },
+}
 
 export default function Resources() {
   return (
@@ -13,8 +20,6 @@ export default function Resources() {
     }}>
       {/* Header Section */}
       <header style={{ textAlign: 'center', marginBottom: '3rem' }}>
-        
-
         <h1 className="contact-page-title" style={{ color: 'var(--text-primary)' }}>
           Homeschool Math Resources
         </h1>

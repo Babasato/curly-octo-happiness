@@ -165,7 +165,7 @@ export default function Grade6Worksheets() {
             {/* Features Grid */}
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem',
               marginBottom: '2.5rem'
             }}>
@@ -316,6 +316,56 @@ export default function Grade6Worksheets() {
             </div>
           </section>
 
+                    {/* Worksheet Categories - Styled Cards */}
+          <section style={{marginBottom: '3rem'}}>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: '700',
+              color: 'var(--text-primary)',
+              textAlign: 'center',
+              marginBottom: '1rem'
+            }}>
+              Worksheet Categories
+            </h2>
+            <p style={{
+              fontSize: '1.125rem',
+              color: 'var(--text-secondary)',
+              textAlign: 'center',
+              marginBottom: '2.5rem',
+              maxWidth: '600px',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}>
+              Choose the skill your sixth grader needs to practice
+            </p>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1.5rem'
+            }}>
+              <Link href="/grade-6-multiplication-worksheets" className="worksheet-card">
+                <h3>Grade 6 Multiplication Worksheets</h3>
+                <p>Practice multi-digit multiplication, decimal multiplication, and multiplication of fractions.</p>
+              </Link>
+              <Link href="/grade-6-division-worksheets" className="worksheet-card">
+                <h3>Grade 6 Division Worksheets</h3>
+                <p>Master long division with multi-digit divisors, decimal division, and fraction division.</p>
+              </Link>
+              <Link href="/grade-6-word-problems-worksheets" className="worksheet-card">
+                <h3>Grade 6 Word Problems Worksheets</h3>
+                <p>Solve multi-step word problems with ratios, percentages, fractions, decimals, and measurement conversions.</p>
+              </Link>
+              <Link href="/grade-6-percent-worksheets" className="worksheet-card">
+                <h3>Grade 6 Percent Worksheets</h3>
+                <p>Practice finding percentages, percent of a number, percent increase and decrease, and percent word problems.</p>
+              </Link>
+              <Link href="/grade-6-ratios-worksheets" className="worksheet-card">
+                <h3>Grade 6 Ratios Worksheets</h3>
+                <p>Master ratio concepts, equivalent ratios, ratio tables, unit rates, and real-world ratio problems.</p>
+              </Link>
+            </div>
+          </section>
+
                               {/* Why This Matters Section */}
           <section style={{
             background: 'var(--surface)',
@@ -358,7 +408,7 @@ export default function Grade6Worksheets() {
           </section>
 
           {/* Grade Level Descriptions */}
-          <section style={{marginBottom: '3rem'}}>
+          <section className="focus-areas" style={{marginBottom: '3rem'}}>
             <h2 style={{
               fontSize: '2rem',
               fontWeight: '700',
@@ -381,7 +431,7 @@ export default function Grade6Worksheets() {
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               {gradeLevels.map((level, index) => (
@@ -435,7 +485,7 @@ export default function Grade6Worksheets() {
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               {skills.map((skill, index) => (
@@ -502,7 +552,7 @@ export default function Grade6Worksheets() {
               </h2>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
                 gap: '2rem'
               }}>
                 <div>

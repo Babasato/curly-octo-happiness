@@ -189,6 +189,56 @@ export default function Grade3Worksheets() {
             </div>
           </section>
 
+                    {/* Worksheet Categories - Styled Cards */}
+          <section style={{marginBottom: '3rem'}}>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: '700',
+              color: 'var(--text-primary)',
+              textAlign: 'center',
+              marginBottom: '1rem'
+            }}>
+              Worksheet Categories
+            </h2>
+            <p style={{
+              fontSize: '1.125rem',
+              color: 'var(--text-secondary)',
+              textAlign: 'center',
+              marginBottom: '2.5rem',
+              maxWidth: '600px',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}>
+              Choose the skill your third grader needs to practice
+            </p>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1.5rem'
+            }}>
+              <Link href="/grade-3-addition-worksheets" className="worksheet-card">
+                <h3>Grade 3 Addition Worksheets</h3>
+                <p>Practice addition within 1,000 with regrouping. Build fluency with three-digit addition problems.</p>
+              </Link>
+              <Link href="/grade-3-subtraction-worksheets" className="worksheet-card">
+                <h3>Grade 3 Subtraction Worksheets</h3>
+                <p>Master subtraction within 1,000 with borrowing. Develop mental math strategies.</p>
+              </Link>
+              <Link href="/grade-3-multiplication-worksheets" className="worksheet-card">
+                <h3>Grade 3 Multiplication Worksheets</h3>
+                <p>Learn multiplication facts 0-10 with arrays, equal groups, and fact families.</p>
+              </Link>
+              <Link href="/grade-3-division-worksheets" className="worksheet-card">
+                <h3>Grade 3 Division Worksheets</h3>
+                <p>Understand division as the inverse of multiplication. Practice basic division facts.</p>
+              </Link>
+              <Link href="/grade-3-word-problems-worksheets" className="worksheet-card">
+                <h3>Grade 3 Word Problems Worksheets</h3>
+                <p>Solve one- and two-step word problems with all four operations in real-world contexts.</p>
+              </Link>
+            </div>
+          </section>
+
                     {/* Why This Matters Section */}
           <section style={{
             background: 'var(--surface)',
@@ -231,7 +281,7 @@ export default function Grade3Worksheets() {
           </section>
 
           {/* Grade Level Descriptions */}
-          <section style={{marginBottom: '3rem'}}>
+          <section className="focus-areas" style={{marginBottom: '3rem'}}>
             <h2 style={{
               fontSize: '2rem',
               fontWeight: '700',
@@ -254,7 +304,7 @@ export default function Grade3Worksheets() {
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               {gradeLevels.map((level, index) => (
@@ -288,7 +338,7 @@ export default function Grade3Worksheets() {
           <section style={{marginBottom: '3rem'}}>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               <div style={{
@@ -431,7 +481,7 @@ export default function Grade3Worksheets() {
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               {skills.map((skill, index) => (
@@ -498,7 +548,7 @@ export default function Grade3Worksheets() {
               </h2>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
                 gap: '2rem'
               }}>
                 <div>

@@ -5,6 +5,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Math Word Problems Worksheets | Story Problems Practice 1st-6th Grade',
   description: 'Master math word problems with custom practice sheets. Generate free printable story problem worksheets for 1st through 6th grade with real-world scenarios and multiple operations.',
+  alternates: {
+    canonical: 'https://homeschoolmath.site/word-problems',
+  },
 }
 
 export default function WordProblems() {

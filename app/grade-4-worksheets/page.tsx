@@ -189,6 +189,52 @@ export default function Grade4Worksheets() {
             </div>
           </section>
 
+                    {/* Worksheet Categories - Styled Cards */}
+          <section style={{marginBottom: '3rem'}}>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: '700',
+              color: 'var(--text-primary)',
+              textAlign: 'center',
+              marginBottom: '1rem'
+            }}>
+              Worksheet Categories
+            </h2>
+            <p style={{
+              fontSize: '1.125rem',
+              color: 'var(--text-secondary)',
+              textAlign: 'center',
+              marginBottom: '2.5rem',
+              maxWidth: '600px',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}>
+              Choose the skill your fourth grader needs to practice
+            </p>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1.5rem'
+            }}>
+              <Link href="/grade-4-multiplication-worksheets" className="worksheet-card">
+                <h3>Grade 4 Multiplication Worksheets</h3>
+                <p>Practice multi-digit multiplication up to 4-digit by 1-digit and 2-digit by 2-digit.</p>
+              </Link>
+              <Link href="/grade-4-division-worksheets" className="worksheet-card">
+                <h3>Grade 4 Division Worksheets</h3>
+                <p>Master long division with up to 4-digit dividends and 1-digit divisors, including remainders.</p>
+              </Link>
+              <Link href="/grade-4-word-problems-worksheets" className="worksheet-card">
+                <h3>Grade 4 Word Problems Worksheets</h3>
+                <p>Solve multi-step word problems with all four operations in real-world contexts.</p>
+              </Link>
+              <Link href="/grade-4-fractions-worksheets" className="worksheet-card">
+                <h3>Grade 4 Fractions Worksheets</h3>
+                <p>Practice equivalent fractions, comparing fractions, adding/subtracting fractions, and decimals.</p>
+              </Link>
+            </div>
+          </section>
+
           {/* Why This Matters Section */}
           <section style={{
             background: 'var(--surface)',
@@ -223,7 +269,7 @@ export default function Grade4Worksheets() {
           </section>
 
           {/* Grade Level Descriptions */}
-          <section style={{marginBottom: '3rem'}}>
+          <section className="focus-areas" style={{marginBottom: '3rem'}}>
             <h2 style={{
               fontSize: '2rem',
               fontWeight: '700',
@@ -246,7 +292,7 @@ export default function Grade4Worksheets() {
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               {gradeLevels.map((level, index) => (
@@ -280,7 +326,7 @@ export default function Grade4Worksheets() {
           <section style={{marginBottom: '3rem'}}>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               <div style={{
@@ -423,7 +469,7 @@ export default function Grade4Worksheets() {
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               {skills.map((skill, index) => (
@@ -490,7 +536,7 @@ export default function Grade4Worksheets() {
               </h2>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
                 gap: '2rem'
               }}>
                 <div>

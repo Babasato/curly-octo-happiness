@@ -189,6 +189,56 @@ export default function Grade5Worksheets() {
             </div>
           </section>
 
+                    {/* Worksheet Categories - Styled Cards */}
+          <section style={{marginBottom: '3rem'}}>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: '700',
+              color: 'var(--text-primary)',
+              textAlign: 'center',
+              marginBottom: '1rem'
+            }}>
+              Worksheet Categories
+            </h2>
+            <p style={{
+              fontSize: '1.125rem',
+              color: 'var(--text-secondary)',
+              textAlign: 'center',
+              marginBottom: '2.5rem',
+              maxWidth: '600px',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}>
+              Choose the skill your fifth grader needs to practice
+            </p>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1.5rem'
+            }}>
+              <Link href="/grade-5-multiplication-worksheets" className="worksheet-card">
+                <h3>Grade 5 Multiplication Worksheets</h3>
+                <p>Practice multi-digit multiplication up to 3-digit by 2-digit and 4-digit by 2-digit.</p>
+              </Link>
+              <Link href="/grade-5-division-worksheets" className="worksheet-card">
+                <h3>Grade 5 Division Worksheets</h3>
+                <p>Master long division with 4-digit dividends and 2-digit divisors, including remainders and interpreting remainders.</p>
+              </Link>
+              <Link href="/grade-5-word-problems-worksheets" className="worksheet-card">
+                <h3>Grade 5 Word Problems Worksheets</h3>
+                <p>Solve multi-step word problems with all four operations, fractions, decimals, and measurement conversions.</p>
+              </Link>
+              <Link href="/grade-5-fractions-worksheets" className="worksheet-card">
+                <h3>Grade 5 Fractions Worksheets</h3>
+                <p>Practice adding and subtracting fractions with unlike denominators, multiplying fractions, and dividing fractions.</p>
+              </Link>
+              <Link href="/grade-5-decimals-worksheets" className="worksheet-card">
+                <h3>Grade 5 Decimals Worksheets</h3>
+                <p>Master decimal place value, rounding, comparing, and operations with decimals to hundredths.</p>
+              </Link>
+            </div>
+          </section>
+
           {/* Why This Matters Section */}
           <section style={{
             background: 'var(--surface)',
@@ -223,7 +273,7 @@ export default function Grade5Worksheets() {
           </section>
 
           {/* Grade Level Descriptions */}
-          <section style={{marginBottom: '3rem'}}>
+          <section className="focus-areas" style={{marginBottom: '3rem'}}>
             <h2 style={{
               fontSize: '2rem',
               fontWeight: '700',
@@ -246,7 +296,7 @@ export default function Grade5Worksheets() {
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               {gradeLevels.map((level, index) => (
@@ -280,7 +330,7 @@ export default function Grade5Worksheets() {
           <section style={{marginBottom: '3rem'}}>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               <div style={{
@@ -423,7 +473,7 @@ export default function Grade5Worksheets() {
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               {skills.map((skill, index) => (
@@ -490,7 +540,7 @@ export default function Grade5Worksheets() {
               </h2>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
                 gap: '2rem'
               }}>
                 <div>

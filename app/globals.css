@@ -224,7 +224,7 @@ body {
 }
 .settings-options {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: var(--space-xl);
   margin-bottom: var(--space-lg);
 }
@@ -371,7 +371,7 @@ body {
 }
 .problems-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: var(--space-md);
 }
 .problem-card {
@@ -1715,7 +1715,7 @@ html, body {
 
 .practice-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 2rem;
 }
 
@@ -2688,4 +2688,34 @@ html, body {
   .home-client-wrapper {
     min-height: 750px;
   }
+}
+.worksheet-card {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--background) 100%);
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.worksheet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  border-color: var(--primary);
+}
+
+.worksheet-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.worksheet-card p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0;
+  line-height: 1.5;
 }

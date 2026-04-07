@@ -189,6 +189,48 @@ export default function Grade2Worksheets() {
             </div>
           </section>
 
+          {/* Worksheet Categories Section */}
+<section style={{marginBottom: '3rem'}}>
+  <h2 style={{
+    fontSize: '2rem',
+    fontWeight: '700',
+    color: 'var(--text-primary)',
+    textAlign: 'center',
+    marginBottom: '1rem'
+  }}>
+    Worksheet Categories
+  </h2>
+  <p style={{
+    fontSize: '1.125rem',
+    color: 'var(--text-secondary)',
+    textAlign: 'center',
+    marginBottom: '2.5rem',
+    maxWidth: '600px',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  }}>
+    Choose the skill your second grader needs to practice
+  </p>
+  <div style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gap: '1.5rem'
+  }}>
+    <Link href="/grade-2-addition-worksheets" className="worksheet-card">
+      <h3>Grade 2 Addition Worksheets</h3>
+      <p>Practice addition within 100 with and without regrouping. Build fluency with two-digit addition problems.</p>
+    </Link>
+    <Link href="/grade-2-subtraction-worksheets" className="worksheet-card">
+      <h3>Grade 2 Subtraction Worksheets</h3>
+      <p>Master subtraction within 100, including borrowing/regrouping. Develop mental math strategies.</p>
+    </Link>
+    <Link href="/grade-2-word-problems-worksheets" className="worksheet-card">
+      <h3>Grade 2 Word Problems Worksheets</h3>
+      <p>Solve one- and two-step word problems with addition and subtraction in real-world contexts.</p>
+    </Link>
+  </div>
+</section>
+
           {/* Why This Matters Section */}
           <section style={{
             background: 'var(--surface)',
@@ -246,7 +288,7 @@ export default function Grade2Worksheets() {
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               {gradeLevels.map((level, index) => (
@@ -280,7 +322,7 @@ export default function Grade2Worksheets() {
           <section style={{marginBottom: '3rem'}}>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               <div style={{
@@ -423,7 +465,7 @@ export default function Grade2Worksheets() {
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               {skills.map((skill, index) => (
@@ -490,7 +532,7 @@ export default function Grade2Worksheets() {
               </h2>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
                 gap: '2rem'
               }}>
                 <div>
@@ -564,7 +606,7 @@ export default function Grade2Worksheets() {
           </section>
 
           {/* Course Mention */}
-          <section style={{marginBottom: '3rem'}}>
+          <section className="focus-areas" style={{marginBottom: '3rem'}}>
             <div style={{
               background: 'var(--surface)',
               border: '1px solid var(--border)',

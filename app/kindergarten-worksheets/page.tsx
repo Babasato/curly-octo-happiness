@@ -157,13 +157,173 @@ export default function KindergartenWorksheets() {
               Build foundational math skills with visual worksheets covering counting, number recognition, 
               basic operations, and shapes. Perfect for early learners developing number sense.
             </p>
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+              alignItems: 'center'
+            }}>
+              <Link href="/" style={{
+                background: 'var(--primary)',
+                color: 'white',
+                border: 'none',
+                padding: '1rem 2rem',
+                borderRadius: '6px',
+                fontWeight: '600',
+                textDecoration: 'none',
+                display: 'inline-block',
+                transition: 'background-color 0.2s'
+              }}>
+                Generate Custom Kindergarten Worksheets
+              </Link>
+              <div style={{
+                background: '#f1f5f9',
+                color: '#1e293b',
+                border: '1px solid #e2e8f0',
+                padding: '0.75rem 1.5rem',
+                borderRadius: '6px',
+                fontWeight: '600'
+              }}>
+                <span style={{color: 'var(--primary)'}}>10</span> free worksheets per day • <span style={{color: 'var(--primary)'}}>3</span> difficulty levels
+              </div>
+            </div>
+          </section>
 
-            {/* Features Grid */}
+          {/* Worksheet Categories - Styled Cards */}
+          <section className="focus-areas" style={{marginBottom: '3rem'}}>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: '700',
+              color: 'var(--text-primary)',
+              textAlign: 'center',
+              marginBottom: '1rem'
+            }}>
+              Worksheet Categories
+            </h2>
+            <p style={{
+              fontSize: '1.125rem',
+              color: 'var(--text-secondary)',
+              textAlign: 'center',
+              marginBottom: '2.5rem',
+              maxWidth: '600px',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}>
+              Choose the skill your kindergartner needs to practice
+            </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '1.5rem',
-              marginBottom: '2.5rem'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1.5rem'
+            }}>
+              <Link href="/kindergarten-addition-worksheets" className="worksheet-card">
+                <h3>Kindergarten Addition Worksheets</h3>
+                <p>Practice basic addition within 10 with pictures, counting objects, and simple equations.</p>
+              </Link>
+              <Link href="/kindergarten-subtraction-worksheets" className="worksheet-card">
+                <h3>Kindergarten Subtraction Worksheets</h3>
+                <p>Master subtraction within 10 using pictures, crossing out objects, and simple equations.</p>
+              </Link>
+              <Link href="/kindergarten-counting-worksheets" className="worksheet-card">
+                <h3>Kindergarten Counting Worksheets</h3>
+                <p>Practice counting objects, number recognition, tracing numbers, and counting to 100.</p>
+              </Link>
+            </div>
+          </section>
+
+          {/* Why This Matters Section */}
+          <section style={{
+            background: 'var(--surface)',
+            border: '1px solid var(--border)',
+            borderRadius: '8px',
+            padding: '2rem',
+            marginBottom: '3rem'
+          }}>
+            <h2 style={{
+              fontSize: '1.5rem',
+              fontWeight: '700',
+              color: 'var(--text-primary)',
+              marginBottom: '1rem'
+            }}>
+              Why Kindergarten Math Is More Important Than It Looks
+            </h2>
+            <p style={{
+              color: 'var(--text-secondary)',
+              lineHeight: '1.7',
+              fontSize: '1.05rem',
+              marginBottom: '1rem'
+            }}>
+              Kindergarten math looks like play — counting blocks, sorting shapes, making patterns. But underneath that play is the foundation of all later mathematics. In kindergarten, children learn what numbers actually mean. They develop one-to-one correspondence (each object gets one count). They learn cardinality (the last number tells how many). They begin to subitize — recognize small quantities without counting. These are not trivial skills; they are the cognitive building blocks of number sense.
+            </p>
+            <p style={{
+              color: 'var(--text-secondary)',
+              lineHeight: '1.7',
+              fontSize: '1.05rem'
+            }}>
+              The children who struggle in 1st grade and beyond are often not the ones who can't memorize facts — they're the ones who never developed this foundational number sense. They can count by rote but don't understand what the numbers represent. They can write numerals but can't show you what 6 means. That gap, if not addressed, makes every subsequent math topic harder. The worksheets here are designed to build this foundation visually and concretely. They are meant to be used alongside hands-on materials — count real objects before counting pictures, sort real toys before sorting shapes on paper.
+            </p>
+          </section>
+
+          {/* Grade Level Descriptions */}
+          <section style={{marginBottom: '3rem'}}>
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: '700',
+              color: 'var(--text-primary)',
+              textAlign: 'center',
+              marginBottom: '1rem'
+            }}>
+              What to Expect at Each Stage of Kindergarten
+            </h2>
+            <p style={{
+              fontSize: '1.125rem',
+              color: 'var(--text-secondary)',
+              textAlign: 'center',
+              marginBottom: '2.5rem',
+              maxWidth: '600px',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}>
+              What mastery looks like, where children typically get stuck, and what your child should be able to do
+            </p>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
+              gap: '1.5rem'
+            }}>
+              {gradeLevels.map((level, index) => (
+                <div key={index} style={{
+                  background: 'var(--surface)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '8px',
+                  padding: '1.5rem'
+                }}>
+                  <h3 style={{
+                    fontSize: '1.125rem',
+                    fontWeight: '700',
+                    color: 'var(--primary)',
+                    marginBottom: '0.75rem'
+                  }}>
+                    {level.grade}
+                  </h3>
+                  <p style={{
+                    color: 'var(--text-secondary)',
+                    lineHeight: '1.6',
+                    margin: 0
+                  }}>
+                    {level.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Features Grid Section */}
+          <section style={{marginBottom: '3rem'}}>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
+              gap: '1.5rem'
             }}>
               <div style={{
                 background: 'var(--surface)',
@@ -279,132 +439,6 @@ export default function KindergartenWorksheets() {
                 </p>
               </div>
             </div>
-
-            <div style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1rem',
-              alignItems: 'center'
-            }}>
-              <Link href="/" style={{
-                background: 'var(--primary)',
-                color: 'white',
-                border: 'none',
-                padding: '1rem 2rem',
-                borderRadius: '6px',
-                fontWeight: '600',
-                textDecoration: 'none',
-                display: 'inline-block',
-                transition: 'background-color 0.2s'
-              }}>
-                Generate Custom Kindergarten Worksheets
-              </Link>
-              <div style={{
-                background: '#f1f5f9',
-                color: '#1e293b',
-                border: '1px solid #e2e8f0',
-                padding: '0.75rem 1.5rem',
-                borderRadius: '6px',
-                fontWeight: '600'
-              }}>
-                <span style={{color: 'var(--primary)'}}>10</span> free worksheets per day • <span style={{color: 'var(--primary)'}}>3</span> difficulty levels
-              </div>
-            </div>
-          </section>
-
-                    {/* Why This Matters Section */}
-          <section style={{
-            background: 'var(--surface)',
-            border: '1px solid var(--border)',
-            borderRadius: '8px',
-            padding: '2rem',
-            marginBottom: '3rem'
-          }}>
-            <h2 style={{
-              fontSize: '1.5rem',
-              fontWeight: '700',
-              color: 'var(--text-primary)',
-              marginBottom: '1rem'
-            }}>
-              Why Kindergarten Math Is More Important Than It Looks
-            </h2>
-            <p style={{
-              color: 'var(--text-secondary)',
-              lineHeight: '1.7',
-              fontSize: '1.05rem',
-              marginBottom: '1rem'
-            }}>
-              Kindergarten math looks like play — counting blocks, sorting shapes, making patterns. But underneath that play is the foundation of all later mathematics. In kindergarten, children learn what numbers actually mean. They develop one-to-one correspondence (each object gets one count). They learn cardinality (the last number tells how many). They begin to subitize — recognize small quantities without counting. These are not trivial skills; they are the cognitive building blocks of number sense.
-            </p>
-            <p style={{
-              color: 'var(--text-secondary)',
-              lineHeight: '1.7',
-              fontSize: '1.05rem',
-              marginBottom: '1rem'
-            }}>
-              The children who struggle in 1st grade and beyond are often not the ones who can't memorize facts — they're the ones who never developed this foundational number sense. They can count by rote but don't understand what the numbers represent. They can write numerals but can't show you what 6 means. That gap, if not addressed, makes every subsequent math topic harder. The <Link href="/addition-practice" style={{color: 'var(--primary)', textDecoration: 'underline'}}>addition practice</Link> and <Link href="/subtraction-practice" style={{color: 'var(--primary)', textDecoration: 'underline'}}>subtraction practice</Link> pages continue this foundation into early operations.
-            </p>
-            <p style={{
-              color: 'var(--text-secondary)',
-              lineHeight: '1.7',
-              fontSize: '1.05rem'
-            }}>
-              The worksheets here are designed to build this foundation visually and concretely. They are meant to be used alongside hands-on materials — count real objects before counting pictures, sort real toys before sorting shapes on paper.
-            </p>
-          </section>
-
-          {/* Grade Level Descriptions */}
-          <section style={{marginBottom: '3rem'}}>
-            <h2 style={{
-              fontSize: '2rem',
-              fontWeight: '700',
-              color: 'var(--text-primary)',
-              textAlign: 'center',
-              marginBottom: '1rem'
-            }}>
-              What to Expect at Each Stage of Kindergarten
-            </h2>
-            <p style={{
-              fontSize: '1.125rem',
-              color: 'var(--text-secondary)',
-              textAlign: 'center',
-              marginBottom: '2.5rem',
-              maxWidth: '600px',
-              marginLeft: 'auto',
-              marginRight: 'auto'
-            }}>
-              What mastery looks like, where children typically get stuck, and what your child should be able to do
-            </p>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '1.5rem'
-            }}>
-              {gradeLevels.map((level, index) => (
-                <div key={index} style={{
-                  background: 'var(--surface)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '8px',
-                  padding: '1.5rem'
-                }}>
-                  <h3 style={{
-                    fontSize: '1.125rem',
-                    fontWeight: '700',
-                    color: 'var(--primary)',
-                    marginBottom: '0.75rem'
-                  }}>
-                    {level.grade}
-                  </h3>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    lineHeight: '1.6',
-                    margin: 0
-                  }}>
-                    {level.description}
-                  </p>
-                </div>
-              ))}
-            </div>
           </section>
 
           {/* Skills Section */}
@@ -431,7 +465,7 @@ export default function KindergartenWorksheets() {
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: '1.5rem'
             }}>
               {skills.map((skill, index) => (
@@ -498,7 +532,7 @@ export default function KindergartenWorksheets() {
               </h2>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
                 gap: '2rem'
               }}>
                 <div>
@@ -518,19 +552,19 @@ export default function KindergartenWorksheets() {
                   }}>
                     <li style={{marginBottom: '0.75rem', display: 'flex', alignItems: 'flex-start'}}>
                       <span style={{marginRight: '0.5rem'}}>•</span>
-                      Counting objects with one-to-one correspondence
+                      Counting to 100 by ones and tens
                     </li>
                     <li style={{marginBottom: '0.75rem', display: 'flex', alignItems: 'flex-start'}}>
                       <span style={{marginRight: '0.5rem'}}>•</span>
-                      Recognizing quantities without counting (subitizing)
+                      Number recognition 0-20
                     </li>
                     <li style={{marginBottom: '0.75rem', display: 'flex', alignItems: 'flex-start'}}>
                       <span style={{marginRight: '0.5rem'}}>•</span>
-                      Understanding "how many?" and comparing amounts
+                      One-to-one correspondence
                     </li>
                     <li style={{display: 'flex', alignItems: 'flex-start'}}>
                       <span style={{marginRight: '0.5rem'}}>•</span>
-                      Counting forward from any number (not just 1)
+                      Comparing groups (more/less)
                     </li>
                   </ul>
                 </div>
@@ -541,7 +575,7 @@ export default function KindergartenWorksheets() {
                     color: 'var(--text-primary)',
                     marginBottom: '1rem'
                   }}>
-                    Early Operations & Geometry
+                    Early Operations
                   </h3>
                   <ul style={{
                     listStyle: 'none',
@@ -551,94 +585,23 @@ export default function KindergartenWorksheets() {
                   }}>
                     <li style={{marginBottom: '0.75rem', display: 'flex', alignItems: 'flex-start'}}>
                       <span style={{marginRight: '0.5rem'}}>•</span>
-                      Addition and subtraction with objects
+                      Addition within 5 with objects
                     </li>
                     <li style={{marginBottom: '0.75rem', display: 'flex', alignItems: 'flex-start'}}>
                       <span style={{marginRight: '0.5rem'}}>•</span>
-                      Composing and decomposing numbers within 5
+                      Subtraction within 5 with objects
                     </li>
                     <li style={{marginBottom: '0.75rem', display: 'flex', alignItems: 'flex-start'}}>
                       <span style={{marginRight: '0.5rem'}}>•</span>
-                      Identifying and describing shapes
+                      Making 5 and 10
                     </li>
                     <li style={{display: 'flex', alignItems: 'flex-start'}}>
                       <span style={{marginRight: '0.5rem'}}>•</span>
-                      Creating and extending patterns
+                      Simple word problems with pictures
                     </li>
                   </ul>
                 </div>
               </div>
-            </div>
-          </section>
-
-          {/* Worksheet Types Section */}
-          <section style={{marginBottom: '3rem'}}>
-            <h2 style={{
-              fontSize: '2rem',
-              fontWeight: '700',
-              color: 'var(--text-primary)',
-              textAlign: 'center',
-              marginBottom: '1rem'
-            }}>
-              Worksheet Categories
-            </h2>
-            <p style={{
-              fontSize: '1.125rem',
-              color: 'var(--text-secondary)',
-              textAlign: 'center',
-              marginBottom: '2.5rem',
-              maxWidth: '600px',
-              marginLeft: 'auto',
-              marginRight: 'auto'
-            }}>
-              Comprehensive collection of kindergarten math practice materials
-            </p>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '1.5rem'
-            }}>
-              {[
-                { name: 'Counting Practice', href: '/counting-practice', count: '15+ worksheets', desc: 'Count objects up to 20 with visual supports' },
-                { name: 'Number Recognition', href: '/number-recognition', count: '12+ worksheets', desc: 'Identify and write numbers 0-20' },
-                { name: 'Basic Addition', href: '/addition-practice', count: '15+ worksheets', desc: 'Add within 5 using pictures and objects' },
-                { name: 'Basic Subtraction', href: '/subtraction-practice', count: '12+ worksheets', desc: 'Subtract within 5 with visual models' },
-                { name: 'Shapes & Patterns', href: '/shapes-patterns', count: '10+ worksheets', desc: 'Identify shapes and complete patterns' },
-                { name: 'Comparing Groups', href: '/comparing', count: '10+ worksheets', desc: 'More, less, and equal with pictures' }
-              ].map((type, index) => (
-                <Link key={index} href={type.href} style={{
-                  background: 'var(--surface)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '8px',
-                  padding: '1.5rem',
-                  textDecoration: 'none',
-                  transition: 'border-color 0.2s'
-                }}>
-                  <h3 style={{
-                    fontSize: '1.125rem',
-                    fontWeight: '600',
-                    color: 'var(--text-primary)',
-                    marginBottom: '0.5rem'
-                  }}>
-                    {type.name}
-                  </h3>
-                  <p style={{
-                    color: 'var(--primary)',
-                    fontSize: '0.875rem',
-                    fontWeight: '600',
-                    marginBottom: '0.5rem'
-                  }}>
-                    {type.count}
-                  </p>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    fontSize: '0.875rem',
-                    margin: 0
-                  }}>
-                    {type.desc}
-                  </p>
-                </Link>
-              ))}
             </div>
           </section>
 
@@ -664,7 +627,7 @@ export default function KindergartenWorksheets() {
                 lineHeight: '1.7',
                 marginBottom: '1.25rem'
               }}>
-                For some children, the foundation needs more direct support. If your child is still struggling with one-to-one correspondence past mid-year, cannot recognize small quantities without counting, or seems generally confused by what numbers mean, worksheets alone won't bridge that gap. Our <strong>Number Sense Foundations</strong> course (K–2) builds the conceptual groundwork through hands-on activities and clear progression. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
+                For some children, the gap is not in practice — it is in the underlying number sense that makes counting and early operations make sense. If your child cannot count objects with one-to-one correspondence past mid-year or cannot recognize numbers without counting, worksheets alone will not bridge that gap. Our <strong>Number Sense Foundations</strong> course (K-2) builds the conceptual groundwork that makes number sense stick. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
                 href="https://homeschoolmath.gumroad.com/l/mfikwi"
@@ -754,7 +717,7 @@ export default function KindergartenWorksheets() {
                 fontWeight: '700',
                 marginBottom: '1rem'
               }}>
-                Start Math Adventures Today!
+                Build Strong Number Sense Today!
               </h2>
               <p style={{
                 fontSize: '1.125rem',
@@ -765,7 +728,7 @@ export default function KindergartenWorksheets() {
                 marginRight: 'auto',
                 lineHeight: '1.6'
               }}>
-                Begin your child's math journey with engaging, visual worksheets that build confidence and foundational skills for future success.
+                Start generating custom kindergarten worksheets today. Perfect for building essential math foundations and preparing for first grade success.
               </p>
               <div style={{
                 display: 'flex',
@@ -782,7 +745,6 @@ export default function KindergartenWorksheets() {
                   fontWeight: '600',
                   textDecoration: 'none',
                   display: 'inline-block',
-                  transition: 'background-color 0.2s',
                   fontSize: '1.125rem'
                 }}>
                   Create Worksheets Now
@@ -931,7 +893,7 @@ export default function KindergartenWorksheets() {
                 </div>
               </Link>
 
-              <Link href="/addition-practice" style={{
+              <Link href="/grade-4-worksheets" style={{
                 background: 'var(--surface)',
                 border: '1px solid var(--border)',
                 borderRadius: '8px',
@@ -953,20 +915,20 @@ export default function KindergartenWorksheets() {
                   fontSize: '1.25rem',
                   margin: '0 auto 1rem'
                 }}>
-                  +
+                  4
                 </div>
                 <div style={{
                   color: 'var(--text-primary)',
                   fontWeight: '600',
                   marginBottom: '0.25rem'
                 }}>
-                  Addition
+                  Grade 4
                 </div>
                 <div style={{
                   color: 'var(--text-secondary)',
                   fontSize: '0.875rem'
                 }}>
-                  Practice sheets
+                  Math worksheets
                 </div>
               </Link>
             </div>
