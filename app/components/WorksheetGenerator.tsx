@@ -30,7 +30,7 @@ interface WorksheetGeneratorProps {
 // Grade configurations
 const gradeConfigurations = {
   kindergarten: {
-    availableTypes: ['Addition', 'Subtraction', 'Counting'],
+    availableTypes: ['Addition', 'Subtraction', 'Counting', 'Place Value'],
     defaultTypes: ['Addition', 'Subtraction'],
     difficultyLevels: {
       easy: { range: '1-4', description: 'Numbers 1-4' },
@@ -40,7 +40,7 @@ const gradeConfigurations = {
     description: 'Basic counting, addition, and subtraction within 8'
   },
   first: {
-    availableTypes: ['Addition', 'Subtraction', 'Word Problems'],
+    availableTypes: ['Addition', 'Subtraction', 'Word Problems', 'Place Value'],
     defaultTypes: ['Addition', 'Subtraction'],
     difficultyLevels: {
       easy: { range: '1-10', description: 'Single-digit operations' },
@@ -50,7 +50,7 @@ const gradeConfigurations = {
     description: 'Addition and subtraction within 20'
   },
   second: {
-    availableTypes: ['Addition', 'Subtraction', 'Multiplication', 'Word Problems'],
+    availableTypes: ['Addition', 'Subtraction', 'Multiplication', 'Word Problems', 'Place Value'],
     defaultTypes: ['Addition', 'Subtraction', 'Word Problems'],
     difficultyLevels: {
       easy: { range: '1-20', description: 'Within 20' },
@@ -60,7 +60,7 @@ const gradeConfigurations = {
     description: 'Two-digit operations, basic multiplication'
   },
   third: {
-    availableTypes: ['Addition', 'Subtraction', 'Multiplication', 'Division', 'Word Problems'],
+    availableTypes: ['Addition', 'Subtraction', 'Multiplication', 'Division', 'Word Problems', 'Place Value', 'Area & Perimeter'],
     defaultTypes: ['Multiplication', 'Division', 'Word Problems'],
     difficultyLevels: {
       easy: { range: '1-5', description: 'Basic facts 1-5' },
@@ -70,7 +70,7 @@ const gradeConfigurations = {
     description: 'Multiplication, division, and multi-step problems'
   },
   fourth: {
-    availableTypes: ['Multiplication', 'Division', 'Word Problems', 'Fractions'],
+    availableTypes: ['Multiplication', 'Division', 'Word Problems', 'Fractions', 'Place Value', 'Area & Perimeter'],
     defaultTypes: ['Multiplication', 'Division', 'Word Problems'],
     difficultyLevels: {
       easy: { range: '2-digit', description: 'Two-digit numbers' },
@@ -80,7 +80,7 @@ const gradeConfigurations = {
     description: 'Multi-digit operations and fractions'
   },
   fifth: {
-    availableTypes: ['Multiplication', 'Division', 'Word Problems', 'Fractions', 'Decimals'],
+    availableTypes: ['Multiplication', 'Division', 'Word Problems', 'Fractions', 'Decimals', 'Place Value', 'Area & Perimeter'],
     defaultTypes: ['Multiplication', 'Division', 'Word Problems'],
     difficultyLevels: {
       easy: { range: 'Basic', description: 'Simple fractions/decimals' },
@@ -100,6 +100,10 @@ const gradeConfigurations = {
     description: 'Ratios, percentages, and pre-algebra'
   }
 };
+
+// Place Value: grades K-5
+  // Area & Perimeter: grades 3-5
+  // These are added to existing grades via availableTypes below
 
 // Word problem templates
 const wordProblemTemplates = {
@@ -247,6 +251,16 @@ const getNumberRanges = (grade: string, difficulty: string, operation: string) =
         hard: { decimalPlaces: 2, min: 1, max: 1000 }
       }
     },
+    placeValue: {
+      easy: { min: 1, max: 99, places: 'tens' },
+      medium: { min: 100, max: 9999, places: 'hundreds' },
+      hard: { min: 1000, max: 999999, places: 'thousands' }
+    },
+    areaPerimeter: {
+      easy: { min: 1, max: 10 },
+      medium: { min: 2, max: 20 },
+      hard: { min: 5, max: 50 }
+    },
     sixth: {
       multiplication: {
         easy: { min: 10, max: 100 },
@@ -376,6 +390,118 @@ const generatePercentProblem = (difficulty: string): { question: string; answer:
   }
   
   return { question, answer };
+};
+
+const generatePlaceValueProblem = (grade: string, difficulty: string): { question: string; answer: string } => {
+  const range = getNumberRanges('third', difficulty, 'placeValue');
+
+  const problemTypes = ['identify_digit', 'expanded_form', 'compare', 'round'];
+  
+  // Limit problem types by grade
+  const availableTypes = grade === 'kindergarten' || grade === 'first'
+    ? ['identify_digit', 'expanded_form']
+    : grade === 'second'
+    ? ['identify_digit', 'expanded_form', 'compare']
+    : problemTypes;
+
+  const problemType = availableTypes[Math.floor(Math.random() * availableTypes.length)];
+
+  const num = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+
+  if (problemType === 'identify_digit') {
+    const numStr = String(num);
+    const placeNames = ['ones', 'tens', 'hundreds', 'thousands', 'ten-thousands'];
+    const digitIndex = Math.floor(Math.random() * numStr.length);
+    const placeIndex = numStr.length - 1 - digitIndex;
+    const placeName = placeNames[placeIndex] || 'ones';
+    const digit = numStr[digitIndex];
+    return {
+      question: `What digit is in the ${placeName} place in ${num}?`,
+      answer: digit
+    };
+  }
+
+  if (problemType === 'expanded_form') {
+    const numStr = String(num);
+    const placeValues = ['ones', 'tens', 'hundreds', 'thousands'];
+    const parts: string[] = [];
+    for (let i = 0; i < numStr.length; i++) {
+      const digit = parseInt(numStr[i]);
+      if (digit !== 0) {
+        const place = Math.pow(10, numStr.length - 1 - i);
+        parts.push(`${digit} × ${place}`);
+      }
+    }
+    return {
+      question: `Write ${num} in expanded form:`,
+      answer: parts.join(' + ')
+    };
+  }
+
+  if (problemType === 'compare') {
+    const num2 = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+    const symbol = num > num2 ? '>' : num < num2 ? '<' : '=';
+    return {
+      question: `Compare: ${num} ___ ${num2}`,
+      answer: symbol
+    };
+  }
+
+  if (problemType === 'round') {
+    const roundTo = range.max >= 1000 ? 100 : range.max >= 100 ? 10 : 10;
+    const rounded = Math.round(num / roundTo) * roundTo;
+    return {
+      question: `Round ${num} to the nearest ${roundTo}:`,
+      answer: String(rounded)
+    };
+  }
+
+  return { question: `What is the value of ${num}?`, answer: String(num) };
+};
+
+const generateAreaPerimeterProblem = (difficulty: string): { question: string; answer: string } => {
+  const range = getNumberRanges('third', difficulty, 'areaPerimeter');
+
+  const length = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+  const width = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+
+  const problemTypes = ['area_rect', 'perimeter_rect', 'missing_side_area', 'missing_side_perimeter'];
+  const problemType = problemTypes[Math.floor(Math.random() * problemTypes.length)];
+
+  if (problemType === 'area_rect') {
+    return {
+      question: `A rectangle is ${length} cm long and ${width} cm wide. What is its area?`,
+      answer: `${length * width} cm²`
+    };
+  }
+
+  if (problemType === 'perimeter_rect') {
+    return {
+      question: `A rectangle is ${length} cm long and ${width} cm wide. What is its perimeter?`,
+      answer: `${2 * (length + width)} cm`
+    };
+  }
+
+  if (problemType === 'missing_side_area') {
+    const area = length * width;
+    return {
+      question: `A rectangle has an area of ${area} cm². One side is ${length} cm. What is the other side?`,
+      answer: `${width} cm`
+    };
+  }
+
+  if (problemType === 'missing_side_perimeter') {
+    const perimeter = 2 * (length + width);
+    return {
+      question: `A rectangle has a perimeter of ${perimeter} cm. One side is ${length} cm. What is the other side?`,
+      answer: `${width} cm`
+    };
+  }
+
+  return {
+    question: `A rectangle is ${length} cm long and ${width} cm wide. What is its area?`,
+    answer: `${length * width} cm²`
+  };
 };
 
 const generateRatioProblem = (difficulty: string): { question: string; answer: string } => {
@@ -539,9 +665,14 @@ const generateMathProblem = (
   if (problemTypes.includes('Percent') && grade === 'sixth') {
     availableOperations.push('percent');
   }
-  if (problemTypes.includes('Ratios') && grade === 'sixth') {
-    availableOperations.push('ratios');
+  
+  if (problemTypes.includes('Place Value')) {
+    availableOperations.push('placevalue');
   }
+  if (problemTypes.includes('Area & Perimeter') && (grade === 'third' || grade === 'fourth' || grade === 'fifth')) {
+    availableOperations.push('areaperimeter');
+  }
+
   if (problemTypes.includes('Counting') && grade === 'kindergarten') {
     availableOperations.push('counting');
   }
@@ -636,6 +767,26 @@ const generateMathProblem = (
         id: index + 1, 
         question: result.question, 
         answer: result.answer, 
+        isWordProblem: false,
+        hasVisual: false
+      };
+
+      } else if (operation === 'placevalue') {
+      const result = generatePlaceValueProblem(grade, difficulty);
+      return {
+        id: index + 1,
+        question: result.question,
+        answer: result.answer,
+        isWordProblem: false,
+        hasVisual: false
+      };
+
+    } else if (operation === 'areaperimeter') {
+      const result = generateAreaPerimeterProblem(difficulty);
+      return {
+        id: index + 1,
+        question: result.question,
+        answer: result.answer,
         isWordProblem: false,
         hasVisual: false
       };
@@ -758,7 +909,9 @@ export default function WorksheetGenerator({
         'word-problems': ['Word Problems'],
         'counting': ['Counting'],
         'percent': ['Percent'],
-        'ratios': ['Ratios']
+        'ratios': ['Ratios'],
+        'place-value': ['Place Value'],
+        'area-perimeter': ['Area & Perimeter']
       };
       
       const mappedTypes = topicMap[topicParam];
