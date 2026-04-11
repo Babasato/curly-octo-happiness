@@ -54,6 +54,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/resources',
     '/privacy-policy',
     '/terms-of-service',
+    '/area-perimeter',
+    '/place-value',
   ]
 
   return routes.map((route) => ({
