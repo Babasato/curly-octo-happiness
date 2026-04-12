@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Math Word Problems Worksheets | Story Problems Practice 1st-6th Grade',
-  description: 'Master math word problems with custom practice sheets. Generate free printable story problem worksheets for 1st through 6th grade with real-world scenarios and multiple operations.',
+  title: 'Math Word Problems Worksheets | Free Printable K-6 Math Practice',
+  description: 'Free printable math word problems worksheets for K-6. Practice addition, subtraction, multiplication, and division word problems with real-world scenarios.',
   alternates: {
     canonical: 'https://homeschoolmath.site/word-problems',
   },
@@ -13,38 +13,38 @@ export const metadata: Metadata = {
 export default function WordProblems() {
   const faqs = [
     {
-      question: 'What types of word problems are included in the worksheets?',
-      answer: 'Our generator creates word problem worksheets with real-world scenarios involving addition, subtraction, multiplication, and division. Problems include shopping, sharing, time, money, distance, measurement, and everyday situations appropriate for each grade level. Each problem is designed to require genuine mathematical thinking, not just pattern matching.'
+      question: 'What types of word problems can I practice with these worksheets?',
+      answer: 'Our generator creates word problems for all four operations: addition, subtraction, multiplication, and division. You can choose one-step problems, multi-step problems, or mixed operations. Each worksheet includes real-world scenarios appropriate for the grade level.'
     },
     {
-      question: 'Why do some children struggle with word problems even when they know the math facts?',
-      answer: 'Word problems ask children to do two things at once: decode language and apply mathematics. A child who knows their facts can still struggle because reading comprehension, not math, is the bottleneck. The problem is often that they can\'t visualize what the problem is describing. The fix is teaching them to translate the story into a mental picture before reaching for numbers. Reading the problem aloud and asking "What is actually happening here?" is often more effective than re-explaining the operation.'
+      question: 'Why does my child freeze on word problems when they can solve equations easily?',
+      answer: 'This is the most common math complaint, and the reason is simple: word problems require reading comprehension AND math skills simultaneously. A child who can solve 23 + 47 = 70 may still freeze on "Sarah had 23 apples and bought 47 more" because they have to read, comprehend, identify the operation, and then compute. The fix is explicit strategy teaching: read the problem aloud, restate it in their own words, cover the numbers first, and identify the situation before solving.'
     },
     {
-      question: 'How often do worksheets include word problems?',
-      answer: 'Word problems have a 30% chance of appearing in any generated worksheet. This ensures students get regular practice with story problems while maintaining variety in their math practice. You can also generate dedicated word problem worksheets focused on specific operations or grade levels.'
+      question: 'What is the best strategy for solving word problems?',
+      answer: 'Teach the CUBES strategy: Circle the numbers, Underline the question, Box the key words, Evaluate the operation, Solve and check. Or teach the simpler 3-step method: (1) Read and restate — what is happening? (2) Identify the operation — are we combining, comparing, sharing? (3) Write the equation and solve. The key is to read the words before looking at the numbers.'
     },
     {
-      question: 'Are the word problems age-appropriate for different grade levels?',
-      answer: 'Yes! We carefully design problems with appropriate vocabulary, number ranges, and complexity for each grade level. Younger students get simple, concrete scenarios with numbers they can visualize. Older students tackle complex, multi-step problems that require planning and reasoning. A 1st grader might solve "Tom has 3 apples and gets 2 more," while a 5th grader handles "A recipe calls for 2/3 cup of flour. If you want to make half the recipe, how much flour do you need?"'
+      question: 'What keywords signal each operation?',
+      answer: 'Addition: "in all," "total," "altogether," "combined," "sum." Subtraction: "left," "remain," "difference," "how many more," "fewer." Multiplication: "each," "per," "groups of," "rows of," "total." Division: "share equally," "split," "each gets," "how many groups." Warn your child that keywords are clues, not rules — the best strategy is to understand the situation.'
     },
     {
-      question: 'Do word problems include visual aids or supports?',
-      answer: 'While the primary focus is on reading comprehension and problem-solving, some word problems for younger grades include simple visual context. The main emphasis is developing the ability to extract mathematical information from text — a skill that becomes increasingly important in upper elementary and beyond.'
+      question: 'When should my child start multi-step word problems?',
+      answer: 'Start multi-step word problems after your child can solve one-step problems reliably. Typically this is in 2nd or 3rd grade for simple two-step problems (addition then subtraction), and 4th grade for more complex multi-step problems. The common error is doing operations in the wrong order. Teach your child to break the problem into parts: "First, what happens? Then, what happens next?" Write each step separately.'
     },
     {
-      question: 'How do I help my child who guesses the operation without reading the problem?',
-      answer: 'This is extremely common — children look at the numbers and guess whether to add, subtract, multiply, or divide based on what they\'ve been practicing. The fix is to remove the numbers temporarily. Cover them and ask: "What is this story about? What is happening?" Once they can describe the situation in their own words, uncover the numbers and ask which operation matches the story. This breaks the guessing habit and builds genuine comprehension.'
+      question: 'How many word problems should my child practice daily?',
+      answer: '5-10 word problems per session is effective. Word problems take longer than equations because of the reading and comprehension step. Quality over quantity — it is better to solve 5 problems correctly with full understanding than 15 problems guessed. Spend 15-20 minutes daily on word problems, not more.'
     },
     {
-      question: 'What is the difference between a simple word problem and a complex one?',
-      answer: 'Simple word problems involve one step and use direct language: "Sarah has 12 stickers and gives 4 away." Complex problems involve multiple steps, extraneous information, or indirect language: "Tom bought 3 packs of pencils. Each pack had 8 pencils. He gave 5 pencils to his sister. How many does he have left?" The extra step of ignoring irrelevant information is itself a cognitive skill that needs practice.'
+      question: 'Do the answer keys show the steps?',
+      answer: 'Answer keys provide only the final answer. This allows students to work through the reasoning independently while giving parents quick verification. If your child gets a word problem wrong, do not just show the correct answer. Go back to the problem and ask: "Let\'s read this again. What is happening? What are we trying to find out?" Walking through the reasoning is more valuable than the correct answer.'
     },
     {
-      question: 'Should my child be taught to underline key words (like "in all" or "left")?',
-      answer: 'This strategy is controversial and often counterproductive. Children who rely on keyword spotting will eventually be tricked by problems that use those words in different contexts. For example, "How many are left?" in a subtraction problem is safe, but "What is left over?" in a division problem means something else. The better approach is teaching them to visualize the scenario and understand what is actually happening, not just hunt for signal words.'
+      question: 'What is the difference between one-step and multi-step word problems?',
+      answer: 'One-step problems require a single operation: "Sarah has 12 apples. She buys 5 more. How many does she have?" (addition). Multi-step problems require two or more operations: "Sarah has 12 apples. She buys 5 more. Then she gives 3 to her friend. How many are left?" (addition then subtraction). Teach one-step problems first, then multi-step once those are solid.'
     }
-  ];
+  ]
 
   const schemaMarkup = {
     '@context': 'https://schema.org',
@@ -57,7 +57,7 @@ export default function WordProblems() {
         'text': faq.answer
       }
     }))
-  };
+  }
 
   return (
     <>
@@ -71,42 +71,42 @@ export default function WordProblems() {
 
           {/* HERO SECTION */}
           <section className="practice-hero">
-            <div className="practice-badge practice-badge-green">
+            <div className="practice-badge practice-badge-purple">
               Free Printable Worksheets
             </div>
             <h1 className="practice-title">
               Math Word Problems Worksheets
             </h1>
-            <p className="practice-subtitle practice-subtitle-green">
-              Master Story Problems with Custom Practice Sheets
+            <p className="practice-subtitle practice-subtitle-purple">
+              Practice Real-World Math Scenarios
             </p>
             <p className="practice-description">
-              Generate custom word problem worksheets with real-world scenarios and multiple operations. 
-              Perfect for developing critical thinking, reading comprehension, and mathematical reasoning skills.
+              Generate custom word problem worksheets for addition, subtraction, multiplication, and division. 
+              Perfect for building reading comprehension and math skills simultaneously.
             </p>
 
             {/* Features Grid */}
             <div className="practice-features-grid">
               <div className="practice-card practice-card-center">
-                <div className="practice-card-icon">📖</div>
-                <h3 className="practice-card-title">Real-World Scenarios</h3>
-                <p className="practice-card-text">Shopping, time, money, measurement, sharing</p>
-              </div>
-              <div className="practice-card practice-card-center">
-                <div className="practice-card-icon">➕➖✖️➗</div>
+                <div className="practice-card-icon">➕</div>
                 <h3 className="practice-card-title">All Operations</h3>
                 <p className="practice-card-text">Addition, subtraction, multiplication, division</p>
               </div>
               <div className="practice-card practice-card-center">
-                <div className="practice-card-icon">🎯</div>
-                <h3 className="practice-card-title">Multi-Step Problems</h3>
-                <p className="practice-card-text">Complex scenarios for upper grades</p>
+                <div className="practice-card-icon">📖</div>
+                <h3 className="practice-card-title">CUBES Strategy</h3>
+                <p className="practice-card-text">Circle, Underline, Box, Evaluate, Solve</p>
+              </div>
+              <div className="practice-card practice-card-center">
+                <div className="practice-card-icon">🔢</div>
+                <h3 className="practice-card-title">Multi-Step</h3>
+                <p className="practice-card-text">One-step and multi-step problems</p>
               </div>
             </div>
 
             <div className="practice-cta-container">
-              <Link href="/" className="practice-button practice-button-green">
-                Generate Custom Word Problem Worksheets
+              <Link href="/" className="practice-button practice-button-purple">
+                Generate Custom Word Problems Worksheets
               </Link>
               <div className="practice-info-box">
                 10 free worksheets per day • 3 difficulty levels
@@ -129,7 +129,7 @@ export default function WordProblems() {
                 color: 'var(--text-primary)',
                 marginBottom: '1rem'
               }}>
-                Why Word Problems Reveal What Math Facts Hide
+                Why Word Problems Are the True Test of Math Understanding
               </h2>
               <p style={{
                 color: 'var(--text-secondary)',
@@ -137,22 +137,14 @@ export default function WordProblems() {
                 fontSize: '1.05rem',
                 marginBottom: '1rem'
               }}>
-                A child who can complete a page of addition problems in two minutes might still freeze when faced with this: "Maria has 15 apples. She gives 6 to her friend and then buys 4 more at the store. How many does she have now?" The difference isn't math ability — it's the ability to translate a situation into mathematical action. Word problems are the first place where math stops being about following instructions and starts being about thinking.
-              </p>
-              <p style={{
-                color: 'var(--text-secondary)',
-                lineHeight: '1.7',
-                fontSize: '1.05rem',
-                marginBottom: '1rem'
-              }}>
-                The children who handle word problems well aren't necessarily better at calculation. They're better at visualizing. When they read a problem, a mental movie plays — they see the apples, the giving away, the buying more. Only after the movie is clear do they reach for numbers. Children who struggle with word problems often skip the movie entirely and grab the first two numbers they see, guessing at the operation based on what they've been practicing that week.
+                A child can memorize that 23 + 47 = 70. But do they know when to add? Word problems ask children to read a scenario, identify what the problem is asking, and choose the correct operation. This is what real math looks like — not isolated equations, but applying skills to actual situations like shopping, cooking, and measuring.
               </p>
               <p style={{
                 color: 'var(--text-secondary)',
                 lineHeight: '1.7',
                 fontSize: '1.05rem'
               }}>
-                The worksheets here are designed to build that visualization skill gradually. Problems progress from simple one-step scenarios to complex multi-step situations with extraneous information. For students who need to strengthen the underlying number sense that makes problem-solving intuitive, the <Link href="/addition-practice" style={{color: 'var(--primary)', textDecoration: 'underline'}}>addition practice</Link> and <Link href="/subtraction-practice" style={{color: 'var(--primary)', textDecoration: 'underline'}}>subtraction practice</Link> pages provide the foundational fluency word problems depend on.
+                Many parents focus exclusively on computation worksheets and then wonder why their child freezes on word problems. The answer is simple: word problems require reading comprehension and situation recognition. That is why word problems should run alongside computation practice from the very beginning. For students who need computation fluency alongside word problem practice, see our <Link href="/addition-practice" style={{color: 'var(--primary)', textDecoration: 'underline'}}>addition</Link>, <Link href="/subtraction-practice" style={{color: 'var(--primary)', textDecoration: 'underline'}}>subtraction</Link>, <Link href="/multiplication-practice" style={{color: 'var(--primary)', textDecoration: 'underline'}}>multiplication</Link>, and <Link href="/division-practice" style={{color: 'var(--primary)', textDecoration: 'underline'}}>division</Link> practice pages.
               </p>
             </div>
           </section>
@@ -167,48 +159,48 @@ export default function WordProblems() {
             </p>
             <div className="practice-grid">
               <div className="practice-card">
-                <h3 className="practice-card-heading">1st-2nd Grade Skills</h3>
+                <h3 className="practice-card-heading">K-2 Grade Skills</h3>
                 <div className="practice-bullet">
-                  <div className="practice-bullet-dot practice-bullet-dot-green"></div>
-                  <span className="practice-bullet-text">Single-step addition problems — combining quantities in real-world contexts</span>
+                  <div className="practice-bullet-dot practice-bullet-dot-purple"></div>
+                  <span className="practice-bullet-text">Simple addition and subtraction word problems — combining and taking away</span>
                 </div>
                 <div className="practice-bullet">
-                  <div className="practice-bullet-dot practice-bullet-dot-green"></div>
-                  <span className="practice-bullet-text">Simple subtraction scenarios — taking away and finding differences</span>
+                  <div className="practice-bullet-dot practice-bullet-dot-purple"></div>
+                  <span className="practice-bullet-text">Picture-based word problems — connecting stories to numbers</span>
                 </div>
                 <div className="practice-bullet">
-                  <div className="practice-bullet-dot practice-bullet-dot-green"></div>
-                  <span className="practice-bullet-text">Counting and sharing stories — building the foundation for multiplication and division</span>
-                </div>
-              </div>
-              <div className="practice-card">
-                <h3 className="practice-card-heading">3rd-4th Grade Skills</h3>
-                <div className="practice-bullet">
-                  <div className="practice-bullet-dot practice-bullet-dot-green"></div>
-                  <span className="practice-bullet-text">Multi-step word problems — planning multiple operations in sequence</span>
-                </div>
-                <div className="practice-bullet">
-                  <div className="practice-bullet-dot practice-bullet-dot-green"></div>
-                  <span className="practice-bullet-text">Multiplication and division contexts — equal groups, arrays, and sharing</span>
-                </div>
-                <div className="practice-bullet">
-                  <div className="practice-bullet-dot practice-bullet-dot-green"></div>
-                  <span className="practice-bullet-text">Money and time problems — real-world financial and scheduling scenarios</span>
+                  <div className="practice-bullet-dot practice-bullet-dot-purple"></div>
+                  <span className="practice-bullet-text">One-step problems — single operation scenarios</span>
                 </div>
               </div>
               <div className="practice-card">
-                <h3 className="practice-card-heading">5th-6th Grade Skills</h3>
+                <h3 className="practice-card-heading">3-4 Grade Skills</h3>
                 <div className="practice-bullet">
-                  <div className="practice-bullet-dot practice-bullet-dot-green"></div>
-                  <span className="practice-bullet-text">Complex multi-step problems — problems requiring planning and organization</span>
+                  <div className="practice-bullet-dot practice-bullet-dot-purple"></div>
+                  <span className="practice-bullet-text">Multiplication and division word problems — equal groups and sharing</span>
                 </div>
                 <div className="practice-bullet">
-                  <div className="practice-bullet-dot practice-bullet-dot-green"></div>
-                  <span className="practice-bullet-text">Multiple operations required — addition, subtraction, multiplication, and division in one problem</span>
+                  <div className="practice-bullet-dot practice-bullet-dot-purple"></div>
+                  <span className="practice-bullet-text">Two-step problems — combining two operations</span>
                 </div>
                 <div className="practice-bullet">
-                  <div className="practice-bullet-dot practice-bullet-dot-green"></div>
-                  <span className="practice-bullet-text">Extraneous information — learning to ignore irrelevant details</span>
+                  <div className="practice-bullet-dot practice-bullet-dot-purple"></div>
+                  <span className="practice-bullet-text">Comparing problems — "how many more" and "how many fewer"</span>
+                </div>
+              </div>
+              <div className="practice-card">
+                <h3 className="practice-card-heading">5-6 Grade Skills</h3>
+                <div className="practice-bullet">
+                  <div className="practice-bullet-dot practice-bullet-dot-purple"></div>
+                  <span className="practice-bullet-text">Multi-step problems — three or more operations</span>
+                </div>
+                <div className="practice-bullet">
+                  <div className="practice-bullet-dot practice-bullet-dot-purple"></div>
+                  <span className="practice-bullet-text">Fraction and decimal word problems — real-world applications</span>
+                </div>
+                <div className="practice-bullet">
+                  <div className="practice-bullet-dot practice-bullet-dot-purple"></div>
+                  <span className="practice-bullet-text">Mixed operations — choosing the correct operation without cues</span>
                 </div>
               </div>
             </div>
@@ -222,45 +214,68 @@ export default function WordProblems() {
             <p className="practice-section-subtitle">
               What word problem mastery looks like at each stage, and what sticking points to watch for
             </p>
-            <div className="practice-grade-grid">
-              {[
-                {
-                  grade: '1-2',
-                  focus: 'Single-step, addition/subtraction',
-                  detail: 'A 1st or 2nd grader who has mastered word problems can read a simple story, identify whether to add or subtract, and explain why. The common sticking point is grabbing numbers without understanding the situation — a child who sees "5 apples" and "3 apples" and adds because they just practiced addition, even when the story says "ate" or "gave away." By the end of 2nd grade, a child should be able to act out a word problem with objects before solving it.'
-                },
-                {
-                  grade: '3-4',
-                  focus: 'Multi-step, all operations',
-                  detail: 'A 3rd or 4th grader should handle problems that require more than one step. Mastery means they can plan ahead — recognizing that they need to solve part A before part B. The common sticking point is losing track of intermediate answers. Teaching them to write down partial results or circle them in the problem is more effective than starting over.'
-                },
-                {
-                  grade: '5-6',
-                  focus: 'Complex, real-world scenarios',
-                  detail: 'A 5th or 6th grader should handle problems with extraneous information, fractions, decimals, and ratios. Mastery means they can ignore irrelevant details and identify what information is actually needed. The common sticking point is overwhelm — children shut down when a problem looks long. Teaching them to read the question first, then find the needed information, reduces anxiety significantly.'
-                }
-              ].map((level, index) => (
-                <div key={index} className="practice-card" style={{textAlign: 'left'}}>
-                  <div className="practice-grade-badge practice-grade-badge-green" style={{textAlign: 'center', margin: '0 auto 0.75rem'}}>
-                    {level.grade.split('-')[0]}
-                  </div>
-                  <div className="practice-grade-title" style={{textAlign: 'center'}}>
-                    Grades {level.grade} — {level.focus}
-                  </div>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    lineHeight: '1.6',
-                    fontSize: '0.9rem',
-                    marginTop: '0.75rem'
-                  }}>
-                    {level.detail}
-                  </p>
+            
+            {/* K-2 Row */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '1.5rem',
+              marginBottom: '2rem'
+            }}>
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-purple" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  K-2
                 </div>
-              ))}
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  K-2 — Picture-Based and Simple One-Step
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  In K-2, word problems should include pictures. Children learn to identify addition ("in all," "total") and subtraction ("left," "remain") situations. The common sticking point is reading comprehension — children who can solve 3+2 may freeze on "Sam has 3 toys and gets 2 more." Read problems aloud and have your child restate them in their own words.
+                </p>
+              </div>
+            </div>
+
+            {/* 3-4 Row */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '1.5rem',
+              marginBottom: '2rem'
+            }}>
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-purple" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  3-4
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  3-4 — Multiplication, Division, and Two-Step
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  In 3-4, word problems introduce multiplication ("each," "per," "total") and division ("share equally," "split"). Two-step problems appear (addition then subtraction). The common sticking point is identifying which operation to use when multiple operations are possible. Teach the CUBES strategy and have your child underline the question before solving.
+                </p>
+              </div>
+            </div>
+
+            {/* 5-6 Row */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '1.5rem'
+            }}>
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-purple" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  5-6
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  5-6 — Multi-Step, Fractions, and Mixed Operations
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  By 5-6, word problems include fractions, decimals, and multi-step scenarios with three or more operations. The common sticking point is doing operations in the wrong order. Teach your child to break the problem into parts: "First, what do we need to find? Then, what do we do next?" Write each step separately.
+                </p>
+              </div>
             </div>
           </section>
 
-          {/* WORKSHEET TYPES SECTION */}
+          {/* WORKSHEET TYPES SECTION - WITH LINKS */}
           <section className="practice-section">
             <h2 className="practice-section-title">
               Worksheet Categories
@@ -269,31 +284,59 @@ export default function WordProblems() {
               Varied word problem practice materials
             </p>
             <div className="practice-grid">
-              {[
-                { type: 'Addition Word Problems', count: '8-12 problems', grades: '1-4', desc: 'Combining and adding scenarios to build understanding of aggregation' },
-                { type: 'Subtraction Word Problems', count: '8-12 problems', grades: '1-4', desc: 'Take-away and difference stories that develop comparison skills' },
-                { type: 'Multiplication Word Problems', count: '8-12 problems', grades: '3-6', desc: 'Equal groups and arrays that build the foundation for proportional reasoning' },
-                { type: 'Division Word Problems', count: '8-12 problems', grades: '3-6', desc: 'Sharing and grouping scenarios that make division meaningful' },
-                { type: 'Multi-Step Problems', count: '6-10 problems', grades: '3-6', desc: 'Problems requiring planning and multiple operations in sequence' },
-                { type: 'Money and Time Problems', count: '8-12 problems', grades: '2-6', desc: 'Real-world financial and scheduling scenarios with practical application' }
-              ].map((worksheet, index) => (
-                <div key={index} className="practice-worksheet-card">
-                  <div className="practice-worksheet-header">
-                    <h3 className="practice-worksheet-title">
-                      {worksheet.type}
-                    </h3>
-                    <span className="practice-count-badge practice-count-badge-green">
-                      {worksheet.count}
-                    </span>
-                  </div>
-                  <p className="practice-worksheet-desc">
-                    {worksheet.desc}
-                  </p>
-                  <div className="practice-worksheet-grades practice-worksheet-grades-green">
-                    Grades {worksheet.grades}
-                  </div>
+              <Link href="/word-problems-addition-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">Addition Word Problems</h3>
+                  <span className="practice-count-badge practice-count-badge-purple">15+ problems</span>
                 </div>
-              ))}
+                <p className="practice-worksheet-desc">Combining, totaling, and "in all" scenarios</p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-purple">Grades K-4</div>
+              </Link>
+
+              <Link href="/word-problems-subtraction-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">Subtraction Word Problems</h3>
+                  <span className="practice-count-badge practice-count-badge-purple">15+ problems</span>
+                </div>
+                <p className="practice-worksheet-desc">Taking away, comparing, and "how many left" scenarios</p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-purple">Grades K-4</div>
+              </Link>
+
+              <Link href="/word-problems-multiplication-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">Multiplication Word Problems</h3>
+                  <span className="practice-count-badge practice-count-badge-purple">15+ problems</span>
+                </div>
+                <p className="practice-worksheet-desc">Equal groups, arrays, and "each" scenarios</p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-purple">Grades 3-5</div>
+              </Link>
+
+              <Link href="/word-problems-division-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">Division Word Problems</h3>
+                  <span className="practice-count-badge practice-count-badge-purple">15+ problems</span>
+                </div>
+                <p className="practice-worksheet-desc">Sharing equally, grouping, and "each gets" scenarios</p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-purple">Grades 3-5</div>
+              </Link>
+
+              <Link href="/word-problems-multi-step-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">Multi-Step Problems</h3>
+                  <span className="practice-count-badge practice-count-badge-purple">10+ problems</span>
+                </div>
+                <p className="practice-worksheet-desc">Two or more operations in sequence</p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-purple">Grades 3-6</div>
+              </Link>
+
+              <Link href="/word-problems-mixed-operations-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">Mixed Operations</h3>
+                  <span className="practice-count-badge practice-count-badge-purple">15+ problems</span>
+                </div>
+                <p className="practice-worksheet-desc">Choose the correct operation — no operation cues</p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-purple">Grades 4-6</div>
+              </Link>
             </div>
           </section>
 
@@ -312,14 +355,14 @@ export default function WordProblems() {
                 color: 'var(--text-primary)',
                 marginBottom: '0.75rem'
               }}>
-                When Word Problem Struggles Run Deeper
+                When Word Problem Practice Isn't Enough
               </h2>
               <p style={{
                 color: 'var(--text-secondary)',
                 lineHeight: '1.7',
                 marginBottom: '1.25rem'
               }}>
-                Sometimes difficulty with word problems isn't about reading comprehension — it's about number sense. Children who don't instinctively visualize quantities, who can't estimate whether an answer makes sense, or who treat numbers as symbols to manipulate rather than quantities to reason about will struggle with story problems no matter how much they practice. Our <strong>Number Sense Foundations</strong> course (K–2) builds the conceptual groundwork that makes mathematical reasoning intuitive. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
+                For some children, the gap isn't in practice — it's in reading comprehension or language processing. If your child consistently guesses the operation or cannot restate word problems in their own words, worksheets alone won't bridge that gap. Our <strong>Number Sense Foundations</strong> course (K-2) builds the language and problem-solving strategies that make word problems manageable. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
                 href="https://homeschoolmath.gumroad.com/l/mfikwi"
@@ -347,7 +390,7 @@ export default function WordProblems() {
               Frequently Asked Questions
             </h2>
             <p className="practice-section-subtitle">
-              Everything you need to know about word problem worksheets
+              Everything you need to know about word problem practice worksheets
             </p>
             <div className="practice-faq-container">
               {faqs.map((faq, index) => (
@@ -365,17 +408,16 @@ export default function WordProblems() {
 
           {/* CTA SECTION */}
           <section className="practice-cta-section">
-            <div className="practice-cta-box practice-cta-box-green">
+            <div className="practice-cta-box practice-cta-box-purple">
               <h2 className="practice-cta-title">
-                Develop Problem-Solving Skills!
+                Master Math Word Problems!
               </h2>
               <p className="practice-cta-text">
-                Master real-world math applications with customized word problem worksheets that grow with your student. 
-                Build critical thinking, reading comprehension, and mathematical reasoning skills for academic success.
+                Build reading comprehension and math skills simultaneously with customized word problem practice sheets. From simple one-step to complex multi-step problems.
               </p>
               <div className="practice-cta-container">
-                <Link href="/" className="practice-cta-button practice-cta-button-green">
-                  Create Word Problem Worksheets Now
+                <Link href="/" className="practice-cta-button practice-cta-button-purple">
+                  Create Word Problems Worksheets Now
                 </Link>
                 <p className="practice-cta-note">
                   Free • No registration required • 10 worksheets per day
@@ -391,7 +433,7 @@ export default function WordProblems() {
             </h2>
             <div className="practice-nav-grid">
               <Link href="/addition-practice" className="practice-nav-card">
-                <div className="practice-nav-icon practice-nav-icon-green">
+                <div className="practice-nav-icon practice-nav-icon-purple">
                   +
                 </div>
                 <div className="practice-nav-label">
@@ -402,39 +444,39 @@ export default function WordProblems() {
                 </div>
               </Link>
 
-              <Link href="/subtraction-practice" className="practice-nav-card">
-                <div className="practice-nav-icon practice-nav-icon-green">
-                  −
+              <Link href="/fractions-practice" className="practice-nav-card">
+                <div className="practice-nav-icon practice-nav-icon-purple">
+                  ½
                 </div>
                 <div className="practice-nav-label">
-                  Subtraction
+                  Fractions
                 </div>
                 <div className="practice-nav-desc">
-                  Basic facts
+                  Parts of a whole
                 </div>
               </Link>
 
-              <Link href="/multiplication-practice" className="practice-nav-card">
-                <div className="practice-nav-icon practice-nav-icon-green">
-                  ×
+              <Link href="/grade-3-worksheets" className="practice-nav-card">
+                <div className="practice-nav-icon practice-nav-icon-purple">
+                  3
                 </div>
                 <div className="practice-nav-label">
-                  Multiplication
+                  3rd Grade
                 </div>
                 <div className="practice-nav-desc">
-                  Times tables
+                  Math worksheets
                 </div>
               </Link>
 
-              <Link href="/division-practice" className="practice-nav-card">
-                <div className="practice-nav-icon practice-nav-icon-green">
-                  ÷
+              <Link href="/grade-4-worksheets" className="practice-nav-card">
+                <div className="practice-nav-icon practice-nav-icon-purple">
+                  4
                 </div>
                 <div className="practice-nav-label">
-                  Division
+                  4th Grade
                 </div>
                 <div className="practice-nav-desc">
-                  Basic facts
+                  Math worksheets
                 </div>
               </Link>
             </div>

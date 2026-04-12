@@ -14,27 +14,35 @@ export default function MultiplicationPractice() {
   const faqs = [
     {
       question: 'What multiplication skills can I practice with these worksheets?',
-      answer: 'Our generator creates multiplication worksheets with times tables practice up to 12×12, basic multiplication facts, array visualizations, and real-world word problems. Three difficulty levels: Easy (1-5), Medium (1-8), and Hard (1-12).'
+      answer: 'Our generator creates multiplication worksheets with times tables practice up to 12×12, basic multiplication facts, array visualizations, and real-world word problems. Three difficulty levels are available for each grade: Easy (1-5), Medium (1-8), and Hard (1-12).'
     },
     {
       question: 'What order should I teach the times tables in?',
-      answer: 'The most effective order is not 1s, 2s, 3s in sequence. Start with the 2s and 5s because children often already have a sense of skip-counting these. Then move to 10s, 11s, and squares (3×3, 4×4, etc.), because these have memorable patterns. Save the 6s, 7s, and 8s for last — these are the hardest because they have no strong patterns and must be memorized directly.'
+      answer: 'The most effective order is not 1s, 2s, 3s in sequence — that builds chanting, not retrieval. Start with 2s and 5s because children often already have a sense of skip-counting these from everyday experiences. Then move to 10s, 11s, and squares (3×3, 4×4, etc.) because these have memorable patterns. Then teach 3s and 4s using derived fact strategies (3×7 is 2×7 plus one more 7). Save 6s, 7s, and 8s for last — these are the hardest because they have no strong patterns and must be memorized directly or broken down from known facts. Never teach all tables simultaneously in numerical order.'
     },
     {
       question: 'My child knows the times tables in order but freezes on random fact quizzes. What is the problem?',
-      answer: 'This is known as sequential dependency. The child has memorized the tables as a chant, so they can get to 7×8 by running through the table from the beginning, but they cannot retrieve the fact directly. The fix is to practice facts in random order to break the sequence and build true automaticity.'
+      answer: 'This is called sequential dependency. Your child has memorized the tables as a chant — "3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36" — so they can get to 3×7 by running through the chant from the beginning, but they cannot retrieve the fact directly when asked "What is 3×7?" in isolation. The fix is exclusive practice in random order. Our mixed facts worksheets mix facts across all tables so your child must retrieve each fact directly rather than reciting a sequence. This is why sequential worksheets (all the 3s together) are actively harmful for building true fluency.'
     },
     {
       question: 'Do you include multi-digit multiplication problems?',
-      answer: 'No, our multiplication worksheets focus on basic multiplication facts and times tables only. The goal at this stage is fluency with core facts, which then becomes the foundation for multi-digit work. Attempting multi-digit multiplication before basic facts are automatic is the single most common cause of errors and frustration.'
+      answer: 'No. Our multiplication worksheets focus on basic multiplication facts and times tables only (products up to 12×12 = 144). The goal at this stage is fluency with core facts, which then becomes the foundation for multi-digit work. Attempting multi-digit multiplication before basic facts are automatic is the single most common cause of errors and frustration. A child who is still calculating 7×8 by counting up will have no working memory left for the multi-digit procedure. Once facts are automatic, see our grade-level worksheets for multi-digit multiplication practice.'
     },
     {
       question: 'How long should multiplication fact practice take each day?',
-      answer: 'Ten to fifteen minutes of focused multiplication practice daily will build fluency faster than an hour once a week. The key is that practice should stop when focus drops — a child drilling facts while mentally checked out is not building automaticity, they are just passing time.'
+      answer: 'Ten to fifteen minutes of focused multiplication practice daily will build fluency faster than an hour once a week. The key is that practice should stop when focus drops — a child drilling facts while mentally checked out is not building automaticity, they are just passing time. Consistency over months builds fluency faster than intensity over weeks. For most children, 10 minutes of random-order fact practice daily for 8-12 weeks is enough to achieve full automaticity of all facts through 12×12.'
     },
     {
       question: 'Are array visualizations included in all worksheets?',
-      answer: 'Array visualizations are primarily included in worksheets for grades 2-3 to build conceptual understanding of multiplication as equal groups. For older grades, worksheets focus more on fact fluency and word problems, since the concept is established and the goal becomes automaticity.'
+      answer: 'Array visualizations are primarily included in worksheets for grades 2-3 to build conceptual understanding of multiplication as equal groups. For older grades, worksheets focus more on fact fluency and word problems, since the concept is established and the goal becomes automaticity. However, if an older student is still struggling with the meaning of multiplication, array worksheets remain useful regardless of grade — conceptual gaps should be addressed directly, not skipped.'
+    },
+    {
+      question: 'What is the difference between knowing multiplication facts and understanding multiplication?',
+      answer: 'Understanding means a child can explain why 3×4 = 12 — they can draw an array, show equal groups, or connect it to repeated addition (3+3+3+3 or 4+4+4). Fluency means they can retrieve 3×4 = 12 instantly without any of that. Both matter. Understanding should come first; fluency is built on top of it through practice. A child who only has fluency without understanding will hit a wall when multiplication gets more complex (area, fractions, algebra). A child who has understanding but not fluency will be slow and error-prone under time pressure. Our array worksheets build understanding; our mixed facts worksheets build fluency.'
+    },
+    {
+      question: 'My child knows some tables perfectly but others are completely blank. What should I do?',
+      answer: 'This is extremely common and tells you exactly where to focus. The hard tables (6s, 7s, 8s) are almost always the weak spots. The most effective strategy is not to drill the weak tables in isolation — that is boring and inefficient. Instead, focus on derived fact strategies. For 6×7, teach: "I know 5×7 = 35, so 6×7 is one more 7 — 42." For 8×7, teach: "I know 2×7 = 14, so 8×7 is 4 times that — wait, that is too complex. Better: 8×7 = 7×8, and I know 7×8 = 56." Using known facts to derive unknown ones builds both retrieval and number sense simultaneously.'
     }
   ];
 
@@ -129,14 +137,14 @@ export default function MultiplicationPractice() {
                 fontSize: '1.05rem',
                 marginBottom: '1rem'
               }}>
-                Most children who struggle with multiplication facts aren't struggling with the numbers—they're struggling with how they're being practiced. The most common mistake is drilling tables in sequence (3×1, 3×2, 3×3). Children learn the chant but not the facts. Ask them 3×7 in isolation and they have to count up from the beginning. That's not fluency; that's just a longer version of counting on fingers.
+                Most children who struggle with multiplication facts are not struggling with the numbers — they are struggling with how they are being practiced. The most common mistake is drilling tables in sequence (3×1, 3×2, 3×3, 3×4). Children learn the chant but not the facts. Ask them 3×7 in isolation and they have to start from the beginning and count up. That is not fluency; that is just a longer version of counting on fingers. The child is not "bad at math" — they have simply been taught in a way that builds sequential dependency instead of direct retrieval.
               </p>
               <p style={{
                 color: 'var(--text-secondary)',
                 lineHeight: '1.7',
                 fontSize: '1.05rem'
               }}>
-                The worksheets here are organized to build both understanding and fluency—starting with arrays that make the concept visible, then progressing to random-order fact practice that breaks sequential dependency. For students building toward division, the <Link href="/division-practice" style={{color: 'var(--primary)', textDecoration: 'underline'}}>division practice</Link> and <Link href="/fractions-practice" style={{color: 'var(--primary)', textDecoration: 'underline'}}>fractions practice</Link> pages support the arithmetic fluency that higher operations require.
+                The worksheets here are organized to build both understanding and fluency — starting with arrays that make the concept visible, then progressing to random-order fact practice that breaks sequential dependency. For students building toward division, the <Link href="/division-practice" style={{color: 'var(--primary)', textDecoration: 'underline'}}>division practice</Link> and <Link href="/fractions-practice" style={{color: 'var(--primary)', textDecoration: 'underline'}}>fractions practice</Link> pages support the arithmetic fluency that higher operations require.
               </p>
             </div>
           </section>
@@ -186,7 +194,7 @@ export default function MultiplicationPractice() {
             </div>
           </section>
 
-          {/* GRADE LEVELS SECTION */}
+          {/* GRADE LEVELS SECTION - REDESIGNED */}
           <section className="practice-section">
             <h2 className="practice-section-title">
               Multiplication by Grade Level
@@ -194,46 +202,93 @@ export default function MultiplicationPractice() {
             <p className="practice-section-subtitle">
               What multiplication mastery looks like at each stage, and what sticking points to watch for
             </p>
-            <div className="practice-grade-grid">
-              {[
-                {
-                  grade: '2',
-                  focus: 'Arrays & Equal Groups',
-                  detail: 'A 2nd grader who has mastered multiplication readiness can draw an array for a fact and write the equation. The common sticking point is understanding that rows represent equal groups — children who draw the correct total but can\'t explain the grouping haven\'t yet grasped the concept. Focus on 2s, 5s, and 10s at this stage.'
-                },
-                {
-                  grade: '3',
-                  focus: 'Core Fact Retrieval',
-                  detail: 'This is the critical year for multiplication. Mastery means recalling facts through 8×8 without counting up or skip-counting. The common sticking point is the 6s, 7s, and 8s — these are the hardest to memorize because they have no strong patterns. By the end of 3rd grade, a child should have most core facts automatic.'
-                },
-                {
-                  grade: '4',
-                  focus: 'Automaticity to 12×12',
-                  detail: 'A 4th grader should have all facts through 12×12 fully automatic. This is essential because multi-digit multiplication and long division require so much working memory that basic facts must be effortless. The sticking point is usually the 7s and 8s — if these aren\'t solid, multi-digit work will be frustrating.'
-                },
-                {
-                  grade: '5',
-                  focus: 'Tool for Application',
-                  detail: 'By 5th grade, multiplication is a sub-skill used in fractions, area, and volume. Mastery means facts are so automatic that the child never notices them as separate steps. Students still slow with basic facts at this stage benefit from direct fluency work before attempting more complex problems.'
-                }
-              ].map((level, index) => (
-                <div key={index} className="practice-card" style={{textAlign: 'left'}}>
-                  <div className="practice-grade-badge practice-grade-badge-purple" style={{textAlign: 'center', margin: '0 auto 0.75rem'}}>
-                    {level.grade}
-                  </div>
-                  <div className="practice-grade-title" style={{textAlign: 'center'}}>
-                    Grade {level.grade} — {level.focus}
-                  </div>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    lineHeight: '1.6',
-                    fontSize: '0.9rem',
-                    marginTop: '0.75rem'
-                  }}>
-                    {level.detail}
-                  </p>
+            
+            {/* Grades 2-3 Row */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '1.5rem',
+              marginBottom: '2rem'
+            }}>
+              {/* Grade 2 */}
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-purple" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  2
                 </div>
-              ))}
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  Grade 2 — Arrays & Equal Groups
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  A 2nd grader who has mastered multiplication readiness can draw an array for a fact and write the equation. The common sticking point is understanding that rows represent equal groups — children who draw the correct total but cannot explain the grouping have not yet grasped the concept. By the end of 2nd grade, a child should be able to represent multiplication as equal groups and repeated addition, and have some exposure to 2s, 5s, and 10s through skip-counting.'
+                </p>
+              </div>
+
+              {/* Grade 3 */}
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-purple" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  3
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  Grade 3 — Core Fact Retrieval
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  This is the critical year for multiplication. Mastery means recalling facts through 8×8 without counting up or skip-counting — retrieval should be automatic. The common sticking point is the 6s, 7s, and 8s — these are the hardest to memorize because they have no strong patterns. By the end of 3rd grade, a child should have most core facts automatic and be able to use derived fact strategies (like "I know 5×7=35, so 6×7 is one more 7 — 42") for the few facts they haven't yet memorized.'
+                </p>
+              </div>
+            </div>
+
+            {/* Grades 4-5 Row */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '1.5rem',
+              marginBottom: '2rem'
+            }}>
+              {/* Grade 4 */}
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-purple" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  4
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  Grade 4 — Automaticity to 12×12
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  A 4th grader should have all facts through 12×12 fully automatic. This is essential because multi-digit multiplication and long division require so much working memory that basic facts must be effortless. The sticking point is usually the 7s and 8s — if these are not solid, multi-digit work will be frustrating for both the child and the parent. By the end of 4th grade, a child should answer any multiplication fact through 12×12 in under 3 seconds without any strategy use — pure retrieval.'
+                </p>
+              </div>
+
+              {/* Grade 5 */}
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-purple" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  5
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  Grade 5 — Tool for Application
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  By 5th grade, multiplication is a sub-skill used in fractions, area, volume, and ratio problems. Mastery means facts are so automatic that the child never notices them as separate steps — they are simply part of the background. Students still slow with basic facts at this stage benefit from direct fluency work before attempting more complex problems. If a 5th grader pauses on 7×8, the gap is fact fluency, not fraction understanding, and drilling fractions will not fix it.'
+                </p>
+              </div>
+            </div>
+
+            {/* Grade 6 Row */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '1.5rem'
+            }}>
+              {/* Grade 6 */}
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-purple" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  6
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  Grade 6 — Fluent Sub-Skill
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  By 6th grade, multiplication should be completely fluent as a sub-skill inside algebra, ratios, proportions, and multi-step word problems. Students still making basic fact errors under pressure need direct remediation rather than more complex problem practice. If a 6th grader is still slow with 7×8 or 6×9, the intervention is 10-15 minutes of daily random-order fact practice for 4-8 weeks — not more 6th-grade-level worksheets that assume fluency.'
+                </p>
+              </div>
             </div>
           </section>
 
@@ -246,31 +301,59 @@ export default function MultiplicationPractice() {
               Varied multiplication practice materials
             </p>
             <div className="practice-grid">
-              {[
-                { type: 'Times Tables', count: '25+ problems', grades: '2-4', desc: 'Systematic practice with each times table in isolation' },
-                { type: 'Array Visuals', count: '15+ problems', grades: '2-3', desc: 'Multiplication as equal groups with visual models' },
-                { type: 'Mixed Facts', count: '30+ problems', grades: '3-5', desc: 'Random-order fact practice to build automaticity' },
-                { type: 'Missing Factors', count: '20+ problems', grades: '3-5', desc: 'Find the missing number in multiplication equations' },
-                { type: 'Word Problems', count: '15+ problems', grades: '3-6', desc: 'Real-world multiplication scenarios' },
-                { type: 'Fact Families', count: '20+ problems', grades: '3-5', desc: 'Connect multiplication to division through fact families' }
-              ].map((worksheet, index) => (
-                <div key={index} className="practice-worksheet-card">
-                  <div className="practice-worksheet-header">
-                    <h3 className="practice-worksheet-title">
-                      {worksheet.type}
-                    </h3>
-                    <span className="practice-count-badge practice-count-badge-purple">
-                      {worksheet.count}
-                    </span>
-                  </div>
-                  <p className="practice-worksheet-desc">
-                    {worksheet.desc}
-                  </p>
-                  <div className="practice-worksheet-grades practice-worksheet-grades-purple">
-                    Grades {worksheet.grades}
-                  </div>
+              <Link href="/multiplication-times-tables-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">Times Tables</h3>
+                  <span className="practice-count-badge practice-count-badge-purple">25+ problems</span>
                 </div>
-              ))}
+                <p className="practice-worksheet-desc">Systematic practice with each times table in isolation — use only for initial learning, not for fluency</p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-purple">Grades 2-4</div>
+              </Link>
+
+              <Link href="/multiplication-array-visuals-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">Array Visuals</h3>
+                  <span className="practice-count-badge practice-count-badge-purple">15+ problems</span>
+                </div>
+                <p className="practice-worksheet-desc">Multiplication as equal groups with visual models — builds conceptual understanding</p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-purple">Grades 2-3</div>
+              </Link>
+
+              <Link href="/multiplication-mixed-facts-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">Mixed Facts</h3>
+                  <span className="practice-count-badge practice-count-badge-purple">30+ problems</span>
+                </div>
+                <p className="practice-worksheet-desc">Random-order fact practice to build automaticity and break sequential dependency</p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-purple">Grades 3-5</div>
+              </Link>
+
+              <Link href="/multiplication-missing-factors-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">Missing Factors</h3>
+                  <span className="practice-count-badge practice-count-badge-purple">20+ problems</span>
+                </div>
+                <p className="practice-worksheet-desc">Find the missing number in multiplication equations — builds algebraic thinking</p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-purple">Grades 3-5</div>
+              </Link>
+
+              <Link href="/multiplication-word-problems-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">Word Problems</h3>
+                  <span className="practice-count-badge practice-count-badge-purple">15+ problems</span>
+                </div>
+                <p className="practice-worksheet-desc">Real-world multiplication scenarios appropriate for each grade level</p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-purple">Grades 3-6</div>
+              </Link>
+
+              <Link href="/multiplication-fact-families-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">Fact Families</h3>
+                  <span className="practice-count-badge practice-count-badge-purple">20+ problems</span>
+                </div>
+                <p className="practice-worksheet-desc">Connect multiplication to division through fact families — builds both operations</p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-purple">Grades 3-5</div>
+              </Link>
             </div>
           </section>
 
@@ -296,7 +379,7 @@ export default function MultiplicationPractice() {
                 lineHeight: '1.7',
                 marginBottom: '1.25rem'
               }}>
-                For some children, the gap isn't in practice — it's in the conceptual foundation that makes multiplication make sense. If your child can recite the times tables in order but freezes on random facts, or doesn't connect multiplication to equal groups, worksheets alone won't bridge that gap. Our <strong>Multiplication & Division Foundations</strong> course (grades 3–5) covers the full progression from arrays through fact fluency and into division as the inverse operation. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
+                For some children, the gap is not in practice — it is in the conceptual foundation that makes multiplication make sense. If your child can recite the times tables in order but freezes on random facts, or does not connect multiplication to equal groups and arrays, worksheets alone will not bridge that gap. Our <strong>Multiplication & Division Foundations</strong> course (grades 3–5) covers the full progression from arrays through fact fluency and into division as the inverse operation. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
                 href="https://homeschoolmath.gumroad.com/l/csfto"

@@ -5,6 +5,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Addition Practice Worksheets | Free Printable Math Sheets K-6',
   description: 'Master addition with custom practice sheets. Generate free printable addition worksheets for kindergarten through 6th grade with basic facts, regrouping, and visual aids.',
+  alternates: {
+    canonical: 'https://homeschoolmath.site/addition-practice',
+  },
 }
 
 export default function AdditionPractice() {
@@ -203,7 +206,7 @@ export default function AdditionPractice() {
             </div>
           </section>
 
-          {/* GRADE LEVELS SECTION */}
+                    {/* GRADE LEVELS SECTION */}
           <section className="practice-section">
             <h2 className="practice-section-title">
               Addition by Grade Level
@@ -211,65 +214,123 @@ export default function AdditionPractice() {
             <p className="practice-section-subtitle">
               What addition mastery looks like at each stage, and what sticking points to watch for
             </p>
-            <div className="practice-grade-grid">
-              {[
-                {
-                  grade: 'K',
-                  focus: 'Basic facts 1-5 with visuals',
-                  detail: 'A kindergartener who has mastered addition can count two groups of objects and write the total. The common sticking point is one-to-one correspondence — children who recount the first group instead of holding it in mind. By the end of kindergarten, a child should be able to add any two numbers within 5 without needing physical objects.'
-                },
-                {
-                  grade: '1',
-                  focus: 'Facts 1-10, number lines',
-                  detail: 'A 1st grader should add single-digit numbers within 10 quickly and reliably. The sticking point is the shift from counting-all to counting-on — many 1st graders recount from 1 every time instead of starting from the larger number. By the end of 1st grade, a child should have most sums within 10 memorized and be comfortable using a number line.'
-                },
-                {
-                  grade: '2',
-                  focus: 'Facts 1-20, simple word problems',
-                  detail: 'A 2nd grader should have automatic recall of all sums within 20 and accurate two-digit addition without regrouping. The common sticking point is place value confusion — children who add 27 + 35 and write 512 because they added the tens and ones separately without understanding columns.'
-                },
-                {
-                  grade: '3',
-                  focus: 'Two-digit, no regrouping',
-                  detail: 'A 3rd grader consolidates two-digit addition and begins multi-digit work. The sticking point at this stage is usually not the addition itself but reading comprehension — children miss what the problem is actually asking. By the end of 3rd grade, a child should add three-digit numbers reliably.'
-                },
-                {
-                  grade: '4',
-                  focus: 'Two-digit with regrouping',
-                  detail: 'A 4th grader should have multi-digit addition fully automated. Mastery means carrying accurately across multiple columns. The sticking point is the "carried one" — children who forget to add it or add it twice. By end of 4th grade, a child should add four-digit numbers accurately.'
-                },
-                {
-                  grade: '5',
-                  focus: 'Multi-digit addition',
-                  detail: 'A 5th grader adds multi-digit whole numbers and begins adding decimals. Mastery means treating decimal addition as a natural extension of whole-number addition. The sticking point is alignment — children who add 3.5 + 2.45 and line up right edges instead of decimal points.'
-                },
-                {
-                  grade: '6',
-                  focus: 'Complex regrouping',
-                  detail: 'By 6th grade, addition should be completely fluent as a sub-skill inside algebra, ratios, and multi-step problems. Students still making basic fact errors under pressure need direct remediation rather than more complex problem practice.'
-                }
-              ].map((level, index) => (
-                <div key={index} className="practice-card" style={{textAlign: 'left'}}>
-                  <div className="practice-grade-badge practice-grade-badge-blue" style={{textAlign: 'center', margin: '0 auto 0.75rem'}}>
-                    {level.grade}
-                  </div>
-                  <div className="practice-grade-title" style={{textAlign: 'center'}}>
-                    Grade {level.grade} — {level.focus}
-                  </div>
-                  <p style={{
-                    color: 'var(--text-secondary)',
-                    lineHeight: '1.6',
-                    fontSize: '0.9rem',
-                    marginTop: '0.75rem'
-                  }}>
-                    {level.detail}
-                  </p>
+            
+            {/* K-2 Grades Row */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '1.5rem',
+              marginBottom: '2rem'
+            }}>
+              {/* Grade K */}
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-blue" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  K
                 </div>
-              ))}
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  Grade K — Basic Facts 1-5 with Visuals
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  A kindergartener who has mastered addition can count two groups of objects and write the total. The common sticking point is one-to-one correspondence — children who recount the first group instead of holding it in mind. By the end of kindergarten, a child should be able to add any two numbers within 5 without needing physical objects.
+                </p>
+              </div>
+
+              {/* Grade 1 */}
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-blue" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  1
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  Grade 1 — Facts 1-10, Number Lines
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  A 1st grader should add single-digit numbers within 10 quickly and reliably. The sticking point is the shift from counting-all to counting-on — many 1st graders recount from 1 every time instead of starting from the larger number. By the end of 1st grade, a child should have most sums within 10 memorized and be comfortable using a number line.
+                </p>
+              </div>
+
+              {/* Grade 2 */}
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-blue" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  2
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  Grade 2 — Facts 1-20, Simple Word Problems
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  A 2nd grader should have automatic recall of all sums within 20 and accurate two-digit addition without regrouping. The common sticking point is place value confusion — children who add 27 + 35 and write 512 because they added the tens and ones separately without understanding columns.
+                </p>
+              </div>
+            </div>
+
+            {/* Grades 3-4 Row */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '1.5rem',
+              marginBottom: '2rem'
+            }}>
+              {/* Grade 3 */}
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-blue" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  3
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  Grade 3 — Two-Digit, No Regrouping
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  A 3rd grader consolidates two-digit addition and begins multi-digit work. The sticking point at this stage is usually not the addition itself but reading comprehension — children miss what the problem is actually asking. By the end of 3rd grade, a child should add three-digit numbers reliably.
+                </p>
+              </div>
+
+              {/* Grade 4 */}
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-blue" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  4
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  Grade 4 — Two-Digit with Regrouping
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  A 4th grader should have multi-digit addition fully automated. Mastery means carrying accurately across multiple columns. The sticking point is the "carried one" — children who forget to add it or add it twice. By end of 4th grade, a child should add four-digit numbers accurately.
+                </p>
+              </div>
+            </div>
+
+            {/* Grades 5-6 Row */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '1.5rem'
+            }}>
+              {/* Grade 5 */}
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-blue" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  5
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  Grade 5 — Multi-Digit Addition
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  A 5th grader adds multi-digit whole numbers and begins adding decimals. Mastery means treating decimal addition as a natural extension of whole-number addition. The sticking point is alignment — children who add 3.5 + 2.45 and line up right edges instead of decimal points.
+                </p>
+              </div>
+
+              {/* Grade 6 */}
+              <div className="practice-card" style={{ textAlign: 'center', padding: '1.5rem' }}>
+                <div className="practice-grade-badge practice-grade-badge-blue" style={{ textAlign: 'center', margin: '0 auto 0.75rem' }}>
+                  6
+                </div>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                  Grade 6 — Complex Regrouping
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem', textAlign: 'left' }}>
+                  By 6th grade, addition should be completely fluent as a sub-skill inside algebra, ratios, and multi-step problems. Students still making basic fact errors under pressure need direct remediation rather than more complex problem practice.
+                </p>
+              </div>
             </div>
           </section>
 
-          {/* WORKSHEET TYPES SECTION */}
+          {/* WORKSHEET TYPES SECTION - WITH LINKS */}
           <section className="practice-section">
             <h2 className="practice-section-title">
               Worksheet Categories
@@ -278,31 +339,107 @@ export default function AdditionPractice() {
               Varied addition practice materials
             </p>
             <div className="practice-grid">
-              {[
-                { type: 'Basic Facts', count: '25+ problems', grades: 'K-2', desc: 'Single-digit addition within 20 to build automatic recall' },
-                { type: 'Number Lines', count: '15+ problems', grades: 'K-2', desc: 'Visual addition using number lines for conceptual understanding' },
-                { type: 'Shape Counting', count: '20+ problems', grades: 'K-1', desc: 'Count and add with shapes to connect quantities to numerals' },
-                { type: 'Two-Digit (No Regrouping)', count: '20+ problems', grades: '2-3', desc: 'Vertical addition practice focusing on place value alignment' },
-                { type: 'Two-Digit (With Regrouping)', count: '20+ problems', grades: '3-4', desc: 'Carrying practice to master the regrouping procedure' },
-                { type: 'Word Problems', count: '10+ problems', grades: '1-6', desc: 'Real-world addition scenarios appropriate for each grade level' }
-              ].map((worksheet, index) => (
-                <div key={index} className="practice-worksheet-card">
-                  <div className="practice-worksheet-header">
-                    <h3 className="practice-worksheet-title">
-                      {worksheet.type}
-                    </h3>
-                    <span className="practice-count-badge practice-count-badge-blue">
-                      {worksheet.count}
-                    </span>
-                  </div>
-                  <p className="practice-worksheet-desc">
-                    {worksheet.desc}
-                  </p>
-                  <div className="practice-worksheet-grades practice-worksheet-grades-blue">
-                    Grades {worksheet.grades}
-                  </div>
+              <Link href="/addition-basic-facts-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">
+                    Basic Facts
+                  </h3>
+                  <span className="practice-count-badge practice-count-badge-blue">
+                    25+ problems
+                  </span>
                 </div>
-              ))}
+                <p className="practice-worksheet-desc">
+                  Single-digit addition within 20 to build automatic recall
+                </p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-blue">
+                  Grades K-2
+                </div>
+              </Link>
+
+              <Link href="/addition-number-lines-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">
+                    Number Lines
+                  </h3>
+                  <span className="practice-count-badge practice-count-badge-blue">
+                    15+ problems
+                  </span>
+                </div>
+                <p className="practice-worksheet-desc">
+                  Visual addition using number lines for conceptual understanding
+                </p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-blue">
+                  Grades K-2
+                </div>
+              </Link>
+
+              <Link href="/addition-shape-counting-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">
+                    Shape Counting
+                  </h3>
+                  <span className="practice-count-badge practice-count-badge-blue">
+                    20+ problems
+                  </span>
+                </div>
+                <p className="practice-worksheet-desc">
+                  Count and add with shapes to connect quantities to numerals
+                </p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-blue">
+                  Grades K-1
+                </div>
+              </Link>
+
+              <Link href="/addition-two-digit-no-regrouping-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">
+                    Two-Digit (No Regrouping)
+                  </h3>
+                  <span className="practice-count-badge practice-count-badge-blue">
+                    20+ problems
+                  </span>
+                </div>
+                <p className="practice-worksheet-desc">
+                  Vertical addition practice focusing on place value alignment
+                </p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-blue">
+                  Grades 2-3
+                </div>
+              </Link>
+
+              <Link href="/addition-two-digit-regrouping-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">
+                    Two-Digit (With Regrouping)
+                  </h3>
+                  <span className="practice-count-badge practice-count-badge-blue">
+                    20+ problems
+                  </span>
+                </div>
+                <p className="practice-worksheet-desc">
+                  Carrying practice to master the regrouping procedure
+                </p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-blue">
+                  Grades 3-4
+                </div>
+              </Link>
+
+              <Link href="/addition-word-problems-worksheets" className="practice-worksheet-card" style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="practice-worksheet-header">
+                  <h3 className="practice-worksheet-title">
+                    Word Problems
+                  </h3>
+                  <span className="practice-count-badge practice-count-badge-blue">
+                    10+ problems
+                  </span>
+                </div>
+                <p className="practice-worksheet-desc">
+                  Real-world addition scenarios appropriate for each grade level
+                </p>
+                <div className="practice-worksheet-grades practice-worksheet-grades-blue">
+                  Grades 1-6
+                </div>
+              </Link>
             </div>
           </section>
 

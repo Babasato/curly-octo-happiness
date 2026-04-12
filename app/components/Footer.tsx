@@ -3,6 +3,7 @@
 
 import Link from 'next/link';
 
+
 export default function Footer() {
   const worksheetTypes = [
     { name: 'Addition Worksheets', href: '/addition-practice' },
@@ -10,6 +11,7 @@ export default function Footer() {
     { name: 'Multiplication Worksheets', href: '/multiplication-practice' },
     { name: 'Division Worksheets', href: '/division-practice' },
     { name: 'Fractions Worksheets', href: '/fractions-practice' },
+    { name: 'Decimals Worksheets', href: '/decimals-practice' },
     { name: 'Word Problems', href: '/word-problems' },
   ];
 
@@ -88,7 +90,6 @@ export default function Footer() {
               Resources & Support
             </h4>
             <ul className="footer-link-list">
-              {/* ADDED PLANNING RESOURCES LINK HERE */}
               <li>
                 <Link href="/resources">
                   <div className="footer-link-content" style={{ color: '#60a5fa', fontWeight: 'bold' }}>
@@ -135,7 +136,6 @@ export default function Footer() {
       </div>
 
       <div className="footer-legal-section">
-        {/* ... (rest of the legal section code remains exactly the same as you provided) ... */}
         <div className="footer-legal-content">
           <div className="legal-links-group">
             <Link href="/privacy-policy">
