@@ -24,7 +24,7 @@ export default function DownloadSection({
   hasReceivedSignupBonus
 }: DownloadSectionProps) {
   
-  const [selectedPaperSize, setSelectedPaperSize] = useState<PaperSize>('a4');
+  const [selectedPaperSize, setSelectedPaperSize] = useState<PaperSize>('letter');
   const paperSizeOptions = getPaperSizeOptions();
   
   // Track bonus prompt clicks
@@ -143,9 +143,9 @@ export default function DownloadSection({
           ))}
         </select>
         <p className="paper-size-hint">
-          {selectedPaperSize === 'a4' 
-            ? 'Standard international size (210×297mm)' 
-            : 'Standard US/Canada size (8.5×11in)'}
+          {selectedPaperSize === 'letter' 
+            ? 'Standard US/Canada size (8.5×11in)' 
+            : 'Standard international size (210×297mm)'}
         </p>
       </div>
 
