@@ -220,10 +220,10 @@ export default function ProblemSettings({
         }
 
         .settings-section {
-          background: #f8fafc;
+          background: var(--surface);
           border-radius: 12px;
           padding: 24px;
-          border: 1px solid #e2e8f0;
+          border: 1px solid var(--border);
         }
 
         .settings-section h4 {
@@ -346,7 +346,7 @@ export default function ProblemSettings({
           padding: 1rem;
           background: white;
           border-radius: 8px;
-          border: 1px solid #e2e8f0;
+          border: 1px solid var(--border);
         }
 
         .include-word-problems .checkbox-label {
@@ -420,7 +420,7 @@ export default function ProblemSettings({
 
         .generate-section {
           text-align: center;
-          border-top: 2px solid #f1f5f9;
+          border-top: 2px solid var(--surface);
           padding-top: 32px;
         }
 

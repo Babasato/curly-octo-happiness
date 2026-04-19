@@ -253,7 +253,7 @@ export default function LeadMagnetSignup({ onSuccess, onClose }: LeadMagnetSignu
         .consent-description {
           margin: 0 0 0 32px;
           font-size: 13px;
-          color: #475569;
+          color: var(--text-secondary);
           line-height: 1.5;
         }
         

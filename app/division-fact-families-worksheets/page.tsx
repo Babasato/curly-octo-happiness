@@ -157,9 +157,9 @@ export default function DivisionFactFamiliesWorksheets() {
                 Generate Fact Families Worksheets
               </Link>
               <div style={{
-                background: '#f1f5f9',
-                color: '#1e293b',
-                border: '1px solid #e2e8f0',
+                background: 'var(--surface)',
+                color: 'var(--text-primary)',
+                border: '1px solid var(--border)',
                 padding: '0.75rem 1.5rem',
                 borderRadius: '6px',
                 fontWeight: '600'

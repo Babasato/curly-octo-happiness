@@ -43,7 +43,7 @@ export default function Resources() {
             className="info-card" 
             style={{ 
               background: 'var(--surface)',
-              border: '2px solid var(--accent-blue)', 
+              border: '2px solid var(--primary)', 
               borderRadius: '12px',
               padding: '2rem',
               transition: 'all 0.3s ease'
@@ -63,7 +63,7 @@ export default function Resources() {
                   Number Sense Foundations
                 </h3>
                 <p style={{ 
-                  color: 'var(--accent-blue)', 
+                  color: 'var(--primary)', 
                   fontWeight: 'bold', 
                   fontSize: '0.9rem', 
                   marginBottom: '0.5rem' 
@@ -72,7 +72,7 @@ export default function Resources() {
                 </p>
               </div>
               <span style={{ 
-                background: 'var(--accent-blue)', 
+                background: 'var(--primary)', 
                 color: 'white', 
                 padding: '6px 12px', 
                 borderRadius: '4px', 
@@ -101,7 +101,7 @@ export default function Resources() {
                 textAlign: 'center', 
                 textDecoration: 'none', 
                 width: '100%', 
-                background: 'var(--accent-blue)', 
+                background: 'var(--primary)', 
                 color: 'white', 
                 padding: '1rem', 
                 borderRadius: '8px', 
@@ -115,7 +115,7 @@ export default function Resources() {
                 e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'var(--accent-blue)';
+                e.currentTarget.style.background = 'var(--primary)';
                 e.currentTarget.style.transform = 'translateY(0)';
                 e.currentTarget.style.boxShadow = 'none';
               }}
@@ -129,7 +129,7 @@ export default function Resources() {
             className="info-card" 
             style={{ 
               background: 'var(--surface)',
-              border: '2px solid var(--accent-blue)', 
+              border: '2px solid var(--primary)', 
               borderRadius: '12px',
               padding: '2rem',
               transition: 'all 0.3s ease'
@@ -149,7 +149,7 @@ export default function Resources() {
                   Subtraction in 30 Days
                 </h3>
                 <p style={{ 
-                  color: 'var(--accent-blue)', 
+                  color: 'var(--primary)', 
                   fontWeight: 'bold', 
                   fontSize: '0.9rem', 
                   marginBottom: '0.5rem' 
@@ -158,7 +158,7 @@ export default function Resources() {
                 </p>
               </div>
               <span style={{ 
-                background: 'var(--accent-blue)', 
+                background: 'var(--primary)', 
                 color: 'white', 
                 padding: '6px 12px', 
                 borderRadius: '4px', 
@@ -187,7 +187,7 @@ export default function Resources() {
                 textAlign: 'center', 
                 textDecoration: 'none', 
                 width: '100%', 
-                background: 'var(--accent-blue)', 
+                background: 'var(--primary)', 
                 color: 'white', 
                 padding: '1rem', 
                 borderRadius: '8px', 
@@ -201,7 +201,7 @@ export default function Resources() {
                 e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'var(--accent-blue)';
+                e.currentTarget.style.background = 'var(--primary)';
                 e.currentTarget.style.transform = 'translateY(0)';
                 e.currentTarget.style.boxShadow = 'none';
               }}
@@ -215,7 +215,7 @@ export default function Resources() {
             className="info-card" 
             style={{ 
               background: 'var(--surface)',
-              border: '2px solid var(--accent-blue)', 
+              border: '2px solid var(--primary)', 
               borderRadius: '12px',
               padding: '2rem',
               transition: 'all 0.3s ease'
@@ -235,7 +235,7 @@ export default function Resources() {
                   Multiplication & Division Foundations
                 </h3>
                 <p style={{ 
-                  color: 'var(--accent-blue)', 
+                  color: 'var(--primary)', 
                   fontWeight: 'bold', 
                   fontSize: '0.9rem', 
                   marginBottom: '0.5rem' 
@@ -244,7 +244,7 @@ export default function Resources() {
                 </p>
               </div>
               <span style={{ 
-                background: 'var(--accent-blue)', 
+                background: 'var(--primary)', 
                 color: 'white', 
                 padding: '6px 12px', 
                 borderRadius: '4px', 
@@ -273,7 +273,7 @@ export default function Resources() {
                 textAlign: 'center', 
                 textDecoration: 'none', 
                 width: '100%', 
-                background: 'var(--accent-blue)', 
+                background: 'var(--primary)', 
                 color: 'white', 
                 padding: '1rem', 
                 borderRadius: '8px', 
@@ -287,7 +287,7 @@ export default function Resources() {
                 e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'var(--accent-blue)';
+                e.currentTarget.style.background = 'var(--primary)';
                 e.currentTarget.style.transform = 'translateY(0)';
                 e.currentTarget.style.boxShadow = 'none';
               }}
@@ -317,7 +317,7 @@ export default function Resources() {
           className="info-card accent-blue" 
           style={{ 
             background: 'var(--surface)',
-            border: '2px solid var(--accent-blue)', 
+            border: '2px solid var(--primary)', 
             borderRadius: '12px',
             padding: '2rem',
             marginBottom: '1.5rem',
@@ -338,7 +338,7 @@ export default function Resources() {
                 Notion Math Progress Dashboard
               </h3>
               <p style={{ 
-                color: 'var(--accent-blue)', 
+                color: 'var(--primary)', 
                 fontWeight: 'bold', 
                 fontSize: '0.9rem', 
                 marginBottom: '0.5rem' 
@@ -347,7 +347,7 @@ export default function Resources() {
               </p>
             </div>
             <span style={{ 
-              background: 'var(--accent-blue)', 
+              background: 'var(--primary)', 
               color: 'white', 
               padding: '6px 12px', 
               borderRadius: '4px', 
@@ -377,7 +377,7 @@ export default function Resources() {
               textAlign: 'center', 
               textDecoration: 'none', 
               width: '100%', 
-              background: 'var(--accent-blue)', 
+              background: 'var(--primary)', 
               color: 'white', 
               padding: '1rem', 
               borderRadius: '8px', 
@@ -391,7 +391,7 @@ export default function Resources() {
               e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'var(--accent-blue)';
+              e.currentTarget.style.background = 'var(--primary)';
               e.currentTarget.style.transform = 'translateY(0)';
               e.currentTarget.style.boxShadow = 'none';
             }}
@@ -642,7 +642,7 @@ export default function Resources() {
               Worksheet Generator
             </h3>
             <p className="text-p" style={{ color: 'var(--text-secondary)' }}>
-              Our signature tool for creating unlimited custom math practice pages for core operations (K-6).
+              Our signature tool for creating custom math practice pages for core operations (K-6).
             </p>
             <Link 
               href="/#resources-banner" 

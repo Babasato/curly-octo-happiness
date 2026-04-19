@@ -130,7 +130,7 @@ export default function ProblemList({ problems }: ProblemListProps) {
         }
 
         .problem-list-empty {
-          background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+          background: linear-gradient(135deg, var(--surface) 0%, var(--surface) 100%);
           border-radius: 16px;
           padding: 48px 24px;
           margin: 32px 0;
@@ -213,7 +213,7 @@ export default function ProblemList({ problems }: ProblemListProps) {
         }
 
         .worksheet-preview {
-          background: #ffffff;
+          background: var(--surface-elevated);
           border: 2px solid #e5e7eb;
           border-radius: 12px;
           padding: 32px;
@@ -255,9 +255,9 @@ export default function ProblemList({ problems }: ProblemListProps) {
           gap: 20px;
           margin-bottom: 24px;
           padding: 16px;
-          background: #f8fafc;
+          background: var(--surface);
           border-radius: 8px;
-          border: 1px solid #e2e8f0;
+          border: 1px solid var(--border);
         }
 
         .info-field {
@@ -268,7 +268,7 @@ export default function ProblemList({ problems }: ProblemListProps) {
 
         .info-field label {
           font-size: 12px;
-          color: #64748b;
+          color: var(--text-muted);
           font-weight: 600;
           min-width: 40px;
         }
@@ -335,7 +335,7 @@ export default function ProblemList({ problems }: ProblemListProps) {
         .preview-footer {
           text-align: center;
           padding-top: 16px;
-          border-top: 1px solid #e2e8f0;
+          border-top: 1px solid var(--border);
           margin-top: 24px;
         }
 
@@ -391,7 +391,7 @@ function ProblemPreview({ problem, number, showAnswer }: any) {
       <style jsx>{`
         .problem-preview {
           padding: 12px;
-          background: ${showAnswer ? '#fef2f2' : '#f8fafc'};
+          background: ${showAnswer ? '#fef2f2' : 'var(--surface)'};
           border-radius: 8px;
           border-left: 4px solid ${showAnswer ? '#dc2626' : '#3b82f6'};
         }

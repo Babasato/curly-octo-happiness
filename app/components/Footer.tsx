@@ -3,6 +3,31 @@
 
 import Link from 'next/link';
 
+// --- Social Media Icons with Official Brand Colors ---
+const PinterestIcon = () => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="20" 
+    height="20" 
+    viewBox="0 0 24 24" 
+    fill="#E60023"  // Pinterest Red
+  >
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.934 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.167 1.777 2.167 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/>
+  </svg>
+);
+
+const FacebookIcon = () => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="20" 
+    height="20" 
+    viewBox="0 0 24 24" 
+    fill="#1877F2"  // Facebook Blue
+  >
+    <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.294h6.116c.73 0 1.323-.593 1.323-1.324v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+  </svg>
+);
+// ----------------------------------------------
 
 export default function Footer() {
   const worksheetTypes = [
@@ -46,6 +71,28 @@ export default function Footer() {
                 <span className="stats-number">5,000+</span>
                 <span className="stats-label">Happy Teachers</span>
               </div>
+            </div>
+            
+            {/* Social Media Buttons */}
+            <div className="social-links">
+              <a 
+  href="https://www.pinterest.com/homeschoolmathsite/" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="social-icon pinterest"
+  aria-label="Pinterest"
+>
+  <PinterestIcon />
+</a>
+<a 
+  href="https://www.facebook.com/profile.php?id=61568334862821" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="social-icon facebook"
+  aria-label="Facebook"
+>
+  <FacebookIcon />
+</a>
             </div>
           </div>
 
@@ -175,7 +222,7 @@ export default function Footer() {
       </div>
       <style jsx>{`
         .footer-container {
-          background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+          background: linear-gradient(135deg, var(--text-primary) 0%, #334155 100%);
           color: white;
           margin-top: auto;
         }
@@ -231,7 +278,7 @@ export default function Footer() {
         }
 
         .footer-description {
-          color: #e2e8f0;
+          color: var(--border);
           line-height: 1.6;
           margin: 0 0 2rem 0;
           font-size: clamp(0.95rem, 2vw, 1rem);
@@ -241,6 +288,7 @@ export default function Footer() {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 1rem;
+          margin-bottom: 1.5rem;
         }
 
         @media (min-width: 640px) {
@@ -267,14 +315,14 @@ export default function Footer() {
           display: block;
           font-size: clamp(1.5rem, 3vw, 2rem);
           font-weight: 900;
-          color: #ffffff;
+          color: var(--surface-elevated);
           margin-bottom: 0.5rem;
         }
 
         .stats-label {
           display: block;
           font-size: 0.75rem;
-          color: #e2e8f0;
+          color: var(--border);
           font-weight: 600;
         }
 
@@ -282,6 +330,31 @@ export default function Footer() {
           .stats-label {
             font-size: 0.875rem;
           }
+        }
+
+        /* Social Media Buttons */
+        .social-links {
+          display: flex;
+          gap: 1rem;
+          justify-content: flex-start;
+          margin-top: 1rem;
+        }
+
+        .social-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 50%;
+          color: white;
+          transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+          background: #2563eb;
+          transform: translateY(-3px);
         }
 
         .footer-heading {
@@ -436,7 +509,7 @@ export default function Footer() {
 
         .trust-badge span {
           font-size: 0.75rem;
-          color: #ffffff;
+          color: var(--surface-elevated);
           font-weight: 600;
         }
 

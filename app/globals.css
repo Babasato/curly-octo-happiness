@@ -1,70 +1,58 @@
 /* ===== CSS VARIABLES - LIGHT MODE ===== */
 :root {
-  /* Colors - Professional homeschool palette */
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
   --secondary: #059669;
   --accent: #dc2626;
- 
-  /* Neutral colors */
-  --background: #ffffff;
-  --surface: #f8fafc;
-  --surface-elevated: #ffffff;
-  --border: #e2e8f0;
-  --border-light: #f1f5f9;
- 
-  /* Text colors */
+
+  --background: #e2e8f0;
+  --surface: #ffffff;
+  --surface-elevated: #f8fafc;
+  --border: #cbd5e1;
+  --border-light: #e2e8f0;
+
   --text-primary: #1e293b;
-  --text-secondary: #475569;
+  --text-secondary: #1e3a5f;
   --text-muted: #64748b;
- 
-  /* Functional colors */
+
   --success: #059669;
   --warning: #d97706;
   --error: #dc2626;
- 
-  /* Spacing */
+
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2rem;
   --space-xl: 3rem;
- 
-  /* Layout */
+
   --radius: 6px;
   --radius-lg: 8px;
   --max-width: 1000px;
- 
-  /* Effects */
+
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-/* ===== DARK MODE VARIABLES ===== */
+
 [data-theme='dark'] {
-  /* Colors adapted for dark mode */
   --primary: #3b82f6;
   --primary-hover: #2563eb;
   --secondary: #10b981;
   --accent: #ef4444;
- 
-  /* Neutral colors - dark palette */
+
   --background: #0f172a;
   --surface: #1e293b;
   --surface-elevated: #334155;
   --border: #475569;
-  --border-light: #64748b;
- 
-  /* Text colors - inverted for dark */
+  --border-light: #334155;
+
   --text-primary: #f1f5f9;
   --text-secondary: #cbd5e1;
   --text-muted: #94a3b8;
- 
-  /* Functional colors */
+
   --success: #10b981;
   --warning: #f59e0b;
   --error: #ef4444;
- 
-  /* Effects - adjusted for dark */
+
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
@@ -629,11 +617,11 @@ body {
 }
 /* Custom Footer Overrides */
 .footer-container a {
-  color: #ffffff;
+  color: var(--surface-elevated);
   text-decoration: none;
 }
 .footer-container a:visited {
-  color: #ffffff;
+  color: var(--surface-elevated);
   text-decoration: none;
 }
 /* ===== DARK MODE TOGGLE BUTTON ===== */
@@ -2719,3 +2707,34 @@ html, body {
   margin: 0;
   line-height: 1.5;
 }
+        /* Social Media Buttons - Official Brand Colors */
+        .social-links {
+          display: flex;
+          gap: 1rem;
+          justify-content: flex-start;
+          margin-top: 1rem;
+        }
+
+        .social-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 50%;
+          transition: all 0.3s ease;
+          color: white;
+        }
+
+        .social-icon:hover {
+          transform: translateY(-3px);
+        }
+
+        .social-icon.pinterest:hover {
+          background: #E60023;
+        }
+
+        .social-icon.facebook:hover {
+          background: #1877F2;
+        }
