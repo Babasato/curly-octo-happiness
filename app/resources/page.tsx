@@ -1,6 +1,6 @@
+// app/resources/page.tsx - WITH COURSES SECTION + ANCHOR LINK AND DARK MODE COMPATIBILITY
 'use client'
 
-// app/resources/page.tsx - WITH COURSES SECTION + ANCHOR LINK AND DARK MODE COMPATIBILITY
 import { Metadata } from 'next'
 import Link from 'next/link'
 
