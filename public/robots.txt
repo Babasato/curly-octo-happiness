@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://homeschoolmath.site
+
+# Sitemaps
+Sitemap: https://homeschoolmath.site/sitemap.xml

@@ -1,53 +1,72 @@
 // app/layout.tsx
-import './globals.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Script from 'next/script';
-import { Metadata } from 'next';
+import type { Metadata } from 'next'
+import './globals.css'
+import Link from 'next/link'
+import Footer from './components/Footer'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://homeschoolmath.site'),
-  title: {
-    default: 'HomeschoolMath.site - Free Printable Math Worksheets',
-    template: '%s | HomeschoolMath.site'
+  title: 'HomeschoolMath.site | Free Printable Math Worksheets K-6',
+  description: 'Free printable math worksheets for homeschool parents and teachers. Generate custom addition, subtraction, multiplication, division, fraction, and decimal worksheets.',
+  keywords: 'math worksheets, homeschool math, printable worksheets, addition practice, subtraction worksheets, multiplication times tables, division facts, fractions, decimals',
+  authors: [{ name: 'HomeschoolMath.site' }],
+  robots: 'index, follow',
+  openGraph: {
+    title: 'HomeschoolMath.site | Free Printable Math Worksheets K-6',
+    description: 'Free printable math worksheets for homeschool parents and teachers.',
+    url: 'https://homeschoolmath.site',
+    siteName: 'HomeschoolMath.site',
+    type: 'website',
   },
-  description: 'Generate unlimited free printable math worksheets for addition, subtraction, multiplication, and division. Perfect for homeschool families and teachers.',
-  alternates: {
-    canonical: 'https://homeschoolmath.site',
+}
+
+function Header() {
+  return (
+    <header className="site-header">
+      <div className="header-content">
+        <Link href="/" className="home-link">
+          <h1 className="brand-title">homeschoolmath.site</h1>
+        </Link>
+        <nav className="main-nav">
+          <Link href="/#generator" className="nav-link">Generator</Link>
+          <Link href="/resources" className="nav-link">Resources</Link>
+          <Link href="/contact" className="nav-link">Contact</Link>
+        </nav>
+      </div>
+    </header>
+  )
+}
+
+// Global schema for all pages (server-rendered, works immediately)
+const globalSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  name: 'HomeschoolMath.site',
+  url: 'https://homeschoolmath.site',
+  description: 'Free printable math worksheets for homeschool parents and teachers. Generate custom addition, subtraction, multiplication, division, fraction, and decimal worksheets.',
+  audience: {
+    '@type': 'EducationalAudience',
+    educationalRole: 'student',
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
-          dangerouslySetInnerHTML={{
-            __html: `(function() { try { var theme = localStorage.getItem('theme'); var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true; if (!theme && supportDarkMode) theme = 'dark'; if (!theme) theme = 'light'; document.documentElement.setAttribute('data-theme', theme); } catch (e) {} })();`,
-          }}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalSchema) }}
         />
       </head>
-      <body suppressHydrationWarning>
+      <body>
         <Header />
-        {children}
+        <main className="main-content-area">{children}</main>
         <Footer />
-        <Script
-  src="https://www.googletagmanager.com/gtag/js?id=G-20S3GKW7QB"
-  strategy="lazyOnload"
-/>
-<Script
-  id="gtag-init"
-  strategy="lazyOnload"
-  dangerouslySetInnerHTML={{
-    __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-20S3GKW7QB');`,
-  }}
-/>
       </body>
     </html>
-  );
+  )
 }

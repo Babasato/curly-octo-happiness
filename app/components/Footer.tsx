@@ -170,6 +170,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+  <Link href="/math-tricks">
+    <div className="footer-link-content">
+      <span>Math Tricks & Guides</span>
+      <span className="arrow">→</span>
+    </div>
+  </Link>
+</li>
+              <li>
                 <Link href="/about">
                   <div className="footer-link-content">
                     <span>About Us</span>
