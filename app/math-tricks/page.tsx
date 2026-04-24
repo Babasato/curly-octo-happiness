@@ -31,19 +31,19 @@ export default function MathTricksHub() {
       ]
     },
     {
-      title: 'Fractions & Decimals',
-      description: 'Visual guides for understanding parts of a whole.',
-      items: [
-        { name: 'What Is a Numerator?', href: '/what-is-a-numerator', desc: 'Understanding the top number' },
-        { name: 'How to Simplify Fractions', href: '/how-to-simplify-fractions', desc: 'Reducing fractions step by step' },
-        { name: 'How to Read Decimals', href: '/decimals-practice', desc: 'Tenths, hundredths, thousandths' },
-      ]
-    },
-    {
+  title: 'Fractions & Decimals',
+  description: 'Visual guides for understanding parts of a whole.',
+  items: [
+    { name: 'What Is a Numerator?', href: '/what-is-a-numerator', desc: 'Understanding the top number' },
+    { name: 'How to Simplify Fractions', href: '/how-to-simplify-fractions', desc: 'Reducing fractions step by step' },
+    { name: 'How to Read Decimals', href: '/how-to-read-decimals', desc: 'Tenths, hundredths, thousandths' },
+  ]
+},
+        {
       title: 'Measurement & Time',
       description: 'Essential skills for everyday math.',
       items: [
-        { name: 'How to Tell Time', href: '/', desc: 'Reading analog clocks', note: 'Use the worksheet generator' },
+        { name: 'How to Tell Time', href: '/how-to-tell-time', desc: 'Reading analog clocks' },
       ]
     },
   ]
@@ -69,7 +69,7 @@ export default function MathTricksHub() {
           </p>
         </section>
 
-        {/* All Tricks Grid */}
+                {/* All Tricks Grid */}
         {trickCategories.map((category, catIndex) => (
           <section key={catIndex} className="practice-section">
             <h2 className="practice-section-title">
@@ -105,16 +105,6 @@ export default function MathTricksHub() {
                   <p className="practice-worksheet-desc">
                     {item.desc}
                   </p>
-                  {item.note && (
-                    <div style={{ 
-                      marginTop: '0.5rem', 
-                      fontSize: '0.8rem', 
-                      color: 'var(--text-muted)',
-                      fontStyle: 'italic'
-                    }}>
-                      {item.note}
-                    </div>
-                  )}
                   <div className="practice-worksheet-grades practice-worksheet-grades-blue" style={{ marginTop: 'auto', paddingTop: '1rem' }}>
                     Free Guide
                   </div>
