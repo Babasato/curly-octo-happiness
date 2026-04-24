@@ -25,6 +25,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/what-is-a-numerator', priority: 0.95 },
     { path: '/skip-counting-explained', priority: 0.95 },
     { path: '/how-to-simplify-fractions', priority: 0.95 },
+    { path: '/how-to-read-decimals', priority: 0.95 },
+    { path: '/how-to-tell-time', priority: 0.95 },
     { path: '/math-tricks', priority: 0.95 },
     
     // Operation practice hubs (priority 0.9)
