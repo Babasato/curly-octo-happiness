@@ -27,7 +27,7 @@ function Header() {
           <h1 className="brand-title">homeschoolmath.site</h1>
         </Link>
         <nav className="main-nav">
-          <Link href="/#generator" className="nav-link">Generator</Link>
+          <Link href="/about" className="nav-link">About</Link>
           <Link href="/resources" className="nav-link">Resources</Link>
           <Link href="/contact" className="nav-link">Contact</Link>
         </nav>
