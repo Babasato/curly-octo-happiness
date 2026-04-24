@@ -31,19 +31,19 @@ export default function MathTricksHub() {
       ]
     },
     {
-  title: 'Fractions & Decimals',
-  description: 'Visual guides for understanding parts of a whole.',
-  items: [
-    { name: 'What Is a Numerator?', href: '/what-is-a-numerator', desc: 'Understanding the top number' },
-    { name: 'How to Simplify Fractions', href: '/how-to-simplify-fractions', desc: 'Reducing fractions step by step' },
-    { name: 'How to Read Decimals', href: '/how-to-read-decimals', desc: 'Tenths, hundredths, thousandths' },
-  ]
-},
-        {
+      title: 'Fractions & Decimals',
+      description: 'Visual guides for understanding parts of a whole.',
+      items: [
+        { name: 'What Is a Numerator?', href: '/what-is-a-numerator', desc: 'Understanding the top number' },
+        { name: 'How to Simplify Fractions', href: '/how-to-simplify-fractions', desc: 'Reducing fractions step by step' },
+        { name: 'How to Read Decimals', href: '/how-to-read-decimals', desc: 'Tenths, hundredths, and place value' },
+      ]
+    },
+    {
       title: 'Measurement & Time',
       description: 'Essential skills for everyday math.',
       items: [
-        { name: 'How to Tell Time', href: '/how-to-tell-time', desc: 'Reading analog clocks' },
+        { name: 'How to Tell Time', href: '/how-to-tell-time', desc: 'Reading analog clocks with ease' },
       ]
     },
   ]
@@ -69,7 +69,7 @@ export default function MathTricksHub() {
           </p>
         </section>
 
-                {/* All Tricks Grid */}
+        {/* All Tricks Grid */}
         {trickCategories.map((category, catIndex) => (
           <section key={catIndex} className="practice-section">
             <h2 className="practice-section-title">
