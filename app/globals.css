@@ -108,11 +108,7 @@ body {
   color: var(--text-primary);
   margin: 0;
 }
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-}
+
 .nav-link {
   color: var(--text-secondary);
   text-decoration: none;
@@ -607,9 +603,6 @@ body {
     gap: var(--space-sm);
   }
  
-  .main-nav {
-    gap: 1rem;
-  }
  
   .nav-link {
     font-size: 0.9rem;
@@ -2229,11 +2222,6 @@ html, body {
     padding: 0.75rem 1rem;
   }
   
-  .main-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.75rem;
-  }
   
   .nav-link {
     font-size: 0.85rem;
@@ -2738,3 +2726,238 @@ html, body {
         .social-icon.facebook:hover {
           background: #1877F2;
         }
+
+/* ===== SEARCH PAGE — add to globals.css ===== */
+
+.search-page {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.search-hero {
+  margin-bottom: 2.5rem;
+}
+
+.search-hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+}
+
+.search-subtitle {
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+}
+
+.search-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.85rem 3rem 0.85rem 2.75rem;
+  font-size: 1rem;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-clear {
+  position: absolute;
+  right: 0.85rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.search-clear:hover {
+  color: var(--text-primary);
+  background: var(--border-light);
+}
+
+.search-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.4rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.results-count {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0 0 1.25rem;
+}
+
+.results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.result-link {
+  display: block;
+  padding: 1rem 1.25rem;
+  border: 1.5px solid var(--border-light);
+  border-radius: 10px;
+  background: var(--surface);
+  text-decoration: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.result-link:hover {
+  border-color: var(--primary);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.result-title {
+  font-size: 0.975rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.result-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.badge-worksheet {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-guide {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge-resource {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.result-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0 0 0.4rem;
+  line-height: 1.5;
+}
+
+.result-url {
+  font-size: 0.78rem;
+  color: var(--secondary);
+}
+
+.no-results {
+  padding: 2rem 0;
+}
+
+.no-results p {
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+}
+
+.no-results-hint {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
+  gap: 1.25rem; 
+  flex-wrap: nowrap; /* This is the most important line to keep them on one row */
+}
+
+.navbar-search-link, .dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; 
+  height: 40px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navbar-search-link:hover, .dark-mode-toggle:hover {
+  color: var(--primary);
+  background: var(--border-light);
+  border-radius: 8px;
+}
+.site-header {
+  position: relative; /* or fixed */
+  z-index: 9999 !important; /* Force it to the front */
+  background: var(--surface); /* Make sure it's not transparent */
+  display: block !important;
+  visibility: visible !important;
+}

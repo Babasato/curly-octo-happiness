@@ -1,7 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from 'next'
 import './globals.css'
-import Link from 'next/link'
+import Header from './components/Header' // This pulls in your file with Search/Dark Mode
 import Footer from './components/Footer'
 
 export const metadata: Metadata = {
@@ -19,24 +19,7 @@ export const metadata: Metadata = {
   },
 }
 
-function Header() {
-  return (
-    <header className="site-header">
-      <div className="header-content">
-        <Link href="/" className="home-link">
-          <h1 className="brand-title">homeschoolmath.site</h1>
-        </Link>
-        <nav className="main-nav">
-          <Link href="/about" className="nav-link">About</Link>
-          <Link href="/resources" className="nav-link">Resources</Link>
-          <Link href="/contact" className="nav-link">Contact</Link>
-        </nav>
-      </div>
-    </header>
-  )
-}
-
-// Global schema for all pages (server-rendered, works immediately)
+// Global schema for all pages (server-rendered)
 const globalSchema = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
@@ -45,7 +28,7 @@ const globalSchema = {
   description: 'Free printable math worksheets for homeschool parents and teachers. Generate custom addition, subtraction, multiplication, division, fraction, and decimal worksheets.',
   audience: {
     '@type': 'EducationalAudience',
-    educationalRole: 'student',
+    'educationalRole': 'student',
   },
 }
 
@@ -63,8 +46,13 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Header />
-        <main className="main-content-area">{children}</main>
+        {/* This Header component now correctly links to your app/components/Header.tsx */}
+        <Header /> 
+        
+        <main className="main-content-area">
+          {children}
+        </main>
+        
         <Footer />
       </body>
     </html>
