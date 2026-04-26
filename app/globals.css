@@ -610,11 +610,11 @@ body {
 }
 /* Custom Footer Overrides */
 .footer-container a {
-  color: var(--surface-elevated);
+  color: #f1f5f9;
   text-decoration: none;
 }
 .footer-container a:visited {
-  color: var(--surface-elevated);
+  color: #f1f5f9;
   text-decoration: none;
 }
 /* ===== DARK MODE TOGGLE BUTTON ===== */
