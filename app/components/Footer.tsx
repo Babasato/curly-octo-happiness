@@ -486,9 +486,7 @@ export default function Footer() {
         }
 
         .legal-separator {
-          color: #a0aec0;
-          font-size: 0.8rem;
-        }
+          color: #f1f5f9;
 
         .trust-badges-group {
           display: flex;
