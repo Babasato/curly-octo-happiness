@@ -286,7 +286,7 @@ export default function Footer() {
         }
 
         .footer-description {
-          color: var(--border);
+          color: #cbd5e1;
           line-height: 1.6;
           margin: 0 0 2rem 0;
           font-size: clamp(0.95rem, 2vw, 1rem);
@@ -320,17 +320,17 @@ export default function Footer() {
         }
 
         .stats-number {
-          display: block;
-          font-size: clamp(1.5rem, 3vw, 2rem);
-          font-weight: 900;
-          color: var(--surface-elevated);
+         display: block;
+         font-size: clamp(1.5rem, 3vw, 2rem);
+         font-weight: 900;
+         color: #f1f5f9;
           margin-bottom: 0.5rem;
         }
 
         .stats-label {
-          display: block;
-          font-size: 0.75rem;
-          color: var(--border);
+         display: block;
+         font-size: 0.75rem;
+         color: #cbd5e1;
           font-weight: 600;
         }
 

@@ -2747,7 +2747,7 @@ html, body {
 }
 
 .search-subtitle {
-  color: var(--text-muted);
+  color: var(--text-secondary);
   margin: 0 0 1.5rem;
   font-size: 1rem;
 }
@@ -2836,7 +2836,7 @@ html, body {
 
 .results-count {
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   margin: 0 0 1.25rem;
 }
 
@@ -2904,7 +2904,7 @@ html, body {
 
 .result-desc {
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: var(--text-primary);
   margin: 0 0 0.4rem;
   line-height: 1.5;
 }
@@ -2924,7 +2924,7 @@ html, body {
 }
 
 .no-results-hint {
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 0.9rem;
 }
 
