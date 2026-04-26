@@ -230,7 +230,7 @@ export default function Footer() {
       </div>
       <style jsx>{`
         .footer-container {
-          background: linear-gradient(135deg, var(--text-primary) 0%, #334155 100%);
+          background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
           color: white;
           margin-top: auto;
         }

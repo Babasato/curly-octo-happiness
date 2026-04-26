@@ -2954,10 +2954,3 @@ html, body {
   background: var(--border-light);
   border-radius: 8px;
 }
-.site-header {
-  position: relative; /* or fixed */
-  z-index: 9999 !important; /* Force it to the front */
-  background: var(--surface); /* Make sure it's not transparent */
-  display: block !important;
-  visibility: visible !important;
-}
