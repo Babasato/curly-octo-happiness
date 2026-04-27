@@ -1,7 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from 'next'
 import './globals.css'
-import Header from './components/Header' // This pulls in your file with Search/Dark Mode
+import Header from './components/Header'
 import Footer from './components/Footer'
 
 export const metadata: Metadata = {
@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   },
 }
 
-// Global schema for all pages (server-rendered)
 const globalSchema = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
@@ -40,19 +39,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="google-adsense-account" content="ca-pub-4262494597106551" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalSchema) }}
         />
       </head>
       <body>
-        {/* This Header component now correctly links to your app/components/Header.tsx */}
-        <Header /> 
-        
+        <Header />
         <main className="main-content-area">
           {children}
         </main>
-        
         <Footer />
       </body>
     </html>
