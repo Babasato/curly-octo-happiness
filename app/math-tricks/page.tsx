@@ -17,7 +17,9 @@ export default function MathTricksHub() {
       description: 'Tricks and explanations for mastering times tables and division facts.',
       items: [
         { name: 'Multiplying by 9 Trick', href: '/multiplying-by-9-trick', desc: 'Fast method that works every time' },
+        { name: 'Multiplying by 11 Trick', href: '/multiplying-by-11-trick', desc: 'Single and double digit patterns' },
         { name: 'Long Division Steps', href: '/long-division-steps-for-kids', desc: 'Step-by-step visual guide' },
+        { name: 'Long Division with Remainders', href: '/long-division-with-remainders', desc: 'What to do when it doesn\'t divide evenly' },
         { name: 'Skip Counting Explained', href: '/skip-counting-explained', desc: 'The foundation of multiplication' },
       ]
     },
@@ -35,6 +37,9 @@ export default function MathTricksHub() {
       description: 'Visual guides for understanding parts of a whole.',
       items: [
         { name: 'What Is a Numerator?', href: '/what-is-a-numerator', desc: 'Understanding the top number' },
+        { name: 'What Is a Denominator?', href: '/what-is-a-denominator', desc: 'Understanding the bottom number' },
+        { name: 'How to Multiply Fractions', href: '/how-to-multiply-fractions', desc: 'Multiply tops, multiply bottoms, simplify' },
+        { name: 'How to Divide Fractions', href: '/how-to-divide-fractions', desc: 'Keep Change Flip explained simply' },
         { name: 'How to Simplify Fractions', href: '/how-to-simplify-fractions', desc: 'Reducing fractions step by step' },
         { name: 'How to Read Decimals', href: '/how-to-read-decimals', desc: 'Tenths, hundredths, and place value' },
       ]
@@ -80,13 +85,13 @@ export default function MathTricksHub() {
             </p>
             <div className="practice-grid">
               {category.items.map((item, itemIndex) => (
-                <Link 
-                  key={itemIndex} 
-                  href={item.href} 
+                <Link
+                  key={itemIndex}
+                  href={item.href}
                   className="practice-worksheet-card"
-                  style={{ 
-                    textDecoration: 'none', 
-                    display: 'flex', 
+                  style={{
+                    textDecoration: 'none',
+                    display: 'flex',
                     flexDirection: 'column',
                     transition: 'all 0.3s ease',
                     border: '2px solid var(--border)',
@@ -142,51 +147,24 @@ export default function MathTricksHub() {
           </h2>
           <div className="practice-nav-grid">
             <Link href="/multiplication-practice" className="practice-nav-card">
-              <div className="practice-nav-icon practice-nav-icon-blue">
-                ×
-              </div>
-              <div className="practice-nav-label">
-                Multiplication
-              </div>
-              <div className="practice-nav-desc">
-                Times tables & facts
-              </div>
+              <div className="practice-nav-icon practice-nav-icon-blue">×</div>
+              <div className="practice-nav-label">Multiplication</div>
+              <div className="practice-nav-desc">Times tables & facts</div>
             </Link>
-
             <Link href="/division-practice" className="practice-nav-card">
-              <div className="practice-nav-icon practice-nav-icon-blue">
-                ÷
-              </div>
-              <div className="practice-nav-label">
-                Division
-              </div>
-              <div className="practice-nav-desc">
-                Basic facts
-              </div>
+              <div className="practice-nav-icon practice-nav-icon-blue">÷</div>
+              <div className="practice-nav-label">Division</div>
+              <div className="practice-nav-desc">Basic facts & long division</div>
             </Link>
-
             <Link href="/fractions-practice" className="practice-nav-card">
-              <div className="practice-nav-icon practice-nav-icon-blue">
-                ½
-              </div>
-              <div className="practice-nav-label">
-                Fractions
-              </div>
-              <div className="practice-nav-desc">
-                Parts of a whole
-              </div>
+              <div className="practice-nav-icon practice-nav-icon-blue">½</div>
+              <div className="practice-nav-label">Fractions</div>
+              <div className="practice-nav-desc">Parts of a whole</div>
             </Link>
-
             <Link href="/decimals-practice" className="practice-nav-card">
-              <div className="practice-nav-icon practice-nav-icon-blue">
-                0.1
-              </div>
-              <div className="practice-nav-label">
-                Decimals
-              </div>
-              <div className="practice-nav-desc">
-                Place value & operations
-              </div>
+              <div className="practice-nav-icon practice-nav-icon-blue">0.1</div>
+              <div className="practice-nav-label">Decimals</div>
+              <div className="practice-nav-desc">Place value & operations</div>
             </Link>
           </div>
         </section>

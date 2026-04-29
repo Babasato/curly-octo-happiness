@@ -28,6 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/how-to-read-decimals', priority: 0.95 },
     { path: '/how-to-tell-time', priority: 0.95 },
     { path: '/math-tricks', priority: 0.95 },
+    // NEW Math trick pages (priority 0.95)
+    { path: '/multiplying-by-11-trick', priority: 0.95 },
+    { path: '/long-division-with-remainders', priority: 0.95 },
+    { path: '/what-is-a-denominator', priority: 0.95 },
+    { path: '/how-to-multiply-fractions', priority: 0.95 },
+    { path: '/how-to-divide-fractions', priority: 0.95 },
     
     // Operation practice hubs (priority 0.9)
     { path: '/addition-practice', priority: 0.9 },
