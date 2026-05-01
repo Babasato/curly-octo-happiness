@@ -220,7 +220,7 @@ export default function SearchClient() {
         <p className="results-count">
           {query || activeCategory !== 'all'
             ? `${results.length} result${results.length !== 1 ? 's' : ''}${query ? ` for "${query}"` : ''}`
-            : `Showing all ${results.length} pages across 100+ topics`}
+            : `Showing all ${results.length} pages`}
         </p>
 
         {results.length === 0 ? (
