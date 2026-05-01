@@ -36,7 +36,11 @@ const ALL_PAGES: Page[] = [
   { title: 'How to Simplify Fractions', description: 'Finding the GCF and reducing fractions to lowest terms.', href: '/how-to-simplify-fractions', tags: ['fractions', 'simplify', 'reduce', 'GCF', 'lowest terms'], category: 'guide' },
   { title: 'How to Read Decimals', description: 'Simple method for reading and understanding decimal numbers.', href: '/how-to-read-decimals', tags: ['decimals', 'tenths', 'hundredths', 'decimal point'], category: 'guide' },
   { title: 'How to Tell Time', description: 'Step-by-step guide to reading analog and digital clocks.', href: '/how-to-tell-time', tags: ['time', 'clock', 'analog', 'hours', 'minutes'], category: 'guide' },
-
+  { title: 'Multiplying by 11 Trick', description: 'The pattern trick that makes the 11 times table instant — single and double digits.', href: '/multiplying-by-11-trick', tags: ['multiplication', '11 times table', 'trick', 'pattern', 'mental math'], category: 'guide' },
+  { title: 'Long Division with Remainders', description: 'What to do when long division doesn\'t divide evenly — step by step.', href: '/long-division-with-remainders', tags: ['long division', 'remainders', 'division', 'steps'], category: 'guide' },
+  { title: 'What Is a Denominator', description: 'Understanding the bottom number in a fraction and what it means.', href: '/what-is-a-denominator', tags: ['fractions', 'denominator', 'bottom number', 'equal parts'], category: 'guide' },
+  { title: 'How to Multiply Fractions', description: 'Multiply tops, multiply bottoms, simplify — no common denominator needed.', href: '/how-to-multiply-fractions', tags: ['fractions', 'multiply', 'multiplication', 'simplify'], category: 'guide' },
+  { title: 'How to Divide Fractions', description: 'Keep Change Flip explained simply — with worked examples.', href: '/how-to-divide-fractions', tags: ['fractions', 'divide', 'keep change flip', 'division'], category: 'guide' },
   // ===== OPERATION PRACTICE HUBS =====
   { title: 'Addition Practice', description: 'All addition worksheets and resources in one place.', href: '/addition-practice', tags: ['addition', 'practice', 'hub', 'adding'], category: 'worksheet' },
   { title: 'Subtraction Practice', description: 'All subtraction worksheets and resources in one place.', href: '/subtraction-practice', tags: ['subtraction', 'practice', 'hub', 'minus'], category: 'worksheet' },
@@ -216,7 +220,7 @@ export default function SearchClient() {
         <p className="results-count">
           {query || activeCategory !== 'all'
             ? `${results.length} result${results.length !== 1 ? 's' : ''}${query ? ` for "${query}"` : ''}`
-            : `Showing all ${results.length} pages`}
+            : `Showing all ${results.length} pages across 100+ topics`}
         </p>
 
         {results.length === 0 ? (
