@@ -2,21 +2,21 @@
 'use client'
 
 import { usePathname, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, Suspense } from 'react' //
 
-// 👇 THIS FIXES THE ERROR
 declare global {
   interface Window {
     gtag: (...args: any[]) => void
   }
 }
 
-export default function Analytics() {
+// Separate the logic that triggers the error
+function AnalyticsInner() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
   useEffect(() => {
-    const url = pathname + (searchParams?.toString() || '')
+    const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '')
 
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('config', 'G-20S3GKW7QB', {
@@ -26,4 +26,13 @@ export default function Analytics() {
   }, [pathname, searchParams])
 
   return null
+}
+
+// Wrap the inner component in Suspense
+export default function Analytics() {
+  return (
+    <Suspense fallback={null}>
+      <AnalyticsInner />
+    </Suspense>
+  )
 }

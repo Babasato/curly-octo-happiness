@@ -17,8 +17,7 @@ const globalSchema = {
   '@type': 'EducationalOrganization',
   name: 'HomeschoolMath.site',
   url: 'https://homeschoolmath.site',
-  description:
-    'Free printable math worksheets for homeschool parents and teachers.',
+  description: 'Free printable math worksheets for homeschool parents and teachers.',
 }
 
 export default function RootLayout({
@@ -29,12 +28,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* AdSense */}
-        <meta
-          name="google-adsense-account"
-          content="ca-pub-4262494597106551"
-        />
-
         {/* GA4 Script */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-20S3GKW7QB"
@@ -45,9 +38,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-20S3GKW7QB', {
-              page_path: window.location.pathname,
-            });
+            // We only initialize here; the Analytics component handles the 'config' call
           `}
         </Script>
 
@@ -61,9 +52,7 @@ export default function RootLayout({
       </head>
 
       <body>
-        {/* THIS enables page tracking */}
         <Analytics />
-
         <Header />
         <main className="main-content-area">{children}</main>
         <Footer />
