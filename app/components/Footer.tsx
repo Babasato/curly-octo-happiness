@@ -107,23 +107,24 @@ export default function Footer() {
           <div className="footer-links-section">
             <h4 className="footer-heading">Resources & Support</h4>
             <ul className="footer-link-list">
-              {[
-                { name: 'Planning Resources', href: '/resources', highlight: true },
-                { name: 'How to Use Generator', href: '/how-to-use' },
-                { name: 'Math Teaching Tips', href: '/teaching-tips' },
-                { name: 'Math Tricks & Guides', href: '/math-tricks' },
-                { name: 'Contact Support', href: '/contact' },
-                { name: 'About Us', href: '/about' },
-              ].map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href}>
-                    <div className="footer-link-content" style={item.highlight ? { color: '#60a5fa', fontWeight: 'bold' } : {}}>
-                      <span>{item.name}</span>
-                      <span className="arrow">→</span>
-                    </div>
-                  </Link>
-                </li>
-              ))}
+{[
+  { name: 'Free Resources', href: '/free-guides', highlight: true },
+  { name: 'Planning Resources', href: '/resources' },
+  { name: 'How to Use Generator', href: '/how-to-use' },
+  { name: 'Math Teaching Tips', href: '/teaching-tips' },
+  { name: 'Math Tricks & Guides', href: '/math-tricks' },
+  { name: 'Contact Support', href: '/contact' },
+  { name: 'About Us', href: '/about' },
+].map((item) => (
+  <li key={item.href}>
+    <Link href={item.href}>
+      <div className="footer-link-content" style={item.highlight ? { color: '#60a5fa', fontWeight: 'bold' } : {}}>
+        <span>{item.name}</span>
+        <span className="arrow">→</span>
+      </div>
+    </Link>
+  </li>
+))}
             </ul>
           </div>
         </div>

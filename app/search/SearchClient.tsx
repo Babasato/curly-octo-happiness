@@ -145,6 +145,10 @@ const ALL_PAGES: Page[] = [
   { title: 'Grade 6 Multiplication Worksheets', description: 'Multi-digit and algebraic multiplication practice for Grade 6.', href: '/grade-6-multiplication-worksheets', tags: ['grade 6', 'multiplication', 'multi digit', 'algebra'], category: 'worksheet' },
   { title: 'Grade 6 Percent Worksheets', description: 'Percentages, ratios, and proportions practice for Grade 6.', href: '/grade-6-percent-worksheets', tags: ['grade 6', 'percent', 'percentages', 'ratios', 'proportions'], category: 'worksheet' },
   { title: 'Grade 6 Word Problems Worksheets', description: 'Advanced multi-step word problems for Grade 6.', href: '/grade-6-word-problems-worksheets', tags: ['grade 6', 'word problems', 'multi-step', 'advanced'], category: 'worksheet' },
+  { title: 'Free Homeschool Math Guides', description: 'Three free downloadable guides for homeschool parents — Grade 4 readiness, multiplication, and fractions.', href: '/free-guides', tags: ['free', 'guides', 'download', 'parent resources'], category: 'resource' },
+  { title: 'Is My Child Ready for Grade 4 Math?', description: 'Free diagnostic guide with checklist, practice problems, scoring guide and 4-week action plan.', href: '/free-grade-4-guide', tags: ['free', 'grade 4', 'diagnostic', 'readiness', 'checklist'], category: 'resource' },
+  { title: 'Multiplication Made Simple', description: 'Free 5-day multiplication starter guide for homeschool parents — equal groups, arrays, derived facts.', href: '/free-multiplication-guide', tags: ['free', 'multiplication', 'times tables', 'guide', 'parents'], category: 'resource' },
+  { title: 'Fractions from Scratch', description: 'Free fraction concept foundation guide — what fractions are, comparing, equivalence, number lines.', href: '/free-fractions-guide', tags: ['free', 'fractions', 'guide', 'concept', 'foundation'], category: 'resource' },
 ]
 
 const CATEGORY_LABELS: Record<Page['category'], string> = {
