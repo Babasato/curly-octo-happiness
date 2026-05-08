@@ -1,10 +1,17 @@
 // app/layout.tsx
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Script from 'next/script'
 import Analytics from './components/Analytics'
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+})
 
 export const metadata: Metadata = {
   title: 'HomeschoolMath.site | Free Printable Math Worksheets K-6',
@@ -28,7 +35,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* GA4 Script */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-20S3GKW7QB"
           strategy="afterInteractive"
@@ -38,11 +44,8 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            // We only initialize here; the Analytics component handles the 'config' call
           `}
         </Script>
-
-        {/* Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -50,8 +53,7 @@ export default function RootLayout({
           }}
         />
       </head>
-
-      <body>
+      <body className={inter.className}>
         <Analytics />
         <Header />
         <main className="main-content-area">{children}</main>

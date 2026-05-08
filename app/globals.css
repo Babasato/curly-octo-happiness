@@ -67,7 +67,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.5;
   color: var(--text-primary);
   background-color: var(--background);
@@ -2957,4 +2957,17 @@ html, body {
   color: var(--primary);
   background: var(--border-light);
   border-radius: 8px;
+}
+.practice-nav-card,
+.generate-button,
+.bonus-button,
+.contact-resource-card,
+.info-card {
+  will-change: auto;
+}
+
+.practice-nav-card:hover,
+.generate-button:hover,
+.bonus-button:hover {
+  will-change: transform;
 }
