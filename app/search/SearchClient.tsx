@@ -149,6 +149,7 @@ const ALL_PAGES: Page[] = [
   { title: 'Is My Child Ready for Grade 4 Math?', description: 'Free diagnostic guide with checklist, practice problems, scoring guide and 4-week action plan.', href: '/free-grade-4-guide', tags: ['free', 'grade 4', 'diagnostic', 'readiness', 'checklist'], category: 'resource' },
   { title: 'Multiplication Made Simple', description: 'Free 5-day multiplication starter guide for homeschool parents — equal groups, arrays, derived facts.', href: '/free-multiplication-guide', tags: ['free', 'multiplication', 'times tables', 'guide', 'parents'], category: 'resource' },
   { title: 'Fractions from Scratch', description: 'Free fraction concept foundation guide — what fractions are, comparing, equivalence, number lines.', href: '/free-fractions-guide', tags: ['free', 'fractions', 'guide', 'concept', 'foundation'], category: 'resource' },
+  { title: 'Word Problems Made Easy', description: 'Free word problems strategy guide — the 4-step READ method, signal words, 20 practice problems and answer key for Grades K–6.', href: '/free-word-problems-guide', tags: ['free', 'word problems', 'guide', 'READ method', 'signal words', 'strategy'], category: 'resource' },
 ]
 
 const CATEGORY_LABELS: Record<Page['category'], string> = {
