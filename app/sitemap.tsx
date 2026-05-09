@@ -39,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/free-grade-4-guide', priority: 0.9 },
     { path: '/free-multiplication-guide', priority: 0.9 },
     { path: '/free-fractions-guide', priority: 0.9 },
+    { path: '/free-word-problems-guide', priority: 0.9 },
     
     // Operation practice hubs (priority 0.9)
     { path: '/addition-practice', priority: 0.9 },

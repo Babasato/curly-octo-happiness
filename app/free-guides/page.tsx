@@ -4,7 +4,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Free Homeschool Math Guides | Download Free Parent Resources | HomeschoolMath.site',
-  description: 'Download free printable math guides for homeschool parents. Grade 4 readiness checklist, multiplication starter guide, and fractions foundation guide — all free, no registration required.',
+  description: 'Download free printable math guides for homeschool parents. Grade 4 readiness checklist, multiplication starter guide, fractions foundation guide, and word problems strategy guide — all free, no registration required.',
   alternates: {
     canonical: 'https://homeschoolmath.site/free-guides',  // Changed from free-courses
   },
@@ -40,7 +40,27 @@ export default function FreeResourcesHub() {
       downloadHref: 'https://homeschoolmath.gumroad.com/l/qntlb',
       color: 'green',
       badge: 'Grades 3–5',
-      includes: ['4 core concept lessons', '4 worksheets with answer keys', 'Common mistakes guide', 'Visual teaching methods'],
+      includes: [
+        '4 core concept lessons',
+        '4 worksheets with answer keys',
+        'Common mistakes guide',
+        'Visual teaching methods',
+      ],
+    },
+    {
+      title: 'Word Problems Made Easy',
+      subtitle: 'Step-by-Step Strategy Guide',
+      description: 'A reliable method for every word problem your child will encounter in Grades K–6. Covers addition, subtraction, multiplication, and division word problems using the 4-step READ framework — with signal word guides, worked examples, and 20 practice problems.',
+      href: '/free-word-problems-guide',
+      downloadHref: 'https://homeschoolmath.gumroad.com/l/xcwol',
+      color: 'amber',
+      badge: 'Grades K–6',
+      includes: [
+        '4-step READ method explained',
+        '4 problem types with worked examples',
+        '20 mixed practice problems',
+        'Answer key + signal word reference card',
+      ],
     },
   ]
 
@@ -48,6 +68,7 @@ export default function FreeResourcesHub() {
     gold:  { badge: '#C8973A', border: '#C8973A', accent: '#FDF3E3' },
     teal:  { badge: '#2A7F7F', border: '#2A7F7F', accent: '#E8F4F4' },
     green: { badge: '#2D6A4F', border: '#2D6A4F', accent: '#E8F5EE' },
+    amber: { badge: '#92400E', border: '#92400E', accent: '#FFFBEB' },
   }
 
   return (
