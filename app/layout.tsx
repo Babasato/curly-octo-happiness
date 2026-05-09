@@ -10,7 +10,8 @@ import Analytics from './components/Analytics'
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  preload: true,
+  preload: false,
+  fallback: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
 })
 
 export const metadata: Metadata = {
