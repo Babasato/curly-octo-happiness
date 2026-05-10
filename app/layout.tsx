@@ -1,18 +1,10 @@
 // app/layout.tsx
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Script from 'next/script'
 import Analytics from './components/Analytics'
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  preload: false,
-  fallback: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-})
 
 export const metadata: Metadata = {
   title: 'HomeschoolMath.site | Free Printable Math Worksheets K-6',
@@ -54,7 +46,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body>
         <Analytics />
         <Header />
         <main className="main-content-area">{children}</main>
