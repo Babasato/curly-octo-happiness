@@ -37,8 +37,9 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            gtag('config', 'G-20S3GKW7QB', { send_page_view: false });
           `}
-        </Script>
+        </Script>        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
