@@ -108,8 +108,7 @@ export default function Footer() {
             <h4 className="footer-heading">Resources & Support</h4>
             <ul className="footer-link-list">
 {[
-  { name: 'Free Resources', href: '/free-guides', highlight: true },
-  { name: 'Planning Resources', href: '/resources' },
+  { name: 'Free Guides', href: '/free-guides', highlight: true },  { name: 'Planning Resources', href: '/resources' },
   { name: 'How to Use Generator', href: '/how-to-use' },
   { name: 'Math Teaching Tips', href: '/teaching-tips' },
   { name: 'Math Tricks & Guides', href: '/math-tricks' },
