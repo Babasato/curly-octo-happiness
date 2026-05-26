@@ -333,7 +333,7 @@ export default function FractionBasicsWorksheets() {
                 For some children, the gap isn't in practice — it's in the underlying number sense that makes fractions make sense. If your child still thinks 1/8 is larger than 1/4, cannot generate equivalent fractions, or struggles with finding common denominators, worksheets alone won't bridge that gap. Our <strong>Number Sense Foundations</strong> course (K-2) builds the conceptual groundwork that makes fraction fluency stick. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/mfikwi"
+                href="https://homeschoolmath.gumroad.com/l/lqywsy"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

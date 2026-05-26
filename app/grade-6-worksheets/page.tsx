@@ -721,7 +721,7 @@ export default function Grade6Worksheets() {
                 For some students, the leap to abstract thinking requires more structured support. If your child is struggling with ratios, variables, or negative numbers — not just practicing but genuinely confused — our <strong>Multiplication & Division Foundations</strong> course (grades 3–5) can help backfill the arithmetic fluency that makes algebraic thinking possible. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/csfto"
+                href="https://homeschoolmath.gumroad.com/l/dvcgun"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

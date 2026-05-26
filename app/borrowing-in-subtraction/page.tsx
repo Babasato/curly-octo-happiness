@@ -306,7 +306,7 @@ export default function BorrowingInSubtraction() {
             </p>
 
             <Link
-              href="https://homeschoolmath.gumroad.com/l/cdhshb"
+              href="https://homeschoolmath.gumroad.com/l/oalnh"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-submit-button"

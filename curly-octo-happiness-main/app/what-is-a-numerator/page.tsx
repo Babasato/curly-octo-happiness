@@ -268,7 +268,7 @@ export default function WhatIsANumerator() {
             </p>
 
             <Link
-              href="https://homeschoolmath.gumroad.com/l/mfikwi"
+              href="https://homeschoolmath.gumroad.com/l/lqywsy"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-submit-button"

@@ -93,7 +93,7 @@ export default function Resources() {
             </p>
             
             <Link 
-              href="https://homeschoolmath.gumroad.com/l/mfikwi" 
+              href="https://homeschoolmath.gumroad.com/l/lqywsy" 
               target="_blank" 
               className="contact-submit-button" 
               style={{ 
@@ -179,7 +179,7 @@ export default function Resources() {
             </p>
             
             <Link 
-              href="https://homeschoolmath.gumroad.com/l/cdhshb" 
+              href="https://homeschoolmath.gumroad.com/l/oalnh" 
               target="_blank" 
               className="contact-submit-button" 
               style={{ 
@@ -265,7 +265,7 @@ export default function Resources() {
             </p>
             
             <Link 
-              href="https://homeschoolmath.gumroad.com/l/csfto" 
+              href="https://homeschoolmath.gumroad.com/l/dvcgun" 
               target="_blank" 
               className="contact-submit-button" 
               style={{ 
@@ -593,7 +593,7 @@ export default function Resources() {
           </p>
           
           <Link 
-            href="https://homeschoolmath.gumroad.com/l/bmedz" 
+            href="https:///resources" 
             target="_blank" 
             className="contact-submit-button" 
             style={{ 

@@ -634,7 +634,7 @@ export default function Grade4Worksheets() {
                 If your 4th grader is struggling with multiplication or division — not just rusty, but genuinely confused — targeted practice sheets can only go so far. Our <strong>Multiplication & Division Foundations</strong> course was built specifically for grades 3–5 and walks through the conceptual underpinning of both operations before drilling procedures. A lot of parents find it bridges the gap between "my child kind of gets it" and genuine fluency. You can also browse all courses and tools on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/csfto"
+                href="https://homeschoolmath.gumroad.com/l/dvcgun"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

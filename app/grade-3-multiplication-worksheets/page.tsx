@@ -374,7 +374,7 @@ export default function Grade3MultiplicationWorksheets() {
                 For some children, the gap isn't in practice — it's in the conceptual foundation that makes multiplication and division make sense. If your child can recite the times tables in order but freezes on random facts, or doesn't connect multiplication to equal groups, worksheets alone won't bridge that gap. Our <strong>Multiplication & Division Foundations</strong> course (grades 3–5) covers the full progression from arrays through fact fluency and into division as the inverse operation. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/csfto"
+                href="https://homeschoolmath.gumroad.com/l/dvcgun"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

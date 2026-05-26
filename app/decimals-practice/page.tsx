@@ -399,7 +399,7 @@ export default function DecimalsPractice() {
                 Mastering decimals is often the final step in elementary number sense. If your student is ready to take these skills further into fractions, percentages, and ratios, our <strong>Middle School Math Foundations</strong> course provides the deep dive needed for success in Pre-Algebra. You can also browse all available curricula on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/mfikwi"
+                href="https://homeschoolmath.gumroad.com/l/lqywsy"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

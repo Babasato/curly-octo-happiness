@@ -374,7 +374,7 @@ export default function Grade5DivisionWorksheets() {
                 For some children, the gap is not in practice — it is in the conceptual foundation that makes long division with 2-digit divisors make sense. If your child cannot estimate quotient digits or forgets steps in the algorithm, worksheets alone will not bridge that gap. Our <strong>Multiplication and Division Foundations</strong> course (grades 3-5) covers the full progression from sharing through long division. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/csfto"
+                href="https://homeschoolmath.gumroad.com/l/dvcgun"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

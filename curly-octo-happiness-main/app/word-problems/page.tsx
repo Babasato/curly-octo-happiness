@@ -365,7 +365,7 @@ export default function WordProblems() {
                 For some children, the gap isn't in practice — it's in reading comprehension or language processing. If your child consistently guesses the operation or cannot restate word problems in their own words, worksheets alone won't bridge that gap. Our <strong>Number Sense Foundations</strong> course (K-2) builds the language and problem-solving strategies that make word problems manageable. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/mfikwi"
+                href="https://homeschoolmath.gumroad.com/l/lqywsy"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

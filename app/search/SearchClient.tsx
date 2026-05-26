@@ -41,6 +41,7 @@ const ALL_PAGES: Page[] = [
   { title: 'What Is a Denominator', description: 'Understanding the bottom number in a fraction and what it means.', href: '/what-is-a-denominator', tags: ['fractions', 'denominator', 'bottom number', 'equal parts'], category: 'guide' },
   { title: 'How to Multiply Fractions', description: 'Multiply tops, multiply bottoms, simplify — no common denominator needed.', href: '/how-to-multiply-fractions', tags: ['fractions', 'multiply', 'multiplication', 'simplify'], category: 'guide' },
   { title: 'How to Divide Fractions', description: 'Keep Change Flip explained simply — with worked examples.', href: '/how-to-divide-fractions', tags: ['fractions', 'divide', 'keep change flip', 'division'], category: 'guide' },
+  
   // ===== OPERATION PRACTICE HUBS =====
   { title: 'Addition Practice', description: 'All addition worksheets and resources in one place.', href: '/addition-practice', tags: ['addition', 'practice', 'hub', 'adding'], category: 'worksheet' },
   { title: 'Subtraction Practice', description: 'All subtraction worksheets and resources in one place.', href: '/subtraction-practice', tags: ['subtraction', 'practice', 'hub', 'minus'], category: 'worksheet' },
@@ -150,6 +151,11 @@ const ALL_PAGES: Page[] = [
   { title: 'Multiplication Made Simple', description: 'Free 5-day multiplication starter guide for homeschool parents — equal groups, arrays, derived facts.', href: '/free-multiplication-guide', tags: ['free', 'multiplication', 'times tables', 'guide', 'parents'], category: 'resource' },
   { title: 'Fractions from Scratch', description: 'Free fraction concept foundation guide — what fractions are, comparing, equivalence, number lines.', href: '/free-fractions-guide', tags: ['free', 'fractions', 'guide', 'concept', 'foundation'], category: 'resource' },
   { title: 'Word Problems Made Easy', description: 'Free word problems strategy guide — the 4-step READ method, signal words, 20 practice problems and answer key for Grades K–6.', href: '/free-word-problems-guide', tags: ['free', 'word problems', 'guide', 'READ method', 'signal words', 'strategy'], category: 'resource' },
+  
+  // ===== COURSES =====
+  { title: 'Number Sense Foundations — Complete K–2 Math Course', description: 'A complete structured course building genuine number sense for Kindergarten through Grade 2. 4 modules, 10 worksheet sets, parent guides, and full answer keys.', href: '/number-sense-foundations', tags: ['course', 'number sense', 'k-2', 'complete course', 'homeschool'], category: 'resource' },
+  { title: 'Subtraction in 30 Days — Complete Grades 2–4 Math Course', description: 'A 30-day structured course fixing subtraction and borrowing at the root for Grades 2–4. 20 daily lessons, 12 worksheet sets, and full answer keys.', href: '/subtraction-in-30-days', tags: ['course', 'subtraction', 'borrowing', '30 days', 'grades 2-4'], category: 'resource' },
+  { title: 'Multiplication & Division Foundations — Complete Grades 3–5 Math Course', description: 'A complete course teaching multiplication and division together from the ground up for Grades 3–5. 4 modules, 14 worksheet sets, and two assessments.', href: '/multiplication-division-foundations', tags: ['course', 'multiplication', 'division', 'foundations', 'grades 3-5'], category: 'resource' },
 ]
 
 const CATEGORY_LABELS: Record<Page['category'], string> = {

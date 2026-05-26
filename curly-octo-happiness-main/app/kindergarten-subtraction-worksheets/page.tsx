@@ -374,7 +374,7 @@ export default function KindergartenSubtractionWorksheets() {
                 For some children, the gap is not in practice — it is in the underlying number sense that makes subtraction make sense. If your child is still counting everything from 1 past mid-year or cannot recognize numbers without counting, worksheets alone will not bridge that gap. Our <strong>Number Sense Foundations</strong> course (K-2) builds the conceptual groundwork that makes fact fluency stick. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/mfikwi"
+                href="https://homeschoolmath.gumroad.com/l/lqywsy"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

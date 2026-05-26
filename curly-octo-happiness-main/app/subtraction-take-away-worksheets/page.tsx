@@ -392,7 +392,7 @@ export default function SubtractionTakeAwayWorksheets() {
                 <Link href="/resources" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/mfikwi"
+                href="https://homeschoolmath.gumroad.com/l/lqywsy"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

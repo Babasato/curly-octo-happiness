@@ -397,7 +397,7 @@ export default function MultiplicationFactFamiliesWorksheets() {
                 <Link href="/resources" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/csfto"
+                href="https://homeschoolmath.gumroad.com/l/dvcgun"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

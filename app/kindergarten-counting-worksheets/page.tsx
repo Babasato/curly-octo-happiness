@@ -374,7 +374,7 @@ export default function KindergartenCountingWorksheets() {
                 For some children, the gap is not in practice — it is in the underlying number sense that makes counting make sense. If your child cannot count objects with one-to-one correspondence past mid-year or cannot recognize numbers without counting, worksheets alone will not bridge that gap. Our <strong>Number Sense Foundations</strong> course (K-2) builds the conceptual groundwork that makes counting and number sense stick. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/mfikwi"
+                href="https://homeschoolmath.gumroad.com/l/lqywsy"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

@@ -341,7 +341,7 @@ export default function SubtractionBasicFactsWorksheets() {
                 <Link href="/resources" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/cdhshb"
+                href="https://homeschoolmath.gumroad.com/l/oalnh"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

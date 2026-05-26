@@ -320,7 +320,7 @@ export default function LongDivisionSteps() {
             </p>
 
             <Link
-              href="https://homeschoolmath.gumroad.com/l/csfto"
+              href="https://homeschoolmath.gumroad.com/l/dvcgun"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-submit-button"

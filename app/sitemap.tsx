@@ -34,12 +34,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/what-is-a-denominator', priority: 0.95 },
     { path: '/how-to-multiply-fractions', priority: 0.95 },
     { path: '/how-to-divide-fractions', priority: 0.95 },
+
     // Free guides pages (priority 0.9)
     { path: '/free-guides', priority: 0.9 },
     { path: '/free-grade-4-guide', priority: 0.9 },
     { path: '/free-multiplication-guide', priority: 0.9 },
     { path: '/free-fractions-guide', priority: 0.9 },
     { path: '/free-word-problems-guide', priority: 0.9 },
+
+    // NEW sitemap entries (priority 0.9)
+    { path: '/number-sense-foundations', priority: 0.9 },
+    { path: '/subtraction-in-30-days', priority: 0.9 },
+    { path: '/multiplication-division-foundations', priority: 0.9 },
+
     
     // Operation practice hubs (priority 0.9)
     { path: '/addition-practice', priority: 0.9 },

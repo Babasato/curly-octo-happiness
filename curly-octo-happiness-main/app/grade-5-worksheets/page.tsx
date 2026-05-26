@@ -638,7 +638,7 @@ export default function Grade5Worksheets() {
                 Some 5th graders arrive with multiplication and division foundations that were never quite solid — they can do it slowly, but not fluently. Since fraction operations and decimal multiplication both depend on those foundations, gaps here compound quickly. Our <strong>Multiplication & Division Foundations</strong> course covers exactly this ground for grades 3–5, and several homeschool parents have used it as a 5th grade remediation before pushing into fraction operations. You can find it and all other tools on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/csfto"
+                href="https://homeschoolmath.gumroad.com/l/dvcgun"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

@@ -373,7 +373,7 @@ export default function DivisionPractice() {
                 If your child consistently struggles with division despite worksheet practice — guessing rather than knowing, avoiding division problems, or not connecting division to multiplication — the underlying number sense may need direct attention. Our <strong>Multiplication & Division Foundations</strong> course (grades 3–5) addresses the arithmetic fluency that division requires. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/csfto"
+                href="https://homeschoolmath.gumroad.com/l/dvcgun"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
