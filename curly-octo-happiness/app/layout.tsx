@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   },
 }
 
+
 const globalSchema = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
