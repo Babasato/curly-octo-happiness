@@ -156,7 +156,10 @@ export default function PlaceValue() {
               Place value also connects directly to rounding, estimation, and decimal operations — skills that become central in 4th and 5th grade. The <Link href="/grade-3-worksheets" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>3rd grade worksheets</Link> page covers rounding to the nearest 10 and 100, and the <Link href="/grade-5-worksheets" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>5th grade worksheets</Link> page covers decimal place value in depth.
             </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7', fontSize: '1.05rem' }}>
-              The worksheets here are organized by concept and difficulty, not just by grade, so you can target exactly the place value skill your student needs — whether that is two-digit numbers or decimal hundredths.
+              The worksheets here are organized by concept and difficulty, not just by grade, so you can target exactly the place value skill your student needs — whether that is two-digit numbers or decimal hundredths. For a visual explanation of what place value actually means, see the{' '}
+<Link href="/place-value-explained" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>
+  place value concept guide
+</Link>.
             </p>
           </section>
 
