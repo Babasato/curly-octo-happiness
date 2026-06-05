@@ -1,8 +1,10 @@
 // app/layout.tsx
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Analytics from './components/Analytics'
 
 export const metadata: Metadata = {
   title: 'HomeschoolMath.site | Free Printable Math Worksheets K-6',
@@ -39,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Dark mode flash prevention — must be first */}
         <script
           dangerouslySetInnerHTML={{ __html: `
             (function() {
@@ -60,10 +63,26 @@ export default function RootLayout({
         />
       </head>
       <body>
+        {/* GA4 scripts */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-20S3GKW7QB"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-20S3GKW7QB', {
+              send_page_view: false
+            });
+          `}
+        </Script>
         <Header />
         <main className="main-content-area">
           {children}
         </main>
+        <Analytics />
         <Footer />
       </body>
     </html>
