@@ -189,7 +189,52 @@ export default function Grade3Worksheets() {
             </div>
           </section>
 
-                    {/* Worksheet Categories - Styled Cards */}
+          {/* Readiness Check */}
+<section style={{
+  background: 'var(--surface)',
+  border: '1px solid var(--border)',
+  borderLeft: '4px solid var(--warning)',
+  borderRadius: '8px',
+  padding: '1.5rem 2rem',
+  marginBottom: '3rem'
+}}>
+  <h2 style={{
+    fontSize: '1.25rem',
+    fontWeight: '700',
+    color: 'var(--text-primary)',
+    marginBottom: '0.75rem'
+  }}>
+    Is Your Third Grader Ready for Multiplication?
+  </h2>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    marginBottom: '1rem'
+  }}>
+    Before starting 3rd grade multiplication, check these two things. First, can your child
+    recall any addition or subtraction fact within 20 in under 3 seconds without counting?
+    Second, do they understand that 4 groups of 3 objects is the same as 3 plus 3 plus 3 plus 3?
+    If both are solid, they are ready. If either is shaky, start there before the times tables.
+  </p>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    margin: 0
+  }}>
+    If you want a complete plan for getting multiplication and division solid before
+    Grade 4, the{' '}
+    <Link href="/multiplication-division-foundations" style={{
+      color: 'var(--primary)',
+      textDecoration: 'underline',
+      fontWeight: '600'
+    }}>
+      Multiplication and Division Foundations course
+    </Link>
+    {' '}covers the full sequence from arrays to fact fluency to division in one structured plan.
+  </p>
+</section>
+
+        {/* Worksheet Categories - Styled Cards */}
           <section style={{marginBottom: '3rem'}}>
             <h2 style={{
               fontSize: '2rem',
@@ -717,9 +762,7 @@ export default function Grade3Worksheets() {
                 For some children, the gap isn't in practice — it's in the conceptual foundation that makes multiplication and division make sense. If your child can recite the times tables in order but freezes on random facts, or doesn't connect multiplication to equal groups, worksheets alone won't bridge that gap. Our <strong>Multiplication & Division Foundations</strong> course (grades 3–5) covers the full progression from arrays through fact fluency and into division as the inverse operation. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/dvcgun"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/multiplication-division-foundations"
                 style={{
                   display: 'inline-block',
                   background: 'var(--primary)',
@@ -731,7 +774,7 @@ export default function Grade3Worksheets() {
                   fontSize: '0.95rem'
                 }}
               >
-                View Multiplication & Division Foundations — $57
+                See the Full Course — Multiplication and Division Foundations
               </a>
             </div>
           </section>
