@@ -380,7 +380,7 @@ export default function WordProblemsAdditionWorksheets() {
                 <Link href="/resources" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/lqywsy"
+                href="/number-sense-foundations"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

@@ -336,7 +336,7 @@ export default function SubtractionTwoDigitBorrowingWorksheets() {
                 <Link href="/resources" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/oalnh"
+                href="/subtraction-in-30-days"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

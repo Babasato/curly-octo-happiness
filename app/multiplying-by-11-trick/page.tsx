@@ -234,7 +234,7 @@ export default function MultiplyingBy11Trick() {
             <p className="text-p" style={{ fontSize: '1.05rem', marginBottom: '1.5rem' }}>
               Tricks are great for getting unstuck — but real multiplication confidence comes from understanding equal groups, arrays, and the relationship between multiplication and division. This course builds that foundation from the ground up, then develops fact fluency on top of it. Every lesson tells you exactly what to say, what to watch for, and what to do when a child is stuck.
             </p>
-            <Link href="https://homeschoolmath.gumroad.com/l/dvcgun" target="_blank" rel="noopener noreferrer" className="contact-submit-button" style={{ display: 'block', textAlign: 'center', width: '100%' }} aria-label="Purchase Multiplication and Division Foundations course on Gumroad">
+            <Link href="/multiplication-division-foundations" target="_blank" rel="noopener noreferrer" className="contact-submit-button" style={{ display: 'block', textAlign: 'center', width: '100%' }} aria-label="Purchase Multiplication and Division Foundations course on Gumroad">
               Get Multiplication & Division Foundations on Gumroad →
             </Link>
           </div>

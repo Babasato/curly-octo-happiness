@@ -375,7 +375,7 @@ export default function Grade4FractionsWorksheets() {
                 For some children, the gap is not in practice — it is in the conceptual foundation that makes fractions make sense. If your child cannot explain why 1/2 equals 2/4 or struggles to place fractions on a number line, worksheets alone will not bridge that gap. Our <strong>Multiplication and Division Foundations</strong> course (grades 3-5) covers the full progression from arrays through multi-digit multiplication and long division. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/dvcgun"
+                href="/multiplication-division-foundations"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

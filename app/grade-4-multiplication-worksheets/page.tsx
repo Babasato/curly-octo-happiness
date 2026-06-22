@@ -374,7 +374,7 @@ export default function Grade4MultiplicationWorksheets() {
                 For some children, the gap isn't in practice — it's in the conceptual foundation that makes multi-digit multiplication make sense. If your child can't explain why the standard algorithm works or forgets to add place value holders, worksheets alone won't bridge that gap. Our <strong>Multiplication & Division Foundations</strong> course (grades 3–5) covers the full progression from arrays through multi-digit multiplication. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/dvcgun"
+                href="/multiplication-division-foundations"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

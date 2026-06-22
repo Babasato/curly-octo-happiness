@@ -189,6 +189,54 @@ export default function Grade5Worksheets() {
             </div>
           </section>
 
+          {/* Readiness Check */}
+<section style={{
+  background: 'var(--surface)',
+  border: '1px solid var(--border)',
+  borderLeft: '4px solid var(--warning)',
+  borderRadius: '8px',
+  padding: '1.5rem 2rem',
+  marginBottom: '3rem'
+}}>
+  <h2 style={{
+    fontSize: '1.25rem',
+    fontWeight: '700',
+    color: 'var(--text-primary)',
+    marginBottom: '0.75rem'
+  }}>
+    Is Your Fifth Grader Ready for Grade 5 Math?
+  </h2>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    marginBottom: '1rem'
+  }}>
+    Before starting Grade 5 math, check these two things. First, can your child
+    add and subtract fractions with different denominators and explain why a
+    common denominator is needed? Second, do they understand what a decimal
+    represents and can they compare 0.4 and 0.38 correctly without guessing?
+    If both are solid, they are ready. If either is shaky, fractions and decimals
+    are the gaps that will compound quickly once Grade 5 introduces operations
+    with both.
+  </p>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    margin: 0
+  }}>
+    If fractions are the sticking point, the{' '}
+    <Link href="/free-fractions-guide" style={{
+      color: 'var(--primary)',
+      textDecoration: 'underline',
+      fontWeight: '600'
+    }}>
+      free Fractions from Scratch guide
+    </Link>
+    {' '}walks through the foundational sequence any parent can use at home before
+    Grade 5 begins.
+  </p>
+</section>
+
                     {/* Worksheet Categories - Styled Cards */}
           <section style={{marginBottom: '3rem'}}>
             <h2 style={{
@@ -638,7 +686,7 @@ export default function Grade5Worksheets() {
                 Some 5th graders arrive with multiplication and division foundations that were never quite solid — they can do it slowly, but not fluently. Since fraction operations and decimal multiplication both depend on those foundations, gaps here compound quickly. Our <strong>Multiplication & Division Foundations</strong> course covers exactly this ground for grades 3–5, and several homeschool parents have used it as a 5th grade remediation before pushing into fraction operations. You can find it and all other tools on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/dvcgun"
+                href="/multiplication-division-foundations"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

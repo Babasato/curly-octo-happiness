@@ -268,7 +268,7 @@ export default function WhatIsANumerator() {
             </p>
 
             <Link
-              href="https://homeschoolmath.gumroad.com/l/lqywsy"
+              href="/number-sense-foundations"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-submit-button"

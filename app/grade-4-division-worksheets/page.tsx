@@ -374,7 +374,7 @@ export default function Grade4DivisionWorksheets() {
                 For some children, the gap isn't in practice — it's in the conceptual foundation that makes long division make sense. If your child can't explain what the remainder means or forgets steps in the algorithm, worksheets alone won't bridge that gap. Our <strong>Multiplication & Division Foundations</strong> course (grades 3–5) covers the full progression from sharing through long division. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/dvcgun"
+                href="/multiplication-division-foundations"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

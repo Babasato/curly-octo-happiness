@@ -189,6 +189,52 @@ export default function Grade2Worksheets() {
             </div>
           </section>
 
+          {/* Readiness Check */}
+<section style={{
+  background: 'var(--surface)',
+  border: '1px solid var(--border)',
+  borderLeft: '4px solid var(--warning)',
+  borderRadius: '8px',
+  padding: '1.5rem 2rem',
+  marginBottom: '3rem'
+}}>
+  <h2 style={{
+    fontSize: '1.25rem',
+    fontWeight: '700',
+    color: 'var(--text-primary)',
+    marginBottom: '0.75rem'
+  }}>
+    Is Your Second Grader Ready for Grade 2 Math?
+  </h2>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    marginBottom: '1rem'
+  }}>
+    Before starting Grade 2 math, check these two things. First, can your child
+    recall any addition or subtraction fact within 10 without counting on fingers?
+    Second, do they understand that 34 means 3 tens and 4 ones and not just a
+    symbol they have memorized? If both are solid, they are ready. If either is
+    shaky, number sense is the gap and it needs to come before two digit addition.
+  </p>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    margin: 0
+  }}>
+    If you want a complete plan for building the foundations Grade 2 depends on
+    before the school year begins, the{' '}
+    <Link href="/number-sense-foundations" style={{
+      color: 'var(--primary)',
+      textDecoration: 'underline',
+      fontWeight: '600'
+    }}>
+      Number Sense Foundations course
+    </Link>
+    {' '}covers the full sequence from counting to place value in one structured plan.
+  </p>
+</section>
+
           {/* Worksheet Categories Section */}
 <section style={{marginBottom: '3rem'}}>
   <h2 style={{
@@ -630,7 +676,7 @@ export default function Grade2Worksheets() {
                 For some 2nd graders, worksheets alone aren't enough — the underlying number sense that makes addition and subtraction click hasn't fully formed yet. Our <strong>Number Sense Foundations</strong> course covers K–2 number concepts from the ground up, including the mental models and strategies that make arithmetic feel intuitive rather than effortful. It's been particularly useful for homeschool parents whose child can follow procedures but seems to be "doing math without really understanding it." You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/lqywsy"
+                href="/number-sense-foundations"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

@@ -74,7 +74,7 @@ export default function FreeFractionsGuide() {
           </p>
           <div className="practice-cta-container">
             <a
-              href="https://homeschoolmath.gumroad.com/l/qntlb"
+              href="/free-fractions-guide"
               target="_blank"
               rel="noopener noreferrer"
               className="practice-button"
@@ -164,7 +164,7 @@ export default function FreeFractionsGuide() {
               ))}
             </div>
             <a
-              href="https://homeschoolmath.gumroad.com/l/qntlb"
+              href="/free-fractions-guide"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-submit-button"
@@ -202,7 +202,7 @@ export default function FreeFractionsGuide() {
             </p>
             <div className="practice-cta-container">
               <a
-                href="https://homeschoolmath.gumroad.com/l/qntlb"
+                href="/free-fractions-guide"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="practice-cta-button"

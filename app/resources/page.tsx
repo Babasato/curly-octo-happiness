@@ -99,7 +99,7 @@ export default function Resources() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <Link
-                href="https://homeschoolmath.gumroad.com/l/lqywsy"
+                href="/number-sense-foundations"
                 target="_blank"
                 className="contact-submit-button"
                 style={{
@@ -197,7 +197,7 @@ export default function Resources() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <Link
-                href="https://homeschoolmath.gumroad.com/l/oalnh"
+                href="/subtraction-in-30-days"
                 target="_blank"
                 className="contact-submit-button"
                 style={{
@@ -295,7 +295,7 @@ export default function Resources() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <Link
-                href="https://homeschoolmath.gumroad.com/l/dvcgun"
+                href="/multiplication-division-foundations"
                 target="_blank"
                 className="contact-submit-button"
                 style={{

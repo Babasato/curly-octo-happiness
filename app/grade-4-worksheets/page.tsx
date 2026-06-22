@@ -189,6 +189,53 @@ export default function Grade4Worksheets() {
             </div>
           </section>
 
+          {/* Readiness Check */}
+<section style={{
+  background: 'var(--surface)',
+  border: '1px solid var(--border)',
+  borderLeft: '4px solid var(--warning)',
+  borderRadius: '8px',
+  padding: '1.5rem 2rem',
+  marginBottom: '3rem'
+}}>
+  <h2 style={{
+    fontSize: '1.25rem',
+    fontWeight: '700',
+    color: 'var(--text-primary)',
+    marginBottom: '0.75rem'
+  }}>
+    Is Your Fourth Grader Ready for Grade 4 Math?
+  </h2>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    marginBottom: '1rem'
+  }}>
+    Before starting Grade 4 math, check these two things. First, can your child
+    recall any multiplication fact through 10 times 10 without counting or
+    skip-chanting? Second, do they understand that division and multiplication
+    are the same fact written two different ways? If both are solid, they are
+    ready. If either is shaky, multiplication fluency is the gap that will slow
+    everything in Grade 4 including fractions, long division and word problems.
+  </p>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    margin: 0
+  }}>
+    If you want a structured plan for getting multiplication and division solid
+    before Grade 4 begins, the{' '}
+    <Link href="/multiplication-division-foundations" style={{
+      color: 'var(--primary)',
+      textDecoration: 'underline',
+      fontWeight: '600'
+    }}>
+      Multiplication and Division Foundations course
+    </Link>
+    {' '}covers the full sequence from arrays to fact fluency to division in one plan.
+  </p>
+</section>
+
                     {/* Worksheet Categories - Styled Cards */}
           <section style={{marginBottom: '3rem'}}>
             <h2 style={{
@@ -634,7 +681,7 @@ export default function Grade4Worksheets() {
                 If your 4th grader is struggling with multiplication or division — not just rusty, but genuinely confused — targeted practice sheets can only go so far. Our <strong>Multiplication & Division Foundations</strong> course was built specifically for grades 3–5 and walks through the conceptual underpinning of both operations before drilling procedures. A lot of parents find it bridges the gap between "my child kind of gets it" and genuine fluency. You can also browse all courses and tools on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/dvcgun"
+                href="/multiplication-division-foundations"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

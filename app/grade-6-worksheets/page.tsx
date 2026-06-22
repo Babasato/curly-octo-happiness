@@ -316,6 +316,61 @@ export default function Grade6Worksheets() {
             </div>
           </section>
 
+          {/* Readiness Check */}
+<section style={{
+  background: 'var(--surface)',
+  border: '1px solid var(--border)',
+  borderLeft: '4px solid var(--warning)',
+  borderRadius: '8px',
+  padding: '1.5rem 2rem',
+  marginBottom: '3rem'
+}}>
+  <h2 style={{
+    fontSize: '1.25rem',
+    fontWeight: '700',
+    color: 'var(--text-primary)',
+    marginBottom: '0.75rem'
+  }}>
+    Is Your Sixth Grader Ready for Grade 6 Math?
+  </h2>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    marginBottom: '1rem'
+  }}>
+    Before starting Grade 6 math, check these two things. First, can your child
+    multiply and divide fractions and explain what is happening rather than just
+    following a procedure? Second, do they understand that a percentage is a
+    fraction out of 100 and can they move between fractions, decimals and
+    percentages without confusion? If both are solid, they are ready. If either
+    is shaky, those gaps will surface immediately when Grade 6 introduces ratios,
+    rates and proportional reasoning.
+  </p>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    margin: 0
+  }}>
+    If fractions or decimals need strengthening before Grade 6 begins, the{' '}
+    <Link href="/free-fractions-guide" style={{
+      color: 'var(--primary)',
+      textDecoration: 'underline',
+      fontWeight: '600'
+    }}>
+      free Fractions from Scratch guide
+    </Link>
+    {' '}and the{' '}
+    <Link href="/resources" style={{
+      color: 'var(--primary)',
+      textDecoration: 'underline',
+      fontWeight: '600'
+    }}>
+      resources page
+    </Link>
+    {' '}are the right starting points.
+  </p>
+</section>
+
                     {/* Worksheet Categories - Styled Cards */}
           <section style={{marginBottom: '3rem'}}>
             <h2 style={{
@@ -721,7 +776,7 @@ export default function Grade6Worksheets() {
                 For some students, the leap to abstract thinking requires more structured support. If your child is struggling with ratios, variables, or negative numbers — not just practicing but genuinely confused — our <strong>Multiplication & Division Foundations</strong> course (grades 3–5) can help backfill the arithmetic fluency that makes algebraic thinking possible. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/dvcgun"
+                href="/multiplication-division-foundations"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

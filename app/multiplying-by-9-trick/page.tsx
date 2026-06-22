@@ -254,7 +254,7 @@ export default function MultiplyingBy9Trick() {
             </p>
 
             <Link
-              href="https://homeschoolmath.gumroad.com/l/dvcgun"
+              href="/multiplication-division-foundations"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-submit-button"

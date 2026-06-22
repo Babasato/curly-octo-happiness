@@ -424,7 +424,7 @@ export default function SubtractionPractice() {
                 For some children, the gap is not in practice — it is in the underlying place value understanding that makes borrowing make sense. If your child consistently struggles with subtraction, especially borrowing across zeros or problems where the minuend digit is smaller than the subtrahend digit, worksheets alone will not bridge that gap. These specific error patterns almost always mean the child has memorized a procedure without understanding the place value behind it. Our <strong>Subtraction in 30 Days</strong> course (grades 2–4) walks through the complete progression from basic facts to borrowing across zeros, with explicit place value work at every stage. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/oalnh"
+                href="/subtraction-in-30-days"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

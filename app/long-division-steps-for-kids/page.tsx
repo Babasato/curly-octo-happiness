@@ -320,7 +320,7 @@ export default function LongDivisionSteps() {
             </p>
 
             <Link
-              href="https://homeschoolmath.gumroad.com/l/dvcgun"
+              href="/multiplication-division-foundations"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-submit-button"

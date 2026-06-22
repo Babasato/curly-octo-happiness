@@ -395,7 +395,7 @@ export default function Grade1AdditionWorksheets() {
                 For some children, the gap isn't in practice — it's in the underlying number sense that makes addition and subtraction intuitive. If your child is still counting on fingers for every fact past mid-year, struggles to understand teen numbers, or can't explain their thinking, worksheets alone won't bridge that gap. Our <strong>Number Sense Foundations</strong> course (K–2) builds the conceptual groundwork that makes fact fluency stick.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/lqywsy"
+                href="/number-sense-foundations"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

@@ -210,7 +210,7 @@ export default function HowToDivideFractions() {
             <p className="text-p" style={{ fontSize: '1.05rem', marginBottom: '1.5rem' }}>
               Keep Change Flip is memorable — but children who truly understand fractions as quantities don't need to rely on it. This course builds the conceptual foundation from the ground up: what fractions mean, how they relate to division, and why operations on fractions work the way they do.
             </p>
-            <Link href="https://homeschoolmath.gumroad.com/l/lqywsy" target="_blank" rel="noopener noreferrer" className="contact-submit-button" style={{ display: 'block', textAlign: 'center', width: '100%' }} aria-label="Purchase Number Sense Foundations course on Gumroad">
+            <Link href="/number-sense-foundations" target="_blank" rel="noopener noreferrer" className="contact-submit-button" style={{ display: 'block', textAlign: 'center', width: '100%' }} aria-label="Purchase Number Sense Foundations course on Gumroad">
               Get Number Sense Foundations on Gumroad →
             </Link>
           </div>

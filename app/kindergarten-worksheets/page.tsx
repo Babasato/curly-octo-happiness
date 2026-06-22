@@ -189,6 +189,52 @@ export default function KindergartenWorksheets() {
             </div>
           </section>
 
+          {/* Readiness Check */}
+<section style={{
+  background: 'var(--surface)',
+  border: '1px solid var(--border)',
+  borderLeft: '4px solid var(--warning)',
+  borderRadius: '8px',
+  padding: '1.5rem 2rem',
+  marginBottom: '3rem'
+}}>
+  <h2 style={{
+    fontSize: '1.25rem',
+    fontWeight: '700',
+    color: 'var(--text-primary)',
+    marginBottom: '0.75rem'
+  }}>
+    Is Your Kindergartner Ready to Start Math?
+  </h2>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    marginBottom: '1rem'
+  }}>
+    Before formal math begins, check these two things. First, can your child count
+    objects to 10 and understand that the last number said tells you how many there
+    are in total? Second, do they recognize that a group of 3 objects is more than
+    a group of 2 without counting? If both are solid, they are ready. If either is
+    shaky, start with counting activities before any written work.
+  </p>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    margin: 0
+  }}>
+    If you want a structured plan for building the number foundations that
+    kindergarten and Grade 1 depend on, the{' '}
+    <Link href="/number-sense-foundations" style={{
+      color: 'var(--primary)',
+      textDecoration: 'underline',
+      fontWeight: '600'
+    }}>
+      Number Sense Foundations course
+    </Link>
+    {' '}gives you a complete sequence to follow, no math background needed.
+  </p>
+</section>
+
           {/* Worksheet Categories - Styled Cards */}
           <section className="focus-areas" style={{marginBottom: '3rem'}}>
             <h2 style={{
@@ -630,7 +676,7 @@ export default function KindergartenWorksheets() {
                 For some children, the gap is not in practice — it is in the underlying number sense that makes counting and early operations make sense. If your child cannot count objects with one-to-one correspondence past mid-year or cannot recognize numbers without counting, worksheets alone will not bridge that gap. Our <strong>Number Sense Foundations</strong> course (K-2) builds the conceptual groundwork that makes number sense stick. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/lqywsy"
+                href="/number-sense-foundations"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

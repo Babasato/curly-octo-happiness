@@ -189,6 +189,53 @@ export default function Grade1Worksheets() {
             </div>
           </section>
 
+          {/* Readiness Check */}
+<section style={{
+  background: 'var(--surface)',
+  border: '1px solid var(--border)',
+  borderLeft: '4px solid var(--warning)',
+  borderRadius: '8px',
+  padding: '1.5rem 2rem',
+  marginBottom: '3rem'
+}}>
+  <h2 style={{
+    fontSize: '1.25rem',
+    fontWeight: '700',
+    color: 'var(--text-primary)',
+    marginBottom: '0.75rem'
+  }}>
+    Is Your First Grader Ready for Grade 1 Math?
+  </h2>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    marginBottom: '1rem'
+  }}>
+    Before starting Grade 1 math, check these two things. First, can your child
+    count reliably to 20 and understand that 14 means one group of ten and four
+    ones? Second, can they add and subtract small numbers within 10 using objects
+    or fingers without losing track? If both are solid, they are ready. If either
+    is shaky, spend time on counting and grouping activities before moving to
+    written addition.
+  </p>
+  <p style={{
+    color: 'var(--text-secondary)',
+    lineHeight: '1.7',
+    margin: 0
+  }}>
+    If you want a structured plan for building the number sense foundation that
+    Grade 1 and Grade 2 depend on, the{' '}
+    <Link href="/number-sense-foundations" style={{
+      color: 'var(--primary)',
+      textDecoration: 'underline',
+      fontWeight: '600'
+    }}>
+      Number Sense Foundations course
+    </Link>
+    {' '}walks through the full sequence in a format any parent can follow at home.
+  </p>
+</section>
+
           {/* Worksheet Categories Section - Styled Cards */}
           <section className="focus-areas" style={{marginBottom: '3rem'}}>
             <h2 style={{
@@ -630,7 +677,7 @@ export default function Grade1Worksheets() {
                 For some children, the gap isn't in practice — it's in the underlying number sense that makes addition and subtraction intuitive. If your child is still counting on fingers for every fact past mid-year, struggles to understand teen numbers, or can't explain their thinking, worksheets alone won't bridge that gap. Our <strong>Number Sense Foundations</strong> course (K–2) builds the conceptual groundwork that makes fact fluency stick. You can also browse all available courses and planners on the <Link href="/resources" style={{color: 'var(--primary)', textDecoration: 'underline'}}>resources page</Link>.
               </p>
               <a
-                href="https://homeschoolmath.gumroad.com/l/lqywsy"
+                href="/number-sense-foundations"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

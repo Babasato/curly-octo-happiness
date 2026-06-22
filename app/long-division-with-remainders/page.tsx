@@ -209,7 +209,7 @@ export default function LongDivisionWithRemainders() {
             <p className="text-p" style={{ fontSize: '1.05rem', marginBottom: '1.5rem' }}>
               Long division with remainders is the point where many kids hit a wall — not because it's too hard, but because the conceptual link between multiplication and division was never made solid. This course builds both operations together from equal groups through to long division, so the procedure makes sense rather than being a set of steps to memorise.
             </p>
-            <Link href="https://homeschoolmath.gumroad.com/l/dvcgun" target="_blank" rel="noopener noreferrer" className="contact-submit-button" style={{ display: 'block', textAlign: 'center', width: '100%' }} aria-label="Purchase Multiplication and Division Foundations course on Gumroad">
+            <Link href="/multiplication-division-foundations" target="_blank" rel="noopener noreferrer" className="contact-submit-button" style={{ display: 'block', textAlign: 'center', width: '100%' }} aria-label="Purchase Multiplication and Division Foundations course on Gumroad">
               Get Multiplication & Division Foundations on Gumroad →
             </Link>
           </div>

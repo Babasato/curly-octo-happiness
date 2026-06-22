@@ -52,7 +52,7 @@ export default function FreeMultiplicationGuide() {
           </p>
           <div className="practice-cta-container">
             <a
-              href="https://homeschoolmath.gumroad.com/l/wdkid"
+              href="/free-multiplication-guide"
               target="_blank"
               rel="noopener noreferrer"
               className="practice-button"
@@ -132,7 +132,7 @@ export default function FreeMultiplicationGuide() {
               ))}
             </div>
             <a
-              href="https://homeschoolmath.gumroad.com/l/wdkid"
+              href="/free-multiplication-guide"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-submit-button"
@@ -170,7 +170,7 @@ export default function FreeMultiplicationGuide() {
             </p>
             <div className="practice-cta-container">
               <a
-                href="https://homeschoolmath.gumroad.com/l/wdkid"
+                href="/free-multiplication-guide"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="practice-cta-button"

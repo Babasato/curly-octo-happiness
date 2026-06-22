@@ -211,7 +211,7 @@ export default function HowToMultiplyFractions() {
             <p className="text-p" style={{ fontSize: '1.05rem', marginBottom: '1.5rem' }}>
               Fraction operations make sense when children genuinely understand what a fraction represents — equal parts of a whole, part of a group, a point on a number line. This course builds that conceptual foundation in the early years so that multiplying and dividing fractions later on feels logical rather than like rules to memorise.
             </p>
-            <Link href="https://homeschoolmath.gumroad.com/l/lqywsy" target="_blank" rel="noopener noreferrer" className="contact-submit-button" style={{ display: 'block', textAlign: 'center', width: '100%' }} aria-label="Purchase Number Sense Foundations course on Gumroad">
+            <Link href="/number-sense-foundations" target="_blank" rel="noopener noreferrer" className="contact-submit-button" style={{ display: 'block', textAlign: 'center', width: '100%' }} aria-label="Purchase Number Sense Foundations course on Gumroad">
               Get Number Sense Foundations on Gumroad →
             </Link>
           </div>
