@@ -403,7 +403,8 @@ export default function Resources() {
                 boxSizing: 'border-box'
               }}
             >
-              Download Free on Gumroad
+              Enter 0 in the price field to download at no cost. No payment required.
+Download Free on Gumroad
             </Link>
           </div>
 
@@ -458,7 +459,8 @@ export default function Resources() {
                 boxSizing: 'border-box'
               }}
             >
-              Download Free on Gumroad
+              Enter 0 in the price field to download at no cost. No payment required.
+Download Free on Gumroad
             </Link>
           </div>
 
@@ -513,7 +515,8 @@ export default function Resources() {
                 boxSizing: 'border-box'
               }}
             >
-              Download Free on Gumroad
+              Enter 0 in the price field to download at no cost. No payment required.
+Download Free on Gumroad
             </Link>
           </div>
 

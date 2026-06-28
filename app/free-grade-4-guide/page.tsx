@@ -60,7 +60,8 @@ export default function FreeGrade4Guide() {
               style={{ background: '#C8973A' }}
               aria-label="Download the free Grade 4 readiness guide"
             >
-              Download Free — No Registration Required
+              Enter 0 in the price field to download at no cost. No payment information required.
+Download Free — No Registration Required
             </a>
             <p className="practice-info-box">PDF · Instant download · Print at home</p>
           </div>

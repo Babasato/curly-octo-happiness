@@ -59,7 +59,8 @@ export default function FreeMultiplicationGuide() {
               style={{ background: '#2A7F7F' }}
               aria-label="Download the free multiplication guide"
             >
-              Download Free — No Registration Required
+              Enter 0 in the price field to download at no cost. No payment information required.
+Download Free — No Registration Required
             </a>
             <p className="practice-info-box">PDF · Instant download · Print at home</p>
           </div>

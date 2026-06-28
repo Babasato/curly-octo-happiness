@@ -81,7 +81,8 @@ export default function FreeWordProblemsGuide() {
               className="practice-button"
               style={{ background: '#92400E' }}
             >
-              Download Free — No Registration Required
+              Enter 0 in the price field to download at no cost. No payment information required.
+Download Free — No Registration Required
             </a>
             <p className="practice-info-box">PDF · Instant download · Print at home</p>
           </div>
