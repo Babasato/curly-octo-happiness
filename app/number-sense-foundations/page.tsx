@@ -153,6 +153,7 @@ export default function NumberSenseFoundations() {
           <Link
             href="https://homeschoolmath.gumroad.com/l/lqywsy"
             target="_blank"
+            
             style={{
               display: 'inline-block',
               background: 'var(--primary)',
@@ -428,6 +429,7 @@ export default function NumberSenseFoundations() {
           <Link
             href="https://homeschoolmath.gumroad.com/l/lqywsy"
             target="_blank"
+            
             style={{
               display: 'inline-block',
               background: 'white',
