@@ -2,7 +2,7 @@
 'use client'
 
 import { usePathname, useSearchParams } from 'next/navigation'
-import { useEffect, Suspense } from 'react' //
+import { useEffect, Suspense } from 'react'
 
 declare global {
   interface Window {
@@ -19,8 +19,9 @@ function AnalyticsInner() {
     const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '')
 
     if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('config', 'G-20S3GKW7QB', {
+      window.gtag('event', 'page_view', {
         page_path: url,
+        page_title: document.title,
       })
     }
   }, [pathname, searchParams])
