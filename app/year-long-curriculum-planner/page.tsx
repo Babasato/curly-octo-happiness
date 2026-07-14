@@ -40,7 +40,7 @@ export default function YearLongCurriculumPlanner() {
         <section className="practice-hero">
           <div className="practice-badge" style={{ background: '#1B2A4A' }}>Free Planning Tool</div>
           <h1 className="practice-title">Plan Your Entire Homeschool Year in 20 Minutes</h1>
-          <p className="practice-subtitle" style={{ color: '#1B2A4A' }}>
+          <p className="practice-subtitle" style={{ color: '#3B82F6' }}>
             The Year-Long Curriculum Planner Generator
           </p>
           <p className="practice-description">
@@ -130,9 +130,9 @@ export default function YearLongCurriculumPlanner() {
             </h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', margin: 0, lineHeight: '1.6' }}>
               This planner comes bundled at no extra cost with{' '}
-              <Link href="/subtraction-in-30-days" style={{ color: '#1B2A4A', fontWeight: '600' }}>Subtraction in 30 Days</Link>{' '}
+              <Link href="/subtraction-in-30-days" style={{ color: '#3B82F6', fontWeight: '600' }}>Subtraction in 30 Days</Link>{' '}
               and{' '}
-              <Link href="/multiplication-division-foundations" style={{ color: '#1B2A4A', fontWeight: '600' }}>Multiplication & Division Foundations</Link>.
+              <Link href="/multiplication-division-foundations" style={{ color: '#3B82F6', fontWeight: '600' }}>Multiplication & Division Foundations</Link>.
               If you already own either course, check your Gumroad library — you may already have this.
             </p>
           </div>
