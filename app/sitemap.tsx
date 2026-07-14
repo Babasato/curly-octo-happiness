@@ -47,6 +47,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/subtraction-in-30-days', priority: 0.9 },
     { path: '/multiplication-division-foundations', priority: 0.9 },
 
+    // Free planning tool pages (priority 0.9)
+    { path: '/notion-progress-dashboard', priority: 0.9 },
+    { path: '/year-long-curriculum-planner', priority: 0.9 },
+    { path: '/weekly-math-planner', priority: 0.9 },
+
     
     // Operation practice hubs (priority 0.9)
     { path: '/addition-practice', priority: 0.9 },

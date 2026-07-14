@@ -386,26 +386,42 @@ export default function Resources() {
                 Track your student's entire mathematical journey in one system. Auto-calculate teaching hours, visualize skill mastery with progress bars, and generate compliance portfolios. 13 pre-built views, smart alerts for struggling skills, multi-student tracking.
               </p>
             </div>
-            <Link
-              href="https://homeschoolmath.gumroad.com/l/ahxceu"
-              target="_blank"
-              className="contact-submit-button"
-              style={{
-                display: 'block',
-                textAlign: 'center',
-                textDecoration: 'none',
-                fontSize: '0.9rem',
-                background: 'var(--primary)',
-                color: 'white',
-                padding: '0.75rem',
-                borderRadius: '8px',
-                width: '100%',
-                boxSizing: 'border-box'
-              }}
-            >
-              Enter 0 in the price field to download at no cost. No payment required.
-Download Free on Gumroad
-            </Link>
+            <div>
+              <Link
+                href="https://homeschoolmath.gumroad.com/l/ahxceu"
+                target="_blank"
+                className="contact-submit-button"
+                style={{
+                  display: 'block',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  fontSize: '0.9rem',
+                  background: 'var(--primary)',
+                  color: 'white',
+                  padding: '0.75rem',
+                  borderRadius: '8px',
+                  width: '100%',
+                  boxSizing: 'border-box'
+                }}
+              >
+                Enter 0 in the price field to download at no cost. No payment required.
+                Download Free on Gumroad
+              </Link>
+              <Link
+                href="/notion-progress-dashboard"
+                style={{
+                  display: 'block',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  color: 'var(--primary)',
+                  fontSize: '0.85rem',
+                  fontWeight: '600',
+                  marginTop: '0.5rem'
+                }}
+              >
+                View full details →
+              </Link>
+            </div>
           </div>
 
           {/* Year-Long Planner */}
@@ -442,26 +458,42 @@ Download Free on Gumroad
                 Map out your entire academic year in minutes. Set high-level objectives, align with standards, and generate a comprehensive PDF roadmap to keep your teaching on track all year.
               </p>
             </div>
-            <Link
-              href="https://homeschoolmath.gumroad.com/l/btoecv"
-              target="_blank"
-              className="contact-submit-button"
-              style={{
-                display: 'block',
-                textAlign: 'center',
-                textDecoration: 'none',
-                fontSize: '0.9rem',
-                background: 'var(--primary)',
-                color: 'white',
-                padding: '0.75rem',
-                borderRadius: '8px',
-                width: '100%',
-                boxSizing: 'border-box'
-              }}
-            >
-              Enter 0 in the price field to download at no cost. No payment required.
-Download Free on Gumroad
-            </Link>
+            <div>
+              <Link
+                href="https://homeschoolmath.gumroad.com/l/btoecv"
+                target="_blank"
+                className="contact-submit-button"
+                style={{
+                  display: 'block',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  fontSize: '0.9rem',
+                  background: 'var(--primary)',
+                  color: 'white',
+                  padding: '0.75rem',
+                  borderRadius: '8px',
+                  width: '100%',
+                  boxSizing: 'border-box'
+                }}
+              >
+                Enter 0 in the price field to download at no cost. No payment required.
+                Download Free on Gumroad
+              </Link>
+              <Link
+                href="/year-long-curriculum-planner"
+                style={{
+                  display: 'block',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  color: 'var(--primary)',
+                  fontSize: '0.85rem',
+                  fontWeight: '600',
+                  marginTop: '0.5rem'
+                }}
+              >
+                View full details →
+              </Link>
+            </div>
           </div>
 
           {/* Weekly Planner */}
@@ -498,26 +530,42 @@ Download Free on Gumroad
                 The perfect companion for daily teaching. Organize lessons, track manipulatives, and document student reflections. Pairs directly with the course structure for a complete teaching system.
               </p>
             </div>
-            <Link
-              href="https://homeschoolmath.gumroad.com/l/bkltc"
-              target="_blank"
-              className="contact-submit-button"
-              style={{
-                display: 'block',
-                textAlign: 'center',
-                textDecoration: 'none',
-                fontSize: '0.9rem',
-                background: 'var(--primary)',
-                color: 'white',
-                padding: '0.75rem',
-                borderRadius: '8px',
-                width: '100%',
-                boxSizing: 'border-box'
-              }}
-            >
-              Enter 0 in the price field to download at no cost. No payment required.
-Download Free on Gumroad
-            </Link>
+            <div>
+              <Link
+                href="https://homeschoolmath.gumroad.com/l/bkltc"
+                target="_blank"
+                className="contact-submit-button"
+                style={{
+                  display: 'block',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  fontSize: '0.9rem',
+                  background: 'var(--primary)',
+                  color: 'white',
+                  padding: '0.75rem',
+                  borderRadius: '8px',
+                  width: '100%',
+                  boxSizing: 'border-box'
+                }}
+              >
+                Enter 0 in the price field to download at no cost. No payment required.
+                Download Free on Gumroad
+              </Link>
+              <Link
+                href="/weekly-math-planner"
+                style={{
+                  display: 'block',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  color: 'var(--primary)',
+                  fontSize: '0.85rem',
+                  fontWeight: '600',
+                  marginTop: '0.5rem'
+                }}
+              >
+                View full details →
+              </Link>
+            </div>
           </div>
 
         </div>
