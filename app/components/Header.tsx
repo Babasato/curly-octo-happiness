@@ -9,7 +9,7 @@ export default function Header() {
       <div className="header-content">
         <div className="brand">
           <Link href="/" className="home-link">
-            <h1 className="brand-title">Homeschool Math</h1>
+            <p className="brand-title">Homeschool Math</p>
           </Link>
         </div>
 
