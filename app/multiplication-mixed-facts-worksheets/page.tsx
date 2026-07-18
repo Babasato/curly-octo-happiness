@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Mixed Multiplication Facts Worksheets | Free Printable 3-5 Grade Math',
+  title: 'Mixed Multiplication Facts Worksheets | Free Practice',
   description: 'Free printable mixed multiplication facts worksheets for 3rd-5th grade. Random-order practice with facts through 12×12. Build automatic recall and break sequential dependency.',
   alternates: {
     canonical: 'https://homeschoolmath.site/multiplication-mixed-facts-worksheets',

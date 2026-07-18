@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Kindergarten Counting Worksheets | Free Printable Kindergarten Counting Practice',
-  description: 'Free printable kindergarten counting worksheets covering counting objects, number recognition, tracing numbers, and counting to 100. Perfect for homeschool and classroom use.',
+  title: 'Kindergarten Counting Worksheets | Free Practice',
+  description: 'Free printable kindergarten counting worksheets covering counting objects, number recognition, tracing numbers, and counting to 100.',
   alternates: {
     canonical: 'https://homeschoolmath.site/kindergarten-counting-worksheets',
   },

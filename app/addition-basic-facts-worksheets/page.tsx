@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Basic Addition Facts Worksheets | Free Printable K-2 Math Practice',
+  title: 'Basic Addition Facts Worksheets | Free Practice',
   description: 'Free printable basic addition facts worksheets for K-2. Practice sums within 10, 15, and 20 with horizontal and vertical formats. Perfect for building fact fluency.',
   alternates: {
     canonical: 'https://homeschoolmath.site/addition-basic-facts-worksheets',

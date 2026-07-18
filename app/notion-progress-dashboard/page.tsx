@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Notion Math Progress Dashboard | Free Homeschool Tracking Template | HomeschoolMath.site',
+  title: 'Notion Math Progress Dashboard | Free Template',
   description: 'Free Notion template for homeschool math tracking. Auto-calculating teaching hours, visual mastery progress bars, and 30-second compliance portfolio exports.',
   alternates: {
     canonical: 'https://homeschoolmath.site/notion-progress-dashboard',

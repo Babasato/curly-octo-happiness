@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Multiplication Fact Families Worksheets | Free Printable 3-5 Grade Math',
+  title: 'Multiplication Fact Families Worksheets | Free Practice',
   description: 'Free printable multiplication fact families worksheets for 3rd-5th grade. Practice the relationship between multiplication and division. Build both operations simultaneously.',
   alternates: {
     canonical: 'https://homeschoolmath.site/multiplication-fact-families-worksheets',

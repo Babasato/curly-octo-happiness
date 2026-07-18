@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Simplify Fractions | Step-by-Step Visual Guide for Kids | HomeschoolMath.site',
+  title: 'How to Simplify Fractions | Step-by-Step Visual Guide for Kids',
   description: 'Learn how to simplify fractions (reduce to lowest terms) with a simple step-by-step visual guide. Perfect for 4th-6th graders mastering fractions.',
   alternates: {
     canonical: 'https://homeschoolmath.site/how-to-simplify-fractions',

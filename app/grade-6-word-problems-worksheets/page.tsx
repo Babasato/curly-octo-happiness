@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Sixth Grade Word Problems Worksheets | Free Printable 6th Grade Math Word Problems',
-  description: 'Free printable 6th grade math word problems covering ratios, percentages, fractions, decimals, measurement conversions, and multi-step problems. Perfect for homeschool and classroom use.',
+  title: 'Sixth Grade Word Problems Worksheets | Free Practice',
+  description: 'Free printable 6th grade math word problems covering ratios, percentages, fractions, decimals, measurement conversions, and multi-step problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-6-word-problems-worksheets',
   },

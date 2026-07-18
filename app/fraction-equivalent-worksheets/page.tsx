@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Equivalent Fractions Worksheets | Free Printable 3rd-5th Grade Math',
+  title: 'Equivalent Fractions Worksheets | Free Practice',
   description: 'Free printable equivalent fractions worksheets for 3rd-5th grade. Practice finding equivalent fractions using visual models and multiplication/division.',
   alternates: {
     canonical: 'https://homeschoolmath.site/fraction-equivalent-worksheets',

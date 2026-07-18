@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'First Grade Subtraction Worksheets | Free Printable 1st Grade Subtraction Practice',
-  description: 'Free printable 1st grade subtraction worksheets within 20. Practice take-away, comparison problems, fact families, and subtraction word problems. Perfect for homeschool and classroom use.',
+  title: 'First Grade Subtraction Worksheets | Free Practice',
+  description: 'Free printable 1st grade subtraction worksheets within 20. Practice take-away, comparison problems, fact families, and subtraction word problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-1-subtraction-worksheets',
   },

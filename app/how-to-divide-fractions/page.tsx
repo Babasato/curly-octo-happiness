@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Divide Fractions for Kids (Keep Change Flip) | HomeschoolMath.site',
+  title: 'How to Divide Fractions for Kids (Keep Change Flip)',
   description: 'Learn how to divide fractions using the Keep Change Flip method. Simple step-by-step visual guide for kids in grades 5–6. Includes worked examples and why it works.',
   alternates: {
     canonical: 'https://homeschoolmath.site/how-to-divide-fractions',

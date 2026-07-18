@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fourth Grade Division Worksheets | Free Printable 4th Grade Division Practice',
+  title: 'Fourth Grade Division Worksheets | Free Practice',
   description: 'Free printable 4th grade division worksheets covering long division, 4-digit by 1-digit division with remainders, interpreting remainders, and word problems. Perfect for homeschool and classroom use.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-4-division-worksheets',

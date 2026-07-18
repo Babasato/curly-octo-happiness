@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Second Grade Addition Worksheets | Free Printable 2nd Grade Addition Practice',
+  title: 'Second Grade Addition Worksheets | Free Practice',
   description: 'Free printable 2nd grade addition worksheets within 100. Practice two-digit addition with and without regrouping, mental math strategies, and word problems. Perfect for homeschool and classroom use.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-2-addition-worksheets',

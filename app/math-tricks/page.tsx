@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Math Tricks & Explanations | Free Visual Guides for Kids | HomeschoolMath.site',
+  title: 'Math Tricks & Explanations | Free Visual Guides for Kids',
   description: 'Free visual guides explaining key math concepts: multiplication tricks, borrowing in subtraction, place value, long division, fractions, and more. Perfect for homeschool parents.',
   alternates: {
     canonical: 'https://homeschoolmath.site/math-tricks',

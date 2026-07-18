@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Long Division Steps | Step-by-Step Visual Guide for Kids | HomeschoolMath.site',
+  title: 'Long Division Steps | Step-by-Step Visual Guide for Kids',
   description: 'Learn long division with a simple step-by-step visual guide using the "Does McDonalds Sell Burgers?" method. Perfect for 4th-6th graders.',
   alternates: {
     canonical: 'https://homeschoolmath.site/long-division-steps-for-kids',

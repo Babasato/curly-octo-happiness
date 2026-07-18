@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fractions Practice Worksheets | Free Printable Math Sheets 3rd-6th Grade',
+  title: 'Fractions Practice Worksheets | Free Practice',
   description: 'Master fractions with custom practice sheets. Generate free printable fraction worksheets for 3rd through 6th grade with basic concepts, equivalent fractions, and operations.',
   alternates: {
     canonical: 'https://homeschoolmath.site/fractions-practice',

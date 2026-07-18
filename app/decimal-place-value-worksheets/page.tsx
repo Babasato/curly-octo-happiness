@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Decimal Place Value Worksheets | Free Printable 4th-5th Grade Math',
+  title: 'Decimal Place Value Worksheets | Free Practice',
   description: 'Free printable decimal place value worksheets for 4th-5th grade. Practice identifying tenths, hundredths, and thousandths with hundredths grid visuals.',
   alternates: {
     canonical: 'https://homeschoolmath.site/decimal-place-value-worksheets',

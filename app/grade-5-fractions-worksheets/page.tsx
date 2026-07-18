@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fifth Grade Fractions Worksheets | Free Printable 5th Grade Fractions Practice',
+  title: 'Fifth Grade Fractions Worksheets | Free Practice',
   description: 'Free printable 5th grade fractions worksheets covering adding and subtracting fractions with unlike denominators, multiplying fractions, dividing fractions, and fraction word problems. Perfect for homeschool and classroom use.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-5-fractions-worksheets',

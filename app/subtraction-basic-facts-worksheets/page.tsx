@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Basic Subtraction Facts Worksheets | Free Printable K-2 Math Practice',
+  title: 'Basic Subtraction Facts Worksheets | Free Practice',
   description: 'Free printable basic subtraction facts worksheets for K-2. Practice differences within 10, 15, and 20 with horizontal and vertical formats. Build automatic recall with random-order practice that stops sequential chanting.',
   alternates: {
     canonical: 'https://homeschoolmath.site/subtraction-basic-facts-worksheets',

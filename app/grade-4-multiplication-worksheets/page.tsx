@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fourth Grade Multiplication Worksheets | Free Printable 4th Grade Multiplication Practice',
+  title: 'Fourth Grade Multiplication Worksheets | Free Practice',
   description: 'Free printable 4th grade multiplication worksheets covering multi-digit multiplication, 2-digit by 2-digit, 4-digit by 1-digit, area models, and word problems. Perfect for homeschool and classroom use.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-4-multiplication-worksheets',

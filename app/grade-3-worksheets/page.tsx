@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Third Grade Math Worksheets | Free Printable 3rd Grade Math Practice',
-  description: 'Free printable 3rd grade math worksheets covering multiplication, division, fractions, area, perimeter, and word problems. Perfect for homeschool and classroom use.',
+  title: 'Third Grade Math Worksheets | Free Practice',
+  description: 'Free printable 3rd grade math worksheets covering multiplication, division, fractions, area, perimeter, and word problems.',
 alternates: {
     canonical: 'https://homeschoolmath.site/grade-3-worksheets',
   },

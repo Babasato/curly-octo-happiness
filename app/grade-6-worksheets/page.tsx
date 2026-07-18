@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Sixth Grade Math Worksheets | Free Printable 6th Grade Math Practice',
-  description: 'Free printable 6th grade math worksheets covering ratios, proportions, expressions, equations, statistics, and geometry. Perfect for homeschool and classroom use.',
+  title: 'Sixth Grade Math Worksheets | Free Practice',
+  description: 'Free printable 6th grade math worksheets covering ratios, proportions, expressions, equations, statistics, and geometry.',
 alternates: {
     canonical: 'https://homeschoolmath.site/grade-6-worksheets',
   },

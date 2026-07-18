@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Decimal Word Problems Worksheets | Free Printable 5th-6th Grade Math',
+  title: 'Decimal Word Problems Worksheets | Free Practice',
   description: 'Free printable decimal word problems worksheets for 5th-6th grade. Practice real-world decimal scenarios involving money, measurement, and data.',
   alternates: {
     canonical: 'https://homeschoolmath.site/decimal-word-problems-worksheets',

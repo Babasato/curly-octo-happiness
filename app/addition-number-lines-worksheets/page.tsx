@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Number Line Addition Worksheets | Free Printable K-2 Math Practice',
+  title: 'Number Line Addition Worksheets | Free Practice',
   description: 'Free printable number line addition worksheets for K-2. Practice addition by jumping forward on number lines. Perfect for visual learners building conceptual understanding.',
   alternates: {
     canonical: 'https://homeschoolmath.site/addition-number-lines-worksheets',

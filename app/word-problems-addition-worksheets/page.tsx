@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Addition Word Problems Worksheets | Free Printable K-4 Math Practice',
+  title: 'Addition Word Problems Worksheets | Free Practice',
   description: 'Free printable addition word problems worksheets for K-4. Practice combining, totaling, and "in all" scenarios with real-world math problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/word-problems-addition-worksheets',

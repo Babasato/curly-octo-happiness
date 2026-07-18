@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Mixed Operations Word Problems Worksheets | Free Printable 4-6 Grade Math',
+  title: 'Mixed Operations Word Problems Worksheets | Free Practice',
   description: 'Free printable mixed operations word problems worksheets for 4th-6th grade. Practice choosing the correct operation without cues with real-world math problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/word-problems-mixed-operations-worksheets',

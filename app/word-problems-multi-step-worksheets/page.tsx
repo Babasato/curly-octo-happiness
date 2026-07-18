@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Multi-Step Word Problems Worksheets | Free Printable 3-6 Grade Math',
+  title: 'Multi-Step Word Problems Worksheets | Free Practice',
   description: 'Free printable multi-step word problems worksheets for 3rd-6th grade. Practice two or more operations in sequence with real-world math problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/word-problems-multi-step-worksheets',

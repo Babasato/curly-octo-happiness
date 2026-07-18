@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Subtraction Take-Away Worksheets | Free Printable K-2 Math Practice',
+  title: 'Subtraction Take-Away Worksheets | Free Practice',
   description: 'Free printable subtraction take-away worksheets for K-2. Practice subtraction as removal with simple word problems and visual aids. Build the conceptual understanding that subtraction means "taking away."',
   alternates: {
     canonical: 'https://homeschoolmath.site/subtraction-take-away-worksheets',

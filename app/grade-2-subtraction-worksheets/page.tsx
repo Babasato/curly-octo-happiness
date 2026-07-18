@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Second Grade Subtraction Worksheets | Free Printable 2nd Grade Subtraction Practice',
+  title: 'Second Grade Subtraction Worksheets | Free Practice',
   description: 'Free printable 2nd grade subtraction worksheets within 100. Practice two-digit subtraction with and without borrowing/regrouping, mental math strategies, and word problems. Perfect for homeschool and classroom use.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-2-subtraction-worksheets',

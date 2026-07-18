@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fractions from Scratch — Free Concept Foundation Guide | HomeschoolMath.site',
+  title: 'Fractions from Scratch — Free Concept Foundation Guide',
   description: 'Free fractions guide for homeschool parents. Build the four core fraction concepts properly — what fractions are, comparing, equivalence, and number lines. Grades 3–5.',
   alternates: {
     canonical: 'https://homeschoolmath.site/free-fractions-guide',

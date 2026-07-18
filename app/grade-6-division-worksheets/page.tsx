@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Sixth Grade Division Worksheets | Free Printable 6th Grade Division Practice',
-  description: 'Free printable 6th grade division worksheets covering long division with multi-digit divisors, decimal division, fraction division, and word problems. Perfect for homeschool and classroom use.',
+  title: 'Sixth Grade Division Worksheets | Free Practice',
+  description: 'Free printable 6th grade division worksheets covering long division with multi-digit divisors, decimal division, fraction division, and word problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-6-division-worksheets',
   },

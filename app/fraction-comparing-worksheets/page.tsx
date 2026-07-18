@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Comparing Fractions Worksheets | Free Printable 4th-5th Grade Math',
+  title: 'Comparing Fractions Worksheets | Free Practice',
   description: 'Free printable comparing fractions worksheets for 4th-5th grade. Practice comparing fractions with like and unlike denominators using benchmarks and equivalence.',
   alternates: {
     canonical: 'https://homeschoolmath.site/fraction-comparing-worksheets',

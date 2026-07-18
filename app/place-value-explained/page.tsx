@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Place Value Explained | Free Visual Guide for Kids | HomeschoolMath.site',
+  title: 'Place Value Explained | Free Visual Guide for Kids',
   description: 'Learn place value with a simple visual guide. Understand ones, tens, hundreds, and why the position of a digit matters. Perfect for 1st-3rd graders.',
   alternates: {
     canonical: 'https://homeschoolmath.site/place-value-explained',

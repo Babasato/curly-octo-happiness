@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fifth Grade Division Worksheets | Free Printable 5th Grade Division Practice',
+  title: 'Fifth Grade Division Worksheets | Free Practice',
   description: 'Free printable 5th grade division worksheets covering long division with 2-digit divisors, 4-digit dividends, remainders, and interpreting remainders in word problems. Perfect for homeschool and classroom use.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-5-division-worksheets',

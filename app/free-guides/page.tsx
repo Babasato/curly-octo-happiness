@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Free Homeschool Math Guides | Download Free Parent Resources | HomeschoolMath.site',
+  title: 'Free Homeschool Math Guides | Download Free Parent Resources',
   description: 'Download free printable math guides for homeschool parents. Grade 4 readiness checklist, multiplication starter guide, fractions foundation guide, and word problems strategy guide — all free, no registration required.',
   alternates: {
     canonical: 'https://homeschoolmath.site/free-guides',  // Changed from free-courses

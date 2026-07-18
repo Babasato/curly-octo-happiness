@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'First Grade Word Problems Worksheets | Free Printable 1st Grade Math Story Problems',
+  title: 'First Grade Word Problems Worksheets | Free Practice',
   description: 'Free printable 1st grade word problems worksheets for addition and subtraction within 20. Includes take-away, comparison, and missing addend story problems with visual supports.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-1-word-problems-worksheets',

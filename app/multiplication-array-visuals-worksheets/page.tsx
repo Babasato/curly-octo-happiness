@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Multiplication Array Visuals Worksheets | Free Printable 2-3 Grade Math',
+  title: 'Multiplication Array Visuals Worksheets | Free Practice',
   description: 'Free printable multiplication array worksheets for 2nd-3rd grade. Visual multiplication practice with rows and columns. Build conceptual understanding of multiplication as equal groups.',
   alternates: {
     canonical: 'https://homeschoolmath.site/multiplication-array-visuals-worksheets',

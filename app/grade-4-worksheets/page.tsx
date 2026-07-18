@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fourth Grade Math Worksheets | Free Printable 4th Grade Math Practice',
-  description: 'Free printable 4th grade math worksheets covering multiplication, division, fractions, decimals, geometry, and measurement. Perfect for homeschool and classroom use.',
+  title: 'Fourth Grade Math Worksheets | Free Practice',
+  description: 'Free printable 4th grade math worksheets covering multiplication, division, fractions, decimals, geometry, and measurement.',
 alternates: {
     canonical: 'https://homeschoolmath.site/grade-4-worksheets',
   },

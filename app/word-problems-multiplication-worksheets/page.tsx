@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Multiplication Word Problems Worksheets | Free Printable 3-5 Grade Math',
+  title: 'Multiplication Word Problems Worksheets | Free Practice',
   description: 'Free printable multiplication word problems worksheets for 3rd-5th grade. Practice equal groups, arrays, and "each" scenarios with real-world math problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/word-problems-multiplication-worksheets',

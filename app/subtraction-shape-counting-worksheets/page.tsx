@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Subtraction Shape Counting Worksheets | Free Printable K-1 Math Practice',
+  title: 'Subtraction Shape Counting Worksheets | Free Practice',
   description: 'Free printable subtraction shape counting worksheets for K-1. Count and subtract circles, squares, and triangles. Perfect for visual learners building conceptual understanding of take-away.',
   alternates: {
     canonical: 'https://homeschoolmath.site/subtraction-shape-counting-worksheets',

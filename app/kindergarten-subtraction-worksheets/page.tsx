@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Kindergarten Subtraction Worksheets | Free Printable Kindergarten Subtraction Practice',
-  description: 'Free printable kindergarten subtraction worksheets within 10. Practice subtracting with pictures, crossing out objects, and simple equations. Perfect for homeschool and classroom use.',
+  title: 'Kindergarten Subtraction Worksheets | Free Practice',
+  description: 'Free printable kindergarten subtraction worksheets within 10. Practice subtracting with pictures, crossing out objects, and simple equations.',
   alternates: {
     canonical: 'https://homeschoolmath.site/kindergarten-subtraction-worksheets',
   },

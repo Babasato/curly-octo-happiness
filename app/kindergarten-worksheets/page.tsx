@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Kindergarten Math Worksheets | Free Printable Math Practice for Kindergarten',
+  title: 'Kindergarten Math Worksheets | Free Practice',
   description: 'Free printable kindergarten math worksheets covering counting, numbers, shapes, patterns, and basic addition and subtraction. Perfect for homeschool and early learning.',
   alternates: {
     canonical: 'https://homeschoolmath.site/kindergarten-worksheets',

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Two-Digit Subtraction No Borrowing Worksheets | Free Printable 2-3 Grade Math',
+  title: 'Two-Digit Subtraction No Borrowing Worksheets | Free Practice',
   description: 'Free printable two-digit subtraction without borrowing worksheets for 2nd and 3rd grade. Practice subtracting tens and ones with correct place value alignment. Master column subtraction before borrowing.',
   alternates: {
     canonical: 'https://homeschoolmath.site/subtraction-two-digit-no-borrowing-worksheets',

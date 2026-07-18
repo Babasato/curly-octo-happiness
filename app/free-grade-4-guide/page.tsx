@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Is My Child Ready for Grade 4 Math? Free Diagnostic Guide | HomeschoolMath.site',
+  title: 'Is My Child Ready for Grade 4 Math? Free Diagnostic Guide',
   description: 'Free diagnostic guide for homeschool parents. 20-item checklist, 15 practice problems, scoring guide, and 4-week action plan. Know exactly where your child stands before Grade 4.',
   alternates: {
     canonical: 'https://homeschoolmath.site/free-grade-4-guide',

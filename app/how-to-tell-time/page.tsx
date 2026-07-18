@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Tell Time | A Simple Visual Guide for Kids | HomeschoolMath.site',
+  title: 'How to Tell Time | A Simple Visual Guide for Kids',
   description: 'Learn how to tell time on an analog clock step by step. Understand the hour hand, minute hand, and how to read minutes past and minutes to the hour.',
   alternates: {
     canonical: 'https://homeschoolmath.site/how-to-tell-time',

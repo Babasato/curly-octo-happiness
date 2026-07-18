@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Multiply Fractions Step by Step | Visual Guide | HomeschoolMath.site',
+  title: 'How to Multiply Fractions Step by Step | Visual Guide',
   description: 'Learn how to multiply fractions with a simple step-by-step visual guide. Multiply tops, multiply bottoms, simplify. Works every time for kids in grades 4–6.',
   alternates: {
     canonical: 'https://homeschoolmath.site/how-to-multiply-fractions',

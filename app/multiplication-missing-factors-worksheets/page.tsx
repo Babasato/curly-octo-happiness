@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Missing Factors Multiplication Worksheets | Free Printable 3-5 Grade Math',
+  title: 'Missing Factors Multiplication Worksheets | Free Practice',
   description: 'Free printable missing factors multiplication worksheets for 3rd-5th grade. Practice solving for the unknown number in multiplication equations. Build algebraic thinking skills.',
   alternates: {
     canonical: 'https://homeschoolmath.site/multiplication-missing-factors-worksheets',

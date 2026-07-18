@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Read Decimals | A Simple Visual Guide for Kids | HomeschoolMath.site',
+  title: 'How to Read Decimals | A Simple Visual Guide for Kids',
   description: 'Learn how to read decimals step by step. Understand tenths, hundredths, thousandths, and how to say decimal numbers correctly. Perfect for 4th-5th graders.',
   alternates: {
     canonical: 'https://homeschoolmath.site/how-to-read-decimals',

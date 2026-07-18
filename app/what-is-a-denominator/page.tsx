@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'What Is a Denominator? | Easy Explanation for Kids | HomeschoolMath.site',
+  title: 'What Is a Denominator? | Easy Explanation for Kids',
   description: 'Learn what a denominator is and why it matters. Simple visual guide for kids in grades 3–5 with real-life examples. The perfect pair to our numerator guide.',
   alternates: {
     canonical: 'https://homeschoolmath.site/what-is-a-denominator',

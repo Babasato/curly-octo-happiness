@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'What Is a Numerator? | Simple Fraction Guide for Kids | HomeschoolMath.site',
+  title: 'What Is a Numerator? | Simple Fraction Guide for Kids',
   description: 'Learn what a numerator is with a simple visual guide. Understand the top number of a fraction — how many parts we have. Perfect for 2nd-4th graders.',
   alternates: {
     canonical: 'https://homeschoolmath.site/what-is-a-numerator',

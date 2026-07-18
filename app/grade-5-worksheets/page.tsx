@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fifth Grade Math Worksheets | Free Printable 5th Grade Math Practice',
-  description: 'Free printable 5th grade math worksheets covering fractions, decimals, volume, coordinate plane, and algebraic thinking. Perfect for homeschool and classroom use.',
+  title: 'Fifth Grade Math Worksheets | Free Practice',
+  description: 'Free printable 5th grade math worksheets covering fractions, decimals, volume, coordinate plane, and algebraic thinking.',
 alternates: {
     canonical: 'https://homeschoolmath.site/grade-5-worksheets',
   },
