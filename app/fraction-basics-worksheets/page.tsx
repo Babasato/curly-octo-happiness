@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Basic Fraction Concepts Worksheets | Free Practice',
-  description: 'Free printable basic fraction concepts worksheets for 3rd-4th grade. Practice numerators, denominators, and parts of a whole with fraction circles and bars.',
+  title: 'Basic Fraction Concepts Worksheets for 3rd-4th | Numerators & Denominators',
+  description: 'Free printable 3rd-4th grade basic fraction concepts worksheets covering numerators, denominators, and parts of a whole with circles and bars.',
   alternates: {
     canonical: 'https://homeschoolmath.site/fraction-basics-worksheets',
   },

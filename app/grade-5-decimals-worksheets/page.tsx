@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fifth Grade Decimals Worksheets | Free Practice',
-  description: 'Free printable 5th grade decimals worksheets covering decimal place value, rounding decimals, comparing decimals, adding/subtracting decimals, multiplying decimals, dividing decimals, and decimal word problems. Perfect for homeschool and classroom use.',
+  title: 'Fifth Grade Decimals Worksheets | Place Value, Operations & Word Problems',
+  description: 'Free printable 5th grade decimals worksheets covering place value, rounding, comparing, operations, and decimal word problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-5-decimals-worksheets',
   },

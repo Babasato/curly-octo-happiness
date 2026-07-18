@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Sixth Grade Ratios Worksheets | Free Practice',
-  description: 'Free printable 6th grade ratios worksheets covering ratio concepts, equivalent ratios, ratio tables, unit rates, and real-world ratio word problems.',
+  title: 'Sixth Grade Ratios Worksheets | Equivalent Ratios, Tables & Unit Rates',
+  description: 'Free printable 6th grade ratios worksheets covering equivalent ratios, ratio tables, unit rates, and real-world word problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-6-ratios-worksheets',
   },

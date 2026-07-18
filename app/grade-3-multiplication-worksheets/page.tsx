@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Third Grade Multiplication Worksheets | Free Practice',
-  description: 'Free printable 3rd grade multiplication worksheets covering multiplication facts 0-10, arrays, equal groups, fact families, and word problems.',
+  title: 'Third Grade Multiplication Worksheets | Facts 0-10, Arrays & Word Problems',
+  description: 'Free printable 3rd grade multiplication worksheets covering facts 0-10, arrays, equal groups, fact families, and word problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-3-multiplication-worksheets',
   },

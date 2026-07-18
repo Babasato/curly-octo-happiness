@@ -3,10 +3,10 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Free Homeschool Math Guides | Download Free Parent Resources',
-  description: 'Download free printable math guides for homeschool parents. Grade 4 readiness checklist, multiplication starter guide, fractions foundation guide, and word problems strategy guide — all free, no registration required.',
+  title: 'Free Homeschool Math Guides | Readiness, Multiplication & Fractions',
+  description: 'Free printable homeschool math guides including Grade 4 readiness, multiplication, fractions foundation, and word problems strategy — no registration required.',
   alternates: {
-    canonical: 'https://homeschoolmath.site/free-guides',  // Changed from free-courses
+    canonical: 'https://homeschoolmath.site/free-guides',
   },
 }
 

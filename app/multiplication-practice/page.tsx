@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Multiplication Practice Worksheets | Free Printable Times Tables',
-  description: 'Master multiplication with custom practice sheets. Generate free printable multiplication worksheets for 2nd through 6th grade with times tables, arrays, and word problems.',
+  title: 'Multiplication Practice for 2nd-6th | Times Tables, Arrays & Word Problems',
+  description: 'Free printable 2nd-6th grade multiplication worksheets covering times tables, arrays, and word problems with custom generation.',
   alternates: {
     canonical: 'https://homeschoolmath.site/multiplication-practice',
   },

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Division Fact Families Worksheets | Free Printable 3-5 Grade Math',
-  description: 'Free printable division fact families worksheets for 3rd-5th grade. Practice the relationship between multiplication and division. Learn division as the inverse of multiplication.',
+  title: 'Division Fact Families Worksheets for 3rd-5th Grade | Inverse Operations',
+  description: 'Free printable 3rd-5th grade division fact families worksheets covering multiplication-division relationships and inverse operations.',
   alternates: {
     canonical: 'https://homeschoolmath.site/division-fact-families-worksheets',
   },

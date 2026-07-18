@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'What Is a Denominator? | Easy Explanation for Kids',
-  description: 'Learn what a denominator is and why it matters. Simple visual guide for kids in grades 3–5 with real-life examples. The perfect pair to our numerator guide.',
+  title: 'What Is a Denominator? | Easy Visual Guide for 3rd-5th Grade with Examples',
+  description: 'Learn what a denominator is and why it matters with a visual guide for grades 3-5 featuring real-life examples.',
   alternates: {
     canonical: 'https://homeschoolmath.site/what-is-a-denominator',
   },

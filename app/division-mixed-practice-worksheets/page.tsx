@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Mixed Division Practice Worksheets | Free Practice',
-  description: 'Free printable mixed division practice worksheets for 4th-6th grade. Interleaved division problems with facts through 144. Build durable, automatic fluency for long division readiness.',
+  title: 'Mixed Division Practice Worksheets for 4th-6th Grade | Facts to 144',
+  description: 'Free printable 4th-6th grade mixed division worksheets with interleaved facts to 144 for automatic fluency and long division readiness.',
   alternates: {
     canonical: 'https://homeschoolmath.site/division-mixed-practice-worksheets',
   },

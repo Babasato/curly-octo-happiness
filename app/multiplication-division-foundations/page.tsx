@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Multiplication & Division Foundations | Grades 3-5',
-  description: 'A complete 80+ page Grades 3–5 course teaching multiplication and division together from the ground up. 4 modules, 14 worksheet sets, mid-course and final assessments. Instant PDF download.',
+  title: 'Multiplication & Division Foundations Course | 80+ Pages for Grades 3-5',
+  description: 'A complete 80+ page grades 3-5 course teaching multiplication and division together with 4 modules, 14 worksheet sets, and assessments.',
   alternates: {
     canonical: 'https://homeschoolmath.site/multiplication-division-foundations',
   },

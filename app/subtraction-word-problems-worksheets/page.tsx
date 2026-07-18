@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Subtraction Word Problems Worksheets | Free Practice',
-  description: 'Free printable subtraction word problems worksheets for K-6. Practice real-world subtraction scenarios with one-step and multi-step problems. Learn to recognize when subtraction is needed.',
+  title: 'Subtraction Word Problems for K-6 | One-Step & Multi-Step Real-World Scenarios',
+  description: 'Free printable K-6 subtraction word problems covering real-world one-step and multi-step scenarios to build recognition skills.',
   alternates: {
     canonical: 'https://homeschoolmath.site/subtraction-word-problems-worksheets',
   },

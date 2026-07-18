@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Multiplying and Dividing Fractions Worksheets | Free Practice',
-  description: 'Free printable multiplying and dividing fractions worksheets for 5th-6th grade. Practice operations with fractions including mixed numbers.',
+  title: 'Multiplying & Dividing Fractions Worksheets for 5th-6th | Mixed Numbers',
+  description: 'Free printable 5th-6th grade multiplying and dividing fractions worksheets covering operations with mixed numbers.',
   alternates: {
     canonical: 'https://homeschoolmath.site/fraction-multiplication-division-worksheets',
   },

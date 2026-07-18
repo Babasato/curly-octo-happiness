@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Third Grade Math Worksheets | Free Practice',
+  title: 'Third Grade Math Worksheets | Multiplication, Division, Fractions & More',
   description: 'Free printable 3rd grade math worksheets covering multiplication, division, fractions, area, perimeter, and word problems.',
-alternates: {
+  alternates: {
     canonical: 'https://homeschoolmath.site/grade-3-worksheets',
   },
 }

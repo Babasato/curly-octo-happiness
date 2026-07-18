@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Second Grade Addition Worksheets | Free Practice',
-  description: 'Free printable 2nd grade addition worksheets within 100. Practice two-digit addition with and without regrouping, mental math strategies, and word problems. Perfect for homeschool and classroom use.',
+  title: 'Second Grade Addition Worksheets Within 100 | With & Without Regrouping',
+  description: 'Free printable 2nd grade addition worksheets within 100 covering two-digit regrouping, mental math strategies, and word problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-2-addition-worksheets',
   },

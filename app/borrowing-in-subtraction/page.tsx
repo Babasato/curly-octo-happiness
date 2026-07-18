@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Borrowing in Subtraction | Step-by-Step Visual Guide for Kids',
-  description: 'Learn borrowing in subtraction with a simple step-by-step visual guide. Perfect for 2nd-4th graders who struggle with "when do I borrow?"',
+  title: 'Borrowing in Subtraction | Step-by-Step Visual Guide for 2nd-4th Grade',
+  description: 'Learn borrowing in subtraction with a simple step-by-step visual guide designed for 2nd-4th graders who struggle with when to borrow.',
   alternates: {
     canonical: 'https://homeschoolmath.site/borrowing-in-subtraction',
   },

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Regrouping in Addition Explained | Step-by-Step Visual Guide',
-  description: 'Learn regrouping (carrying) in addition with a simple step-by-step visual guide. Perfect for 2nd-4th graders who struggle with "when do I carry?"',
+  title: 'Regrouping in Addition | Step-by-Step Visual Guide for 2nd-4th Grade',
+  description: 'Learn regrouping (carrying) in addition with a step-by-step visual guide for 2nd-4th graders who struggle with when to carry.',
   alternates: {
     canonical: 'https://homeschoolmath.site/regrouping-in-addition-explained',
   },

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Missing Divisors Worksheets | Free Printable 3-5 Grade Math',
-  description: 'Free printable missing divisors worksheets for 3rd-5th grade. Practice finding the missing number in division equations. Build flexible thinking and algebraic reasoning.',
+  title: 'Missing Divisors Worksheets for 3rd-5th Grade | Find the Missing Number',
+  description: 'Free printable 3rd-5th grade missing divisors worksheets for finding unknown numbers in division equations to build algebraic reasoning.',
   alternates: {
     canonical: 'https://homeschoolmath.site/division-missing-divisors-worksheets',
   },

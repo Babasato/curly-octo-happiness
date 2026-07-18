@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Two-Digit Addition With Regrouping Worksheets | Free Practice',
-  description: 'Free printable two-digit addition with regrouping worksheets for 3rd and 4th grade. Practice carrying tens from ones column. Includes step-by-step examples.',
+  title: 'Two-Digit Addition With Regrouping Worksheets for 3rd-4th Grade',
+  description: 'Free printable 3rd-4th grade worksheets for two-digit addition with regrouping, practicing carrying from ones to tens with step-by-step examples.',
   alternates: {
     canonical: 'https://homeschoolmath.site/addition-two-digit-regrouping-worksheets',
   },

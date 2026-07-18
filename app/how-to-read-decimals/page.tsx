@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Read Decimals | A Simple Visual Guide for Kids',
-  description: 'Learn how to read decimals step by step. Understand tenths, hundredths, thousandths, and how to say decimal numbers correctly. Perfect for 4th-5th graders.',
+  title: 'How to Read Decimals | Visual Guide for 4th-5th Grade | Tenths & Hundredths',
+  description: 'Learn to read decimals step by step covering tenths, hundredths, thousandths, and correct decimal number pronunciation for 4th-5th grade.',
   alternates: {
     canonical: 'https://homeschoolmath.site/how-to-read-decimals',
   },

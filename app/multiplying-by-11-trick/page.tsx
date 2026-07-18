@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Multiplying by 11 Trick (Fast & Visual Method)',
-  description: 'Learn the fast trick for multiplying any number by 11. Step-by-step visual guide for kids and parents. Works for single and double digits — because 11 is just 1 + 10.',
+  title: 'Multiplying by 11 Trick | Fast Visual Method for Single & Double Digits',
+  description: 'Learn the fast trick for multiplying by 11 with a step-by-step visual guide for single and double digits — because 11 is 1 + 10.',
   alternates: {
     canonical: 'https://homeschoolmath.site/multiplying-by-11-trick',
   },

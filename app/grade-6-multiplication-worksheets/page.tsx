@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Sixth Grade Multiplication Worksheets | Free Practice',
-  description: 'Free printable 6th grade multiplication worksheets covering multi-digit multiplication, decimal multiplication, fraction multiplication, and word problems.',
+  title: 'Sixth Grade Multiplication Worksheets | Multi-Digit, Decimals & Fractions',
+  description: 'Free printable 6th grade multiplication worksheets covering multi-digit, decimal, fraction multiplication, and word problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-6-multiplication-worksheets',
   },

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'First Grade Addition Worksheets | Free Practice',
-  description: 'Free printable 1st grade addition worksheets within 20. Practice counting on, making ten, doubles facts, and addition word problems.',
+  title: 'First Grade Addition Worksheets Within 20 | Counting On & Doubles Facts',
+  description: 'Free printable 1st grade addition worksheets within 20 covering counting on, making ten, doubles facts, and word problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-1-addition-worksheets',
   },

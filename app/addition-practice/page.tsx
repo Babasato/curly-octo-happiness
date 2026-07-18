@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Addition Practice Worksheets | Free Printable Math Sheets K-6',
-  description: 'Master addition with custom practice sheets. Generate free printable addition worksheets for kindergarten through 6th grade with basic facts, regrouping, and visual aids.',
+  title: 'Addition Practice Worksheets for K-6 | Basic Facts to Regrouping',
+  description: 'Free printable addition practice worksheets for K-6 covering basic facts, regrouping, and visual aids with custom generation.',
   alternates: {
     canonical: 'https://homeschoolmath.site/addition-practice',
   },

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Subtraction in 30 Days — Complete Grades 2–4 Math Course',
-  description: 'A complete 80+ page Grades 2–4 subtraction course. 20 daily lessons, 4 weeks of structured progression, 12 worksheet sets, and full answer keys. Fixes borrowing at the root. Instant PDF download.',
+  title: 'Subtraction in 30 Days | Complete Grades 2-4 Math Course with 80+ Pages',
+  description: 'A complete 80+ page grades 2-4 subtraction course with 20 daily lessons, 12 worksheet sets, full answer keys, and borrowing remediation.',
   alternates: {
     canonical: 'https://homeschoolmath.site/subtraction-in-30-days',
   },

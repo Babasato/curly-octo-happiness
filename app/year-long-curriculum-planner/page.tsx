@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Year-Long Curriculum Planner | Free Homeschool Tool',
-  description: 'Free tool that generates a complete 6 to 16 page curriculum workbook with unit tracking, assessment logs, and quarterly reflections. Plan your homeschool year in 20 minutes.',
+  title: 'Year-Long Curriculum Planner | Free Homeschool Workbook Generator',
+  description: 'Free tool that generates a complete 6-16 page curriculum workbook with unit tracking, assessment logs, and quarterly reflections.',
   alternates: {
     canonical: 'https://homeschoolmath.site/year-long-curriculum-planner',
   },

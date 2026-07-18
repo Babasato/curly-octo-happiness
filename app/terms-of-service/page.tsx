@@ -3,8 +3,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Math Worksheet Generator',
-  description: 'Terms of service for Math Worksheet Generator. Learn about acceptable use, intellectual property, and user responsibilities.',
+  title: 'Terms of Service for Math Worksheet Generator | Acceptable Use & IP',
+  description: 'Terms of service for the Math Worksheet Generator covering acceptable use, intellectual property, and user responsibilities.',
 }
 
 export default function TermsOfService() {

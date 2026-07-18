@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Decimal Subtraction Worksheets | Free Practice',
-  description: 'Free printable decimal subtraction worksheets for 4th-6th grade. Practice subtracting tenths, hundredths, and thousandths with borrowing and decimal point alignment.',
+  title: 'Decimal Subtraction Worksheets for 4th-6th Grade | Tenths to Thousandths',
+  description: 'Free printable 4th-6th grade decimal subtraction worksheets covering tenths, hundredths, and thousandths with borrowing and decimal alignment practice.',
   alternates: {
     canonical: 'https://homeschoolmath.site/decimal-subtraction-worksheets',
   },

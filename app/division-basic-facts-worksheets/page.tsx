@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Basic Division Facts Worksheets | Free Printable 3-4 Grade Math',
-  description: 'Free printable basic division facts worksheets for 3rd-4th grade. Practice division within the 12×12 multiplication table. Build automatic recall of division facts.',
+  title: 'Basic Division Facts Worksheets for 3rd-4th Grade | Within 12×12',
+  description: 'Free printable 3rd-4th grade basic division facts worksheets within the 12×12 multiplication table for automatic recall practice.',
   alternates: {
     canonical: 'https://homeschoolmath.site/division-basic-facts-worksheets',
   },

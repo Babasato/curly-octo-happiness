@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Equal Sharing Division Worksheets | Free Printable 3-4 Grade Math',
-  description: 'Free printable equal sharing division worksheets for 3rd-4th grade. Practice division as sharing equally with real-world word problems. Build conceptual understanding of division.',
+  title: 'Equal Sharing Division Worksheets for 3rd-4th Grade | Word Problems',
+  description: 'Free printable 3rd-4th grade equal sharing division worksheets with real-world word problems to build conceptual understanding.',
   alternates: {
     canonical: 'https://homeschoolmath.site/division-equal-sharing-worksheets',
   },

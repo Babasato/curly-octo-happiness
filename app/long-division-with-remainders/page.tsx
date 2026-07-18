@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Long Division with Remainders Explained | Step-by-Step Guide',
-  description: 'Learn how to do long division with remainders step by step. Clear visual guide for kids in grades 4–6. Includes worked examples and common mistakes to avoid.',
+  title: 'Long Division with Remainders | Step-by-Step Visual Guide for 4th-6th',
+  description: 'Learn long division with remainders step by step using a visual guide for grades 4-6, including worked examples and common mistakes to avoid.',
   alternates: {
     canonical: 'https://homeschoolmath.site/long-division-with-remainders',
   },

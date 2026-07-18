@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Times Tables Worksheets | Free Practice',
-  description: 'Free printable times tables worksheets for 2nd-4th grade. Practice each multiplication table from 2s through 12s with systematic worksheets. Perfect for initial learning of multiplication facts.',
+  title: 'Times Tables Worksheets for 2nd-4th | Practice 2s through 12s',
+  description: 'Free printable 2nd-4th grade times tables worksheets covering each table from 2s through 12s for systematic multiplication practice.',
   alternates: {
     canonical: 'https://homeschoolmath.site/multiplication-times-tables-worksheets',
   },

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Decimal Addition Worksheets | Free Printable 4th-5th Grade Math',
-  description: 'Free printable decimal addition worksheets for 4th-5th grade. Practice adding tenths, hundredths, and thousandths with proper decimal point alignment.',
+  title: 'Decimal Addition Worksheets for 4th-5th Grade | Tenths to Thousandths',
+  description: 'Free printable 4th-5th grade decimal addition worksheets covering tenths, hundredths, and thousandths with decimal point alignment practice.',
   alternates: {
     canonical: 'https://homeschoolmath.site/decimal-addition-worksheets',
   },

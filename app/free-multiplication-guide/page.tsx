@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Multiplication Made Simple — Free 5-Day Starter Guide',
-  description: 'Free 5-day multiplication guide for homeschool parents. Teach equal groups, arrays, skip counting, and derived facts — no maths teaching experience required. Grades 2–4.',
+  title: 'Free 5-Day Multiplication Guide for Grades 2-4 | Arrays & Skip Counting',
+  description: 'Free 5-day homeschool multiplication guide for grades 2-4 covering equal groups, arrays, skip counting, and derived facts — no experience needed.',
   alternates: {
     canonical: 'https://homeschoolmath.site/free-multiplication-guide',
   },

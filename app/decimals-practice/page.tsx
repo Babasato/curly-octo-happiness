@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Decimal Practice Worksheets | Free Printable Math Sheets 4-6',
-  description: 'Master decimals with custom practice sheets. Generate free printable decimal worksheets for 4th through 6th grade covering addition, subtraction, and place value alignment.',
+  title: 'Decimal Practice Worksheets for 4th-6th Grade | Add, Subtract, & Place Value',
+  description: 'Free printable 4th-6th grade decimal practice worksheets covering addition, subtraction, and place value alignment with custom generation.',
   alternates: {
     canonical: 'https://homeschoolmath.site/decimals-practice',
   },

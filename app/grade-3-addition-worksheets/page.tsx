@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Third Grade Addition Worksheets | Free Practice',
-  description: 'Free printable 3rd grade addition worksheets within 1,000. Practice three-digit addition with regrouping, mental math strategies, and word problems.',
+  title: 'Third Grade Addition Worksheets Within 1,000 | 3-Digit Regrouping & More',
+  description: 'Free printable 3rd grade addition worksheets within 1,000 covering three-digit regrouping, mental math strategies, and word problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-3-addition-worksheets',
   },

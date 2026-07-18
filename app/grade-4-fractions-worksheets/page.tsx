@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fourth Grade Fractions Worksheets | Free Practice',
-  description: 'Free printable 4th grade fractions worksheets covering equivalent fractions, comparing fractions, adding/subtracting fractions, multiplying fractions by whole numbers, and decimals. Perfect for homeschool and classroom use.',
+  title: 'Fourth Grade Fractions Worksheets | Equivalent, Comparing, Adding & More',
+  description: 'Free printable 4th grade fractions worksheets covering equivalent, comparing, adding/subtracting, multiplying by whole numbers, and decimals.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-4-fractions-worksheets',
   },

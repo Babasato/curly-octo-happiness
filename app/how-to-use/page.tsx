@@ -3,8 +3,11 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'How to Use Math Worksheet Generator | Step-by-Step Tutorial',
-  description: 'Learn how to effectively use our math worksheet generator to create customized practice sheets for homeschool and classroom use. Tips for printing and customization.',
+  title: 'How to Use the Math Worksheet Generator | Step-by-Step Guide',
+  description: 'Learn to use the math worksheet generator to create custom practice sheets for homeschool or classroom, with tips for printing and customization.',
+  alternates: {
+    canonical: 'https://homeschoolmath.site/how-to-use-math-worksheet-generator',
+  },
 }
 
 // 1. REUSABLE COMPONENTS

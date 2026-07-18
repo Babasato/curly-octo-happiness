@@ -3,8 +3,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Math Teaching Tips & Strategies for Homeschool',
-  description: 'Discover effective math teaching strategies, differentiation techniques, and practical tips for homeschool parents. Learn how to build number sense, teach fact fluency, and develop problem-solving skills.',
+  title: 'Math Teaching Tips for Homeschool | Strategies, Differentiation & More',
+  description: 'Discover effective math teaching strategies, differentiation techniques, and practical tips for homeschool parents building number sense and fact fluency.',
   alternates: {
     canonical: 'https://homeschoolmath.site/teaching-tips',
   },

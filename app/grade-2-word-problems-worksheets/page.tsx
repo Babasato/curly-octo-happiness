@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Second Grade Word Problems Worksheets | Free Practice',
-  description: 'Free printable 2nd grade math word problems covering addition and subtraction within 100, time, money, measurement, and two-step problems.',
+  title: 'Second Grade Word Problems Worksheets | Addition, Subtraction, Time & Money',
+  description: 'Free printable 2nd grade word problems covering addition, subtraction, time, money, measurement, and two-step scenarios within 100.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-2-word-problems-worksheets',
   },

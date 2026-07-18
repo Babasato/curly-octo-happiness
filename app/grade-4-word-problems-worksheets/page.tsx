@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fourth Grade Word Problems Worksheets | Free Practice',
-  description: 'Free printable 4th grade math word problems covering multiplication, division, fractions, decimals, and multi-step problems.',
+  title: 'Fourth Grade Word Problems | Multiplication, Division, Fractions & Decimals',
+  description: 'Free printable 4th grade word problems covering multiplication, division, fractions, decimals, and multi-step scenarios.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-4-word-problems-worksheets',
   },

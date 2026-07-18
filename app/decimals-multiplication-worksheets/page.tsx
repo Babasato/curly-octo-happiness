@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Decimal Multiplication Worksheets | Free Practice',
-  description: 'Free printable decimal multiplication worksheets for 5th-6th grade. Practice multiplying decimals by whole numbers and decimals with decimal point placement.',
+  title: 'Decimal Multiplication Worksheets for 5th-6th Grade | Whole & Decimal',
+  description: 'Free printable 5th-6th grade decimal multiplication worksheets covering whole numbers and decimals with decimal point placement practice.',
   alternates: {
     canonical: 'https://homeschoolmath.site/decimals-multiplication-worksheets',
   },

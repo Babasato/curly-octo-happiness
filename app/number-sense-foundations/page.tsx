@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Number Sense Foundations — Complete K–2 Math Course',
-  description: 'A complete 80+ page K–2 math course that builds genuine number sense from the ground up. 4 modules, 10 worksheet sets, parent guides, and full answer keys. Instant PDF download.',
+  title: 'Number Sense Foundations | Complete K-2 Math Course with 80+ Pages',
+  description: 'A complete 80+ page K-2 number sense course with 4 modules, 10 worksheet sets, parent guides, and full answer keys.',
   alternates: {
     canonical: 'https://homeschoolmath.site/number-sense-foundations',
   },

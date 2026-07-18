@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fifth Grade Word Problems Worksheets | Free Practice',
-  description: 'Free printable 5th grade math word problems covering multiplication, division, fractions, decimals, measurement conversions, and multi-step problems.',
+  title: 'Fifth Grade Word Problems | Multiplication, Division, Fractions & Decimals',
+  description: 'Free printable 5th grade word problems covering multiplication, division, fractions, decimals, measurement conversions, and multi-step scenarios.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-5-word-problems-worksheets',
   },

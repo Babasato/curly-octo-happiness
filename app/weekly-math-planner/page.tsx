@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Weekly Math Planner Generator | Free Homeschool Planning Tool',
-  description: 'Free tool that generates unlimited weekly math planners with structured daily lesson blocks, fluency drills, and progress tracking. Plan your week in 2 minutes.',
+  title: 'Weekly Math Planner Generator | Free Homeschool Planning with Tracking',
+  description: 'Free tool that generates unlimited weekly math planners with structured daily lesson blocks, fluency drills, and progress tracking.',
   alternates: {
     canonical: 'https://homeschoolmath.site/weekly-math-planner',
   },

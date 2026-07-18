@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Inverse Operations Division Worksheets | Free Practice',
-  description: 'Free printable inverse operations worksheets for 4th-5th grade. Practice the relationship between multiplication and division. Build flexible thinking with fact families.',
+  title: 'Inverse Operations Division Worksheets for 4th-5th Grade | Fact Families',
+  description: 'Free printable 4th-5th grade inverse operations worksheets covering multiplication-division relationships and fact families for flexible thinking.',
   alternates: {
     canonical: 'https://homeschoolmath.site/division-inverse-operations-worksheets',
   },

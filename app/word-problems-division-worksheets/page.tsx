@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Division Word Problems Worksheets | Free Printable 3-5 Grade Math',
-  description: 'Free printable division word problems worksheets for 3rd-5th grade. Practice sharing equally, grouping, and "each gets" scenarios with real-world math problems.',
+  title: 'Division Word Problems for 3rd-5th | Sharing, Grouping & "Each Gets" Scenarios',
+  description: 'Free printable 3rd-5th grade division word problems covering sharing equally, grouping, and "each gets" real-world scenarios.',
   alternates: {
     canonical: 'https://homeschoolmath.site/word-problems-division-worksheets',
   },

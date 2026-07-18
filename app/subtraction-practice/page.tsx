@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Subtraction Practice Worksheets | Free Printable Math Sheets K-6',
-  description: 'Master subtraction with custom practice sheets. Generate free printable subtraction worksheets for kindergarten through 6th grade with basic facts, borrowing, and visual aids.',
+  title: 'Subtraction Practice for K-6 | Basic Facts, Borrowing & Visual Aids',
+  description: 'Free printable K-6 subtraction worksheets covering basic facts, borrowing, and visual aids with custom generation.',
   alternates: {
     canonical: 'https://homeschoolmath.site/subtraction-practice',
   },

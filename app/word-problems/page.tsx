@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Math Word Problems Worksheets | Free Printable K-6 Math Practice',
-  description: 'Free printable math word problems worksheets for K-6. Practice addition, subtraction, multiplication, and division word problems with real-world scenarios.',
+  title: 'Math Word Problems for K-6 | Add, Subtract, Multiply & Divide',
+  description: 'Free printable K-6 math word problems covering addition, subtraction, multiplication, and division with real-world scenarios.',
   alternates: {
     canonical: 'https://homeschoolmath.site/word-problems',
   },

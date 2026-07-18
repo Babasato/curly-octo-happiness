@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Word Problems Made Easy — Free Strategy Guide',
-  description: 'Free word problems guide for homeschool parents. The 4-step READ method, signal word lists for all four operations, 20 practice problems with answer key. Grades K–6, no registration required.',
+  title: 'Free Word Problems Strategy Guide for K-6 | READ Method & Signal Words',
+  description: 'Free K-6 homeschool word problems guide featuring the READ method, signal word lists for all operations, and 20 practice problems with answer key.',
   alternates: {
     canonical: 'https://homeschoolmath.site/free-word-problems-guide',
   },

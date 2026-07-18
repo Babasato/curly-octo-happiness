@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Second Grade Math Worksheets | Free Practice',
+  title: 'Second Grade Math Worksheets | Addition, Subtraction, Place Value & More',
   description: 'Free printable 2nd grade math worksheets covering addition, subtraction, place value, measurement, time, money, and geometry.',
-alternates: {
+  alternates: {
     canonical: 'https://homeschoolmath.site/grade-2-worksheets',
   },
 }

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Adding and Subtracting Fractions Worksheets | Free Practice',
-  description: 'Free printable adding and subtracting fractions worksheets for 4th-6th grade. Practice operations with like and unlike denominators using equivalent fractions.',
+  title: 'Adding & Subtracting Fractions Worksheets for 4th-6th | Like & Unlike',
+  description: 'Free printable 4th-6th grade adding and subtracting fractions worksheets covering like and unlike denominators with equivalent fraction practice.',
   alternates: {
     canonical: 'https://homeschoolmath.site/fraction-addition-subtraction-worksheets',
   },

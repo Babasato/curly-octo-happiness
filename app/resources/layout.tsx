@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Homeschool Math Resources | Courses, Planners & Teaching Tools',
-  description: 'Discover structured math courses and professional planning tools for homeschooling parents. Number Sense Foundations, Multiplication & Division Foundations, and more.',
+  title: 'Math Resources for Homeschool | Courses, Planners & Teaching Tools',
+  description: 'Discover structured math courses and planning tools for homeschool parents, including Number Sense Foundations and Multiplication & Division Foundations.',
   alternates: {
     canonical: 'https://homeschoolmath.site/resources',
   },

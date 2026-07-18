@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Third Grade Word Problems Worksheets | Free Practice',
-  description: 'Free printable 3rd grade math word problems covering addition, subtraction, multiplication, division, multi-step problems, and real-world scenarios.',
+  title: 'Third Grade Word Problems | Addition, Subtraction, Multiplication & Division',
+  description: 'Free printable 3rd grade word problems covering addition, subtraction, multiplication, division, and multi-step real-world scenarios.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-3-word-problems-worksheets',
   },

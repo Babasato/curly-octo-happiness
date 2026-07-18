@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fraction Word Problems Worksheets | Free Practice',
-  description: 'Free printable fraction word problems worksheets for 4th-6th grade. Practice real-world fraction scenarios involving recipes, measurement, and sharing.',
+  title: 'Fraction Word Problems Worksheets for 4th-6th | Recipes, Measurement & Sharing',
+  description: 'Free printable 4th-6th grade fraction word problems worksheets covering real-world recipes, measurement, and sharing scenarios.',
   alternates: {
     canonical: 'https://homeschoolmath.site/fraction-word-problems-worksheets',
   },

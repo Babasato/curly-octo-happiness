@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Place Value Worksheets | Free Printable Practice Sheets',
-  description: 'Free printable place value worksheets for grades K–5. Practice ones, tens, hundreds, thousands, rounding, comparing numbers, and decimal place value.',
+  title: 'Place Value Worksheets for K-5 | Ones to Thousands, Rounding & Decimals',
+  description: 'Free printable K-5 place value worksheets covering ones to thousands, rounding, comparing numbers, and decimal place value.',
   alternates: {
     canonical: 'https://homeschoolmath.site/place-value',
   },

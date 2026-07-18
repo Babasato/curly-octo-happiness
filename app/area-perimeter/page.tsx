@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Area and Perimeter Worksheets | Free Printable Practice Sheets',
-  description: 'Free printable area and perimeter worksheets for grades 3–5. Practice calculating area of rectangles, perimeter of polygons, and real-world measurement problems.',
+  title: 'Area and Perimeter Worksheets for Grades 3-5 | Rectangles & Polygons',
+  description: 'Free printable 3rd-5th grade area and perimeter worksheets covering rectangles, polygons, and real-world measurement problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/area-perimeter',
   },

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Third Grade Division Worksheets | Free Practice',
-  description: 'Free printable 3rd grade division worksheets covering division facts 0-10, fact families, equal sharing, and word problems.',
+  title: 'Third Grade Division Worksheets | Facts 0-10, Fact Families & Word Problems',
+  description: 'Free printable 3rd grade division worksheets covering facts 0-10, fact families, equal sharing, and word problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-3-division-worksheets',
   },

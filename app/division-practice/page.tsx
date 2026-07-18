@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Division Practice Worksheets | Free Practice',
-  description: 'Master division with custom practice sheets. Generate free printable division worksheets for 3rd through 6th grade with basic facts, inverse operations, and sharing scenarios.',
+  title: 'Division Practice Worksheets for 3rd-6th Grade | Facts, Inverse, & Sharing',
+  description: 'Free printable 3rd-6th grade division practice worksheets covering basic facts, inverse operations, and sharing scenarios with custom generation.',
   alternates: {
     canonical: 'https://homeschoolmath.site/division-practice',
   },

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Third Grade Subtraction Worksheets | Free Practice',
-  description: 'Free printable 3rd grade subtraction worksheets within 1,000. Practice three-digit subtraction with borrowing/regrouping, mental math strategies, and word problems. Perfect for homeschool and classroom use.',
+  title: 'Third Grade Subtraction Within 1,000 | 3-Digit Borrowing & Word Problems',
+  description: 'Free printable 3rd grade subtraction worksheets within 1,000 covering three-digit borrowing, mental math strategies, and word problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-3-subtraction-worksheets',
   },

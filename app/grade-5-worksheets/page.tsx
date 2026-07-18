@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fifth Grade Math Worksheets | Free Practice',
+  title: 'Fifth Grade Math Worksheets | Fractions, Decimals, Volume & More',
   description: 'Free printable 5th grade math worksheets covering fractions, decimals, volume, coordinate plane, and algebraic thinking.',
-alternates: {
+  alternates: {
     canonical: 'https://homeschoolmath.site/grade-5-worksheets',
   },
 }

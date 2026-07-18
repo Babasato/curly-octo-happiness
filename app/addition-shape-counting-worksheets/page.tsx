@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Shape Counting Addition Worksheets | Free Printable K-1 Math',
-  description: 'Free printable shape counting addition worksheets for kindergarten and 1st grade. Count circles, squares, and triangles to add numbers visually. Perfect for early learners.',
+  title: 'Shape Counting Addition Worksheets for K-1 | Count to Add',
+  description: 'Free printable K-1 shape counting addition worksheets using circles, squares, and triangles to visualize adding numbers.',
   alternates: {
     canonical: 'https://homeschoolmath.site/addition-shape-counting-worksheets',
   },

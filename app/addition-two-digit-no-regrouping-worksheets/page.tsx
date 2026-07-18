@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Two-Digit Addition No Regrouping Worksheets | Free Practice',
-  description: 'Free printable two-digit addition without regrouping worksheets for 2nd and 3rd grade. Practice adding tens and ones with correct place value alignment.',
+  title: 'Two-Digit Addition No Regrouping Worksheets for 2nd-3rd Grade',
+  description: 'Free printable 2nd-3rd grade worksheets for two-digit addition without regrouping, focusing on tens and ones place value alignment.',
   alternates: {
     canonical: 'https://homeschoolmath.site/addition-two-digit-no-regrouping-worksheets',
   },

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Decimal Division Worksheets | Free Printable 5th-6th Grade Math',
-  description: 'Free printable decimal division worksheets for 5th-6th grade. Practice dividing decimals by whole numbers and decimals by moving decimal points.',
+  title: 'Decimal Division Worksheets for 5th-6th Grade | Whole Numbers & Decimals',
+  description: 'Free printable 5th-6th grade decimal division worksheets covering dividing by whole numbers and decimals with decimal point movement practice.',
   alternates: {
     canonical: 'https://homeschoolmath.site/decimals-division-worksheets',
   },

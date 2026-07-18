@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'First Grade Math Worksheets | Free Practice',
-  description: 'Free printable 1st grade math worksheets covering addition, subtraction, counting, place value, measurement, and geometry.',
+  title: 'First Grade Math Worksheets | Addition, Subtraction, Place Value & More',
+  description: 'Free printable 1st grade math worksheets covering addition, subtraction, place value, measurement, geometry, and counting.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-1-worksheets',
   },

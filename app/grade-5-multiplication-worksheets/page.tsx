@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Fifth Grade Multiplication Worksheets | Free Practice',
-  description: 'Free printable 5th grade multiplication worksheets covering multi-digit multiplication, 3-digit by 2-digit, 4-digit by 2-digit, and word problems.',
+  title: 'Fifth Grade Multiplication Worksheets | Multi-Digit & Word Problems',
+  description: 'Free printable 5th grade multiplication worksheets covering multi-digit, 3-digit by 2-digit, 4-digit by 2-digit, and word problems.',
   alternates: {
     canonical: 'https://homeschoolmath.site/grade-5-multiplication-worksheets',
   },
