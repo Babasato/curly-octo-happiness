@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Skip Counting Explained | Multiplication Foundation for 2nd-3rd Grade',
+  title: 'Skip Counting Explained | Multiplication Basics',
   description: 'Learn skip counting as the foundation of multiplication with a step-by-step visual guide for 2nd-3rd graders covering 2s, 5s, 10s, and more.',
   alternates: {
     canonical: 'https://homeschoolmath.site/skip-counting-explained',
