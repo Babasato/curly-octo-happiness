@@ -289,6 +289,8 @@ export default function ReadinessQuiz({
         >
           <a
             href={bundleGumroadUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               background: 'var(--primary)',
               color: 'white',
@@ -299,7 +301,7 @@ export default function ReadinessQuiz({
               textAlign: 'center',
             }}
           >
-            Get 50 More Practice Pages — $7
+            Get 30 More Practice Pages — $5
           </a>
           <Link
             href={courseHref}

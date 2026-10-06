@@ -11,8 +11,8 @@ export default function WorksheetBundleOffer({
   grade,
   topic,
   gumroadUrl,
-  price = '$7',
-  pageCount = 50,
+  price = '$5',
+  pageCount = 30,
 }: WorksheetBundleOfferProps) {
   return (
     <section style={{ marginBottom: '3rem' }}>
@@ -41,6 +41,8 @@ export default function WorksheetBundleOffer({
         </p>
         <a
           href={gumroadUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             display: 'inline-block',
             background: 'var(--primary)',
