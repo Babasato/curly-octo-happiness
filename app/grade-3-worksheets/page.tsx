@@ -1,6 +1,8 @@
 // app/grade-3-worksheets/page.tsx
 import Link from 'next/link'
 import { Metadata } from 'next'
+import ReadinessQuiz from '../components/ReadinessQuiz'
+import WorksheetBundleOffer from '../components/WorksheetBundleOffer'
 
 export const metadata: Metadata = {
   title: 'Third Grade Math Worksheets | Multiplication, Division, Fractions & More',
@@ -190,49 +192,38 @@ export default function Grade3Worksheets() {
           </section>
 
           {/* Readiness Check */}
-<section style={{
-  background: 'var(--surface)',
-  border: '1px solid var(--border)',
-  borderLeft: '4px solid var(--warning)',
-  borderRadius: '8px',
-  padding: '1.5rem 2rem',
-  marginBottom: '3rem'
-}}>
-  <h2 style={{
-    fontSize: '1.25rem',
-    fontWeight: '700',
-    color: 'var(--text-primary)',
-    marginBottom: '0.75rem'
-  }}>
-    Is Your Third Grader Ready for Multiplication?
-  </h2>
-  <p style={{
-    color: 'var(--text-secondary)',
-    lineHeight: '1.7',
-    marginBottom: '1rem'
-  }}>
-    Before starting 3rd grade multiplication, check these two things. First, can your child
-    recall any addition or subtraction fact within 20 in under 3 seconds without counting?
-    Second, do they understand that 4 groups of 3 objects is the same as 3 plus 3 plus 3 plus 3?
-    If both are solid, they are ready. If either is shaky, start there before the times tables.
-  </p>
-  <p style={{
-    color: 'var(--text-secondary)',
-    lineHeight: '1.7',
-    margin: 0
-  }}>
-    If you want a complete plan for getting multiplication and division solid before
-    Grade 4, the{' '}
-    <Link href="/multiplication-division-foundations" style={{
-      color: 'var(--primary)',
-      textDecoration: 'underline',
-      fontWeight: '600'
-    }}>
-      Multiplication and Division Foundations course
-    </Link>
-    {' '}covers the full sequence from arrays to fact fluency to division in one structured plan.
-  </p>
-</section>
+          <section style={{
+            background: 'var(--surface)',
+            border: '1px solid var(--border)',
+            borderLeft: '4px solid var(--warning)',
+            borderRadius: '8px',
+            padding: '1.5rem 2rem',
+            marginBottom: '1.5rem'
+          }}>
+            <h2 style={{
+              fontSize: '1.25rem',
+              fontWeight: '700',
+              color: 'var(--text-primary)',
+              marginBottom: '0.75rem'
+            }}>
+              Is Your Third Grader Ready for Multiplication?
+            </h2>
+            <p style={{
+              color: 'var(--text-secondary)',
+              lineHeight: '1.7',
+              marginBottom: '1.25rem'
+            }}>
+              Answer these 12-14 quick questions to see exactly which skills are solid and which are
+              worth strengthening before leaning hard on times tables.
+            </p>
+            <ReadinessQuiz />
+          </section>
+
+          <WorksheetBundleOffer
+            grade="3"
+            topic="Multiplication & Division"
+            gumroadUrl="https://homeschoolmath.gumroad.com/l/lishbb?_gl=1*a0z7ae*_ga*MTk3NDU1NjcxNi4xNzM5ODk4Njgx*_ga_6LJN6D94N6*czE3OTEyNjk5ODgkbzI0MyRnMCR0MTc5MTI2OTk4OCRqNjAkbDAkaDA."
+          />
 
         {/* Worksheet Categories - Styled Cards */}
           <section style={{marginBottom: '3rem'}}>
